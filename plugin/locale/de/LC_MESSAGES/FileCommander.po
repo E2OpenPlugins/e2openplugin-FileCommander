@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 13:58+0200\n"
-"PO-Revision-Date: 2019-08-02 22:37+0200\n"
+"POT-Creation-Date: 2019-08-06 20:53+0200\n"
+"PO-Revision-Date: 2019-08-06 20:56+0200\n"
 "Last-Translator: Pike_Bishop <alfredzngr023@gmail.com>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../addons/key_actions.py:372
@@ -69,20 +69,25 @@ msgstr " - Ordner vorhanden ! Überschreiben"
 msgid " or save the picture additionally to a file"
 msgstr " oder das Bild zusätzlich als Datei speichern"
 
+#: ../addons/key_actions.py:317
+#, python-format
+msgid "%s"
+msgstr "%s"
+
 #: ../plugin.py:1655
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
 
+#: ../addons/key_actions.py:318
+#, python-format
+msgid "%s (%s"
+msgstr "%s (%s"
+
 #: ../addons/key_actions.py:307
 #, python-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
-
-#: ../addons/key_actions.py:318
-#, python-format
-msgid "%s (%sB"
-msgstr "%s (%sB"
 
 #: ../addons/unarchiver.py:186
 #, python-format
@@ -103,11 +108,6 @@ msgstr "%s wurde erfolgreich extrahiert."
 #, python-format
 msgid "%s: %s"
 msgstr "%s: %s"
-
-#: ../addons/key_actions.py:317
-#, python-format
-msgid "%sB"
-msgstr "%sB"
 
 #: ../addons/key_actions.py:513
 #, python-format

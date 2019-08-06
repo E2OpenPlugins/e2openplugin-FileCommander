@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 10:30+0200\n"
+"POT-Creation-Date: 2019-08-06 20:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,19 +65,24 @@ msgstr ""
 msgid " or save the picture additionally to a file"
 msgstr ""
 
+#: ../addons/key_actions.py:317
+#, python-format
+msgid "%s"
+msgstr ""
+
 #: ../plugin.py:1655
 #, python-format
 msgid "%s (%04o)"
 msgstr ""
 
+#: ../addons/key_actions.py:318
+#, python-format
+msgid "%s (%s"
+msgstr ""
+
 #: ../addons/key_actions.py:307
 #, python-format
 msgid "%s (%s)"
-msgstr ""
-
-#: ../addons/key_actions.py:318
-#, python-format
-msgid "%s (%sB"
 msgstr ""
 
 #: ../addons/unarchiver.py:186
@@ -98,11 +103,6 @@ msgstr ""
 #: ../addons/key_actions.py:408 ../addons/key_actions.py:712 ../plugin.py:1646
 #, python-format
 msgid "%s: %s"
-msgstr ""
-
-#: ../addons/key_actions.py:317
-#, python-format
-msgid "%sB"
 msgstr ""
 
 #: ../addons/key_actions.py:513
