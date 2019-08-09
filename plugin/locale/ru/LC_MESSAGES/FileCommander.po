@@ -1,0 +1,927 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FileCommander\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-05 15:14+0200\n"
+"PO-Revision-Date: 2019-08-09 04:33+0000\n"
+"Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: ru_RU\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Parser: loco_parse_mo"
+
+msgid ""
+"\n"
+"optional parameter:\n"
+"%s"
+msgstr ""
+"\n"
+"дополнительный параметр:\n"
+"%s"
+
+msgid " "
+msgstr " "
+
+msgid " ('%s') finished successefully."
+msgstr " ('%s') успешно завершено."
+
+msgid " ('%s') finished with error messages."
+msgstr " ('%s') выполнено с сообщениями об ошибках."
+
+msgid " ('%s') finished with error number [%d]."
+msgstr " ('%s') выполнено с номером ошибки [%d]."
+
+msgid " - %d elements exist! Overwrite"
+msgstr " - %d элементов существует! Перезаписать"
+
+msgid " - 1 element exist! Overwrite"
+msgstr " - 1 Элемент существует! Перезаписать"
+
+msgid " - file exist! Overwrite"
+msgstr " - Перезаписать файл!"
+
+msgid " - folder exist! Overwrite"
+msgstr " - Перезаписать каталог!"
+
+msgid " or save the picture additionally to a file"
+msgstr " или сохраните изображение дополнительно в файл"
+
+msgid "%s (%04o)"
+msgstr "%s (%04o)"
+
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+msgid "%s (%sB"
+msgstr "%s (%sB"
+
+msgid "%s - extraction errors."
+msgstr "%s - ошибки извлечения."
+
+msgid "%s is password protected."
+msgstr "%s защищено паролем."
+
+msgid "%s successfully extracted."
+msgstr "%s успешно извлечено"
+
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "%sB"
+msgstr "%sB"
+
+msgid "'%s' not installed and no known package"
+msgstr "'%s' не установлен не известен пакет..."
+
+msgid "(%d jobs)"
+msgstr "(%d задания)"
+
+msgid "(Selectmode)"
+msgstr "(Режим выбора)"
+
+msgid ": "
+msgstr ": "
+
+msgid "?"
+msgstr " ?"
+
+msgid "Accessed:"
+msgstr "Доступно с:"
+
+msgid "Activate left-hand file list as multi-select source"
+msgstr "Активировать левый список файлов как источник с множественным выбором"
+
+msgid "Activate left-hand file list as source"
+msgstr "Активировать левый список файлов в качестве источника"
+
+msgid "Activate right-hand file list as multi-select source"
+msgstr "Активировать правый список файлов как источник с множественным выбором"
+
+msgid "Activate right-hand file list as source"
+msgstr "Активировать правый список файлов в качестве источника"
+
+msgid "Add current folder to bookmarks"
+msgstr "Добавить текущую папку в закладки"
+
+msgid "Add plugin to Extensions menu*"
+msgstr "Добавить File Commander в Меню дополнений*"
+
+msgid "Add plugin to main menu*"
+msgstr "Добавить File Commander в Главное меню*"
+
+msgid "Add selected folder to bookmarks"
+msgstr "Добавить выбранную папку в закладки"
+
+msgid "Block device"
+msgstr "Заблокированное устройство"
+
+msgid "CPU priority for script execution"
+msgstr "Приоритет процессора для выполнения скрипта"
+
+msgid "Calculate file checksums"
+msgstr "Рассчитать контрольные суммы файлов"
+
+msgid ""
+"Can not run %s: %s.\n"
+"%s may be in a plugin that is not installed."
+msgstr ""
+"Невозможно запустить %s: %s.\n"
+"Возможно дополнение, %s - не установлено."
+
+msgid "Can't read link contents: %s"
+msgstr "Не прочитать содержание ссылки:"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Cancel execution?"
+msgstr "Отменить выполнение?"
+
+msgid "Change buttons for list navigation"
+msgstr "Изменить кнопки навигации по списку"
+
+msgid "Change execute permissions (755/644)"
+msgstr "Изменить права (755/644)"
+
+msgid "Channel button always changes sides"
+msgstr "Кнопка CH+- переход на правую левую панель"
+
+msgid "Character device"
+msgstr "Символьное устройство"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Copy %d elements"
+msgstr "Копировать %d элементов"
+
+msgid "Copy 1 element"
+msgstr "Копировать 1 элемент"
+
+msgid "Copy file"
+msgstr "Копировать файл"
+
+msgid "Copy file/directory to target directory"
+msgstr "Копировать файл/каталог в целевой каталог"
+
+msgid "Copy files/directories to target directory"
+msgstr "Копировать файлы/каталоги в целевой каталог"
+
+msgid "Copy folder"
+msgstr "Копировать папку"
+
+msgid "Create directory/folder"
+msgstr "Создать каталог"
+
+msgid "Create symlink to file"
+msgstr "Создать символическую ссылку на файл"
+
+msgid "Create user-named symbolic link"
+msgstr "Создать символическую ссылку"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Date reverse"
+msgstr "Дата по убыванию"
+
+msgid "Default Folder"
+msgstr "Каталог по умолчанию"
+
+msgid "Default directory sorting"
+msgstr "Сортировка каталогов"
+
+msgid "Default file sorting left"
+msgstr "Сортировка файлов слева"
+
+msgid "Default file sorting right"
+msgstr "Сортировка файлов справа"
+
+msgid "Default folder"
+msgstr "Каталог по умолчанию"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete %d elements"
+msgstr "Удалить элементов: %d"
+
+msgid "Delete 1 element"
+msgstr "Удалить 1 элемент"
+
+msgid "Delete current line"
+msgstr "Удалить текущую строку"
+
+msgid "Delete file"
+msgstr "Удалить файл"
+
+msgid "Delete file or directory (and all its contents)"
+msgstr "Удалить файл или каталог"
+
+msgid "Delete folder"
+msgstr "Удалить каталог"
+
+msgid "Delete the selected files or directories"
+msgstr "Удалить выбранные файлы или каталоги"
+
+msgid "Directory"
+msgstr "Каталог"
+
+msgid ""
+"Do you want change rights?\n"
+msgstr ""
+"Вы хотите изменить права?\n"
+
+msgid ""
+"Do you want to view or run the script?\n"
+msgstr ""
+"Вы хотите просмотреть или запустить скрипт?\n"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Edit current line"
+msgstr "Редактировать текущую строку"
+
+msgid "Edit line "
+msgstr "Редактировать строку "
+
+msgid "Edit position is the line end"
+msgstr "Позиция редактирования с конца строки"
+
+msgid "Enter multi-file selection mode"
+msgstr "Включить режим множественного выбора"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid ""
+"Error creating directory %s:\n"
+"%s"
+msgstr ""
+"Ошибка при создании каталога %s:\n"
+"%s"
+
+msgid ""
+"Error linking %s to %s:\n"
+"%s"
+msgstr ""
+"Ошибка ссылки %s на %s:\n"
+"%s"
+
+msgid ""
+"Error renaming %s to %s:\n"
+"%s"
+msgstr ""
+"Ошибка переименования %s на %s:\n"
+"%s"
+
+msgid "Error..."
+msgstr "Ошибка..."
+
+msgid "Execution finished!!"
+msgstr "Выполнение завершено!!"
+
+msgid "Execution progress:"
+msgstr "Ход выполнения:"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "Exit editor and write changes (if any)"
+msgstr "Выход из редактора и запись изменений (при наличии)"
+
+msgid "Exit picture viewer"
+msgstr "Выход из просмотра изображений"
+
+msgid "FIFO"
+msgstr "ФИФО"
+
+msgid "File Commander"
+msgstr "File Commander"
+
+msgid "File Commander - Addon File-Viewer"
+msgstr "File Commander - просмотр и редактирование"
+
+msgid "File Commander - Addon Mediaplayer"
+msgstr "File Commander - дополнение Mediaplayer"
+
+msgid "File Commander - Addon Movieplayer"
+msgstr "File Commander - дополнение Movieplayer"
+
+msgid "File Commander - all Task's completed!"
+msgstr "File Commander - все Задачи выполнены!"
+
+msgid "File Commander - generalised archive handler"
+msgstr "File Commander - общее управление архивами"
+
+msgid "File Commander - gzip Addon"
+msgstr "File Commander - дополнение gzip"
+
+msgid "File Commander - ipk Addon"
+msgstr "File Commander - дополнение ipk"
+
+msgid "File Commander - tar Addon"
+msgstr "File Commander - дополнение tar"
+
+msgid "File Commander - unrar Addon"
+msgstr "File Commander - дополнение unrar"
+
+msgid "File Commander - unzip Addon"
+msgstr "File Commander - дополнение unzip"
+
+msgid "File Commander Settings"
+msgstr "File Commander - Настройки"
+
+msgid "File Commander context menu"
+msgstr "File Commander - контекстное меню"
+
+msgid "File Commander menu"
+msgstr "File Commander - Меню"
+
+msgid "File checksums/hashes"
+msgstr "Файловые контрольные суммы хэшей"
+
+msgid "File not found: %s"
+msgstr "Файл не найден: %s"
+
+msgid "File transfer was cancelled by user"
+msgstr "Передача файла была отменена пользователем"
+
+msgid "File write error: '%s'"
+msgstr "Ошибка записи файла: '%s'"
+
+msgid "File/Directory Status Information"
+msgstr "Информация о статусе файла/каталога"
+
+msgid "Filter extension, (*) appears in title"
+msgstr "Фильтр расширений (*) показывать в заголовке"
+
+msgid "Go to bookmarked folder"
+msgstr "Перейти в папку закладок"
+
+msgid "Go to end of file"
+msgstr "Перейти в конец файла"
+
+msgid "Go to parent directory"
+msgstr "Перейти в родительский каталог"
+
+msgid "Go to start of file"
+msgstr "Перейти к началу файла"
+
+msgid "Group:"
+msgstr "Группа:"
+
+msgid "I/O priority for script execution"
+msgstr "Приоритет ввода/вывода для выполнения скрипта"
+
+msgid "Inode:"
+msgstr "Индексный дескриптор:"
+
+msgid "Insert"
+msgstr "Вставить"
+
+msgid "Insert line before current line"
+msgstr "Вставить строку перед текущей строкой"
+
+msgid "Install"
+msgstr "Установить"
+
+msgid "Install '%s' and enable this operation"
+msgstr "Выполнить команду '%s'"
+
+msgid "Installing Plugin ..."
+msgstr "Установка плагина ..."
+
+msgid "It is not possible to calculate hashes on <List of Storage Devices>"
+msgstr ""
+"Невозможно вычислить контрольную сумму файлов в <списке устройств хранения>"
+
+msgid "It is not possible to change the file mode of <List of Storage Devices>"
+msgstr "Невозможно изменить режим файла <список устройств хранения>"
+
+msgid "It is not possible to get the file status of <List of Storage Devices>"
+msgstr "Невозможно прочитать состояние файлов в <Списке устройств хранения>"
+
+msgid "It is not possible to run '%s' on <List of Storage Devices>"
+msgstr "Невозможно запустить '%s' из <список устройств хранения>"
+
+msgid "It's not possible to rename the filesystem root."
+msgstr "Невозможно переименовать корневой каталог"
+
+msgid "Leave File Commander"
+msgstr "Выйти из File Commander"
+
+msgid "Leave multi-select mode"
+msgstr "Выйти из режима множественного выбора"
+
+msgid "Link target:"
+msgstr "Целевая ссылка:"
+
+msgid "Links:"
+msgstr "Ссылки:"
+
+msgid "List of Storage Devices"
+msgstr "Список устройств хранения"
+
+msgid "Load"
+msgstr "Загрузка"
+
+msgid "Metadata changed:"
+msgstr "Метаданные изменены:"
+
+msgid "Mode %s (%04o)"
+msgstr "Режим %s (%04o)"
+
+msgid "Modified:"
+msgstr "Изменено:"
+
+msgid "Move"
+msgstr "Переместить"
+
+msgid "Move %d elements"
+msgstr "Переместить %d элементы"
+
+msgid "Move 1 element"
+msgstr "Переместить 1 элемент"
+
+msgid "Move down list"
+msgstr "Перейти вниз списка"
+
+msgid "Move file"
+msgstr "Переместить файл"
+
+msgid "Move file/directory to target directory"
+msgstr "Переместить файл/каталог в целевой каталог"
+
+msgid "Move files/directories to target directory"
+msgstr "Переместить файлы/каталоги в целевой каталог"
+
+msgid "Move folder"
+msgstr "Переместить папку"
+
+msgid "Move up list"
+msgstr "Перемещение вверх по списку"
+
+msgid "Movie"
+msgstr "Кино"
+
+msgid "Music"
+msgstr "Музыка"
+
+msgid "My Extension"
+msgstr "Мои расширения"
+
+msgid "My extension"
+msgstr "Мои расширения"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Name reverse"
+msgstr "Имя по убыванию"
+
+msgid "New folder"
+msgstr "Новая папка"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No files found."
+msgstr "Файлы не найдены."
+
+msgid "No hash calculations configured"
+msgstr "Хэш-вычисления не настроены"
+
+msgid "No viewer installed for this file type: %s"
+msgstr "Для этого типа файлов средство просмотра не установлено: %s"
+
+msgid "None of the hash programs for the hashes %s are available"
+msgstr "Ни одна из хэш-программ для хэшей %s не доступна"
+
+msgid "Not allowed with folders"
+msgstr "Не допустимо для папок"
+
+msgid "Number of lines in script messages"
+msgstr "Количество строк в сообщении скрипта"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "On device:"
+msgstr "На устройстве:"
+
+msgid "Open settings/actions menu"
+msgstr "Открыть меню настроек/действий"
+
+msgid "Open with File Commander"
+msgstr "Открыть при помощи File Commander"
+
+msgid "Owner:"
+msgstr "Владелец:"
+
+msgid "Page down list"
+msgstr "Страница вниз по списоку"
+
+msgid "Page up list"
+msgstr "Страница вверх по списку"
+
+msgid "Parent Directory"
+msgstr "Родительский каталог"
+
+msgid "Path to save not exist: '/tmp/'"
+msgstr "Путь для сохранения не существует: '/tmp/'"
+
+msgid "Permissions:"
+msgstr "Права:"
+
+msgid "Pictures"
+msgstr "Картинки"
+
+msgid "Play folder"
+msgstr "Воспроизвести папку"
+
+msgid "Play title"
+msgstr "Воспроизвести название"
+
+msgid "Play/view/edit/install/extract/run file or enter directory"
+msgstr ""
+"Воспроизвести/просмотреть/отредактировать/установить/извлечь/запустить файл "
+"или войти в каталог"
+
+msgid "Please enter name of the new directory"
+msgstr "Пожалуйста, введите имя нового каталога"
+
+msgid "Please enter name of the new symlink"
+msgstr "Пожалуйста, введите имя новой символической ссылки"
+
+msgid "Please enter password"
+msgstr "Пожалуйста введите пароль"
+
+msgid "Please enter the new directory name"
+msgstr "Пожалуйста, введите новое имя каталога"
+
+msgid "Please enter the new file name"
+msgstr "Пожалуйста, введите новое имя файла"
+
+msgid "Please wait, Loading image."
+msgstr "Пожалуйста, подождите, загрузка изображения"
+
+msgid ""
+"Program '%s' is installed.\n"
+"The package containing this program isn't known, so it can't be uninstalled."
+msgstr ""
+"Программа '%s' установлена.\n"
+"Пакет, содержащий эту программу, неизвестен, поэтому его нельзя удалить"
+
+msgid ""
+"Program '%s' needs to be installed to run the '%s' action.\n"
+"Uninstall the '%s' package to uninstall the program?"
+msgstr ""
+"Программа '%s' должна быть установлена для запуска действия '%s'.\n"
+"Удалить пакет '%s', чтобы удалить программу?"
+
+msgid ""
+"Program '%s' needs to be installed to run this action.\n"
+"Install the '%s' package to install the program?"
+msgstr ""
+"Для выполнения этого действия необходимо установить '%s'.\n"
+"Вы хотите установить '%s'?"
+
+msgid ""
+"Program '%s' not installed.\n"
+"The package containing this program isn't known."
+msgstr ""
+"Программа '%s' не установлена.\n"
+"Пакет, содержащий эту программу, неизвестен"
+
+msgid "Records"
+msgstr "Записи"
+
+msgid "Refresh screen"
+msgstr "Обновить экран"
+
+msgid "Regular file"
+msgstr "Обычный файл"
+
+msgid "Remove current folder from bookmarks"
+msgstr "Удалить текущую папку из закладок"
+
+msgid "Remove selected folder from bookmarks"
+msgstr "Удалить выбранную папку из закладок"
+
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "Rename file/directory"
+msgstr "Переименовать файл или каталог"
+
+msgid "Reverse left file sorting"
+msgstr "Обратная сортировка файлов слева"
+
+msgid "Reverse right file sorting"
+msgstr "Обратная сортировка файлов справа"
+
+msgid "Run '%s' command"
+msgstr "Выполнить команду '%s'"
+
+msgid "Run script"
+msgstr "Запустить скрипт"
+
+msgid "Run script in background"
+msgstr "Запустить скрипт в фоновом режиме"
+
+msgid "Run script with optional parameter"
+msgstr "Запустить скрипт с необязательным параметром"
+
+msgid "Run script with optional parameter in background"
+msgstr "Запустить скрипт с дополнительным параметром в фоновом режиме"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save left folder on exit"
+msgstr "Запомнить левый каталог при выходе"
+
+msgid "Save right folder on exit"
+msgstr "Запомнить правый каталог при выходе"
+
+msgid ""
+"Save the commands and the output to a file?\n"
+"('%s')"
+msgstr ""
+"Сохранить команды и вывод в файл?\n"
+"('%s')"
+
+msgid "Script '%s' must have read permission to be able to run it"
+msgstr ""
+"Скрипт '%s' должен иметь разрешение на чтение, чтобы его можно было запустить"
+
+msgid "Select"
+msgstr "Выбрать"
+
+msgid "Select (source list) or enter directory (target list)"
+msgstr "Выберите (список источников) или введите каталог (список целей)"
+
+msgid "Select a path"
+msgstr "Выберите путь:"
+
+msgid "Select your personal settings:"
+msgstr "Выберите ваши личные настройки:"
+
+msgid "Set archive mode (644)"
+msgstr "Задать права чтения (644)"
+
+msgid "Set executable mode (755)"
+msgstr "Задать права выполнения (755)"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Settings..."
+msgstr "Настройки..."
+
+msgid ""
+"Show '%s' as picture%s?\n"
+"The current service must be interrupted!"
+msgstr ""
+"Показать '%s' как картинк%и?\n"
+"Текущий сервис должен быть прерван!"
+
+msgid "Show Script completed message"
+msgstr "Показывать, сообщение о выполнении скрипта"
+
+msgid "Show Task's completed message"
+msgstr "Показывать, сообщение о выполнении задачи"
+
+msgid "Show as Picture (press any key to close)"
+msgstr "Показать как изображение (нажмите любую кнопку, чтобы закрыть)"
+
+msgid "Show as Picture and save as file ('%s')"
+msgstr "Показать как изображение и сохранить как файл ('%s')"
+
+msgid "Show contents of ipk file"
+msgstr "Показать содержимое ipk-файла"
+
+msgid "Show contents of rar file"
+msgstr "Показать содержимое rar-файла"
+
+msgid "Show contents of tar or compressed tar file"
+msgstr "Показать содержимое tar-файла"
+
+msgid "Show contents of zip file"
+msgstr "Показать содержимое zip-файла"
+
+msgid "Show directories first"
+msgstr "Показывать каталоги в начале списка"
+
+msgid "Show image information"
+msgstr "Показать информацию об изображении"
+
+msgid "Show next picture"
+msgstr "Показать следующее изображение"
+
+msgid "Show previous picture"
+msgstr "Показать предыдущее изображение"
+
+msgid "Show task list"
+msgstr "Показать список задач"
+
+msgid "Show unknown extension as text"
+msgstr "Показывать неизвестные расширения как текст"
+
+msgid "Size"
+msgstr "Размер"
+
+msgid "Size reverse"
+msgstr "Размер по убыванию"
+
+msgid "Size:"
+msgstr "Размер: "
+
+msgid "Skip selection"
+msgstr "Отмена выбора"
+
+msgid "Socket"
+msgstr "Сокет"
+
+msgid "Sorting left files by name, date or size"
+msgstr "Сортировка левых файлов по имени, дате или размеру"
+
+msgid "Sorting right files by name, date or size"
+msgstr "Сортировка правых файлов по имени, дате или размеру"
+
+msgid "Start/stop slide show"
+msgstr "Запуск/остановка слайд-шоу"
+
+msgid "Storage devices"
+msgstr "Устройства хранения"
+
+msgid "Symbolic link"
+msgstr "Символическая ссылка"
+
+msgid "Symlink to "
+msgstr "Символическая ссылка на"
+
+msgid "Task list"
+msgstr "Список задач"
+
+msgid ""
+"The Image Viewer component of the File Commander requires the PicturePlayer "
+"extension. Install PicturePlayer to enable this operation."
+msgstr ""
+"Компонент просмотра изображений File Commander требует расширения "
+"PicturePlayer. Установите PicturePlayer, чтобы включить эту операцию."
+
+msgid "The authors are NOT RESPONSIBLE"
+msgstr "Авторы Не Несут Ответственности"
+
+msgid ""
+"The function has been interrupted.\n"
+"Don't press any key until the picture from mvi-file is displayed!"
+msgstr ""
+"Функция была прервана.\n"
+"Не нажимайте никакие кнопки, пока не отобразится картинка из mvi-файла!"
+
+msgid "The hash of a directory can't be calculated."
+msgstr "Не удается вычислить контрольную сумму каталога"
+
+msgid "This line is not editable!"
+msgstr "Эта строка не редактируется!"
+
+msgid "Time for Slideshow"
+msgstr "Время для слайд-шоу"
+
+msgid "Type:"
+msgstr "Тип:"
+
+msgid "Uninstall '%s' package and disable '%s'"
+msgstr "Удалить пакет '%s' и отключить '%s'"
+
+msgid "Unknown"
+msgstr "Неизвестно"
+
+msgid "Unknown group: %d"
+msgstr "Неизвестная группа: %d"
+
+msgid "Unknown user: %d"
+msgstr "Неизвестный пользователь: %d"
+
+msgid "Unpack to %s"
+msgstr "Распаковать в '%s'"
+
+msgid "Unpack to current folder"
+msgstr "Распаковать в текущий каталог"
+
+msgid "View or edit file (if size < 1MB)"
+msgstr "Просмотр или правка файла (для размеров <1 МБ)"
+
+msgid "View or edit this %s script"
+msgstr "Просмотр или редактирование скрипта %s"
+
+msgid "WARNING!"
+msgstr "ВНИМАНИЕ!"
+
+msgid ""
+"What do you want to play?\n"
+msgstr ""
+"What do you want to play?\n"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "You can't usefully run '%s' on '%s'."
+msgstr "Невозможно выполнить '%s' в '%s'."
+
+msgid "You can't usefully run '%s' on a directory."
+msgstr "Невозможно выполнить '%s' в каталоге."
+
+msgid "copy file"
+msgstr "копировать файл"
+
+msgid "copy folder"
+msgstr "копировать папку"
+
+msgid "create symlink ..."
+msgstr "создать символическую ссылку"
+
+msgid "for DATA LOSS OR DAMAGE !!!"
+msgstr "для Потери или Повреждения ДАННЫХ !!!"
+
+msgid "from dir"
+msgstr "из каталога"
+
+msgid "has been CHANGED! Do you want to save it?"
+msgstr "ИЗМЕНЕНО! Хотите сохранить?"
+
+msgid "hide"
+msgstr "скрыть"
+
+msgid "install/unpack ipk Files"
+msgstr "установить/распаковать ipk файлы"
+
+msgid "manage local Files"
+msgstr "Менеджер локальных Файлов"
+
+msgid "move file"
+msgstr "переместить файл"
+
+msgid "move folder"
+msgstr "переместить папку"
+
+msgid "nothing connected"
+msgstr "нет связей"
+
+msgid "original"
+msgstr "оригинал"
+
+msgid "play Files"
+msgstr "воспроизвести файл"
+
+msgid "play/show Files"
+msgstr "воспроизвести/показать файлы"
+
+msgid "python"
+msgstr "Python"
+
+msgid "script 'sterr':"
+msgstr "Скрипт 'ошибка вывода':"
+
+msgid "script 'stout':"
+msgstr "Скрипт 'стандартный выход':"
+
+msgid "shell"
+msgstr "Shell"
+
+msgid "to dir"
+msgstr "в каталог"
+
+msgid "unpack Rar Files"
+msgstr "распаковоть Rar Файлы"
+
+msgid "unpack archives"
+msgstr "распаковать архивы"
+
+msgid "unpack gzip Files"
+msgstr "распаковоть gzip Файлы"
+
+msgid "unpack tar/compressed tar Files"
+msgstr "распаковать tar/сжатые tar файлы"
+
+msgid "unpack zip Files"
+msgstr "распаковоть zip Файлы"
+
+msgid "without"
+msgstr "без"
