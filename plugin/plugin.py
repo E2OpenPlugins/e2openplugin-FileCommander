@@ -40,7 +40,7 @@ from Tools.BoundFunction import boundFunction
 from Tools import Notifications
 
 # Various
-from enigma import eConsoleAppContainer, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, eTimer
+from enigma import eConsoleAppContainer, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, eTimer, getDesktop
 
 import os
 import stat
@@ -70,6 +70,10 @@ def _make_filter(media_type):
 
 def _make_rec_filter():
 	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext  for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+
+FULLHD = False
+if getDesktop(0).size().width() >= 1920:
+	FULLHD = True
 
 movie = _make_filter("movie")
 music = _make_filter("music")
@@ -133,15 +137,25 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 # ## Config Screen ###
 # ####################
 class FileCommanderSetup(ConfigListScreen, Screen):
-	
-	skin = """
-		<screen position="40,80" size="1200,600" title="" >
-			<widget name="config" position="10,10" size="1180,550" scrollbarMode="showOnDemand"/>
-			<widget name="key_red" position="64,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_green" position="359,570" size="260,25"  transparent="1" font="Regular;20"/>
-			<ePixmap position="30,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
-			<ePixmap position="325,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
-		</screen>"""
+	if FULLHD:
+		skin = """
+			<screen position="200,120" size="1520,900" title="" >
+				<widget name="config" position="10,10" size="1500,825" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand"/>
+				<widget name="key_red" position="96,855" size="390,38" itemHeight="36" transparent="1" font="Regular;32"/>
+				<widget name="key_green" position="539,855" size="390,38" itemHeight="36" transparent="1" font="Regular;32"/>
+				<ePixmap position="45,855" size="390,38" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
+				<ePixmap position="488,855" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
+			</screen>"""
+	else:
+		skin = """
+			<screen position="40,80" size="1200,600" title="" >
+				<widget name="config" position="10,10" size="1180,550" scrollbarMode="showOnDemand"/>
+				<widget name="key_red" position="64,570" size="260,25" transparent="1" font="Regular;20"/>
+				<widget name="key_green" position="359,570" size="260,25"  transparent="1" font="Regular;20"/>
+				<ePixmap position="30,575" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
+				<ePixmap position="325,575" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
+			</screen>"""
+
 
 	def __init__(self, session):
 		self.session = session
@@ -1137,7 +1151,13 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 # 		self.onFileAction(self.SOURCELIST, self.TARGETLIST)
 
 class FileCommanderContextMenu(Screen):
-	skin = """
+	if FULLHD:
+		skin = """
+		<screen name="FileCommanderContextMenu" position="center,center" size="1200,900" title="File Commander context ">
+			<widget name="menu" position="fill" font="Regular;32" itemHeight="36" transparent="0" scrollbarMode="showOnDemand" />
+		</screen>"""
+	else:
+		skin = """
 		<screen name="FileCommanderContextMenu" position="center,center" size="560,570" title="File Commander context ">
 			<widget name="menu" position="fill" itemHeight="30" transparent="0" scrollbarMode="showOnDemand" />
 		</screen>"""
