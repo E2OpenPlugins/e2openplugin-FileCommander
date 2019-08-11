@@ -20,7 +20,7 @@ class GunzipMenuScreen(ArchiverMenuScreen):
 
 	def __init__(self, session, sourcelist, targetlist):
 		super(GunzipMenuScreen, self).__init__(session, sourcelist, targetlist)
-
+		self.skinName = "ArchiverMenuScreen"
 		self.list.append((_("Unpack to current folder"), 1))
 		self.list.append((_("Unpack to %s") % self.targetDir, 2))
 		self.list.append((_("Unpack to %s") % config.usage.default_path.value, 3))
@@ -50,6 +50,7 @@ class UnpackInfoScreen(ArchiverInfoScreen):
 
 	def __init__(self, session, list, sourceDir, filename):
 		super(UnpackInfoScreen, self).__init__(session, list, sourceDir, filename)
+		self.skinName = "ArchiverInfoScreen"
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
