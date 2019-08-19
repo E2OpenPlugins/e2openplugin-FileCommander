@@ -20,7 +20,6 @@ from Components.ConfigList import ConfigListScreen
 
 # Screens
 from Screens.Screen import Screen
-from Screens.Setup import Setup
 # commented out
 # from Screens.Console import Console
 from Screens.ChoiceBox import ChoiceBox
@@ -136,7 +135,7 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 # ####################
 # ## Config Screen ###
 # ####################
-class FileCommanderSetup(ConfigListScreen, Screen):
+class Setup(ConfigListScreen, Screen):
 	if FULLHD:
 		skin = """
 			<screen position="200,120" size="1520,900" title="" >
@@ -591,7 +590,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.oldFilterSettings = self.filterSettings()
 		# commented out
 		# self.session.openWithCallback(self.goRestart, FileCommanderConfigScreen)
-		self.session.openWithCallback(self.goRestart, FileCommanderSetup)
+		self.session.openWithCallback(self.goRestart, Setup)
 
 	def goBookmark(self, current):
 		dirname = current and self.SOURCELIST.getCurrentDirectory() or self.SOURCELIST.getFilename()
