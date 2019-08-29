@@ -79,10 +79,10 @@ class vEditor(Screen, HelpableScreen):
 		<screen position="40,80" size="1200,600" title="">
 			<widget name="list_head" position="10,10" size="1170,45" font="Regular;20" foregroundColor="#00fff000"/>
 			<widget name="filedata"  scrollbarMode="showOnDemand" position="10,60" size="1160,500" itemHeight="25"/>
-			<widget name="key_red" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_green" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
-			<widget name="key_yellow" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_blue" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
+			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_blue" render="Label" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
 			<ePixmap position="70,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
 			<ePixmap position="365,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
 			<ePixmap position="660,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
@@ -109,10 +109,10 @@ class vEditor(Screen, HelpableScreen):
 			"chminus": (self.posEnd, _("Go to end of file")),
 		}, -1)
 		self["list_head"] = Label(self.file_name)
-		self["key_red"] = Label(_("Exit"))
-		self["key_green"] = Label(_("Edit"))
-		self["key_yellow"] = Label(_("Delete"))
-		self["key_blue"] = Label(_("Insert"))
+		self["key_red"] = StaticText(_("Exit"))
+		self["key_green"] = StaticText(_("Edit"))
+		self["key_yellow"] = StaticText(_("Delete"))
+		self["key_blue"] = StaticText(_("Insert"))
 		self.selLine = None
 		self.oldLine = None
 		self.isChanged = False

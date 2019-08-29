@@ -15,6 +15,7 @@ from Components.Task import job_manager
 from Components.ActionMap import ActionMap, HelpableActionMap
 from Components.Sources.Boolean import Boolean
 from Components.Sources.List import List
+from Components.Sources.StaticText import StaticText
 from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Components.ConfigList import ConfigListScreen
 
@@ -136,26 +137,6 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 # ## Config Screen ###
 # ####################
 class Setup(ConfigListScreen, Screen):
-	if FULLHD:
-		skin = """
-			<screen position="200,120" size="1520,900" title="" >
-				<widget name="config" position="10,10" size="1500,825" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand"/>
-				<widget name="key_red" position="96,855" size="390,38" itemHeight="36" transparent="1" font="Regular;32"/>
-				<widget name="key_green" position="539,855" size="390,38" itemHeight="36" transparent="1" font="Regular;32"/>
-				<ePixmap position="45,855" size="390,38" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
-				<ePixmap position="488,855" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
-			</screen>"""
-	else:
-		skin = """
-			<screen position="40,80" size="1200,600" title="" >
-				<widget name="config" position="10,10" size="1180,550" scrollbarMode="showOnDemand"/>
-				<widget name="key_red" position="64,570" size="260,25" transparent="1" font="Regular;20"/>
-				<widget name="key_green" position="359,570" size="260,25"  transparent="1" font="Regular;20"/>
-				<ePixmap position="30,575" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
-				<ePixmap position="325,575" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
-			</screen>"""
-
-
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -184,8 +165,8 @@ class Setup(ConfigListScreen, Screen):
 		
 		ConfigListScreen.__init__(self, self.list, session = session)
 		self["help"] = Label(_("Select your personal settings:"))
-		self["key_red"] = Label(_("Cancel"))
-		self["key_green"] = Label(_("Ok"))
+		self["key_red"] = StaticText(_("Cancel"))
+		self["key_green"] = StaticText(_("Ok"))
 		self["Actions"] = ActionMap(["ColorActions", "SetupActions"],
 		{
 			"green": self.save,
@@ -271,10 +252,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			<widget name="list_right" position="900,85" size="890,699" itemHeight="46" scrollbarMode="showOnDemand"/>
 			<widget name="sort_left" position="10,831" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
 			<widget name="sort_right" position="900,831" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
-			<widget name="key_red" position="150,855" size="390,38" transparent="1" font="Regular;30"/>
-			<widget name="key_green" position="593,855" size="390,38"  transparent="1" font="Regular;30"/>
-			<widget name="key_yellow" position="1035,855" size="390,38" transparent="1" font="Regular;30"/>
-			<widget name="key_blue" position="1488,855" size="390,38" transparent="1" font="Regular;30"/>
+			<widget source="key_red" render="Label" position="150,855" size="390,38" transparent="1" font="Regular;30"/>
+			<widget source="key_green" render="Label" position="593,855" size="390,38"  transparent="1" font="Regular;30"/>
+			<widget source="key_yellow" render="Label" position="1035,855" size="390,38" transparent="1" font="Regular;30"/>
+			<widget source="key_blue" render="Label" position="1488,855" size="390,38" transparent="1" font="Regular;30"/>
 			<ePixmap position="105,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
 			<ePixmap position="548,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
 			<ePixmap position="990,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
@@ -315,10 +296,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
 			<widget name="sort_right" position="595,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget name="key_red" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_green" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
-			<widget name="key_yellow" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_blue" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
+			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_blue" render="Label" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
 			<ePixmap position="70,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
 			<ePixmap position="365,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
 			<ePixmap position="660,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
@@ -387,10 +368,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["sort_left"] = Label(sortLeft)
 		self["sort_right"] = Label(sortRight)
 
-		self["key_red"] = Label(_("Delete"))
-		self["key_green"] = Label(_("Move"))
-		self["key_yellow"] = Label(_("Copy"))
-		self["key_blue"] = Label(_("Rename"))
+		self["key_red"] = StaticText(_("Delete"))
+		self["key_green"] = StaticText(_("Move"))
+		self["key_yellow"] = StaticText(_("Copy"))
+		self["key_blue"] = StaticText(_("Rename"))
 		self["VKeyIcon"] = Boolean(False)
 
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "InfobarTeletextActions", "InfobarSubtitleSelectionActions", "EPGSelectActions", "MediaPlayerActions", "MediaPlayerSeekActions"], {
@@ -745,7 +726,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		#if InfoBar.instance and not inStandby:
 		#	InfoBar.instance.openInfoBarMessage(message, messageboxtyp, timeout)
 		#else:
-		Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout)
+		Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout, simple=True)
 		if hasattr(self, "jobs"):
 			self.finishedCB(None)
 		return False
@@ -773,7 +754,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			#if InfoBar.instance and not inStandby:
 			#	InfoBar.instance.openInfoBarMessage(message, messageboxtyp, timeout)
 			#else:
-			Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout)
+			Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout, simple=True)
 
 	def setSort(self, list, setDirs = False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
@@ -941,7 +922,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			return
 		filename = os.path.basename(os.path.normpath(filename))
 		if not filename:
-			self.session.open(MessageBox, _("It's not possible to rename the filesystem root."), type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("It's not possible to rename the filesystem root."), type=MessageBox.TYPE_ERROR, simple=True)
 			return
 		fname = _("Please enter the new file name")
 		if sourceDir in filename:
@@ -977,7 +958,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				else:
 					os.rename(filename, sourceDir + newname)
 			except OSError as oe:
-				self.session.open(MessageBox, _("Error renaming %s to %s:\n%s") % (filename, newname, oe.strerror), type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("Error renaming %s to %s:\n%s") % (filename, newname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.doRefresh()
 
 	def doRenameCB(self):
@@ -1019,7 +1000,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			try:
 				os.symlink(oldpath, newpath)
 			except OSError as oe:
-				self.session.open(MessageBox, _("Error linking %s to %s:\n%s") % (oldpath, newpath, oe.strerror), type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("Error linking %s to %s:\n%s") % (oldpath, newpath, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.doRefresh()
 
 # ## File/directory information
@@ -1079,7 +1060,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			try:
 				os.mkdir(sourceDir + newname)
 			except OSError as oe:
-				self.session.open(MessageBox, _("Error creating directory %s:\n%s") % (sourceDir + newname, oe.strerror), type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("Error creating directory %s:\n%s") % (sourceDir + newname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.doRefresh()
 
 	def doMakedirCB(self):
@@ -1275,10 +1256,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
 			<widget name="sort_right" position="595,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget name="key_red" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_green" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
-			<widget name="key_yellow" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget name="key_blue" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
+			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
+			<widget source="key_blue" render="Label" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
 			<ePixmap position="70,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
 			<ePixmap position="365,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
 			<ePixmap position="660,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
@@ -1327,10 +1308,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.TARGETLIST = self["list_left"]
 			self.onLayoutFinish.append(self.listRight)
 
-		self["key_red"] = Label(_("Delete"))
-		self["key_green"] = Label(_("Move"))
-		self["key_yellow"] = Label(_("Copy"))
-		self["key_blue"] = Label(_("Skip selection"))
+		self["key_red"] = StaticText(_("Delete"))
+		self["key_green"] = StaticText(_("Move"))
+		self["key_yellow"] = StaticText(_("Copy"))
+		self["key_blue"] = StaticText(_("Skip selection"))
 
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
 			"ok": (self.ok, _("Select (source list) or enter directory (target list)")),
@@ -1687,7 +1668,7 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		sourceDir = self.source.getCurrentDirectory()
 
 		if filename is None:
-			self.session.open(MessageBox, _("It is not possible to get the file status of <List of Storage Devices>"), type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("It is not possible to get the file status of <List of Storage Devices>"), type=MessageBox.TYPE_ERROR, simple=True)
 			self.close()
 			return
 
@@ -1707,7 +1688,7 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		try:
 			st = os.lstat(filepath)
 		except OSError as oe:
-			self.session.open(MessageBox, _("%s: %s") % (filepath, oe.strerror), type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("%s: %s") % (filepath, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.close()
 			return
 

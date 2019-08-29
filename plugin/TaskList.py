@@ -7,6 +7,7 @@ from Components.ActionMap import ActionMap
 from Components.Button import Button
 from Components.Label import Label
 from Components.Sources.List import List
+from Components.Sources.StaticText import StaticText
 from Components.MultiContent import MultiContentEntryText
 from Components.Task import job_manager
 
@@ -15,7 +16,7 @@ from . import _
 
 class TaskListScreen(Screen):
 	skin = """
-		<screen name="TaskListScreen" position="center,center" size="720,576" title="Task list" >
+		<screen name="TaskListScreen" position="center,center" size="720,600" title="Task list" >
 			<widget source="tasklist" render="Listbox" position="10,10" size="690,490" zPosition="7" scrollbarMode="showOnDemand">
 				<convert type="TemplatedMultiContent">
 					{"template": [
@@ -29,8 +30,8 @@ class TaskListScreen(Screen):
 					}
 				</convert>
 			</widget>
-			<ePixmap position="10,530" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
-			<widget name="key_red" position="10,530" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1"/>
+			<ePixmap position="10,570" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
+			<widget source="key_red" render="Label" position="10,570" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1"/>
 		</screen>"""
 
 	def __init__(self, session, tasklist):
@@ -46,7 +47,7 @@ class TaskListScreen(Screen):
 			"red": self.keyCancel,
 		}, -1)
 
-		self["key_red"] = Button(_("Close"))
+		self["key_red"] = StaticText(_("Close"))
 
 		self.onLayoutFinish.append(self.layoutFinished)
 		self.onShown.append(self.setWindowTitle)

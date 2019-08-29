@@ -49,7 +49,7 @@ class RarMenuScreen(ArchiverMenuScreen):
 		except OSError as ex:
 			msg = _("Can not run %s: %s.\n%s may be in a plugin that is not installed.") % (cmd[0], ex.strerror, cmd[0])
 			print "[RarMenuScreen]", msg
-			self.session.open(MessageBox, msg, MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, msg, MessageBox.TYPE_ERROR, simple=True)
 			return
 		stdlog = p.stdout.read()
 		if stdlog:

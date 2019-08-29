@@ -23,8 +23,8 @@ class Console(Screen):
 		self.closeOnSuccess = closeOnSuccess
 		self.errorOcurred = False
 
-		self["key_red"] = Label(_("Cancel"))
-		self["key_green"] = Label(_("hide"))
+		self["key_red"] = StaticText(_("Cancel"))
+		self["key_green"] = StaticText(_("hide"))
 
 		self["text"] = ScrollLabel("")
 		self["summary_description"] = StaticText("")
@@ -126,7 +126,7 @@ class Console(Screen):
 		if self.run == len(self.cmdlist):
 			self.cancel()
 		else:
-			self.cancel_msg = self.session.openWithCallback(self.cancelCB, MessageBox, _("Cancel execution?"), type=MessageBox.TYPE_YESNO, default=False)
+			self.cancel_msg = self.session.openWithCallback(self.cancelCB, MessageBox, _("Cancel execution?"), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def cancelCB(self, ret = None):
 		self.cancel_msg = None
@@ -137,7 +137,7 @@ class Console(Screen):
 		from time import time, localtime
 		lt = localtime(time())
 		self.output_file = '/tmp/%02d%02d%02d_console.txt' %(lt[3],lt[4],lt[5])
-		self.session.openWithCallback(self.saveOutputTextCB, MessageBox, _("Save the commands and the output to a file?\n('%s')") %self.output_file, type=MessageBox.TYPE_YESNO, default=True)
+		self.session.openWithCallback(self.saveOutputTextCB, MessageBox, _("Save the commands and the output to a file?\n('%s')") %self.output_file, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def formatCmdList(self, source):
 		if isinstance(source, (list, tuple)):
@@ -179,7 +179,7 @@ class Console(Screen):
 					failtext = _("File write error: '%s'") %self.output_file
 			self.output_file = 'end'
 			self["key_green"].setText(_(" "))
-			self.session.open(MessageBox, failtext, type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, failtext, type=MessageBox.TYPE_ERROR, simple=True)
 		else:
 			self.output_file = ''
 

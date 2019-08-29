@@ -90,7 +90,7 @@ class FileTransferTask(Task):
 		if aborted:
 			from Tools import Notifications
 			from Screens.MessageBox import MessageBox
-			Notifications.AddNotification(MessageBox, _("File transfer was cancelled by user"), type=MessageBox.TYPE_INFO)
+			Notifications.AddNotification(MessageBox, _("File transfer was cancelled by user"), type=MessageBox.TYPE_INFO, simple=True)
 		else:
 			for postcondition in self.postconditions:
 				if not postcondition.check(self):

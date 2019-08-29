@@ -181,7 +181,7 @@ class task_postconditions(Condition):
 		#if InfoBar.instance and not inStandby:
 		#	InfoBar.instance.openInfoBarMessage(message, messageboxtyp, timeout)
 		#else:
-		Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout)
+		Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout, simple=True)
 
 def task_processStdout(data):
 	global task_Stout
@@ -234,7 +234,7 @@ class key_actions(stat_info):
 		sourceDir = dirsource.getCurrentDirectory()  # self.SOURCELIST.getCurrentDirectory()
 
 		if filename is None or sourceDir is None:
-			self.session.open(MessageBox, _("It is not possible to change the file mode of <List of Storage Devices>"), type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("It is not possible to change the file mode of <List of Storage Devices>"), type=MessageBox.TYPE_ERROR, simple=True)
 			return
 
 		self.longname = sourceDir + filename
@@ -242,7 +242,7 @@ class key_actions(stat_info):
 			askList = [(_("Set archive mode (644)"), "CHMOD644"), (_("Set executable mode (755)"), "CHMOD755"), (_("Cancel"), "NO")]
 			self.session.openWithCallback(self.do_change_mod, ChoiceBox, title=(_("Do you want change rights?\n") + filename), list=askList)
 		else:
-			self.session.open(MessageBox, _("Not allowed with folders"), type=MessageBox.TYPE_INFO, close_on_any_key=True)
+			self.session.open(MessageBox, _("Not allowed with folders"), type=MessageBox.TYPE_INFO, close_on_any_key=True, simple=True)
 
 	def do_change_mod(self, answer):
 		answer = answer and answer[1]
@@ -376,7 +376,7 @@ class key_actions(stat_info):
 		answer = answer and answer[1]
 		if answer in ("YES", "PAR", "YES_BG", "PAR_BG"):
 			if not os.access(self.commando, os.R_OK):
-				self.session.open(MessageBox, _("Script '%s' must have read permission to be able to run it") % self.commando, type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+				self.session.open(MessageBox, _("Script '%s' must have read permission to be able to run it") % self.commando, type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 				return
 			nice = config.plugins.filecommander.script_priority_nice.getValue() or ''
 			ionice = config.plugins.filecommander.script_priority_ionice.getValue() or ''
@@ -405,7 +405,7 @@ class key_actions(stat_info):
 			try:
 				yfile = os.stat(self.commando)
 			except OSError as oe:
-				self.session.open(MessageBox, _("%s: %s") % (self.commando, oe.strerror), type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("%s: %s") % (self.commando, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 				return
 			if (yfile.st_size < 1000000):
 				self.session.open(vEditor, self.commando)
@@ -451,20 +451,20 @@ class key_actions(stat_info):
 			pkg = self.progPackages.get(prog)
 			if pkg:
 				self._opkgArgs = ("install", pkg)
-				self.session.openWithCallback(self.doOpkgCB, MessageBox, _("Program '%s' needs to be installed to run this action.\nInstall the '%s' package to install the program?") % (prog, pkg), type=MessageBox.TYPE_YESNO, default=True)
+				self.session.openWithCallback(self.doOpkgCB, MessageBox, _("Program '%s' needs to be installed to run this action.\nInstall the '%s' package to install the program?") % (prog, pkg), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 			else:
-				self.session.open(MessageBox, _("Program '%s' not installed.\nThe package containing this program isn't known.") % (prog, how_to), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+				self.session.open(MessageBox, _("Program '%s' not installed.\nThe package containing this program isn't known.") % (prog, how_to), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 			return
 
 		filename = self.SOURCELIST.getFilename()
 
 		if filename is None:
-			self.session.open(MessageBox, _("It is not possible to run '%s' on <List of Storage Devices>") % prog, type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("It is not possible to run '%s' on <List of Storage Devices>") % prog, type=MessageBox.TYPE_ERROR, simple=True)
 			return
 
 		if filename.startswith("/"):
 			if prog != "file":
-				self.session.open(MessageBox, _("You can't usefully run '%s' on a directory.") % prog, type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+				self.session.open(MessageBox, _("You can't usefully run '%s' on a directory.") % prog, type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 				return
 			filepath = filename
 			filename = os.path.basename(os.path.normpath(filepath)) or '/'
@@ -481,7 +481,7 @@ class key_actions(stat_info):
 			toRun = (prog,) + tuple(args) + (filepath,)
 			self._progConsole = self.session.open(Console, cmdlist=(toRun,), finishedCallback=self.progConsoleCB)
 		else:
-			self.session.open(MessageBox, _("You can't usefully run '%s' on '%s'.") % (prog, filename), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+			self.session.open(MessageBox, _("You can't usefully run '%s' on '%s'.") % (prog, filename), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 
 	def progConsoleCB(self):
 		if hasattr(self, "_progConsole") and "text" in self._progConsole:
@@ -526,10 +526,10 @@ class key_actions(stat_info):
 			pkg = self.progPackages.get(prog)
 			if pkg:
 				self._opkgArgs = ("remove", pkg)
-				self.session.openWithCallback(self.doOpkgCB, MessageBox, _("Program '%s' needs to be installed to run the '%s' action.\nUninstall the '%s' package to uninstall the program?") % (prog, prog, pkg), type=MessageBox.TYPE_YESNO, default=True)
+				self.session.openWithCallback(self.doOpkgCB, MessageBox, _("Program '%s' needs to be installed to run the '%s' action.\nUninstall the '%s' package to uninstall the program?") % (prog, prog, pkg), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 				return True
 			else:
-				self.session.open(MessageBox, _("Program '%s' is installed.\nThe package containing this program isn't known, so it can't be uninstalled.") % (prog, how_to), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+				self.session.open(MessageBox, _("Program '%s' is installed.\nThe package containing this program isn't known, so it can't be uninstalled.") % (prog, how_to), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 		return False
 
 	def doOpkgCB(self, ans):
@@ -555,20 +555,20 @@ class key_actions(stat_info):
 
 	def run_hashes(self):
 		if not config.plugins.filecommander.hashes.value:
-			self.session.open(MessageBox, _("No hash calculations configured"), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+			self.session.open(MessageBox, _("No hash calculations configured"), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 			return
 		progs = tuple((h, self.hashes[h]) for h in config.plugins.filecommander.hashes.value if h in self.hashes and self.have_program(self.hashes[h]))
 		if not progs:
-			self.session.open(MessageBox, _("None of the hash programs for the hashes %s are available") % ''.join(config.plugins.filecommander.hashes.value), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+			self.session.open(MessageBox, _("None of the hash programs for the hashes %s are available") % ''.join(config.plugins.filecommander.hashes.value), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 			return
 		filename = self.SOURCELIST.getFilename()
 
 		if filename is None:
-			self.session.open(MessageBox, _("It is not possible to calculate hashes on <List of Storage Devices>"), type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("It is not possible to calculate hashes on <List of Storage Devices>"), type=MessageBox.TYPE_ERROR, simple=True)
 			return
 
 		if filename.startswith("/"):
-			self.session.open(MessageBox, _("The hash of a directory can't be calculated."), type=MessageBox.TYPE_ERROR, close_on_any_key=True)
+			self.session.open(MessageBox, _("The hash of a directory can't be calculated."), type=MessageBox.TYPE_ERROR, close_on_any_key=True, simple=True)
 			return
 		sourceDir = self.SOURCELIST.getCurrentDirectory()
 		filepath = os.path.join(sourceDir, filename)
@@ -655,7 +655,7 @@ class key_actions(stat_info):
 		longname = sourceDir + filename
 		print "[Filebrowser]:", filename, sourceDir, testFileName
 		if not fileExists(longname):
-			self.session.open(MessageBox, _("File not found: %s") % longname, type=MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("File not found: %s") % longname, type=MessageBox.TYPE_ERROR, simple=True)
 			return
 		if filetype == ".ipk":
 			self.session.openWithCallback(self.onFileActionCB, ipkMenuScreen, self.SOURCELIST, self.TARGETLIST)
@@ -704,12 +704,12 @@ class key_actions(stat_info):
 			if stat.f_bavail * stat.f_bsize > 1000000:
 				choice.append((_("Show as Picture and save as file ('%s')")%self.tmp_file , "save"))
 				savetext = _(" or save the picture additionally to a file")
-			self.session.openWithCallback(self.mviFileCB, MessageBox, _("Show '%s' as picture%s?\nThe current service must be interrupted!") %(longname,savetext), simple=True, list=choice)
+			self.session.openWithCallback(self.mviFileCB, MessageBox, _("Show '%s' as picture%s?\nThe current service must be interrupted!") %(longname,savetext), simple=True, list=choice, simple=True)
 		elif filetype in TEXT_EXTENSIONS or config.plugins.filecommander.unknown_extension_as_text.value:
 			try:
 				xfile = os.stat(longname)
 			except OSError as oe:
-				self.session.open(MessageBox, _("%s: %s") % (longname, oe.strerror), type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("%s: %s") % (longname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 				return
 			if (xfile.st_size < 1000000):
 				self.session.open(vEditor, longname)
@@ -720,7 +720,7 @@ class key_actions(stat_info):
 			except TypeError, e:
 				found_viewer = False
 			if not found_viewer:
-				self.session.open(MessageBox, _("No viewer installed for this file type: %s") % filename, type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True)
+				self.session.open(MessageBox, _("No viewer installed for this file type: %s") % filename, type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True, simple=True)
 
 	def mviFileCB(self, ret = None):
 		if ret and ret != 'no':
@@ -754,14 +754,14 @@ class key_actions(stat_info):
 				filename = self.tmp_file.split('/')[-1]
 				self.session.open(ImageViewer, [((filename,''),'')],0, self.tmp_file.replace(filename,''), filename)
 			else:
-				self.session.open(MessageBox, _("File not found: %s") %self.tmp_file, type=MessageBox.TYPE_ERROR)
+				self.session.open(MessageBox, _("File not found: %s") %self.tmp_file, type=MessageBox.TYPE_ERROR, simple=True)
 		else:
 			import NavigationInstance
 			if last_service and NavigationInstance.instance:
 				NavigationInstance.instance.playService(last_service)
 				global last_service
 				last_service = None
-			Notifications.AddNotification(MessageBox, _("The function has been interrupted.\nDon't press any key until the picture from mvi-file is displayed!"), type=MessageBox.TYPE_ERROR, timeout=10)
+			Notifications.AddNotification(MessageBox, _("The function has been interrupted.\nDon't press any key until the picture from mvi-file is displayed!"), type=MessageBox.TYPE_ERROR, timeout=10, simple=True)
 
 	def onFileActionCB(self, result):
 		# os.system('echo %s > /tmp/test.log' % (result))
