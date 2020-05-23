@@ -135,6 +135,8 @@ config.plugins.filecommander.sortingRight_tmp = NoSave(ConfigText(default=tmpRig
 config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_left.value))
 config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_right.value))
 
+config.plugins.filecommander.invert_selection = ConfigYesNo(default=False)
+
 # ####################
 # ## Config Screen ###
 # ####################
@@ -166,6 +168,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice))
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow))
+		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection))
 		
 		ConfigListScreen.__init__(self, self.list, session = session)
 		self["help"] = Label(_("Select your personal settings:"))
@@ -1320,7 +1323,13 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["key_red"] = StaticText(_("Delete"))
 		self["key_green"] = StaticText(_("Move"))
 		self["key_yellow"] = StaticText(_("Copy"))
-		self["key_blue"] = StaticText(_("Skip selection"))
+		if config.plugins.filecommander.invert_selection.value:
+			text = _("Invert selection")
+			bluebutton = (self.invertSelection, _("Invert selection"))
+		else:
+			text = _("Skip selection")
+			bluebutton = (self.goBlue, _("Leave multi-select mode"))
+		self["key_blue"] = StaticText(text)
 
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
 			"ok": (self.ok, _("Select (source list) or enter directory (target list)")),
@@ -1338,7 +1347,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"red": (self.goRed, _("Delete the selected files or directories")),
 			"green": (self.goGreen, _("Move files/directories to target directory")),
 			"yellow": (self.goYellow, _("Copy files/directories to target directory")),
-			"blue": (self.goBlue, _("Leave multi-select mode")),
+			"blue": bluebutton,
 			"0": (self.doRefresh, _("Refresh screen")),
 			"8": (self.ok, _("Select")),
 			"showMovies": (self.ok, _("Select")),
@@ -1361,6 +1370,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			print "[FileCommander] selectedFiles:", self.selectedFiles
 			if config.plugins.filecommander.move_selector.value:
 				self.goDown()
+
+	def invertSelection(self):
+		if self.ACTIVELIST == self.SOURCELIST:
+			self.ACTIVELIST.toggleAllSelection()
 
 	def exit(self, jobs=None, updateDirs=None):
 		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
