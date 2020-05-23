@@ -95,9 +95,11 @@ config.plugins.filecommander.editposition_lineend = ConfigYesNo(default=False)
 config.plugins.filecommander.path_default = ConfigDirectory(default="")
 config.plugins.filecommander.path_left = ConfigText(default="")
 config.plugins.filecommander.path_right = ConfigText(default="")
+config.plugins.filecommander.short_header = ConfigYesNo(default=False)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
 config.plugins.filecommander.change_navbutton = ConfigSelection(default="no", choices=[("no", _("No")), ("always", _("Channel button always changes sides")), ("yes", _("Yes"))])
+config.plugins.filecommander.move_selector = ConfigYesNo(default=True)
 #config.plugins.filecommander.input_length = ConfigInteger(default=40, limits=(1, 100))
 config.plugins.filecommander.diashow = ConfigInteger(default=5000, limits=(1000, 10000))
 config.plugins.filecommander.script_messagelen = ConfigSelectionNumber(default=3, stepwidth=1, min=1, max=10, wraparound=True)
@@ -145,6 +147,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu*"), config.plugins.filecommander.add_extensionmenu_entry))
 		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left))
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right))
+		self.list.append(getConfigListEntry(_("Short path in headers"),config.plugins.filecommander.short_header))
 		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs))
 		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message))
 		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message))
@@ -152,6 +155,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Show unknown extension as text"), config.plugins.filecommander.unknown_extension_as_text))
 		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend))
 		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector))
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs))
@@ -1091,7 +1095,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
 				file = self[side].getFilename() or ''
-				if file.startswith(dir):
+				if config.plugins.filecommander.short_header.value: # parent folder always
+					pathname = dir
+				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
 					pathname = dir + file # filepath
@@ -1353,7 +1359,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.ACTIVELIST.changeSelectionState()
 			self.selectedFiles = self.ACTIVELIST.getSelectedList()
 			print "[FileCommander] selectedFiles:", self.selectedFiles
-			self.goDown()
+			if config.plugins.filecommander.move_selector.value:
+				self.goDown()
 
 	def exit(self, jobs=None, updateDirs=None):
 		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
@@ -1545,7 +1552,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
 				file = self[side].getFilename() or ''
-				if file.startswith(dir):
+				if config.plugins.filecommander.short_header.value: # parent folder always
+					pathname = dir
+				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
 					pathname = dir + file # filepath
