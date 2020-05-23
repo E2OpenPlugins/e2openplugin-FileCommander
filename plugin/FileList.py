@@ -303,6 +303,25 @@ class MultiFileSelectList(FileList):
 		for f in self.onSelectionChanged:
 			f()
 
+	def toggleAllSelection(self):
+		for idx,x in enumerate(self.list):
+			if x[0][4].startswith('<'):
+				self.list[idx] = x
+			else:
+				if x[0][1] is True:
+					realPathname = x[0][0]
+				else:
+					realPathname = self.current_directory + x[0][0]
+				SelectState = not x[0][3]
+				if SelectState:
+					if realPathname not in self.selectedFiles:
+						self.selectedFiles.append(realPathname)
+				else:
+					if realPathname in self.selectedFiles:
+						self.selectedFiles.remove(realPathname)
+				self.list[idx] = MultiFileSelectEntryComponent(name=x[0][4], absolute=x[0][0], isDir=x[0][1], isLink=x[0][2], selected=SelectState)
+		self.l.setList(self.list)
+
 	def changeSelectionState(self):
 		idx = self.l.getCurrentSelectionIndex()
 		# os.system('echo %s >> /tmp/test1.log' % ("- xxx - "))
