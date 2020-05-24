@@ -58,8 +58,8 @@ def getPNGByExt(name):
 
 def FileEntryComponent(name, absolute=None, isDir=False, isLink=False):
 	res = [(absolute, isDir, isLink)]
-	x, y, w, h = skin.parameters.get("FileListName",(55, 1, 1175, 25))
-	res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w-x, h, 0, RT_HALIGN_LEFT, name))
+	x, y, w, h = skin.parameters.get("FcFileListName",(55, 1, 1175, 25))
+	res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT, name))
 	if isLink:
 		link_png = LoadPixmap(path=os.path.join(imagePath, "link-arrow.png"))
 	else:
@@ -72,7 +72,7 @@ def FileEntryComponent(name, absolute=None, isDir=False, isLink=False):
 	else:
 		png = getPNGByExt(name)
 	if png is not None:
-		x, y, w, h = skin.parameters.get("FileListIcon",(10, 4, 20, 20))
+		x, y, w, h = skin.parameters.get("FcFileListIcon",(10, 4, 20, 20))
 		res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, png, None, None, BT_SCALE))
 		if link_png is not None:
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, link_png, None ,None, BT_SCALE))
@@ -255,7 +255,7 @@ class FileList(FileListBase):
 
 def MultiFileSelectEntryComponent(name, absolute=None, isDir=False, isLink=False, selected=False):
 	res = [(absolute, isDir, isLink, selected, name)]
-	x, y, w, h = skin.parameters.get("FileListMultiName",(55, 1, 1175, 25))
+	x, y, w, h = skin.parameters.get("FcFileListMultiName",(55, 1, 1175, 25))
 	res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT, name))
 
 	if isLink:
@@ -270,13 +270,13 @@ def MultiFileSelectEntryComponent(name, absolute=None, isDir=False, isLink=False
 	else:
 		png = getPNGByExt(name)
 	if png is not None:
-		x, y, w, h = skin.parameters.get("FileListMultiIcon",(30, 4, 20, 20))
+		x, y, w, h = skin.parameters.get("FcFileListMultiIcon",(30, 4, 20, 20))
 		res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, png, None ,None, BT_SCALE))
 		if link_png is not None:
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, link_png, None ,None, BT_SCALE))
 
 	if not name.startswith('<'):
-		x, y, w, h = skin.parameters.get("FileListMultiLock",(4, 0, 25, 25))
+		x, y, w, h = skin.parameters.get("FcFileListMultiLock",(4, 0, 25, 25))
 		if selected is False:
 			icon = LoadPixmap(path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png"))
 			if not icon:
