@@ -393,42 +393,27 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "InfobarTeletextActions", "InfobarSubtitleSelectionActions", "EPGSelectActions", "MediaPlayerActions", "MediaPlayerSeekActions"], {
 			"ok": (self.ok, _("Play/view/edit/install/extract/run file or enter directory")),
 			"back": (self.exit, _("Leave File Commander")),
-			"menu": (self.goContext, _("Open settings/actions menu")),
+			"menu": (self.selectAction, _("Open settings/actions menu")),
 			"nextMarker": (self.listRight, _("Activate right-hand file list as source")),
 			"prevMarker": (self.listLeft, _("Activate left-hand file list as source")),
 			"nextBouquet": (self.listRightB, _("Activate right-hand file list as source")),
 			"prevBouquet": (self.listLeftB, _("Activate left-hand file list as source")),
-			"1": (self.gomakeDir, _("Create directory/folder")),
-			"2": (self.gomakeSym, _("Create user-named symbolic link")),
-			"3": (self.gofileStatInfo, _("File/Directory Status Information")),
-			"4": (self.call_change_mode, _("Change execute permissions (755/644)")),
-			"5": (self.goDefaultfolder, _("Go to bookmarked folder")),
-			"6": (self.run_file, self.help_run_file),
-			"7": (self.run_ffprobe, self.help_run_ffprobe),
-			# "8": (self.run_mediainfo, self.help_run_mediainfo),
-			"8": (self.listSelect, _("Enter multi-file selection mode")),
-			"9": (self.run_hashes, _("Calculate file checksums")),
-			"startTeletext": (self.file_viewer, _("View or edit file (if size < 1MB)")),
-			"info": (self.openTasklist, _("Show task list")),
-			"directoryUp": (self.goParentfolder, _("Go to parent directory")),
+			"0": (self.doRefresh, _("Refresh screen")),
+			"2": (self.goBlue, _("Rename file/directory")),
+			"3": (self.file_viewer, _("View or edit file (if size < 1MB)")),
+			"7": (self.gomakeDir, _("Create directory/folder")),
+			"8": (self.openTasklist, _("Show task list")),
+#			"9": self.downloadSubtitles,  # Unimplemented
+			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
+			"keyRecord": (self.listSelect, _("Enter multi-file selection mode")),
+			"showMovies": (self.listSelect, _("Enter multi-file selection mode")),
 			"up": (self.goUp, _("Move up list")),
 			"down": (self.goDown, _("Move down list")),
 			"left": (self.goLeftB, _("Page up list")),
 			"right": (self.goRightB, _("Page down list")),
-			"red": (self.goRed, _("Delete file or directory (and all its contents)")),
-			"green": (self.goGreen, _("Move file/directory to target directory")),
-			"yellow": (self.goYellow, _("Copy file/directory to target directory")),
-			"blue": (self.goBlue, _("Rename file/directory")),
-			"0": (self.doRefresh, _("Refresh screen")),
-			"showMovies": (self.listSelect, _("Enter multi-file selection mode")),
-			"subtitleSelection": self.downloadSubtitles,  # Unimplemented
-			#"redlong": (self.goRedLong, _("Sorting left files by name, date or size")),
 			"seekBack": (self.goRedLong, _("Sorting left files by name, date or size")),
-			#"greenlong": (self.goGreenLong, _("Reverse left file sorting")),
 			"pause": (self.goGreenLong, _("Reverse left file sorting")),
-			#"yellowlong": (self.goYellowLong, _("Reverse right file sorting")),
 			"stop": (self.goYellowLong, _("Reverse right file sorting")),
-			#"bluelong": (self.goBlueLong, _("Sorting right files by name, date or size")),
 			"seekFwd": (self.goBlueLong, _("Sorting right files by name, date or size")),
 		}, -1)
 
@@ -521,67 +506,54 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			# self.updateHead()
 			self.doRefresh()
 
-	def goContext(self):
-		if self.disableActions_Timer.isActive():
-			return
-		dummy_to_translate_in_skin = _("File Commander menu")
-		buttons = ("menu", "info") + tuple(string.digits) + ("red", "green", "yellow", "blue")
+	def selectAction(self):
+		menu = []
+		menu.append((_("Rename file/directory"), self.goBlue))				#2
+		menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
+		menu.append((_("Copy file/directory to target directory"), self.goYellow))	#5
+		menu.append((_("Move file/directory to target directory"), self.goGreen))	#6
+		menu.append((_("Create directory/folder"), self.gomakeDir))			#7
+		menu.append((_("Delete file or directory (and all its contents)"), self.goRed))	#8
+		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))	#info
+		menu.append((_("Enter multi-file selection mode"), self.listSelect))		#green
+		menu.append((_("Refresh screen"),self.doRefresh))				#0
+		menu.append((_("Show task list"), self.openTasklist))				#blue
+		menu.append((_("Calculate file checksums"), self.run_hashes))			#
+		menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))	#
+		menu.append((_("Create user-named symbolic link"), self.gomakeSym))		#
+		menu.append((_("Go to parent directory"), self.goParentfolder))			#yellow
+		menu.append((self.help_run_file(), self.run_file))				#
+		menu.append((self.help_run_ffprobe(), self.run_ffprobe))			#
+		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))	#menu
+		menu.append((_("Go to bookmarked folder"), self.goDefaultfolder))		#
 
-		# Map the listed button actions to their help texts and
-		# build a list of the contexts used by the selected buttons
-		actionMap = self["actions"]
-		actions = {}
-		haveContext = set()
-		contexts = []
-		for contextEntry in (ce for ce in self.helpList if ce[0] is actionMap):
-			for actionEntry in contextEntry[2]:
-				button = actionEntry[0]
-				text = actionEntry[1]
-				if button in buttons and text is not None:
-					context = contextEntry[1]
-					if context not in haveContext:
-						contexts.append(context)
-						haveContext.add(context)
-					actions[button] = _("Settings...") if button == "menu" else text
+		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "blue", "", "", "", "yellow", "", "", "menu", ""]
 
-		# Create the menu list with the buttons in the order of
-		# the "buttons" tuple
-		menu = [(button, actions[button]) for button in buttons if button in actions]
-		menu += [
-			("bullet", self.help_uninstall_file, "uninstall+file"),
-			("bullet", self.help_uninstall_ffprobe, "uninstall+ffprobe"),
-			# ("bullet", self.help_uninstall_mediainfo, "uninstall+mediainfo"),
-		]
+		item = self.help_uninstall_file()
+		if item:
+			menu.append((item, self.uninstall_file))
+			keys += ["bullet"]
+		item = self.help_uninstall_ffprobe()
+		if item:
+			menu.append((item, self.uninstall_ffprobe))
+			keys += ["bullet"]
 
 		dirname = self.SOURCELIST.getFilename()
 		if dirname and dirname.endswith("/"):
-			menu += [("bullet", dirname in config.plugins.filecommander.bookmarks.value
-								and _("Remove selected folder from bookmarks")
-								or	_("Add selected folder to bookmarks"), "bookmark+selected")]
+			menu.append((dirname in config.plugins.filecommander.bookmarks.value and _("Remove selected folder from bookmarks") or _("Add selected folder to bookmarks"), boundFunction(self.goBookmark, False)))
+			keys += ["bullet"]
 		dirname = self.SOURCELIST.getCurrentDirectory()
 		if dirname:
-			menu += [("bullet", dirname in config.plugins.filecommander.bookmarks.value
-								and _("Remove current folder from bookmarks")
-								or	_("Add current folder to bookmarks"), "bookmark+current")]
+			menu.append((dirname in config.plugins.filecommander.bookmarks.value and _("Remove current folder from bookmarks") or _("Add current folder to bookmarks"), boundFunction(self.goBookmark, True)))
+			keys += ["bullet"]
 
-		self.session.openWithCallback(self.goContextCB, FileCommanderContextMenu, contexts, menu)
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
 
-	def goContextCB(self, action):
-		if action:
-			if action == "menu":
-				self.goMenu()
-			elif action == "uninstall+file":
-				self.uninstall_file()
-			elif action == "uninstall+ffprobe":
-				self.uninstall_ffprobe()
-			elif action == "uninstall+mediainfo":
-				self.uninstall_mediainfo()
-			elif action.startswith("bookmark"):
-				self.goBookmark(action.endswith("current"))
-			else:
-				actions = self["actions"].actions
-				if action in actions:
-					actions[action]()
+	def menuCallback(self, choice):
+		if choice is None:
+			return
+		if choice[1]:
+			choice[1]()
 
 	def goMenu(self):
 		self.oldFilterSettings = self.filterSettings()
@@ -590,6 +562,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.session.openWithCallback(self.goRestart, Setup)
 
 	def goBookmark(self, current):
+		print "xxxxxxxxxxxxxxxxx", current
 		dirname = current and self.SOURCELIST.getCurrentDirectory() or self.SOURCELIST.getFilename()
 		bookmarks = config.plugins.filecommander.bookmarks.value
 		if dirname in bookmarks:
@@ -1189,49 +1162,6 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 # 	def call_onFileAction(self):
 # 		self.onFileAction(self.SOURCELIST, self.TARGETLIST)
 
-class FileCommanderContextMenu(Screen):
-	if FULLHD:
-		skin = """
-		<screen name="FileCommanderContextMenu" position="center,center" size="1200,900" title="File Commander context ">
-			<widget name="menu" position="fill" font="Regular;32" itemHeight="36" transparent="0" scrollbarMode="showOnDemand" />
-		</screen>"""
-	else:
-		skin = """
-		<screen name="FileCommanderContextMenu" position="center,center" size="560,570" title="File Commander context ">
-			<widget name="menu" position="fill" itemHeight="30" transparent="0" scrollbarMode="showOnDemand" />
-		</screen>"""
-
-	def __init__(self, session, contexts, list):
-		Screen.__init__(self, session)
-		self.setTitle(_("File Commander context menu"))
-		actions = {
-			"ok": self.goOk,
-			"cancel": self.goCancel,
-		}
-		menu = []
-		if ["OkCancelActions"] not in contexts:
-			contexts = ["OkCancelActions"] + contexts
-
-		for item in list:
-			button = item[0]
-			text = item[1]
-			if callable(text):
-				text = text()
-			if text:
-				action = item[2] if len(item) > 2 else button
-				if button and button not in ("expandable", "expanded", "verticalline", "bullet"):
-					actions[button] = boundFunction(self.close, button)
-				menu.append(ChoiceEntryComponent(button, (text, action)))
-
-		self["actions"] = ActionMap(contexts, actions)
-		self["menu"] = ChoiceList(menu)
-
-	def goOk(self):
-		self.close(self["menu"].getCurrent()[0][1])
-
-	def goCancel(self):
-		self.close(False)
-
 #####################
 # ## Select Screen ###
 #####################
@@ -1340,8 +1270,6 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"prevMarker": (self.listLeft, _("Activate left-hand file list as multi-select source")),
 			"nextBouquet": (self.listRightB, _("Activate right-hand file list as multi-select source")),
 			"prevBouquet": (self.listLeftB, _("Activate left-hand file list as multi-select source")),
-			"info": (self.openTasklist, _("Show task list")),
-			"directoryUp": (self.goParentfolder, _("Go to parent directory")),
 			"up": (self.goUp, _("Move up list")),
 			"down": (self.goDown, _("Move down list")),
 			"left": (self.goLeftB, _("Page up list")),
@@ -1351,8 +1279,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"yellow": (self.goYellow, _("Copy files/directories to target directory")),
 			"blue": bluebutton,
 			"0": (self.doRefresh, _("Refresh screen")),
-			"8": (self.ok, _("Select")),
-			"showMovies": (self.ok, _("Select")),
+			"8": (self.openTasklist, _("Show task list")),
+			"keyRecord": (self.goBlue, _("Leave multi-select mode")),
+			"showMovies": (self.goBlue, _("Leave multi-select mode")),
 		}, -1)
 		self.onLayoutFinish.append(self.onLayout)
 
