@@ -403,6 +403,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			"7": (self.gomakeDir, _("Create directory/folder")),
 			"8": (self.openTasklist, _("Show task list")),
 #			"9": self.downloadSubtitles,  # Unimplemented
+			"red": (self.goRed, _("Delete file or directory (and all its contents)")),
+			"green": (self.goGreen, _("Move file/directory to target directory")),
+			"yellow": (self.goYellow, _("Copy file/directory to target directory")),
+			"blue": (self.goBlue, _("Rename file/directory")),
 			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
 			"keyRecord": (self.listSelect, _("Enter multi-file selection mode")),
 			"showMovies": (self.listSelect, _("Enter multi-file selection mode")),
