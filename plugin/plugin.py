@@ -135,6 +135,7 @@ config.plugins.filecommander.sortingRight_tmp = NoSave(ConfigText(default=tmpRig
 config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_left.value))
 config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_right.value))
 
+config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
 config.plugins.filecommander.invert_selection = ConfigYesNo(default=False)
 
 # ####################
@@ -169,6 +170,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow))
 		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection))
+		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size))
 		
 		ConfigListScreen.__init__(self, self.list, session = session)
 		self["help"] = Label(_("Select your personal settings:"))
@@ -1695,6 +1697,8 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 			self.close()
 			return
 
+		dirname = filename if os.path.isdir(filename) else None
+
 		if filename.endswith("/"):
 			filepath = os.path.normpath(filename)
 			if filepath == '/':
@@ -1729,6 +1733,8 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		self.list.append((_("Links:"), "%d" % st.st_nlink))
 		self.list.append((_("Inode:"), "%d" % st.st_ino))
 		self.list.append((_("On device:"), "%d, %d" % ((st.st_dev >> 8) & 0xff, st.st_dev & 0xff)))
+		if config.plugins.filecommander.dir_size.value and dirname:
+			self.list.append((_("Content size:"), "%s" % self.dirContentSize(dirname)))
 
 		self["list"].updateList(self.list)
 
@@ -1743,6 +1749,21 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 			self["link_sep"].hide()
 			self["link_label"].text = ""
 			self["link_value"].text = ""
+
+	def dirContentSize(self, directory):
+		size = 0
+		for dirpath, dirnames, filenames in os.walk(directory):
+			for f in filenames:
+				fp = os.path.join(dirpath, f)
+				size += os.path.getsize(fp) if os.path.isfile(fp) else 0
+		return self.humanizer(size)
+
+	def humanizer(self, size):
+		for index,count in enumerate(['B','KB','MB','GB']):
+			if size < 1024.0:
+				return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
+			size /= 1024.0
+		return "%3.2f %s" % (size, 'TB')
 
 # #####################
 # ## Start routines ###
