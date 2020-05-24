@@ -582,7 +582,6 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.session.openWithCallback(self.goRestart, Setup)
 
 	def goBookmark(self, current):
-		print "xxxxxxxxxxxxxxxxx", current
 		dirname = current and self.SOURCELIST.getCurrentDirectory() or self.SOURCELIST.getFilename()
 		bookmarks = config.plugins.filecommander.bookmarks.value
 		if dirname in bookmarks:
