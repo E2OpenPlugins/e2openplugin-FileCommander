@@ -144,35 +144,45 @@ class Setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		self.list = []
-		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry))
-		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry))
-		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left))
-		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right))
-		self.list.append(getConfigListEntry(_("Short path in headers"),config.plugins.filecommander.short_header))
-		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs))
-		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message))
-		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message))
-		self.list.append(getConfigListEntry(_("Number of lines in script messages"), config.plugins.filecommander.script_messagelen))
-		self.list.append(getConfigListEntry(_("Show unknown extension as text"), config.plugins.filecommander.unknown_extension_as_text))
-		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend))
-		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector))
-		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left))
-		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right))
-		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs))
-		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default))
-		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension))
-		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension))
-		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice))
-		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice))
-		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes))
-		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow))
-		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection))
-		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size))
-		
-		ConfigListScreen.__init__(self, self.list, session = session)
+		self.skinName=["FileCommanderSetup","Setup"]
+
 		self["help"] = Label(_("Select your personal settings:"))
+		self["description"] = Label()
+		from Components.Pixmap import Pixmap
+		from Components.Sources.Boolean import Boolean
+		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
+		self["VKeyIcon"] = Boolean(False)
+
+		self.list = []
+		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry, _("Make File Commander accessible from the main menu.")))
+		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make File Commander accessible from the Extensions menu.")))
+		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left, _("Save the left directory list location on exit.")))
+		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right, _("Save the right folder list location on exit.")))
+		self.list.append(getConfigListEntry(_("Short path in headers"),config.plugins.filecommander.short_header, _("Displays only directories in panel headers.")))
+		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs, _("Show directories on first or last positions in panel (FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
+		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
+		self.list.append(getConfigListEntry(_("Number of lines in script messages"), config.plugins.filecommander.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
+		self.list.append(getConfigListEntry(_("Show unknown extension as text"), config.plugins.filecommander.unknown_extension_as_text, _("Show unknown file extensions with 'Addon File-Viewer'.")))
+		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, can you set the cursor start position at end or begin of the line.")))
+		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
+		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
+		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels.")))
+		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Default directory if the left or right folder isn't saved, and target folder for 'Go to parent directory'.")))
+		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
+		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
+		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
+		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
+		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes, _("Calculates file checksums.")))
+		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow, _("Time between slides in image viewer slideshow.")))
+		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection, _("In multi-selection mode using under blue button inversion of the selection instead cancel this mode.")))
+		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
+		
+		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("Ok"))
 		self["Actions"] = ActionMap(["ColorActions", "SetupActions"],
@@ -187,7 +197,13 @@ class Setup(ConfigListScreen, Screen):
 
 	def onLayout(self):
 		#self.setTitle(pname+" ("+pversion+") "+_("Settings"))
-		self.setTitle(pname+" "+_("Settings"))
+		self.setTitle(pname+" - "+_("Settings"))
+
+	def getCurrentEntry(self):
+		x =  self["config"].getCurrent()
+		if x:
+			text = x[2] if len(x) == 3 else ""
+			self["description"].setText(text)
 
 	def ok(self):
 		if self["config"].getCurrent()[1] is config.plugins.filecommander.path_default:
