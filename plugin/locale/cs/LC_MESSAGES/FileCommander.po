@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 20:53+0200\n"
-"PO-Revision-Date: 2020-05-25 12:02+0200\n"
+"POT-Creation-Date: 2020-05-25 17:47+0200\n"
+"PO-Revision-Date: 2020-05-25 18:08+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -14,7 +14,475 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: ../addons/key_actions.py:372
+#: TaskList.py:50 Console.py:81
+msgid "Close"
+msgstr "Zavřít"
+
+#: TaskList.py:74 addons/key_actions.py:152 addons/key_actions.py:155
+#: addons/key_actions.py:169 addons/key_actions.py:368
+#: addons/key_actions.py:424 ui.py:471 ui.py:754
+msgid "Run script"
+msgstr "Spustit skript"
+
+#: TaskList.py:86
+msgid "Task list"
+msgstr "Seznam úloh"
+
+#: plugin.py:11 addons/type_utils.py:140 ui.py:87
+msgid "File Commander"
+msgstr ""
+
+#: plugin.py:12 ui.py:88
+msgid "manage local Files"
+msgstr "správa místních souborů"
+
+#: plugin.py:35 ui.py:1732
+msgid "Open with File Commander"
+msgstr "Otevřít s File Commander"
+
+#: Console.py:26 addons/unarchiver.py:72 addons/unarchiver.py:242
+#: addons/key_actions.py:242 addons/key_actions.py:368
+#: addons/key_actions.py:584 ui.py:176
+msgid "Cancel"
+msgstr "Zavřít"
+
+#: Console.py:27
+msgid "hide"
+msgstr "skrýt"
+
+#: Console.py:66 Console.py:67
+msgid "Execution progress:"
+msgstr "Průběh provádění:"
+
+#: Console.py:82
+msgid "Save"
+msgstr "Uložit"
+
+#: Console.py:87 Console.py:88
+msgid "Execution finished!!"
+msgstr "Provádění dokončeno!"
+
+#: Console.py:115 Console.py:181
+msgid " "
+msgstr " "
+
+#: Console.py:129
+msgid "Cancel execution?"
+msgstr "Zrušit provádění?"
+
+#: Console.py:140
+#, python-format
+msgid ""
+"Save the commands and the output to a file?\n"
+"('%s')"
+msgstr ""
+
+#: Console.py:153
+msgid "Path to save not exist: '/tmp/'"
+msgstr "Cesta pro uložení neexistuje: '/tmp/"
+
+#: Console.py:176
+msgid "Load"
+msgstr ""
+
+#: Console.py:179
+#, python-format
+msgid "File write error: '%s'"
+msgstr "Chyba zápisu souboru: '%s'"
+
+#: FileList.py:186 FileList.py:421
+msgid "List of Storage Devices"
+msgstr ""
+
+#: FileList.py:190 FileList.py:425
+msgid "Parent Directory"
+msgstr "Rodičovský adresář"
+
+#: FileList.py:232
+msgid "nothing connected"
+msgstr "nic není nepřipojeno"
+
+#: FileTransfer.py:93
+msgid "File transfer was cancelled by user"
+msgstr "Přenos souboru byl ukončen uživatelem"
+
+#: addons/unrar.py:14
+msgid "File Commander - unrar Addon"
+msgstr "File Commander - unrar doplněk"
+
+#: addons/unrar.py:15
+msgid "unpack Rar Files"
+msgstr "rozbalit Rar soubory"
+
+#: addons/unrar.py:28
+msgid "Show contents of rar file"
+msgstr "Zobrazit obsah rar souboru"
+
+#: addons/unrar.py:29 addons/gz.py:24 addons/tar.py:20 addons/unzip.py:25
+msgid "Unpack to current folder"
+msgstr "Rozbalit do aktuálního adresáře"
+
+#: addons/unrar.py:30 addons/unrar.py:31 addons/gz.py:25 addons/gz.py:26
+#: addons/tar.py:21 addons/tar.py:22 addons/unzip.py:26 addons/unzip.py:27
+#, python-format
+msgid "Unpack to %s"
+msgstr "Rozbalit do %s"
+
+#: addons/unrar.py:50 addons/unarchiver.py:141
+#, python-format
+msgid ""
+"Can not run %s: %s.\n"
+"%s may be in a plugin that is not installed."
+msgstr ""
+"Nelze spustit %s: %s.\n"
+"%s může být plugin, který není nainstalován."
+
+#: addons/unrar.py:61
+msgid "Please enter password"
+msgstr "Zadejte heslo"
+
+#: addons/unrar.py:61
+#, python-format
+msgid "%s is password protected."
+msgstr "%s je zabezpečen heslem."
+
+#: addons/gz.py:15
+msgid "File Commander - gzip Addon"
+msgstr "File Commander - gzip doplněk"
+
+#: addons/gz.py:16
+msgid "unpack gzip Files"
+msgstr "rozbalit gzip soubory"
+
+#: addons/tar.py:10
+msgid "File Commander - tar Addon"
+msgstr "File Commander - tar doplněk"
+
+#: addons/tar.py:11
+msgid "unpack tar/compressed tar Files"
+msgstr "rozbaluji tar/komprimované tar soubory"
+
+#: addons/tar.py:19
+msgid "Show contents of tar or compressed tar file"
+msgstr "Zobrazit obsah tar nebo komprimovaného tar souboru"
+
+#: addons/unzip.py:15
+msgid "File Commander - unzip Addon"
+msgstr "File Commander - unzip doplněk"
+
+#: addons/unzip.py:16
+msgid "unpack zip Files"
+msgstr "rozbalit zip soubory"
+
+#: addons/unzip.py:24
+msgid "Show contents of zip file"
+msgstr "Zobrazit obsah zip souboru"
+
+#: addons/type_utils.py:37
+msgid "File Commander - Addon Mediaplayer"
+msgstr "File Commander - doplněk Mediaplayer"
+
+#: addons/type_utils.py:38
+msgid "play/show Files"
+msgstr "přehrát/zobrazit soubory"
+
+#: addons/type_utils.py:96
+msgid "File Commander - Addon File-Viewer"
+msgstr "File Commander - doplněk File-Viewer"
+
+#: addons/type_utils.py:105 addons/type_utils.py:106
+msgid "Edit current line"
+msgstr "Upravit aktuální řádek"
+
+#: addons/type_utils.py:107 addons/type_utils.py:108
+msgid "Exit editor and write changes (if any)"
+msgstr "Ukončit editor a zapsat případné změny"
+
+#: addons/type_utils.py:109
+msgid "Delete current line"
+msgstr "Smazat aktuální řádek"
+
+#: addons/type_utils.py:110
+msgid "Insert line before current line"
+msgstr "Vložit řádek před aktuální řádek"
+
+#: addons/type_utils.py:111
+msgid "Go to start of file"
+msgstr "Přejít na začátek souboru"
+
+#: addons/type_utils.py:112
+msgid "Go to end of file"
+msgstr "Přejít na konec souboru"
+
+#: addons/type_utils.py:115
+msgid "Exit"
+msgstr ""
+
+#: addons/type_utils.py:116
+msgid "Edit"
+msgstr "Upravit"
+
+#: addons/type_utils.py:117 ui.py:403 ui.py:1274
+msgid "Delete"
+msgstr "Smazat"
+
+#: addons/type_utils.py:118
+msgid "Insert"
+msgstr "Vložit"
+
+#: addons/type_utils.py:135
+msgid "has been CHANGED! Do you want to save it?"
+msgstr "byl ZMĚNĚN! Chcete ho uložit?"
+
+#: addons/type_utils.py:136
+msgid "WARNING!"
+msgstr ""
+
+#: addons/type_utils.py:137
+msgid "The authors are NOT RESPONSIBLE"
+msgstr ""
+
+#: addons/type_utils.py:138
+msgid "for DATA LOSS OR DAMAGE !!!"
+msgstr ""
+
+#: addons/type_utils.py:206
+msgid "original"
+msgstr "původní"
+
+#: addons/type_utils.py:206
+msgid ": "
+msgstr ""
+
+#: addons/type_utils.py:206
+msgid "Edit line "
+msgstr "Úprava řádku "
+
+#: addons/type_utils.py:208
+msgid "This line is not editable!"
+msgstr "Tento řádek nelze upravit!"
+
+#: addons/type_utils.py:209
+msgid "Error..."
+msgstr ""
+
+#: addons/type_utils.py:296
+msgid "Exit picture viewer"
+msgstr "Ukončit prohlížeč obrázků"
+
+#: addons/type_utils.py:297
+msgid "Show previous picture"
+msgstr "Zobrazit předchozí obrázek"
+
+#: addons/type_utils.py:298
+msgid "Show next picture"
+msgstr "Zobrazit další obrázek"
+
+#: addons/type_utils.py:299
+msgid "Start/stop slide show"
+msgstr "Spustit/zastavit prezentaci"
+
+#: addons/type_utils.py:300
+msgid "Show image information"
+msgstr ""
+
+#: addons/type_utils.py:306
+msgid "Please wait, Loading image."
+msgstr ""
+
+#: addons/type_utils.py:336
+msgid ""
+"The Image Viewer component of the File Commander requires the PicturePlayer "
+"extension. Install PicturePlayer to enable this operation."
+msgstr ""
+"Komponenta Image Viewer ve File Commanderu vyžaduje rozšíření PicturePlayer. "
+"Chcete-li povolit tutop púeraci, nainstalujte si PicturePlayer."
+
+#: addons/unarchiver.py:19
+msgid "File Commander - generalised archive handler"
+msgstr ""
+
+#: addons/unarchiver.py:20
+msgid "unpack archives"
+msgstr "rozbaluji archivy"
+
+#: addons/unarchiver.py:73 addons/unarchiver.py:243
+msgid "OK"
+msgstr ""
+
+#: addons/unarchiver.py:150
+msgid "No files found."
+msgstr "Žádné soubory nenalezeny."
+
+#: addons/unarchiver.py:187
+#, python-format
+msgid "%s - extraction errors."
+msgstr "%s - chyby při rozbalení."
+
+#: addons/unarchiver.py:198
+#, python-format
+msgid "%s successfully extracted."
+msgstr "%s úspěšně rozbalen."
+
+#: addons/ipk.py:24
+msgid "File Commander - ipk Addon"
+msgstr "File Commander - ipk doplněk"
+
+#: addons/ipk.py:25
+msgid "install/unpack ipk Files"
+msgstr "instalovat/rozbalit ipk soubory"
+
+#: addons/ipk.py:35
+msgid "Show contents of ipk file"
+msgstr "Zobrazit obsah ipk souboru"
+
+#: addons/ipk.py:36
+msgid "Install"
+msgstr "Instalovat"
+
+#: addons/ipk.py:58
+msgid "Installing Plugin ..."
+msgstr "Instalace pluginu ..."
+
+#: addons/key_actions.py:67
+msgid "File Commander - Addon Movieplayer"
+msgstr "File Commander - doplněk Movieplayer"
+
+#: addons/key_actions.py:68
+msgid "play Files"
+msgstr "přehrát soubory"
+
+#: addons/key_actions.py:78
+msgid "Socket"
+msgstr ""
+
+#: addons/key_actions.py:79
+msgid "Symbolic link"
+msgstr "Symbolický odkaz"
+
+#: addons/key_actions.py:80
+msgid "Regular file"
+msgstr "Regulární soubor"
+
+#: addons/key_actions.py:81
+msgid "Block device"
+msgstr ""
+
+#: addons/key_actions.py:82
+msgid "Directory"
+msgstr "Adresář"
+
+#: addons/key_actions.py:83
+msgid "Character device"
+msgstr ""
+
+#: addons/key_actions.py:84
+msgid "FIFO"
+msgstr ""
+
+#: addons/key_actions.py:85
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: addons/key_actions.py:97
+msgid "?"
+msgstr ""
+
+#: addons/key_actions.py:123
+#, python-format
+msgid "Unknown user: %d"
+msgstr "Neznámý uživatel: %d"
+
+#: addons/key_actions.py:131
+#, python-format
+msgid "Unknown group: %d"
+msgstr "Neznámá skupina: %d"
+
+#: addons/key_actions.py:147
+msgid "script 'stout':"
+msgstr ""
+
+#: addons/key_actions.py:149
+msgid "script 'sterr':"
+msgstr ""
+
+#: addons/key_actions.py:152
+#, python-format
+msgid " ('%s') finished with error number [%d]."
+msgstr " ('%s') dokončeno s chybou číslo [%d]."
+
+#: addons/key_actions.py:155
+#, python-format
+msgid " ('%s') finished with error messages."
+msgstr " ('%s') dokončeno s chybovými hlášeními."
+
+#: addons/key_actions.py:169
+#, python-format
+msgid " ('%s') finished successefully."
+msgstr " ('%s') úspěšně dokončeno."
+
+#: addons/key_actions.py:237
+msgid "It is not possible to change the file mode of <List of Storage Devices>"
+msgstr "Nelze měnit mód souboru pro <List of Storage Devices>"
+
+#: addons/key_actions.py:242
+msgid "Set archive mode (644)"
+msgstr "Nastavit archivní mod (644)"
+
+#: addons/key_actions.py:242
+msgid "Set executable mode (755)"
+msgstr "Nastavitspouštěcí mod (755)"
+
+#: addons/key_actions.py:243
+msgid "Do you want change rights?\n"
+msgstr "Chcete změnit oprávnění?\n"
+
+#: addons/key_actions.py:245
+msgid "Not allowed with folders"
+msgstr "Není povoleno u adresářů"
+
+#: addons/key_actions.py:282
+#, python-format
+msgid "Mode %s (%04o)"
+msgstr ""
+
+#: addons/key_actions.py:307 addons/key_actions.py:319
+#: addons/key_actions.py:320
+#, python-format
+msgid "%s (%s)"
+msgstr ""
+
+#: addons/key_actions.py:318
+#, python-format
+msgid "%s"
+msgstr ""
+
+#: addons/key_actions.py:365
+msgid "python"
+msgstr ""
+
+#: addons/key_actions.py:367
+msgid "shell"
+msgstr ""
+
+#: addons/key_actions.py:368 addons/key_actions.py:370
+#, python-format
+msgid "View or edit this %s script"
+msgstr "Zobrazit nebo upravit %s skript"
+
+#: addons/key_actions.py:368
+msgid "Run script in background"
+msgstr "Spustit skript na pozadí"
+
+#: addons/key_actions.py:372
+msgid "Run script with optional parameter"
+msgstr "Spustit skript s volitelným parametrem"
+
+#: addons/key_actions.py:373
+msgid "Run script with optional parameter in background"
+msgstr "Spustit skript s volitelným parametrem na pozadí"
+
+#: addons/key_actions.py:374
 #, python-format
 msgid ""
 "\n"
@@ -25,782 +493,21 @@ msgstr ""
 "volitelný parametr:\n"
 "%s"
 
-#: ../Console.py:115 ../Console.py:181
-msgid " "
-msgstr " "
+#: addons/key_actions.py:375
+msgid "Do you want to view or run the script?\n"
+msgstr "Chcete prohlédnout nebo spustit skript?\n"
 
-#: ../addons/key_actions.py:169
+#: addons/key_actions.py:381
 #, python-format
-msgid " ('%s') finished successefully."
-msgstr " ('%s') úspěšně dokončeno."
+msgid "Script '%s' must have read permission to be able to run it"
+msgstr "Aby bylo možné spustit skript '%s', musí mít oprávnění ke čtení"
 
-#: ../addons/key_actions.py:155
-#, python-format
-msgid " ('%s') finished with error messages."
-msgstr " ('%s') dokončeno s chybovými hlášeními."
-
-#: ../addons/key_actions.py:152
-#, python-format
-msgid " ('%s') finished with error number [%d]."
-msgstr " ('%s') dokončeno s chybou číslo [%d]."
-
-#: ../plugin.py:1429 ../plugin.py:1472
-#, python-format
-msgid " - %d elements exist! Overwrite"
-msgstr " - %d položek existuje! Přepsat"
-
-#: ../plugin.py:1431 ../plugin.py:1474
-msgid " - 1 element exist! Overwrite"
-msgstr " - 1 položka existuje! Přepsat"
-
-#: ../plugin.py:786 ../plugin.py:850
-msgid " - file exist! Overwrite"
-msgstr " - soubor existuje! Přepsat"
-
-#: ../plugin.py:790 ../plugin.py:854
-msgid " - folder exist! Overwrite"
-msgstr " - adresář existuje! Přepsat"
-
-#: ../addons/key_actions.py:706
-msgid " or save the picture additionally to a file"
-msgstr " nebo uložit obrázek navíc do souboru"
-
-#: ../addons/key_actions.py:317
-#, python-format
-msgid "%s"
-msgstr ""
-
-#: ../plugin.py:1655
-#, python-format
-msgid "%s (%04o)"
-msgstr ""
-
-#: ../addons/key_actions.py:318
-#, python-format
-msgid "%s (%s"
-msgstr ""
-
-#: ../addons/key_actions.py:307
-#, python-format
-msgid "%s (%s)"
-msgstr ""
-
-#: ../addons/unarchiver.py:186
-#, python-format
-msgid "%s - extraction errors."
-msgstr "%s - chyby při rozbalení."
-
-#: ../addons/unrar.py:61
-#, python-format
-msgid "%s is password protected."
-msgstr "%s je zabezpečen heslem."
-
-#: ../addons/unarchiver.py:197
-#, python-format
-msgid "%s successfully extracted."
-msgstr "%s úspěšně rozbalen."
-
-#: ../addons/key_actions.py:408 ../addons/key_actions.py:712 ../plugin.py:1646
+#: addons/key_actions.py:410 addons/key_actions.py:714 ui.py:1666
 #, python-format
 msgid "%s: %s"
 msgstr ""
 
-#: ../addons/key_actions.py:513
-#, python-format
-msgid "'%s' not installed and no known package"
-msgstr "'%s' není nainstalován a není znám balíček"
-
-#: ../plugin.py:403
-#, python-format
-msgid "(%d jobs)"
-msgstr "(%d úloh)"
-
-#: ../plugin.py:403
-msgid "(1 job)"
-msgstr "(1 úloha)"
-
-#: ../plugin.py:1299
-msgid "(Selectmode)"
-msgstr ""
-
-#: ../addons/type_utils.py:178
-msgid ": "
-msgstr ""
-
-#: ../addons/key_actions.py:97
-msgid "?"
-msgstr ""
-
-#: ../plugin.py:1659
-msgid "Accessed:"
-msgstr ""
-
-#: ../plugin.py:1275 ../plugin.py:1277
-msgid "Activate left-hand file list as multi-select source"
-msgstr "Přepnout do levého panelu"
-
-#: ../plugin.py:343 ../plugin.py:345
-msgid "Activate left-hand file list as source"
-msgstr "Přepnout do levého panelu"
-
-#: ../plugin.py:1274 ../plugin.py:1276
-msgid "Activate right-hand file list as multi-select source"
-msgstr "Přepnout do pravého panelu"
-
-#: ../plugin.py:342 ../plugin.py:344
-msgid "Activate right-hand file list as source"
-msgstr "Přepnout do pravého panelu"
-
-#: ../plugin.py:510
-msgid "Add current folder to bookmarks"
-msgstr "Přidat aktuální adresář do záložek"
-
-#: ../plugin.py:151
-msgid "Add plugin to Extensions menu*"
-msgstr "Přidat plugin do Extension menu"
-
-#: ../plugin.py:150
-msgid "Add plugin to main menu*"
-msgstr "Přidat plugin do hlavního menu"
-
-#: ../plugin.py:505
-msgid "Add selected folder to bookmarks"
-msgstr "Přidat vybraný adresář do záložek"
-
-#: ../addons/key_actions.py:81
-msgid "Block device"
-msgstr ""
-
-#: ../plugin.py:167
-msgid "CPU priority for script execution"
-msgstr "Priorita CPU pro spouštění skriptu"
-
-#: ../plugin.py:355
-msgid "Calculate file checksums"
-msgstr "Spočítat kontrolní součet souboru"
-
-#: ../addons/unarchiver.py:140 ../addons/unrar.py:50
-#, python-format
-msgid ""
-"Can not run %s: %s.\n"
-"%s may be in a plugin that is not installed."
-msgstr ""
-"Nelze spustit %s: %s.\n"
-"%s může být plugin, který není nainstalován."
-
-#: ../plugin.py:1673
-#, python-format
-msgid "Can't read link contents: %s"
-msgstr ""
-
-#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:366
-#: ../addons/key_actions.py:582 ../addons/unarchiver.py:71
-#: ../addons/unarchiver.py:241 ../plugin.py:174
-msgid "Cancel"
-msgstr "Zavřít"
-
-#: ../Console.py:129
-msgid "Cancel execution?"
-msgstr "Zrušit provádění?"
-
-#: ../plugin.py:160
-msgid "Change buttons for list navigation"
-msgstr "Změnit tlačítka pro pohyb v panelu"
-
-#: ../plugin.py:349
-msgid "Change execute permissions (755/644)"
-msgstr "Změna prováděcích práv (755/644)"
-
-#: ../plugin.py:96
-msgid "Channel button always changes sides"
-msgstr "Ch+/- vždy mění panely"
-
-#: ../addons/key_actions.py:83
-msgid "Character device"
-msgstr ""
-
-#: ../Console.py:81 ../TaskList.py:49
-msgid "Close"
-msgstr "Zavřít"
-
-#: ../plugin.py:334 ../plugin.py:1268
-msgid "Copy"
-msgstr "Kopírovat"
-
-#: ../plugin.py:1483
-#, python-format
-msgid "Copy %d elements"
-msgstr "Kopírovat %d položek"
-
-#: ../plugin.py:1485
-msgid "Copy 1 element"
-msgstr "Kopírovat 1 polořku"
-
-#: ../plugin.py:787
-msgid "Copy file"
-msgstr "Kopírovat soubor"
-
-#: ../plugin.py:365
-msgid "Copy file/directory to target directory"
-msgstr "Zkopírovat soubor nebo adresář"
-
-#: ../plugin.py:1286
-msgid "Copy files/directories to target directory"
-msgstr "Kopírovat soubory/adresáře do cílového adresáře"
-
-#: ../plugin.py:791
-msgid "Copy folder"
-msgstr "Kopírovat adresář"
-
-#: ../plugin.py:346
-msgid "Create directory/folder"
-msgstr "Založit adresář"
-
-#: ../plugin.py:983
-msgid "Create symlink to file"
-msgstr "Založit symbolický soubor k souboru"
-
-#: ../plugin.py:347
-msgid "Create user-named symbolic link"
-msgstr "Vytvořit uživatelsky pojmenovaný symbolický link"
-
-#: ../plugin.py:106 ../plugin.py:111
-msgid "Date"
-msgstr "Datum"
-
-#: ../plugin.py:107 ../plugin.py:112
-msgid "Date reverse"
-msgstr "Datum v opačném pořadí"
-
-#: ../plugin.py:192
-msgid "Default Folder"
-msgstr "Výchozí adresář"
-
-#: ../plugin.py:163
-msgid "Default directory sorting"
-msgstr "Výchozí setřídění adresářů"
-
-#: ../plugin.py:161
-msgid "Default file sorting left"
-msgstr "Výchozí setřídění souborů pro levý"
-
-#: ../plugin.py:162
-msgid "Default file sorting right"
-msgstr "Výchozí setřídění souborů pro pravý"
-
-#: ../plugin.py:164
-msgid "Default folder"
-msgstr "Výchozí adresář"
-
-#: ../addons/type_utils.py:114 ../plugin.py:332 ../plugin.py:1266
-msgid "Delete"
-msgstr "Smazat"
-
-#: ../plugin.py:1391
-#, python-format
-msgid "Delete %d elements"
-msgstr "Smazat %d položek"
-
-#: ../plugin.py:1393
-msgid "Delete 1 element"
-msgstr "Smazat 1 polořku"
-
-#: ../addons/type_utils.py:106
-msgid "Delete current line"
-msgstr "Smazat aktuální řádek"
-
-#: ../plugin.py:819
-msgid "Delete file"
-msgstr "Smazat soubor"
-
-#: ../plugin.py:363
-msgid "Delete file or directory (and all its contents)"
-msgstr "Smazat soubor nebo adresář (včetně obsahu)"
-
-#: ../plugin.py:821
-msgid "Delete folder"
-msgstr "Smazat adresář"
-
-#: ../plugin.py:1284
-msgid "Delete the selected files or directories"
-msgstr "Odstranit vybrané soubory a adresáře"
-
-#: ../addons/key_actions.py:82
-msgid "Directory"
-msgstr "Adresář"
-
-#: ../addons/key_actions.py:243
-msgid "Do you want change rights?\n"
-msgstr "Chcete změnit oprávnění?\n"
-
-#: ../addons/key_actions.py:373
-msgid "Do you want to view or run the script?\n"
-msgstr "Chcete prohlédnout nebo spustit skript?\n"
-
-#: ../addons/type_utils.py:113
-msgid "Edit"
-msgstr "Upravit"
-
-#: ../addons/type_utils.py:102 ../addons/type_utils.py:103
-msgid "Edit current line"
-msgstr "Upravit aktuální řádek"
-
-#: ../addons/type_utils.py:178
-msgid "Edit line "
-msgstr "Úprava řádku "
-
-#: ../plugin.py:159
-msgid "Edit position is the line end"
-msgstr ""
-
-#: ../plugin.py:354 ../plugin.py:368
-msgid "Enter multi-file selection mode"
-msgstr "Přejít na vícenásobný výběr"
-
-#: ../plugin.py:683
-msgid "Error"
-msgstr ""
-
-#: ../plugin.py:1024
-#, python-format
-msgid ""
-"Error creating directory %s:\n"
-"%s"
-msgstr ""
-"Chyba při zakládání adresáře %s:\n"
-"%s"
-
-#: ../plugin.py:964
-#, python-format
-msgid ""
-"Error linking %s to %s:\n"
-"%s"
-msgstr ""
-"Chyba při linkování %s na %s:\n"
-"%s"
-
-#: ../plugin.py:922
-#, python-format
-msgid ""
-"Error renaming %s to %s:\n"
-"%s"
-msgstr ""
-"Chyba při přejmenování %s na %s:\n"
-"%s"
-
-#: ../addons/type_utils.py:181
-msgid "Error..."
-msgstr ""
-
-#: ../Console.py:87 ../Console.py:88
-msgid "Execution finished!!"
-msgstr "Provádění dokončeno!"
-
-#: ../Console.py:66 ../Console.py:67
-msgid "Execution progress:"
-msgstr "Průběh provádění:"
-
-#: ../addons/type_utils.py:112
-msgid "Exit"
-msgstr ""
-
-#: ../addons/type_utils.py:104 ../addons/type_utils.py:105
-msgid "Exit editor and write changes (if any)"
-msgstr "Ukončit editor a zapsat případné změny"
-
-#: ../addons/type_utils.py:268
-msgid "Exit picture viewer"
-msgstr "Ukončit prohlížeč obrázků"
-
-#: ../addons/key_actions.py:84
-msgid "FIFO"
-msgstr ""
-
-#: ../addons/type_utils.py:130 ../plugin.py:82
-msgid "File Commander"
-msgstr ""
-
-#: ../addons/type_utils.py:93
-msgid "File Commander - Addon File-Viewer"
-msgstr ""
-
-#: ../addons/type_utils.py:37
-msgid "File Commander - Addon Mediaplayer"
-msgstr ""
-
-#: ../addons/key_actions.py:67
-msgid "File Commander - Addon Movieplayer"
-msgstr ""
-
-#: ../plugin.py:711
-msgid "File Commander - all Task's completed!"
-msgstr ""
-
-#: ../addons/unarchiver.py:18
-msgid "File Commander - generalised archive handler"
-msgstr ""
-
-#: ../addons/gz.py:15
-msgid "File Commander - gzip Addon"
-msgstr ""
-
-#: ../addons/ipk.py:23
-msgid "File Commander - ipk Addon"
-msgstr ""
-
-#: ../addons/tar.py:10
-msgid "File Commander - tar Addon"
-msgstr ""
-
-#: ../addons/unrar.py:14
-msgid "File Commander - unrar Addon"
-msgstr ""
-
-#: ../addons/unzip.py:15
-msgid "File Commander - unzip Addon"
-msgstr ""
-
-#: ../plugin.py:1147
-msgid "File Commander context menu"
-msgstr ""
-
-#: ../plugin.py:472
-msgid "File Commander menu"
-msgstr "File Commander - Menu"
-
-#: ../plugin.py:169
-msgid "File checksums/hashes"
-msgstr ""
-
-#: ../addons/key_actions.py:658 ../addons/key_actions.py:757
-#, python-format
-msgid "File not found: %s"
-msgstr "Soubor nenalezen: %s"
-
-#: ../FileTransfer.py:93
-msgid "File transfer was cancelled by user"
-msgstr "Přenos souboru byl ukončen uživatelem"
-
-#: ../Console.py:179
-#, python-format
-msgid "File write error: '%s'"
-msgstr "Chyba zápisu souboru: '%s'"
-
-#: ../plugin.py:348 ../plugin.py:1608
-msgid "File/Directory Status Information"
-msgstr "Informace o souboru/adresáři"
-
-#: ../plugin.py:166
-msgid "Filter extension, (*) appears in title"
-msgstr "Filtr pro přípony, (*) se objeví v názvu"
-
-#: ../plugin.py:350
-msgid "Go to bookmarked folder"
-msgstr "Přejít na záložky"
-
-#: ../addons/type_utils.py:109
-msgid "Go to end of file"
-msgstr "Přejít na konec souboru"
-
-#: ../plugin.py:358 ../plugin.py:1279
-msgid "Go to parent directory"
-msgstr "Přejít na rodičovský adresář"
-
-#: ../addons/type_utils.py:108
-msgid "Go to start of file"
-msgstr "Přejít na začátek souboru"
-
-#: ../plugin.py:1654
-msgid "Group:"
-msgstr "Skupina:"
-
-#: ../plugin.py:168
-msgid "I/O priority for script execution"
-msgstr "I/O priorita provádění skriptu"
-
-#: ../plugin.py:1662
-msgid "Inode:"
-msgstr ""
-
-#: ../addons/type_utils.py:115
-msgid "Insert"
-msgstr "Vložit"
-
-#: ../addons/type_utils.py:107
-msgid "Insert line before current line"
-msgstr "Vložit řádek před aktuální řádek"
-
-#: ../addons/ipk.py:33
-msgid "Install"
-msgstr "Instalovat"
-
-#: ../addons/key_actions.py:511
-#, python-format
-msgid "Install '%s' and enable this operation"
-msgstr "Instalovat '%s' a povolit tuto operaci"
-
-#: ../addons/ipk.py:55
-msgid "Installing Plugin ..."
-msgstr "Instalace pluginu ..."
-
-#: ../addons/key_actions.py:567
-msgid "It is not possible to calculate hashes on <List of Storage Devices>"
-msgstr ""
-
-#: ../addons/key_actions.py:237
-msgid "It is not possible to change the file mode of <List of Storage Devices>"
-msgstr ""
-
-#: ../plugin.py:1626
-msgid "It is not possible to get the file status of <List of Storage Devices>"
-msgstr ""
-
-#: ../addons/key_actions.py:462
-#, python-format
-msgid "It is not possible to run '%s' on <List of Storage Devices>"
-msgstr ""
-
-#: ../plugin.py:886
-msgid "It's not possible to rename the filesystem root."
-msgstr ""
-
-#: ../plugin.py:340
-msgid "Leave File Commander"
-msgstr "Ukončit File Commander"
-
-#: ../plugin.py:1273 ../plugin.py:1287
-msgid "Leave multi-select mode"
-msgstr "Opustit vícenásobný výběr"
-
-#: ../plugin.py:1669
-msgid "Link target:"
-msgstr ""
-
-#: ../plugin.py:1661
-msgid "Links:"
-msgstr ""
-
-#: ../FileList.py:186 ../FileList.py:402
-msgid "List of Storage Devices"
-msgstr ""
-
-#: ../Console.py:176
-msgid "Load"
-msgstr ""
-
-#: ../plugin.py:1660
-msgid "Metadata changed:"
-msgstr "Metadata změněna:"
-
-#: ../addons/key_actions.py:282
-#, python-format
-msgid "Mode %s (%04o)"
-msgstr ""
-
-#: ../plugin.py:1658
-msgid "Modified:"
-msgstr "Změněno:"
-
-#: ../plugin.py:333 ../plugin.py:1267
-msgid "Move"
-msgstr "Přesunout"
-
-#: ../plugin.py:1437
-#, python-format
-msgid "Move %d elements"
-msgstr "Přemístit %d položek"
-
-#: ../plugin.py:1439
-msgid "Move 1 element"
-msgstr "Přemístit 1 položku"
-
-#: ../plugin.py:360 ../plugin.py:1281
-msgid "Move down list"
-msgstr "Posun dolů"
-
-#: ../plugin.py:851
-msgid "Move file"
-msgstr "Přesunout soubor"
-
-#: ../plugin.py:364
-msgid "Move file/directory to target directory"
-msgstr "Přesunout soubor nebo adresář"
-
-#: ../plugin.py:1285
-msgid "Move files/directories to target directory"
-msgstr "Přesunout soubory/adresáře do cílového adresáře"
-
-#: ../plugin.py:855
-msgid "Move folder"
-msgstr "Přesunout adresář"
-
-#: ../plugin.py:359 ../plugin.py:1280
-msgid "Move up list"
-msgstr "Posun nahoru"
-
-#: ../plugin.py:95
-msgid "Movie"
-msgstr "Filmy"
-
-#: ../plugin.py:95
-msgid "Music"
-msgstr "Hudba"
-
-#: ../plugin.py:95
-msgid "My Extension"
-msgstr "Moje přípony"
-
-#: ../plugin.py:165
-msgid "My extension"
-msgstr "Moje přípony"
-
-#: ../plugin.py:104 ../plugin.py:109
-msgid "Name"
-msgstr "Název"
-
-#: ../plugin.py:105 ../plugin.py:110
-msgid "Name reverse"
-msgstr "Název v opačném pořadí"
-
-#: ../plugin.py:1013
-msgid "New folder"
-msgstr "Nový adresář"
-
-#: ../addons/key_actions.py:700 ../plugin.py:96 ../plugin.py:792
-#: ../plugin.py:822 ../plugin.py:856 ../plugin.py:991 ../plugin.py:1394
-#: ../plugin.py:1440 ../plugin.py:1486
-msgid "No"
-msgstr "Ne"
-
-#: ../addons/unarchiver.py:149
-msgid "No files found."
-msgstr "Žádné soubory nenalezeny."
-
-#: ../addons/key_actions.py:558
-msgid "No hash calculations configured"
-msgstr ""
-
-#: ../addons/key_actions.py:723
-#, python-format
-msgid "No viewer installed for this file type: %s"
-msgstr "Pro typ souboru '%s' není nainstalován žádný prohlížeč!"
-
-#: ../addons/key_actions.py:562
-#, python-format
-msgid "None of the hash programs for the hashes %s are available"
-msgstr ""
-
-#: ../addons/key_actions.py:245
-msgid "Not allowed with folders"
-msgstr "Není povoleno u adresářů"
-
-#: ../plugin.py:157
-msgid "Number of lines in script messages"
-msgstr "Počet řádků ve zprávách skriptu"
-
-#: ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-msgid "OK"
-msgstr ""
-
-#: ../plugin.py:175
-msgid "Ok"
-msgstr "Ok"
-
-#: ../plugin.py:1663
-msgid "On device:"
-msgstr ""
-
-#: ../plugin.py:341
-msgid "Open settings/actions menu"
-msgstr "Otevřít menu nastavení"
-
-#: ../plugin.py:1695
-msgid "Open with File Commander"
-msgstr "Otevřít s File Commander"
-
-#: ../plugin.py:1653
-msgid "Owner:"
-msgstr "Vlastník:"
-
-#: ../plugin.py:362 ../plugin.py:1283
-msgid "Page down list"
-msgstr "Stránka dolů"
-
-#: ../plugin.py:361 ../plugin.py:1282
-msgid "Page up list"
-msgstr "Stránka nahoru"
-
-#: ../FileList.py:190 ../FileList.py:406
-msgid "Parent Directory"
-msgstr "Rodičovský adresář"
-
-#: ../Console.py:153
-msgid "Path to save not exist: '/tmp/'"
-msgstr "Cesta pro uložení neexistuje: '/tmp/"
-
-#: ../plugin.py:1655
-msgid "Permissions:"
-msgstr "Práva:"
-
-#: ../plugin.py:95
-msgid "Pictures"
-msgstr "Obrázky"
-
-#: ../addons/key_actions.py:582
-msgid "Play folder"
-msgstr "Přehrát adresář"
-
-#: ../addons/key_actions.py:582
-msgid "Play title"
-msgstr ""
-
-#: ../plugin.py:339
-msgid "Play/view/edit/install/extract/run file or enter directory"
-msgstr "Přehrát/prohlížet/upravit/instalovat/rozbalit/spustit/otevřít"
-
-#: ../plugin.py:1013
-msgid "Please enter name of the new directory"
-msgstr "Zadejte název nového adresáře"
-
-#: ../plugin.py:945
-msgid "Please enter name of the new symlink"
-msgstr "Zadejte název nového symbolického linku"
-
-#: ../addons/unrar.py:61
-msgid "Please enter password"
-msgstr "Zadejte heslo"
-
-#: ../plugin.py:890
-msgid "Please enter the new directory name"
-msgstr "Zadejte nový název adresáře"
-
-#: ../plugin.py:888
-msgid "Please enter the new file name"
-msgstr "Zadejte nový název souboru"
-
-#: ../addons/type_utils.py:278
-msgid "Please wait, Loading image."
-msgstr ""
-
-#: ../addons/key_actions.py:532
-#, python-format
-msgid ""
-"Program '%s' is installed.\n"
-"The package containing this program isn't known, so it can't be uninstalled."
-msgstr ""
-"Program '%s' je nainstalován.\n"
-"Balíček obsahující tento program není znám, proto nemůže být odinstalován."
-
-#: ../addons/key_actions.py:529
-#, python-format
-msgid ""
-"Program '%s' needs to be installed to run the '%s' action.\n"
-"Uninstall the '%s' package to uninstall the program?"
-msgstr ""
-"Program '%s' musí být instalován, aby se provedla akce '%s'.\n"
-"Odinstalovat balíček '%s' pro odinstalaci programu?"
-
-#: ../addons/key_actions.py:454
+#: addons/key_actions.py:456
 #, python-format
 msgid ""
 "Program '%s' needs to be installed to run this action.\n"
@@ -809,7 +516,7 @@ msgstr ""
 "Program '%s' musí být nainstalován pro spuštění této akce.\n"
 "Nainstallovat balíček '%s' pro instalaci programu?"
 
-#: ../addons/key_actions.py:456
+#: addons/key_actions.py:458
 #, python-format
 msgid ""
 "Program '%s' not installed.\n"
@@ -818,122 +525,111 @@ msgstr ""
 "Program '%s' není nainstalován.\n"
 "Balíček obsahující tento program není znám."
 
-#: ../plugin.py:95
-msgid "Records"
-msgstr "Nahrávky"
+#: addons/key_actions.py:464
+#, python-format
+msgid "It is not possible to run '%s' on <List of Storage Devices>"
+msgstr "Nelze spustit '%s' na <List of Storage Devices>"
 
-#: ../plugin.py:367 ../plugin.py:1288
-msgid "Refresh screen"
-msgstr "Obnovit obrazovku"
+#: addons/key_actions.py:469
+#, python-format
+msgid "You can't usefully run '%s' on a directory."
+msgstr "Nelze úspěšně spustit '%s' na 'adresář."
 
-#: ../addons/key_actions.py:80
-msgid "Regular file"
-msgstr "Regulární soubor"
+#: addons/key_actions.py:486
+#, python-format
+msgid "You can't usefully run '%s' on '%s'."
+msgstr "Nelze úspěšně spustit '%s' na '%s'."
 
-#: ../plugin.py:509
-msgid "Remove current folder from bookmarks"
-msgstr "Odstranit aktuální adresář ze záložek"
-
-#: ../plugin.py:504
-msgid "Remove selected folder from bookmarks"
-msgstr "Odstranit vybraný adresář ze záložek"
-
-#: ../plugin.py:335
-msgid "Rename"
-msgstr "Přejmenovat"
-
-#: ../plugin.py:366
-msgid "Rename file/directory"
-msgstr "Přejmenovat soubor nebo adresář"
-
-#: ../plugin.py:373
-msgid "Reverse left file sorting"
-msgstr "Otočit třídění souborů pro levý"
-
-#: ../plugin.py:375
-msgid "Reverse right file sorting"
-msgstr "Otočit třídění souborů pro pravý"
-
-#: ../addons/key_actions.py:508
+#: addons/key_actions.py:510
 #, python-format
 msgid "Run '%s' command"
 msgstr "Spustit příkaz '%s'"
 
-#: ../TaskList.py:73 ../addons/key_actions.py:152 ../addons/key_actions.py:155
-#: ../addons/key_actions.py:169 ../addons/key_actions.py:366
-#: ../addons/key_actions.py:422 ../plugin.py:411 ../plugin.py:707
-msgid "Run script"
-msgstr "Spustit skript"
+#: addons/key_actions.py:513
+#, python-format
+msgid "Install '%s' and enable this operation"
+msgstr "Instalovat '%s' a povolit tuto operaci"
 
-#: ../addons/key_actions.py:366
-msgid "Run script in background"
-msgstr "Spustit skript na pozadí"
+#: addons/key_actions.py:515
+#, python-format
+msgid "'%s' not installed and no known package"
+msgstr "'%s' není nainstalován a není znám balíček"
 
-#: ../addons/key_actions.py:370
-msgid "Run script with optional parameter"
-msgstr "Spustit skript s volitelným parametrem"
-
-#: ../addons/key_actions.py:371
-msgid "Run script with optional parameter in background"
-msgstr "Spustit skript s volitelným parametrem na pozadí"
-
-#: ../Console.py:82
-msgid "Save"
-msgstr "Uložit"
-
-#: ../plugin.py:152
-msgid "Save left folder on exit"
-msgstr "Uložit při ukončení adresář pro levý"
-
-#: ../plugin.py:153
-msgid "Save right folder on exit"
-msgstr "Uložit při ukončení adresář pro pravý"
-
-#: ../Console.py:140
+#: addons/key_actions.py:531
 #, python-format
 msgid ""
-"Save the commands and the output to a file?\n"
-"('%s')"
+"Program '%s' needs to be installed to run the '%s' action.\n"
+"Uninstall the '%s' package to uninstall the program?"
 msgstr ""
+"Program '%s' musí být instalován, aby se provedla akce '%s'.\n"
+"Odinstalovat balíček '%s' pro odinstalaci programu?"
 
-#: ../addons/key_actions.py:379
+#: addons/key_actions.py:534
 #, python-format
-msgid "Script '%s' must have read permission to be able to run it"
+msgid ""
+"Program '%s' is installed.\n"
+"The package containing this program isn't known, so it can't be uninstalled."
+msgstr ""
+"Program '%s' je nainstalován.\n"
+"Balíček obsahující tento program není znám, proto nemůže být odinstalován."
+
+#: addons/key_actions.py:555
+#, python-format
+msgid "Uninstall '%s' package and disable '%s'"
+msgstr "Odinstalovat '%s' balíček a zakázat '%s'"
+
+#: addons/key_actions.py:560
+msgid "No hash calculations configured"
+msgstr "Nejsou nakonfigurovány žádné hash výpočty"
+
+#: addons/key_actions.py:564
+#, python-format
+msgid "None of the hash programs for the hashes %s are available"
+msgstr "Žádné dostupné hash programy pro hash %s"
+
+#: addons/key_actions.py:569
+msgid "It is not possible to calculate hashes on <List of Storage Devices>"
+msgstr "Nelze počítat hash pro <List of Storage Devices>"
+
+#: addons/key_actions.py:573
+msgid "The hash of a directory can't be calculated."
+msgstr "Hash pro adresář nelze počítat."
+
+#: addons/key_actions.py:584
+msgid "Play title"
 msgstr ""
 
-#: ../plugin.py:1289 ../plugin.py:1290
-msgid "Select"
-msgstr "Vybrat"
+#: addons/key_actions.py:584
+msgid "Play folder"
+msgstr "Přehrát adresář"
 
-#: ../plugin.py:1272
-msgid "Select (source list) or enter directory (target list)"
-msgstr "Výběr (aktivní panel) nebo volba adresáře (cílový panel)"
+#: addons/key_actions.py:585
+msgid "What do you want to play?\n"
+msgstr "Co chcete přehrát?\n"
 
-#: ../plugin.py:568
-msgid "Select a path"
-msgstr "Vyberte cestu"
+#: addons/key_actions.py:660 addons/key_actions.py:759
+#, python-format
+msgid "File not found: %s"
+msgstr "Soubor nenalezen: %s"
 
-#: ../plugin.py:173
-msgid "Select your personal settings:"
-msgstr "Zvolte Vaše osobní nastavení:"
+#: addons/key_actions.py:702 ui.py:100
+msgid "No"
+msgstr "Ne"
 
-#: ../addons/key_actions.py:242
-msgid "Set archive mode (644)"
-msgstr "Nastavit archivní mod (644)"
+#: addons/key_actions.py:703
+msgid "Show as Picture (press any key to close)"
+msgstr "Zobrazit jako obrázek (zavřít libovolnou klávesou)"
 
-#: ../addons/key_actions.py:242
-msgid "Set executable mode (755)"
-msgstr "Nastavitspouštěcí mod (755)"
+#: addons/key_actions.py:707
+#, python-format
+msgid "Show as Picture and save as file ('%s')"
+msgstr "Zobrazit jako obrázek a uložit jako soubor ('%s')"
 
-#: ../plugin.py:188
-msgid "Settings"
-msgstr "Nastavení"
+#: addons/key_actions.py:708
+msgid " or save the picture additionally to a file"
+msgstr " nebo uložit obrázek navíc do souboru"
 
-#: ../plugin.py:490
-msgid "Settings..."
-msgstr "Nastavení..."
-
-#: ../addons/key_actions.py:707
+#: addons/key_actions.py:709
 #, python-format
 msgid ""
 "Show '%s' as picture%s?\n"
@@ -942,124 +638,12 @@ msgstr ""
 "Zobrazit '%s' jako obrázek%s?\n"
 "Aktuální služba musí být přerušena!"
 
-#: ../plugin.py:156
-msgid "Show Script completed message"
-msgstr "Zobrazovat zprávy po dokončení skriptu"
-
-#: ../plugin.py:155
-msgid "Show Task's completed message"
-msgstr "Zobrazovat zprávy po dokončení úlohy"
-
-#: ../addons/key_actions.py:701
-msgid "Show as Picture (press any key to close)"
-msgstr "Zobrazit jako obrázek (zavřít libovolnou klávesou)"
-
-#: ../addons/key_actions.py:705
+#: addons/key_actions.py:725
 #, python-format
-msgid "Show as Picture and save as file ('%s')"
-msgstr "Zobrazit jako obrázek a uložit jako soubor ('%s')"
+msgid "No viewer installed for this file type: %s"
+msgstr "Pro typ souboru '%s' není nainstalován žádný prohlížeč!"
 
-#: ../addons/ipk.py:32
-msgid "Show contents of ipk file"
-msgstr "Zobrazit obsah ipk souboru"
-
-#: ../addons/unrar.py:28
-msgid "Show contents of rar file"
-msgstr "Zobrazit obsah rar souboru"
-
-#: ../addons/tar.py:19
-msgid "Show contents of tar or compressed tar file"
-msgstr "Zobrazit obsah tar nebo komprimovaného tar souboru"
-
-#: ../addons/unzip.py:24
-msgid "Show contents of zip file"
-msgstr "Zobrazit obsah zip souboru"
-
-#: ../plugin.py:154
-msgid "Show directories first"
-msgstr "Adresáře na začátku"
-
-#: ../addons/type_utils.py:272
-msgid "Show image information"
-msgstr ""
-
-#: ../addons/type_utils.py:270
-msgid "Show next picture"
-msgstr "Zobrazit další obrázek"
-
-#: ../addons/type_utils.py:269
-msgid "Show previous picture"
-msgstr "Zobrazit předchozí obrázek"
-
-#: ../plugin.py:357 ../plugin.py:1278
-msgid "Show task list"
-msgstr "Zobrazit seznam úloh"
-
-#: ../plugin.py:158
-msgid "Show unknown extension as text"
-msgstr "Zobrazovat neznámé přípony jako text"
-
-#: ../plugin.py:113
-msgid "Size"
-msgstr "Velikost"
-
-#: ../plugin.py:114
-msgid "Size reverse"
-msgstr "Velikost v opačném pořadí"
-
-#: ../plugin.py:1657
-msgid "Size:"
-msgstr "Velikost:"
-
-#: ../plugin.py:1269
-msgid "Skip selection"
-msgstr "Přeskočit výběr"
-
-#: ../addons/key_actions.py:78
-msgid "Socket"
-msgstr ""
-
-#: ../plugin.py:371
-msgid "Sorting left files by name, date or size"
-msgstr "Třídit soubory podle názvu, stáří a velikosti pro levý"
-
-#: ../plugin.py:377
-msgid "Sorting right files by name, date or size"
-msgstr "Třídit soubory podle názvu, stáří a velikosti pro pravý"
-
-#: ../addons/type_utils.py:271
-msgid "Start/stop slide show"
-msgstr "Spustit/zastavit prezentaci"
-
-#: ../plugin.py:565
-msgid "Storage devices"
-msgstr ""
-
-#: ../addons/key_actions.py:79
-msgid "Symbolic link"
-msgstr "Symbolický link"
-
-#: ../plugin.py:985
-msgid "Symlink to "
-msgstr "Symlink na"
-
-#: ../TaskList.py:85
-msgid "Task list"
-msgstr "Seznam úloh"
-
-#: ../addons/type_utils.py:308
-msgid ""
-"The Image Viewer component of the File Commander requires the PicturePlayer "
-"extension. Install PicturePlayer to enable this operation."
-msgstr ""
-"Komponenta Image Viewer ve File Commanderu vyžaduje rozšíření PicturePlayer. "
-"Chcete-li povolit tutop púeraci, nainstalujte si PicturePlayer."
-
-#: ../addons/type_utils.py:127
-msgid "The authors are NOT RESPONSIBLE"
-msgstr ""
-
-#: ../addons/key_actions.py:764
+#: addons/key_actions.py:766
 msgid ""
 "The function has been interrupted.\n"
 "Don't press any key until the picture from mvi-file is displayed!"
@@ -1067,186 +651,614 @@ msgstr ""
 "Funkce byla přerušena.\n"
 "Dokud se nezobrazí obrázek ze souboru mvi, nestiskněte žádné tlačítko!"
 
-#: ../addons/key_actions.py:571
-msgid "The hash of a directory can't be calculated."
-msgstr ""
+#: ui.py:99
+msgid "without"
+msgstr "Bez filtru"
 
-#: ../addons/type_utils.py:180
-msgid "This line is not editable!"
-msgstr "Tento řádek nelze upravit!"
+#: ui.py:99
+msgid "My Extension"
+msgstr "Moje přípony"
 
-#: ../plugin.py:170
-msgid "Time for Slideshow"
-msgstr "Čas prezentace"
+#: ui.py:99
+msgid "Records"
+msgstr "Nahrávky"
 
-#: ../plugin.py:1652
-msgid "Type:"
-msgstr "Typ:"
+#: ui.py:99
+msgid "Movie"
+msgstr "Filmy"
 
-#: ../addons/key_actions.py:553
-#, python-format
-msgid "Uninstall '%s' package and disable '%s'"
-msgstr "Odinstalovat '%s' balíček a zakázat '%s'"
+#: ui.py:99
+msgid "Music"
+msgstr "Hudba"
 
-#: ../addons/key_actions.py:85
-msgid "Unknown"
-msgstr "Neznámý"
+#: ui.py:99
+msgid "Pictures"
+msgstr "Obrázky"
 
-#: ../addons/key_actions.py:131
-#, python-format
-msgid "Unknown group: %d"
-msgstr "Neznámá skupina: %d"
+#: ui.py:100
+msgid "Channel button always changes sides"
+msgstr "Ch+/- vždy mění panely"
 
-#: ../addons/key_actions.py:123
-#, python-format
-msgid "Unknown user: %d"
-msgstr "Neznámý uživatel: %d"
-
-#: ../addons/gz.py:25 ../addons/gz.py:26 ../addons/tar.py:21
-#: ../addons/tar.py:22 ../addons/unrar.py:30 ../addons/unrar.py:31
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
-#, python-format
-msgid "Unpack to %s"
-msgstr "Rozbalit do %s"
-
-#: ../addons/gz.py:24 ../addons/tar.py:20 ../addons/unrar.py:29
-#: ../addons/unzip.py:25
-msgid "Unpack to current folder"
-msgstr "Rozbalit do aktuálního adresáře"
-
-#: ../plugin.py:356
-msgid "View or edit file (if size < 1MB)"
-msgstr "Zobrazit nebo upravit soubor (velikost < 1MB)"
-
-#: ../addons/key_actions.py:366 ../addons/key_actions.py:368
-#, python-format
-msgid "View or edit this %s script"
-msgstr "Zobrazit nebo upravit %s skript"
-
-#: ../addons/type_utils.py:126
-msgid "WARNING!"
-msgstr ""
-
-#: ../addons/key_actions.py:583
-msgid "What do you want to play?\n"
-msgstr "Co chcete přehrát?\n"
-
-#: ../plugin.py:96 ../plugin.py:792 ../plugin.py:822 ../plugin.py:856
-#: ../plugin.py:991 ../plugin.py:1394 ../plugin.py:1440 ../plugin.py:1486
+#: ui.py:100
 msgid "Yes"
 msgstr "Ano"
 
-#: ../addons/key_actions.py:484
-#, python-format
-msgid "You can't usefully run '%s' on '%s'."
-msgstr "Nelze úspěšně spustit '%s' na '%s'."
+#: ui.py:109 ui.py:114
+msgid "Name"
+msgstr "Název"
 
-#: ../addons/key_actions.py:467
-#, python-format
-msgid "You can't usefully run '%s' on a directory."
-msgstr "Nelze úspěšně spustit '%s' na 'adresář."
+#: ui.py:110 ui.py:115
+msgid "Name reverse"
+msgstr "Název v opačném pořadí"
 
-#: ../plugin.py:411 ../plugin.py:707 ../plugin.py:805 ../plugin.py:1481
+#: ui.py:111 ui.py:116
+msgid "Date"
+msgstr "Datum"
+
+#: ui.py:112 ui.py:117
+msgid "Date reverse"
+msgstr "Datum v opačném pořadí"
+
+#: ui.py:118
+msgid "Size"
+msgstr "Velikost"
+
+#: ui.py:119
+msgid "Size reverse"
+msgstr "Velikost v opačném pořadí"
+
+#: ui.py:148
+msgid "Add plugin to main menu"
+msgstr "Přidat plugin do hlavního menu"
+
+#: ui.py:149
+msgid "Add plugin to Extensions menu"
+msgstr "Přidat plugin do Extension menu"
+
+#: ui.py:150
+msgid "Save left folder on exit"
+msgstr "Uložit při ukončení adresář pro levý"
+
+#: ui.py:151
+msgid "Save right folder on exit"
+msgstr "Uložit při ukončení adresář pro pravý"
+
+#: ui.py:152
+msgid "Short path in headers"
+msgstr "Krátká cesta v hlavičce panelu"
+
+#: ui.py:153
+msgid "Show directories first"
+msgstr "Adresáře na začátku"
+
+#: ui.py:154
+msgid "Show Task's completed message"
+msgstr "Zobrazovat zprávy po dokončení úlohy"
+
+#: ui.py:155
+msgid "Show Script completed message"
+msgstr "Zobrazovat zprávy po dokončení skriptu"
+
+#: ui.py:156
+msgid "Number of lines in script messages"
+msgstr "Počet řádků ve zprávách skriptu"
+
+#: ui.py:157
+msgid "Show unknown extension as text"
+msgstr "Zobrazovat neznámé přípony jako text"
+
+#: ui.py:158
+msgid "Edit position is the line end"
+msgstr "Pozice pro úpravu je konec řádku"
+
+#: ui.py:159
+msgid "Change buttons for list navigation"
+msgstr "Změnit tlačítka pro pohyb v panelu"
+
+#: ui.py:160
+msgid "Move selector to next item"
+msgstr "Přesunout kurzor na další položku"
+
+#: ui.py:161
+msgid "Default file sorting left"
+msgstr "Výchozí setřídění souborů pro levý"
+
+#: ui.py:162
+msgid "Default file sorting right"
+msgstr "Výchozí setřídění souborů pro pravý"
+
+#: ui.py:163
+msgid "Default directory sorting"
+msgstr "Výchozí setřídění adresářů"
+
+#: ui.py:164
+msgid "Default folder"
+msgstr "Výchozí adresář"
+
+#: ui.py:165
+msgid "My extension"
+msgstr "Moje přípony"
+
+#: ui.py:166
+msgid "Filter extension, (*) appears in title"
+msgstr "Filtr pro přípony, (*) se objeví v názvu"
+
+#: ui.py:167
+msgid "CPU priority for script execution"
+msgstr "Priorita CPU pro spouštění skriptu"
+
+#: ui.py:168
+msgid "I/O priority for script execution"
+msgstr "I/O priorita provádění skriptu"
+
+#: ui.py:169
+msgid "File checksums/hashes"
+msgstr "Kontrolní součty souborů/hashe"
+
+#: ui.py:170
+msgid "Time for Slideshow"
+msgstr "Čas prezentace"
+
+#: ui.py:171
+msgid "Blue in MultiSelection as Invert"
+msgstr "Modré tlačítko v multimódu jako inverze"
+
+#: ui.py:172
+msgid "Count directory content size"
+msgstr "Počítat velikost obsahu adreáře"
+
+#: ui.py:175
+msgid "Select your personal settings:"
+msgstr "Zvolte Vaše osobní nastavení:"
+
+#: ui.py:177
+msgid "Ok"
+msgstr "Ok"
+
+#: ui.py:190
+msgid "Settings"
+msgstr "Nastavení"
+
+#: ui.py:194
+msgid "Default Folder"
+msgstr "Výchozí adresář"
+
+#: ui.py:404 ui.py:1275
+msgid "Move"
+msgstr "Přesunout"
+
+#: ui.py:405 ui.py:1276
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: ui.py:406
+msgid "Rename"
+msgstr "Přejmenovat"
+
+#: ui.py:410
+msgid "Play/view/edit/install/extract/run file or enter directory"
+msgstr "Přehrát/prohlížet/upravit/instalovat/rozbalit/spustit/otevřít"
+
+#: ui.py:411
+msgid "Leave File Commander"
+msgstr "Ukončit File Commander"
+
+#: ui.py:412
+msgid "Open settings/actions menu"
+msgstr "Otevřít menu nastavení"
+
+#: ui.py:413 ui.py:415
+msgid "Activate right-hand file list as source"
+msgstr "Přepnout do pravého panelu"
+
+#: ui.py:414 ui.py:416
+msgid "Activate left-hand file list as source"
+msgstr "Přepnout do levého panelu"
+
+#: ui.py:417 ui.py:539 ui.py:1300
+msgid "Refresh screen"
+msgstr "Obnovit obrazovku"
+
+#: ui.py:418 ui.py:426 ui.py:531
+msgid "Rename file/directory"
+msgstr "Přejmenovat soubor nebo adresář"
+
+#: ui.py:419 ui.py:532
+msgid "View or edit file (if size < 1MB)"
+msgstr "Zobrazit nebo upravit soubor (velikost < 1MB)"
+
+#: ui.py:420 ui.py:535
+msgid "Create directory/folder"
+msgstr "Založit adresář"
+
+#: ui.py:421 ui.py:540 ui.py:1301
+msgid "Show task list"
+msgstr "Zobrazit seznam úloh"
+
+#: ui.py:423 ui.py:536
+msgid "Delete file or directory (and all its contents)"
+msgstr "Smazat soubor nebo adresář (včetně obsahu)"
+
+#: ui.py:424 ui.py:534
+msgid "Move file/directory to target directory"
+msgstr "Přesunout soubor nebo adresář"
+
+#: ui.py:425 ui.py:533
+msgid "Copy file/directory to target directory"
+msgstr "Zkopírovat soubor nebo adresář"
+
+#: ui.py:427 ui.py:537 ui.py:1626
+msgid "File/Directory Status Information"
+msgstr "Informace o souboru/adresáři"
+
+#: ui.py:428 ui.py:429 ui.py:538
+msgid "Enter multi-file selection mode"
+msgstr "Přejít na vícenásobný výběr"
+
+#: ui.py:430 ui.py:1292
+msgid "Move up list"
+msgstr "Posun nahoru"
+
+#: ui.py:431 ui.py:1293
+msgid "Move down list"
+msgstr "Posun dolů"
+
+#: ui.py:432 ui.py:1294
+msgid "Page up list"
+msgstr "Stránka nahoru"
+
+#: ui.py:433 ui.py:1295
+msgid "Page down list"
+msgstr "Stránka dolů"
+
+#: ui.py:434
+msgid "Sorting left files by name, date or size"
+msgstr "Třídit soubory podle názvu, stáří a velikosti pro levý"
+
+#: ui.py:435
+msgid "Reverse left file sorting"
+msgstr "Otočit třídění souborů pro levý"
+
+#: ui.py:436
+msgid "Reverse right file sorting"
+msgstr "Otočit třídění souborů pro pravý"
+
+#: ui.py:437
+msgid "Sorting right files by name, date or size"
+msgstr "Třídit soubory podle názvu, stáří a velikosti pro pravý"
+
+#: ui.py:463
+msgid "(1 job)"
+msgstr "(1 úloha)"
+
+#: ui.py:463
+#, python-format
+msgid "(%d jobs)"
+msgstr "(%d úloh)"
+
+#: ui.py:471 ui.py:754 ui.py:851 ui.py:1497
 msgid "copy file"
 msgstr "Kopíruje se soubor"
 
-#: ../plugin.py:411 ../plugin.py:707 ../plugin.py:807 ../plugin.py:1479
+#: ui.py:471 ui.py:754 ui.py:853 ui.py:1495
 msgid "copy folder"
 msgstr "Kopíruje se adresář"
 
-#: ../plugin.py:1002
-msgid "create symlink ..."
-msgstr "zakládá se symbolický link ..."
-
-#: ../addons/type_utils.py:128
-msgid "for DATA LOSS OR DAMAGE !!!"
-msgstr ""
-
-#: ../plugin.py:792 ../plugin.py:822 ../plugin.py:856 ../plugin.py:1394
-#: ../plugin.py:1440 ../plugin.py:1486
-msgid "from dir"
-msgstr "z adresáře"
-
-#: ../addons/type_utils.py:125
-msgid "has been CHANGED! Do you want to save it?"
-msgstr ""
-
-#: ../Console.py:27
-msgid "hide"
-msgstr ""
-
-#: ../addons/ipk.py:24
-msgid "install/unpack ipk Files"
-msgstr "instalovat/rozbalit ipk soubory"
-
-#: ../plugin.py:83
-msgid "manage local Files"
-msgstr "správa místních souborů"
-
-#: ../plugin.py:411 ../plugin.py:707 ../plugin.py:871 ../plugin.py:1435
+#: ui.py:471 ui.py:754 ui.py:915 ui.py:1452
 msgid "move file"
 msgstr "Přesouvá se soubor"
 
-#: ../plugin.py:411 ../plugin.py:707 ../plugin.py:873
+#: ui.py:471 ui.py:754 ui.py:917
 msgid "move folder"
 msgstr "Přesouvá se adresář"
 
-#: ../FileList.py:232
-msgid "nothing connected"
+#: ui.py:541
+msgid "Calculate file checksums"
+msgstr "Spočítat kontrolní součet souboru"
+
+#: ui.py:542
+msgid "Change execute permissions (755/644)"
+msgstr "Změna prováděcích práv (755/644)"
+
+#: ui.py:543
+msgid "Create user-named symbolic link"
+msgstr "Vytvořit uživatelsky pojmenovaný symbolický odkaz"
+
+#: ui.py:544
+msgid "Go to parent directory"
+msgstr "Přejít na rodičovský adresář"
+
+#: ui.py:547
+msgid "Settings..."
+msgstr "Nastavení..."
+
+#: ui.py:548
+msgid "Go to bookmarked folder"
+msgstr "Přejít na záložky"
+
+#: ui.py:563
+msgid "Remove selected folder from bookmarks"
+msgstr "Odstranit vybraný adresář ze záložek"
+
+#: ui.py:563
+msgid "Add selected folder to bookmarks"
+msgstr "Přidat vybraný adresář do záložek"
+
+#: ui.py:567
+msgid "Remove current folder from bookmarks"
+msgstr "Odstranit aktuální adresář ze záložek"
+
+#: ui.py:567
+msgid "Add current folder to bookmarks"
+msgstr "Přidat aktuální adresář do záložek"
+
+#: ui.py:570
+msgid "Select operation:"
+msgstr "Zvolte operaci:"
+
+#: ui.py:612
+msgid "Storage devices"
 msgstr ""
 
-#: ../addons/type_utils.py:178
-msgid "original"
+#: ui.py:615
+msgid "Select a path"
+msgstr "Vyberte cestu"
+
+#: ui.py:730
+msgid "Error"
 msgstr ""
 
-#: ../addons/key_actions.py:68
-msgid "play Files"
-msgstr "přehrát soubory"
+#: ui.py:758
+msgid "File Commander - all Task's completed!"
+msgstr "File Commander - všechny úlohy dokončeny!"
 
-#: ../addons/type_utils.py:38
-msgid "play/show Files"
-msgstr "přehrát/zobrazit soubory"
+#: ui.py:833 ui.py:895
+msgid " - file exist! Overwrite"
+msgstr " - soubor existuje! Přepsat"
 
-#: ../addons/key_actions.py:363
-msgid "python"
-msgstr ""
+#: ui.py:834
+msgid "Copy file"
+msgstr "Kopírovat soubor"
 
-#: ../addons/key_actions.py:149
-msgid "script 'sterr':"
-msgstr ""
+#: ui.py:837 ui.py:899
+msgid " - folder exist! Overwrite"
+msgstr " - adresář existuje! Přepsat"
 
-#: ../addons/key_actions.py:147
-msgid "script 'stout':"
-msgstr ""
+#: ui.py:838
+msgid "Copy folder"
+msgstr "Kopírovat adresář"
 
-#: ../addons/key_actions.py:365
-msgid "shell"
-msgstr ""
+#: ui.py:839 ui.py:868 ui.py:901 ui.py:1412 ui.py:1457 ui.py:1502
+msgid "from dir"
+msgstr "z adresáře"
 
-#: ../plugin.py:792 ../plugin.py:856 ../plugin.py:1440 ../plugin.py:1486
+#: ui.py:839 ui.py:901 ui.py:1457 ui.py:1502
 msgid "to dir"
 msgstr "do adresáře"
 
-#: ../addons/unrar.py:15
-msgid "unpack Rar Files"
-msgstr "rozbalit Rar soubory"
+#: ui.py:865
+msgid "Delete file"
+msgstr "Smazat soubor"
 
-#: ../addons/unarchiver.py:19
-msgid "unpack archives"
-msgstr "rozbaluji archivy"
+#: ui.py:867
+msgid "Delete folder"
+msgstr "Smazat adresář"
 
-#: ../addons/gz.py:16
-msgid "unpack gzip Files"
-msgstr "rozbalit gzip soubory"
+#: ui.py:896
+msgid "Move file"
+msgstr "Přesunout soubor"
 
-#: ../addons/tar.py:11
-msgid "unpack tar/compressed tar Files"
-msgstr "rozbaluji tar/komprimované tar soubory"
+#: ui.py:900
+msgid "Move folder"
+msgstr "Přesunout adresář"
 
-#: ../addons/unzip.py:16
-msgid "unpack zip Files"
-msgstr "rozbalit zip soubory"
+#: ui.py:930
+msgid "It's not possible to rename the filesystem root."
+msgstr "Není možné přejmenovat kořen souborového systému."
 
-#: ../plugin.py:95
-msgid "without"
-msgstr "Bez filtru"
+#: ui.py:932
+msgid "Please enter the new file name"
+msgstr "Zadejte nový název souboru"
+
+#: ui.py:934
+msgid "Please enter the new directory name"
+msgstr "Zadejte nový název adresáře"
+
+#: ui.py:966
+#, python-format
+msgid ""
+"Error renaming %s to %s:\n"
+"%s"
+msgstr ""
+"Chyba při přejmenování %s na %s:\n"
+"%s"
+
+#: ui.py:989
+msgid "Please enter name of the new symlink"
+msgstr "Zadejte název nového symbolického odkazu"
+
+#: ui.py:1008
+#, python-format
+msgid ""
+"Error linking %s to %s:\n"
+"%s"
+msgstr ""
+"Chyba při odkazování %s na %s:\n"
+"%s"
+
+#: ui.py:1027
+msgid "Create symlink to file"
+msgstr "Založit symbolický odkaz k souboru"
+
+#: ui.py:1029
+msgid "Symlink to "
+msgstr "Symbolický odkaz na"
+
+#: ui.py:1045
+msgid "create symlink ..."
+msgstr "zakládá se symbolický odkaz ..."
+
+#: ui.py:1056
+msgid "Please enter name of the new directory"
+msgstr "Zadejte název nového adresáře"
+
+#: ui.py:1056
+msgid "New folder"
+msgstr "Nový adresář"
+
+#: ui.py:1067
+#, python-format
+msgid ""
+"Error creating directory %s:\n"
+"%s"
+msgstr ""
+"Chyba při zakládání adresáře %s:\n"
+"%s"
+
+#: ui.py:1278 ui.py:1279
+msgid "Invert selection"
+msgstr "Invertovat výběr"
+
+#: ui.py:1281
+msgid "Skip selection"
+msgstr "Přeskočit výběr"
+
+#: ui.py:1282 ui.py:1287 ui.py:1302 ui.py:1303
+msgid "Leave multi-select mode"
+msgstr "Opustit vícenásobný výběr"
+
+#: ui.py:1286
+msgid "Select (source list) or enter directory (target list)"
+msgstr "Výběr (aktivní panel) nebo volba adresáře (cílový panel)"
+
+#: ui.py:1288 ui.py:1290
+msgid "Activate right-hand file list as multi-select source"
+msgstr "Přepnout do pravého panelu"
+
+#: ui.py:1289 ui.py:1291
+msgid "Activate left-hand file list as multi-select source"
+msgstr "Přepnout do levého panelu"
+
+#: ui.py:1296
+msgid "Delete the selected files or directories"
+msgstr "Odstranit vybrané soubory a adresáře"
+
+#: ui.py:1297
+msgid "Move files/directories to target directory"
+msgstr "Přesunout soubory/adresáře do cílového adresáře"
+
+#: ui.py:1298
+msgid "Copy files/directories to target directory"
+msgstr "Kopírovat soubory/adresáře do cílového adresáře"
+
+#: ui.py:1312
+msgid "(Selectmode)"
+msgstr ""
+
+#: ui.py:1409
+#, python-format
+msgid "Delete %d elements"
+msgstr "Smazat %d položek"
+
+#: ui.py:1411
+msgid "Delete 1 element"
+msgstr "Smazat 1 polořku"
+
+#: ui.py:1446 ui.py:1488
+#, python-format
+msgid " - %d elements exist! Overwrite"
+msgstr " - %d položek existuje! Přepsat"
+
+#: ui.py:1448 ui.py:1490
+msgid " - 1 element exist! Overwrite"
+msgstr " - 1 položka existuje! Přepsat"
+
+#: ui.py:1454
+#, python-format
+msgid "Move %d elements"
+msgstr "Přemístit %d položek"
+
+#: ui.py:1456
+msgid "Move 1 element"
+msgstr "Přemístit 1 položku"
+
+#: ui.py:1499
+#, python-format
+msgid "Copy %d elements"
+msgstr "Kopírovat %d položek"
+
+#: ui.py:1501
+msgid "Copy 1 element"
+msgstr "Kopírovat 1 polořku"
+
+#: ui.py:1644
+msgid "It is not possible to get the file status of <List of Storage Devices>"
+msgstr "Nelze získat status pro <List of Storage Devices>"
+
+#: ui.py:1672
+msgid "Type:"
+msgstr "Typ:"
+
+#: ui.py:1673
+msgid "Owner:"
+msgstr "Vlastník:"
+
+#: ui.py:1674
+msgid "Group:"
+msgstr "Skupina:"
+
+#: ui.py:1675
+msgid "Permissions:"
+msgstr "Práva:"
+
+#: ui.py:1675
+#, python-format
+msgid "%s (%04o)"
+msgstr ""
+
+#: ui.py:1677
+msgid "Size:"
+msgstr "Velikost:"
+
+#: ui.py:1678
+msgid "Modified:"
+msgstr "Změněno:"
+
+#: ui.py:1679
+msgid "Accessed:"
+msgstr ""
+
+#: ui.py:1680
+msgid "Metadata changed:"
+msgstr "Metadata změněna:"
+
+#: ui.py:1681
+msgid "Links:"
+msgstr "Odkazy:"
+
+#: ui.py:1682
+msgid "Inode:"
+msgstr ""
+
+#: ui.py:1683
+msgid "On device:"
+msgstr ""
+
+#: ui.py:1685
+msgid "Content size:"
+msgstr "Velikost obsahu:"
+
+#: ui.py:1691
+msgid "Link target:"
+msgstr "Cíl odkazu:"
+
+#: ui.py:1695
+#, python-format
+msgid "Can't read link contents: %s"
+msgstr "Nelze číst obsah odkazu: %s"
+
+#~ msgid "File Commander menu"
+#~ msgstr "File Commander - Menu"
+
+#~ msgid "Select"
+#~ msgstr "Vybrat"
