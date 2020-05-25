@@ -94,7 +94,7 @@ config.plugins.filecommander.editposition_lineend = ConfigYesNo(default=False)
 config.plugins.filecommander.path_default = ConfigDirectory(default="")
 config.plugins.filecommander.path_left = ConfigText(default="")
 config.plugins.filecommander.path_right = ConfigText(default="")
-config.plugins.filecommander.short_header = ConfigYesNo(default=False)
+config.plugins.filecommander.short_header = ConfigYesNo(default=True)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
 config.plugins.filecommander.change_navbutton = ConfigSelection(default="no", choices=[("no", _("No")), ("always", _("Channel button always changes sides")), ("yes", _("Yes"))])
@@ -135,7 +135,7 @@ config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.pl
 config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_right.value))
 
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
-config.plugins.filecommander.invert_selection = ConfigYesNo(default=False)
+config.plugins.filecommander.invert_selection = ConfigYesNo(default=True)
 
 # ####################
 # ## Config Screen ###
@@ -145,8 +145,8 @@ class Setup(ConfigListScreen, Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.list = []
-		self.list.append(getConfigListEntry(_("Add plugin to main menu*"), config.plugins.filecommander.add_mainmenu_entry))
-		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu*"), config.plugins.filecommander.add_extensionmenu_entry))
+		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry))
+		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry))
 		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left))
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right))
 		self.list.append(getConfigListEntry(_("Short path in headers"),config.plugins.filecommander.short_header))

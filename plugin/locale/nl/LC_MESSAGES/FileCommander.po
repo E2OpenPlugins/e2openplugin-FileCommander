@@ -160,11 +160,11 @@ msgid "Add current folder to bookmarks"
 msgstr "Voeg de huidige map aan de bladwijzers"
 
 #: ../plugin.py:151
-msgid "Add plugin to Extensions menu*"
+msgid "Add plugin to Extensions menu"
 msgstr "Plug-in toevoegen aan het applicatiemenu"
 
 #: ../plugin.py:150
-msgid "Add plugin to main menu*"
+msgid "Add plugin to main menu"
 msgstr "Plug-in toevoegen aan het hoofdmenu"
 
 #: ../plugin.py:505

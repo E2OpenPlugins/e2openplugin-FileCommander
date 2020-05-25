@@ -160,12 +160,12 @@ msgid "Add current folder to bookmarks"
 msgstr "Προσθήκη τρέχοντος φακέλου στους σελιδοδείκτες"
 
 #: ../plugin.py:151
-msgid "Add plugin to Extensions menu*"
-msgstr "Προσθήκη στο μενού επεκτάσεων*"
+msgid "Add plugin to Extensions menu"
+msgstr "Προσθήκη στο μενού επεκτάσεων"
 
 #: ../plugin.py:150
-msgid "Add plugin to main menu*"
-msgstr "Προσθήκη πρόσθετου στο κύριο μενού*"
+msgid "Add plugin to main menu"
+msgstr "Προσθήκη πρόσθετου στο κύριο μενού"
 
 #: ../plugin.py:505
 msgid "Add selected folder to bookmarks"

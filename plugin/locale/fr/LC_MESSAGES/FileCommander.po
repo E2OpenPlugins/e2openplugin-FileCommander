@@ -159,12 +159,12 @@ msgid "Add current folder to bookmarks"
 msgstr "Ajouter le dossier actuel aux signets"
 
 #: ../plugin.py:151
-msgid "Add plugin to Extensions menu*"
-msgstr "Ajouter le plugin au menu Extensions*"
+msgid "Add plugin to Extensions menu"
+msgstr "Ajouter le plugin au menu Extensions"
 
 #: ../plugin.py:150
-msgid "Add plugin to main menu*"
-msgstr "Ajouter le plugin au menu principal*"
+msgid "Add plugin to main menu"
+msgstr "Ajouter le plugin au menu principal"
 
 #: ../plugin.py:505
 msgid "Add selected folder to bookmarks"
