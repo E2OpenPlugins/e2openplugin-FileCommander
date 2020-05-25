@@ -836,7 +836,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if os.path.exists(targetDir + filename.split('/')[-2]):
 				warntxt = _(" - folder exist! Overwrite")
 			copytext = _("Copy folder") + warntxt
-		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), default=False, simple=True)
+		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
 
 	def doCopy(self, result = True):
 		if result:
