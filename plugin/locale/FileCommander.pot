@@ -305,7 +305,7 @@ msgstr ""
 msgid "unpack archives"
 msgstr ""
 
-#: addons/unarchiver.py:73 addons/unarchiver.py:243
+#: ui.py:187 addons/unarchiver.py:73 addons/unarchiver.py:243
 msgid "OK"
 msgstr ""
 
@@ -916,10 +916,6 @@ msgstr ""
 
 #: ui.py:182
 msgid "Calculates the size of directory contents for Info."
-msgstr ""
-
-#: ui.py:187
-msgid "Ok"
 msgstr ""
 
 #: ui.py:200

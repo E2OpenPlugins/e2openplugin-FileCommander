@@ -184,7 +184,7 @@ class Setup(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
 
 		self["key_red"] = StaticText(_("Cancel"))
-		self["key_green"] = StaticText(_("Ok"))
+		self["key_green"] = StaticText(_("OK"))
 		self["Actions"] = ActionMap(["ColorActions", "SetupActions"],
 		{
 			"green": self.save,

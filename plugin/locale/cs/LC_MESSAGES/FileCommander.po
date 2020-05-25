@@ -960,10 +960,6 @@ msgstr "Počítat velikost obsahu adreáře"
 msgid "Calculates the size of directory contents for Info."
 msgstr "Počítá velikost obsahu adresáře a zobrazuje ji v Info."
 
-#: ui.py:187
-msgid "Ok"
-msgstr "Ok"
-
 #: ui.py:200
 msgid "Settings"
 msgstr "Nastavení"

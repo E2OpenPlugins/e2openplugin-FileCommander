@@ -706,10 +706,6 @@ msgstr "Αριθμός γραμμών στα μηνύματα script"
 msgid "OK"
 msgstr "OK"
 
-#: ../plugin.py:175
-msgid "Ok"
-msgstr "Ok"
-
 #: ../plugin.py:1663
 msgid "On device:"
 msgstr "Στη συσκευή:"

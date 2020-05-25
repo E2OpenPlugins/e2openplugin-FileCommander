@@ -706,10 +706,6 @@ msgstr "Количество строк в сообщении скрипта"
 msgid "OK"
 msgstr "ОК"
 
-#: ../plugin.py:175
-msgid "Ok"
-msgstr "Ок"
-
 #: ../plugin.py:1663
 msgid "On device:"
 msgstr "На устройстве:"

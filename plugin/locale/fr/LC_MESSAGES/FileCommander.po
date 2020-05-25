@@ -705,10 +705,6 @@ msgstr "Nombre de lignes dans les messages de script"
 msgid "OK"
 msgstr "OK"
 
-#: ../plugin.py:175
-msgid "Ok"
-msgstr "Ok"
-
 #: ../plugin.py:1663
 msgid "On device:"
 msgstr "Sur le périphérique:"
