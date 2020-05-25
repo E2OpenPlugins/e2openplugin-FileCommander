@@ -87,6 +87,9 @@ class vEditor(Screen, HelpableScreen):
 			<ePixmap position="365,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
 			<ePixmap position="660,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
 			<ePixmap position="955,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_blue.png" transparent="1" alphatest="on"/>
+			### do not remove this line. Set x-size and font same as is set "input" in InputBoxWide screen ###
+			<widget name="InputBoxWide_input" position="0,0" size="1080,0" font="Regular;22"/>
+			###
 		</screen>"""
 
 	def __init__(self, session, file):
@@ -113,6 +116,13 @@ class vEditor(Screen, HelpableScreen):
 		self["key_green"] = StaticText(_("Edit"))
 		self["key_yellow"] = StaticText(_("Delete"))
 		self["key_blue"] = StaticText(_("Insert"))
+
+		# do not remove label "InputBoxWide_input".
+		# it is used for get true length (in chars) for InputBoxWide
+		# because InputBoxWide is opened later
+		self["InputBoxWide_input"] = Label()
+		#
+
 		self.selLine = None
 		self.oldLine = None
 		self.isChanged = False
@@ -146,7 +156,6 @@ class vEditor(Screen, HelpableScreen):
 	def editLine(self):
 		try:
 			self.findtab = -1
-			length = 95
 			self.selLine = self["filedata"].getSelectionIndex()
 			self.oldLine = self.list[self.selLine]
 			my_editableText = self.list[self.selLine][:-1]
@@ -157,24 +166,43 @@ class vEditor(Screen, HelpableScreen):
 			self.findtab = editableText.find("\t", 0, len(editableText))
 			if self.findtab != -1:
 				editableText = editableText.replace("\t", "        ")
+
 			firstpos_end = config.plugins.filecommander.editposition_lineend.value
-			if 'MetrixHD/' in config.skin.primary_skin.value:
-				# screen: ... size="1140,30" font="screen_text; 20"
-				# font:   ... <alias name="FileList" font="screen_text" size="20" height="30" />
-				font = skin.fonts.get("FileList", ("Regular", 20, 30))
-				fieldwidth = int(1140*skin.getSkinFactor()) #fhd?
-				length=1
-				if firstpos_end:
-					while getTextBoundarySize(self.instance, gFont(font[0], font[1]), eSize(fieldwidth, font[2]), editableText[len(editableText)-length:], True).width() <= fieldwidth:
-						length+=1
-						if length > len(editableText):
-							break
-				else:
-					while getTextBoundarySize(self.instance, gFont(font[0], font[1]), eSize(fieldwidth, font[2]), editableText.replace(' ','')[:length], True).width() <= fieldwidth:
-						length+=1
-						if length > len(editableText):
-							break
-				length-=1
+
+			# count position for InputBoxWide
+			def getMaxPosition(text, label, end=False):
+				try:
+					def getStringSize(string, label):
+						label.instance.setNoWrap(1)
+						label.setText("%s" % string)
+						return label.instance.calculateSize().width()
+
+					w = label.instance.size().width()
+					if w <= 0:
+						return 100 # default value
+					sw = getStringSize(text, label)
+
+					if sw > w:
+						if end: # editation from end
+							l = len(text)
+							for i,idx in enumerate(text):
+								x = text[l-i:]
+								print x
+								if getStringSize(x, label) >= w:
+									return i
+							return i
+						else:	# standard editation
+							for i,idx in enumerate(text):
+								x = text[:i]
+								if getStringSize(x, label) >= w:
+									return i
+							return i
+					return w / getStringSize("0", label) # approximate number of characters in label
+				except:
+					return 100 # default value, if missing label "InputBoxWide_input" in vEditor skin
+
+			length = getMaxPosition(editableText, self["InputBoxWide_input"], end = firstpos_end) - 1
+
 			self.session.openWithCallback(self.callbackEditLine, InputBoxWide, title=_(_("original") + ": " + editableText), visible_width=length, overwrite=False, firstpos_end=firstpos_end, allmarked=False, windowTitle=_("Edit line ") + str(self.selLine + 1), text=editableText)
 		except:
 			msg = self.session.open(MessageBox, _("This line is not editable!"), MessageBox.TYPE_ERROR)
