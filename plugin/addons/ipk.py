@@ -15,6 +15,7 @@ from Plugins.Extensions.FileCommander.Directories import fileExists, resolveFile
 
 # commented out
 #shellquote
+from Tools.Directories import shellquote
 import subprocess
 
 # for locale (gettext)
@@ -28,6 +29,8 @@ class ipkMenuScreen(ArchiverMenuScreen):
 
 	def __init__(self, session, sourcelist, targetlist):
 		super(ipkMenuScreen, self).__init__(session, sourcelist, targetlist)
+
+		self.skinName="ArchiverMenuScreen"
 
 		self.list.append((_("Show contents of ipk file"), 1))
 		self.list.append((_("Install"), 4))
@@ -64,6 +67,8 @@ class UnpackInfoScreen(ArchiverInfoScreen):
 
 	def __init__(self, session, list, sourceDir, filename):
 		super(UnpackInfoScreen, self).__init__(session, list, sourceDir, filename)
+		self.skinName="ArchiverInfoScreen"
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
+
