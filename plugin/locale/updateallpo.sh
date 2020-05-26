@@ -10,10 +10,33 @@
 # Author: Pr2
 # Version: 1.0
 #
+#
+# On Mac OSX find option are specific
+#
+findoptions=""
+if [[ "$OSTYPE" == "darwin"* ]]
+	then
+		# Mac OSX
+		printf "Script running on Mac OSX [%s]\n" "$OSTYPE"
+    	findoptions="-s -X"
+fi
+#
+# sed detection
+#
+localgsed="sed"
+gsed --version 2> /dev/null | grep -q "GNU"
+if [ $? -eq 0 ]; then
+        localgsed="gsed"
+else
+        "$localgsed" --version | grep -q "GNU"
+        if [ $? -eq 0 ]; then
+                printf "GNU sed found: [%s]\n" $localgsed
+        fi
+fi
 Plugin=FileCommander
 FilePath=/LC_MESSAGES/
 printf "Po files update/creation from script starting.\n"
-languages=($(ls -d ./*/ | g$localgsed 's/\/$//g; s/.*\///g'))
+languages=($(ls -d ./*/ | $localgsed 's/\/$//g; s/.*\///g'))
 #
 # On Mac OSX find option are specific
 #
