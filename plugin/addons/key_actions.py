@@ -282,6 +282,19 @@ class key_actions(stat_info):
 		info += _("Mode %s (%04o)") % (self.fileModeStr(st.st_mode), stat.S_IMODE(st.st_mode))
 		return info
 
+	def selInfo(self, numbers, size):
+		# Numbers in trailing comments are the template text indexes
+		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
+		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
+		sizes = (
+			_("%s  (%s)") % (bytesizedivided, scaledsize ),  # 0
+		)
+		num = _("in %s selected files") % numbers if numbers > 1 else _("in %s selected file") % numbers
+		nr = (
+			"%s" % num,  # 1
+		)
+		return [ sizes + nr ]
+
 	def statInfo(self, dirsource):
 		filename = dirsource.getFilename()
 		sourceDir = dirsource.getCurrentDirectory()
@@ -311,13 +324,15 @@ class key_actions(stat_info):
 			sizes = ("", "", "")
 		else:
 			bytesize = "%s" % "{:n}".format(st.st_size)
-			bytesizedivided = "%s" % "{:,.0f}".format(st.st_size)
+			bytesizedivided = "%s" % "{:,d}".format(st.st_size)
+			bytesizedividedspace = bytesizedivided.replace(',',' ')
 			scaledsize = ' '.join(self.SIZESCALER.scale(st.st_size)) + 'B'
 			sizes = (
 				bytesize,  # 10
 				_("%s") % scaledsize,  # 11
 				_("%s (%s)") % (bytesize, scaledsize),  # 12
-				_("%s (%s)") % (scaledsize, bytesizedivided)  # 16
+				_("%s (%s)") % (scaledsize, bytesizedivided),  # 13
+				_("%s (%s)") % (scaledsize, bytesizedividedspace)  # 14
 			)
 
 		return [modes + (
@@ -329,9 +344,9 @@ class key_actions(stat_info):
 			"%d" % st.st_gid,  # 8
 			"%s" % self.groupname(st.st_gid)  # 9
 		) + sizes + (
-			self.formatTime(st.st_mtime),  # 13
-			self.formatTime(st.st_atime),  # 14
-			self.formatTime(st.st_ctime)  # 15
+			self.formatTime(st.st_mtime),  # 15
+			self.formatTime(st.st_atime),  # 16
+			self.formatTime(st.st_ctime)  # 17
 		)]
 
 	@staticmethod

@@ -287,7 +287,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (250, 0), size = (135, 30), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (500, 0), size = (390, 30), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (500, 0), size = (390, 30), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
 						],
 						"fonts": [gFont("Regular", 24)],
 						"itemHeight": 30,
@@ -301,7 +301,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (250, 0), size = (135, 30), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (500, 0), size = (390, 30), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (500, 0), size = (390, 30), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
 						],
 						"fonts": [gFont("Regular", 24)],
 						"itemHeight": 30,
@@ -331,7 +331,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
 						],
 						"fonts": [gFont("Regular", 18)],
 						"itemHeight": 20,
@@ -345,7 +345,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
 						],
 						"fonts": [gFont("Regular", 18)],
 						"itemHeight": 20,
@@ -1295,7 +1295,19 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
+						],
+						"fonts": [gFont("Regular", 18)],
+						"itemHeight": 20,
+						"selectionEnabled": False
+					}
+				</convert>
+			</widget>
+			<widget source="list_left_head3" render="Listbox" position="10,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+				<convert type="TemplatedMultiContent">
+					{"template": [
+						MultiContentEntryText(pos = (0, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is size
+						MultiContentEntryText(pos = (210, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is selected items
 						],
 						"fonts": [gFont("Regular", 18)],
 						"itemHeight": 20,
@@ -1309,7 +1321,19 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
 						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 13), # index 13 is the modification time
+						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
+						],
+						"fonts": [gFont("Regular", 18)],
+						"itemHeight": 20,
+						"selectionEnabled": False
+					}
+				</convert>
+			</widget>
+			<widget source="list_right_head3" render="Listbox" position="595,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+				<convert type="TemplatedMultiContent">
+					{"template": [
+						MultiContentEntryText(pos = (0, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 0), # index 1 is a symbolic mode
+						MultiContentEntryText(pos = (210, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is selected items
 						],
 						"fonts": [gFont("Regular", 18)],
 						"itemHeight": 20,
@@ -1357,8 +1381,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		# set current folder
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
+		self["list_left_head3"] = List()
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
+		self["list_right_head3"] = List()
 
 		if leftactive:
 			self["list_left"] = MultiFileSelectList(self.selectedFiles, path_left, matchingPattern=filter, sortDirs=sortDirsLeft, sortFiles=sortFilesLeft, firstDirs=firstDirs)
@@ -1407,6 +1433,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"keyRecord": (self.goBlue, _("Leave multi-select mode")),
 			"showMovies": (self.goBlue, _("Leave multi-select mode")),
 		}, -1)
+		self.selItems = 0
+		self.selSize = 0
 		self.onLayoutFinish.append(self.onLayout)
 
 	def onLayout(self):
@@ -1422,13 +1450,25 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		if self.ACTIVELIST == self.SOURCELIST:
 			self.ACTIVELIST.changeSelectionState()
 			self.selectedFiles = self.ACTIVELIST.getSelectedList()
-			print "[FileCommander] selectedFiles:", self.selectedFiles
+			self.getSelectedFilesInfos(self.selectedFiles)
+#			print "[FileCommander] selectedFiles:", self.selectedFiles
 			if config.plugins.filecommander.move_selector.value:
 				self.goDown()
+			else:
+				self.updateHead()
+
+	def getSelectedFilesInfos(self, selected):
+		size = 0
+		for file in selected:
+			size += os.path.getsize(file) if os.path.isfile(file) else 0
+		self.selSize = size
+		self.selItems = len(selected)
 
 	def invertSelection(self):
 		if self.ACTIVELIST == self.SOURCELIST:
 			self.ACTIVELIST.toggleAllSelection()
+			self.getSelectedFilesInfos(self.selectedFiles)
+			self.updateHead()
 
 	def selectAction(self):
 		menu = []
@@ -1503,6 +1543,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					else:
 						if SELECTED(item):
 							self.ACTIVELIST.toggleItemSelection(item)
+		self.getSelectedFilesInfos(self.selectedFiles)
+		self.updateHead()
+
 ###	only for tests	- will be removed after tests
 	def groupSelection(self):
 		searchString = "enigm"
@@ -1711,10 +1754,17 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				else:
 					pathname = dir # parent folder
 				self[side + "_head1"].text = pathname
-				self[side + "_head2"].updateList(self.statInfo(self[side]))
+
+				if self.selItems and self.SOURCELIST == self[side]:
+					self[side + "_head2"].updateList(())
+					self[side + "_head3"].updateList(self.selInfo(self.selItems, self.selSize))
+				else:
+					self[side + "_head2"].updateList(self.statInfo(self[side]))
+					self[side + "_head3"].updateList(())
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
+				self[side + "_head3"].updateList(())
 
 	def doRefresh(self):
 		print "[FileCommander] selectedFiles:", self.selectedFiles
