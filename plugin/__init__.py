@@ -12,7 +12,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("FileCommander", txt)
 	if t == txt:
-		print "[FileCommander] fallback to default translation for", txt
+#		print "[FileCommander] fallback to default translation for", txt
 		t = gettext.gettext(txt)
 	return t
 
