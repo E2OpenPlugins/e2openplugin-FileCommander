@@ -1244,9 +1244,9 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		self.search = _("Search in group selection by")
 		self.list.append(getConfigListEntry(self.search, cfg.search, _("You can set what will group selection use - start of title, end of title or contains in title.")))
 		if cfg.search.value == "begin":
-			self.list.append(getConfigListEntry(_("Pre-fill first 'n' filename chars to virtual keyboard"), cfg.length, _("You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection. For 'group selection' use 'CH+/CH-' buttons.")))
+			self.list.append(getConfigListEntry(_("Pre-fill first 'n' filename chars to virtual keyboard"), cfg.length, _("You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection.")))
 		elif cfg.search.value == "end":
-			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection. For 'group selection' use 'CH+/CH-' buttons.")))
+			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection.")))
 		self.list.append(getConfigListEntry(_("Compare case sensitive"), cfg.sensitive, _("Sets whether to distinguish between uper case and lower case for searching.")))
 		#duplicity from main setting:
 		self.list.append(getConfigListEntry(_("Select across directories"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
@@ -1435,7 +1435,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		menu.append((_("Select group"), boundFunction(self.selectGroup, True)))							# 2
 		menu.append((_("Deselect group"), boundFunction(self.selectGroup, False)))						# 5
 		menu.append((_("Invert Selection"), self.invertSelection))								# blue
-		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.selectAction, MultiSelectionSetup)))	# menu
+		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	# menu
 		keys=["2", "5", "blue", "menu"]
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
 
@@ -1444,6 +1444,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			return
 		if choice[1]:
 			choice[1]()
+
+	def runBacktoMenu(self, dummy=False):
+		self.selectAction()
 
 	def selectGroup(self, mark=True):
 		if self.ACTIVELIST != self.SOURCELIST:
