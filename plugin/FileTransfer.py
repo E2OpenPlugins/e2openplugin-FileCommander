@@ -4,6 +4,7 @@ from Components.Task import Task, Job, job_manager, AbortedPostcondition, Return
 # from Tools.Directories import fileExists, shellquote
 from Components.MovieList import MOVIE_EXTENSIONS
 from enigma import eTimer
+from Components.config import config
 import os
 
 # for locale (gettext)
@@ -31,7 +32,7 @@ class FileTransferTask(Task):
 		src_file_append = ""
 		if not src_isDir:
 			root, ext = os.path.splitext(src_file)
-			if ext in ALL_MOVIE_EXTENSIONS:
+			if config.plugins.filecommander.all_movie_ext.value and ext in ALL_MOVIE_EXTENSIONS:
 				src_file = root
 				src_file_append = ".*"
 		cmd = "mv"

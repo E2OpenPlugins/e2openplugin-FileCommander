@@ -95,6 +95,7 @@ config.plugins.filecommander.path_default = ConfigDirectory(default="")
 config.plugins.filecommander.path_left = ConfigText(default="")
 config.plugins.filecommander.path_right = ConfigText(default="")
 config.plugins.filecommander.short_header = ConfigYesNo(default=True)
+config.plugins.filecommander.all_movie_ext = ConfigYesNo(default=True)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
 config.plugins.filecommander.change_navbutton = ConfigSelection(default="no", choices=[("no", _("No")), ("always", _("Channel button always changes sides")), ("yes", _("Yes"))])
@@ -172,6 +173,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels.")))
 		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Default directory if the left or right folder isn't saved, and target folder for 'Go to parent directory'.")))
+		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("For movies are to transfer operations added all files with same name in directory too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
@@ -852,7 +854,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if os.path.exists(targetDir + filename.split('/')[-2]):
 				warntxt = _(" - folder exist! Overwrite")
 			copytext = _("Copy folder") + warntxt
-		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
+		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
 
 	def doCopy(self, result = True):
 		if result:
@@ -881,7 +883,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			deltext = _("Delete file")
 		else:
 			deltext = _("Delete folder")
-		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
+		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def doDelete(self, result = False):
 		if result:
@@ -914,7 +916,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if os.path.exists(targetDir + filename.split('/')[-2]):
 				warntxt = _(" - folder exist! Overwrite")
 			movetext = _("Move folder") + warntxt
-		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
+		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def doMove(self, result = False):
 		if result:
@@ -1425,7 +1427,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			deltext = _("Delete %d elements") %len(self.selectedFiles)
 		else:
 			deltext = _("Delete 1 element")
-		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
+		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def doDelete(self, result = False):
 		if result:
@@ -1470,7 +1472,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			movetext = (_("Move %d elements") %len(self.selectedFiles)) + warntxt
 		else:
 			movetext = _("Move 1 element") + warntxt
-		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
+		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def doMove(self, result = False):
 		if result:
@@ -1515,7 +1517,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			copytext = (_("Copy %d elements") %len(self.selectedFiles)) + warntxt
 		else:
 			copytext = _("Copy 1 element") + warntxt
-		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
+		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 
 	def doCopy(self, result = False):
