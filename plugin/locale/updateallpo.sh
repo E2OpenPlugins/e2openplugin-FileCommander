@@ -3,7 +3,7 @@
 #  
 # Pre-requisite:
 # The following tools must be installed on your system and accessible from path
-# gawk, find, xgettext, gsed, python, msguniq, msgmerge, msgattrib, msgfmt, msginit
+# gawk, find, xgettext, g$localgsed, python, msguniq, msgmerge, msgattrib, msgfmt, msginit
 #
 # Run this script from within the locale folder.
 #
@@ -13,7 +13,7 @@
 Plugin=FileCommander
 FilePath=/LC_MESSAGES/
 printf "Po files update/creation from script starting.\n"
-languages=($(ls -d ./*/ | gsed 's/\/$//g; s/.*\///g'))
+languages=($(ls -d ./*/ | g$localgsed 's/\/$//g; s/.*\///g'))
 #
 # On Mac OSX find option are specific
 #
@@ -25,13 +25,26 @@ if [[ "$OSTYPE" == "darwin"* ]]
     	findoptions="-s -X"
 fi
 #
+# sed detection
+#
+localgsed="sed"
+gsed --version 2> /dev/null | grep -q "GNU"
+if [ $? -eq 0 ]; then
+        localgsed="gsed"
+else
+        "$localgsed" --version | grep -q "GNU"
+        if [ $? -eq 0 ]; then
+                printf "GNU sed found: [%s]\n" $localgsed
+        fi
+fi
+#
 # Arguments to generate the pot and po files are not retrieved from the Makefile.
 # So if parameters are changed in Makefile please report the same changes in this script.
 #
 
 printf "Creating temporary file $Plugin-py.pot\n"
 find $findoptions .. -name "*.py" -exec xgettext --no-wrap -L Python --from-code=UTF-8 -kpgettext:1c,2 --add-comments="TRANSLATORS:" -d $Plugin -s -o $Plugin-py.pot {} \+
-gsed --in-place $Plugin-py.pot --expression=s/CHARSET/UTF-8/
+$localgsed --in-place $Plugin-py.pot --expression=s/CHARSET/UTF-8/
 printf "Creating temporary file $Plugin-xml.pot\n"
 find $findoptions .. -name "*.xml" -exec python xml2po.py {} \+ > $Plugin-xml.pot
 printf "Merging pot files to create: $Plugin.pot\n"
