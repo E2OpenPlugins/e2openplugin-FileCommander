@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 18:46+0200\n"
+"POT-Creation-Date: 2020-05-26 20:05+0200\n"
 "PO-Revision-Date: 2019-08-06 20:56+0200\n"
 "Last-Translator: Pike_Bishop <alfredzngr023@gmail.com>\n"
 "Language-Team: \n"
@@ -397,9 +397,19 @@ msgstr "Ordner löschen"
 msgid "Delete the selected files or directories"
 msgstr "Ausgewählte Dateien oder Verzeichnisse löschen"
 
-#: ../ui.py:1405 ../ui.py:1436
+#: ../ui.py:1405
 msgid "Deselect group"
 msgstr ""
+
+#: ../ui.py:1436
+#, fuzzy
+msgid "Deselect group..."
+msgstr "Wähle"
+
+#: ../ui.py:182 ../ui.py:1252
+#, fuzzy
+msgid "Directories to group selections"
+msgstr "Auswahl überspringen"
 
 #: ../addons/key_actions.py:82
 msgid "Directory"
@@ -1061,13 +1071,14 @@ msgstr "Wählen Sie (Quellenliste) oder betreten Sie das Verzeichnis (Zielliste)
 msgid "Select a path"
 msgstr "Pfad auswählen"
 
-#: ../ui.py:182 ../ui.py:1252
-msgid "Select across directories"
-msgstr ""
-
-#: ../ui.py:1404 ../ui.py:1435
+#: ../ui.py:1404
 #, fuzzy
 msgid "Select group"
+msgstr "Wähle"
+
+#: ../ui.py:1435
+#, fuzzy
+msgid "Select group..."
 msgstr "Wähle"
 
 #: ../ui.py:599 ../ui.py:1440

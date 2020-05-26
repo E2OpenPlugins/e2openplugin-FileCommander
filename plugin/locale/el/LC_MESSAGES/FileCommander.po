@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 18:46+0200\n"
+"POT-Creation-Date: 2020-05-26 20:05+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -397,9 +397,19 @@ msgstr "Διαγραφή φακέλου"
 msgid "Delete the selected files or directories"
 msgstr "Διαγραφή των επιλεγμένων αρχείων ή φακέλων"
 
-#: ../ui.py:1405 ../ui.py:1436
+#: ../ui.py:1405
 msgid "Deselect group"
 msgstr ""
+
+#: ../ui.py:1436
+#, fuzzy
+msgid "Deselect group..."
+msgstr "Επιλογή"
+
+#: ../ui.py:182 ../ui.py:1252
+#, fuzzy
+msgid "Directories to group selections"
+msgstr "Παράκαμψη επιλογής"
 
 #: ../addons/key_actions.py:82
 msgid "Directory"
@@ -1061,13 +1071,14 @@ msgstr "Επιλέξτε (τη λίστα πηγής) ή εισάγετε κατ
 msgid "Select a path"
 msgstr "Επιλογή διαδρομής"
 
-#: ../ui.py:182 ../ui.py:1252
-msgid "Select across directories"
-msgstr ""
-
-#: ../ui.py:1404 ../ui.py:1435
+#: ../ui.py:1404
 #, fuzzy
 msgid "Select group"
+msgstr "Επιλογή"
+
+#: ../ui.py:1435
+#, fuzzy
+msgid "Select group..."
 msgstr "Επιλογή"
 
 #: ../ui.py:599 ../ui.py:1440

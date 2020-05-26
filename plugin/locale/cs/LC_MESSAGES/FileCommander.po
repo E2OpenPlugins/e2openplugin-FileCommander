@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 18:46+0200\n"
-"PO-Revision-Date: 2020-05-26 18:50+0200\n"
+"POT-Creation-Date: 2020-05-26 20:05+0200\n"
+"PO-Revision-Date: 2020-05-26 20:06+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -389,9 +389,17 @@ msgstr "Smazat adresář"
 msgid "Delete the selected files or directories"
 msgstr "Odstranit vybrané soubory a adresáře"
 
-#: ../ui.py:1405 ../ui.py:1436
+#: ../ui.py:1405
 msgid "Deselect group"
 msgstr "Odebrat z výběru"
+
+#: ../ui.py:1436
+msgid "Deselect group..."
+msgstr "Odebrat z výběru..."
+
+#: ../ui.py:182 ../ui.py:1252
+msgid "Directories to group selections"
+msgstr "Adresáře do skupinového výběru"
 
 #: ../addons/key_actions.py:82
 msgid "Directory"
@@ -1043,13 +1051,13 @@ msgstr "Výběr (aktivní panel) nebo volba adresáře (cílový panel)"
 msgid "Select a path"
 msgstr "Vyberte cestu"
 
-#: ../ui.py:182 ../ui.py:1252
-msgid "Select across directories"
-msgstr ""
-
-#: ../ui.py:1404 ../ui.py:1435
+#: ../ui.py:1404
 msgid "Select group"
 msgstr "Přidat do výběru"
+
+#: ../ui.py:1435
+msgid "Select group..."
+msgstr "Přidat do výběru..."
 
 #: ../ui.py:599 ../ui.py:1440
 msgid "Select operation:"

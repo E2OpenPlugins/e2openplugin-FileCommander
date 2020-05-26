@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 18:46+0200\n"
+"POT-Creation-Date: 2020-05-26 20:05+0200\n"
 "PO-Revision-Date: 2019-08-09 11:04+0200\n"
 "Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
 "Language-Team: SkinerMan\n"
@@ -397,9 +397,19 @@ msgstr "Удалить каталог"
 msgid "Delete the selected files or directories"
 msgstr "Удалить выбранные файлы или каталоги"
 
-#: ../ui.py:1405 ../ui.py:1436
+#: ../ui.py:1405
 msgid "Deselect group"
 msgstr ""
+
+#: ../ui.py:1436
+#, fuzzy
+msgid "Deselect group..."
+msgstr "Выбрать"
+
+#: ../ui.py:182 ../ui.py:1252
+#, fuzzy
+msgid "Directories to group selections"
+msgstr "Отмена выбора"
 
 #: ../addons/key_actions.py:82
 msgid "Directory"
@@ -1061,13 +1071,14 @@ msgstr "Выберите (список источников) или введит
 msgid "Select a path"
 msgstr "Выберите путь"
 
-#: ../ui.py:182 ../ui.py:1252
-msgid "Select across directories"
-msgstr ""
-
-#: ../ui.py:1404 ../ui.py:1435
+#: ../ui.py:1404
 #, fuzzy
 msgid "Select group"
+msgstr "Выбрать"
+
+#: ../ui.py:1435
+#, fuzzy
+msgid "Select group..."
 msgstr "Выбрать"
 
 #: ../ui.py:599 ../ui.py:1440

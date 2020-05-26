@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26 18:48+0200\n"
+"POT-Creation-Date: 2020-05-26 20:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -388,8 +388,16 @@ msgstr ""
 msgid "Delete the selected files or directories"
 msgstr ""
 
-#: ../ui.py:1405 ../ui.py:1436
+#: ../ui.py:1405
 msgid "Deselect group"
+msgstr ""
+
+#: ../ui.py:1436
+msgid "Deselect group..."
+msgstr ""
+
+#: ../ui.py:182 ../ui.py:1252
+msgid "Directories to group selections"
 msgstr ""
 
 #: ../addons/key_actions.py:82
@@ -1026,12 +1034,12 @@ msgstr ""
 msgid "Select a path"
 msgstr ""
 
-#: ../ui.py:182 ../ui.py:1252
-msgid "Select across directories"
+#: ../ui.py:1404
+msgid "Select group"
 msgstr ""
 
-#: ../ui.py:1404 ../ui.py:1435
-msgid "Select group"
+#: ../ui.py:1435
+msgid "Select group..."
 msgstr ""
 
 #: ../ui.py:599 ../ui.py:1440
