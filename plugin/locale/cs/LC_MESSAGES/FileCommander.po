@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-26 10:10+0200\n"
-"PO-Revision-Date: 2020-05-26 10:39+0200\n"
+"PO-Revision-Date: 2020-05-26 10:56+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -112,7 +112,7 @@ msgstr "File Commander - unrar doplněk"
 
 #: addons/unrar.py:15
 msgid "unpack Rar Files"
-msgstr "rozbalit Rar soubory"
+msgstr "rozbalit rar soubory"
 
 #: addons/unrar.py:28
 msgid "Show contents of rar file"
@@ -346,7 +346,7 @@ msgstr "Instalace pluginu ..."
 
 #: addons/key_actions.py:67
 msgid "File Commander - Addon Movieplayer"
-msgstr "File Commander - doplněk Movieplayer"
+msgstr "File Commander - doplněk MoviePlayer"
 
 #: addons/key_actions.py:68
 msgid "play Files"
@@ -1298,7 +1298,7 @@ msgstr "Smazat %d položek"
 
 #: ui.py:1429
 msgid "Delete 1 element"
-msgstr "Smazat 1 polořku"
+msgstr "Smazat 1 položku"
 
 #: ui.py:1464 ui.py:1506
 #, python-format
@@ -1325,7 +1325,7 @@ msgstr "Kopírovat %d položek"
 
 #: ui.py:1519
 msgid "Copy 1 element"
-msgstr "Kopírovat 1 polořku"
+msgstr "Kopírovat 1 položku"
 
 #: ui.py:1662
 msgid "It is not possible to get the file status of <List of Storage Devices>"
