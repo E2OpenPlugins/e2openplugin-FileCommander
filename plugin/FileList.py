@@ -2,6 +2,7 @@ import os
 import re
 from Components.FileList import FileList as FileListBase, EXTENSIONS as BASE_EXTENSIONS
 from Components.Harddisk import harddiskmanager
+from Components.config import config
 
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN
 
@@ -309,7 +310,10 @@ class MultiFileSelectList(FileList):
 				self.list[idx] = x
 			else:
 				if x[0][1] is True:
-					realPathname = x[0][0]
+					if config.plugins.filecommander.select_across_dirs.value:
+						realPathname = x[0][0]
+					else:
+						continue
 				else:
 					realPathname = self.current_directory + x[0][0]
 				SelectState = not x[0][3]
@@ -322,7 +326,38 @@ class MultiFileSelectList(FileList):
 				self.list[idx] = MultiFileSelectEntryComponent(name=x[0][4], absolute=x[0][0], isDir=x[0][1], isLink=x[0][2], selected=SelectState)
 		self.l.setList(self.list)
 
+	def toggleItemSelection(self, item, singleItem = False): # 0 - absolute path 1 = isDir 2 - isLink 3 - selected 4 - name
+		for idx, x in enumerate(self.list):
+			if x[0][0:3] == item[0][0:3]:
+				if x[0][4].startswith('<'):
+					self.list[idx] = x
+				else:
+					if x[0][1] is True:
+						if singleItem or config.plugins.filecommander.select_across_dirs.value:
+							realPathname = x[0][0]
+						else:
+							continue
+					else:
+						realPathname = self.current_directory + x[0][0]
+					SelectState = not x[0][3]
+					if SelectState:
+						if realPathname not in self.selectedFiles:
+							self.selectedFiles.append(realPathname)
+					else:
+						if realPathname in self.selectedFiles:
+							self.selectedFiles.remove(realPathname)
+					self.list[idx] = MultiFileSelectEntryComponent(name=x[0][4], absolute=x[0][0], isDir=x[0][1], isLink=x[0][2], selected=SelectState)
+				self.l.setList(self.list)
+				break
+		return
+
 	def changeSelectionState(self):
+		item = self.l.getCurrentSelection()
+		if item:
+			self.toggleItemSelection(item, singleItem = True)
+		return
+
+		# delete it  - slower, redundant, will be removed after tests
 		idx = self.l.getCurrentSelectionIndex()
 		# os.system('echo %s >> /tmp/test1.log' % ("- xxx - "))
 		count = 0

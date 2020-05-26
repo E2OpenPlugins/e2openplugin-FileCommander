@@ -99,6 +99,7 @@ config.plugins.filecommander.all_movie_ext = ConfigYesNo(default=True)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
 config.plugins.filecommander.change_navbutton = ConfigSelection(default="no", choices=[("no", _("No")), ("always", _("Channel button always changes sides")), ("yes", _("Yes"))])
+config.plugins.filecommander.select_across_dirs = ConfigYesNo(default=False)
 config.plugins.filecommander.move_selector = ConfigYesNo(default=True)
 #config.plugins.filecommander.input_length = ConfigInteger(default=40, limits=(1, 100))
 config.plugins.filecommander.diashow = ConfigInteger(default=5000, limits=(1000, 10000))
@@ -137,6 +138,15 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
 config.plugins.filecommander.invert_selection = ConfigYesNo(default=True)
+config.plugins.filecommander.sensitive = ConfigYesNo(default=False)
+config.plugins.filecommander.search = ConfigSelection(default = "begin", choices = [("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
+choicelist = []
+for i in range(1, 11, 1):
+	choicelist.append(("%d" % i))
+choicelist.append(("15","15"))
+choicelist.append(("20","20"))
+config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.endlength = ConfigSelection(default = "5", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 
 # ####################
 # ## Config Screen ###
@@ -169,6 +179,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, can you set the cursor start position at end or begin of the line.")))
 		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
 		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("Select across directories"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels.")))
@@ -176,12 +187,12 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
+		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection, _("In multi-selection mode using under blue button inversion of the selection instead cancel this mode.")))
+		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes, _("Calculates file checksums.")))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow, _("Time between slides in image viewer slideshow.")))
-		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection, _("In multi-selection mode using under blue button inversion of the selection instead cancel this mode.")))
-		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
 		
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
 
@@ -1199,9 +1210,82 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 # 	def call_onFileAction(self):
 # 		self.onFileAction(self.SOURCELIST, self.TARGETLIST)
 
+# ####################
+# ## Config MultiSelectionScreen ###
+# ####################
+class MultiSelectionSetup(ConfigListScreen, Screen):
+	def __init__(self, session):
+		self.session = session
+		Screen.__init__(self, session)
+
+		self.skinName=["FileCommanderSetup","Setup"]
+
+#		self["help"] = Label(_("Select your personal settings:"))
+		self["description"] = Label()
+		self["key_red"] = StaticText(_("Cancel"))
+		self["key_green"] = StaticText(_("OK"))
+		self["Actions"] = ActionMap(["ColorActions", "SetupActions"],
+		{
+			"green": self.save,
+			"red": self.cancel,
+			"save": self.save,
+			"cancel": self.cancel,
+			"ok": self.ok,
+		}, -2)
+		self.list = []
+		self.onChangedEntry = []
+		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		self.loadMenu()
+		self.onLayoutFinish.append(self.onLayout)
+
+	def loadMenu(self):
+		self.list = []
+		cfg = config.plugins.filecommander
+		self.search = _("Search in group selection by")
+		self.list.append(getConfigListEntry(self.search, cfg.search, _("You can set what will group selection use - start of title, end of title or contains in title.")))
+		if cfg.search.value == "begin":
+			self.list.append(getConfigListEntry(_("Pre-fill first 'n' filename chars to virtual keyboard"), cfg.length, _("You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection. For 'group selection' use 'CH+/CH-' buttons.")))
+		elif cfg.search.value == "end":
+			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection. For 'group selection' use 'CH+/CH-' buttons.")))
+		self.list.append(getConfigListEntry(_("Compare case sensitive"), cfg.sensitive, _("Sets whether to distinguish between uper case and lower case for searching.")))
+		#duplicity from main setting:
+		self.list.append(getConfigListEntry(_("Select across directories"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
+
+		self["config"].list = self.list
+
+	def changedEntry(self):
+		if self["config"].getCurrent():
+			if self["config"].getCurrent()[0] == self.search:
+				self.loadMenu()
+	def getCurrentEntry(self):
+		x =  self["config"].getCurrent()
+		if x:
+			text = x[2] if len(x) == 3 else ""
+			self["description"].setText(text)
+
+	def onLayout(self):
+		self.setTitle(pname+" - "+_("MultiSelection Settings"))
+
+	def ok(self):
+		self.save()
+
+	def save(self):
+		self.keySave()
+
+	def cancel(self):
+		self.keyCancel()
+
 #####################
 # ## Select Screen ###
 #####################
+
+def NAME(item):
+	return item[0][4]
+def SELECTED(item):
+	return item[0][3]
+
 class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	skin = """
 		<screen position="40,80" size="1200,600" title="" >
@@ -1301,6 +1385,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["key_blue"] = StaticText(text)
 
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
+			"menu": (self.selectAction, _("Open actions menu")),
 			"ok": (self.ok, _("Select (source list) or enter directory (target list)")),
 			"back": (self.exit, _("Leave multi-select mode")),
 			"nextMarker": (self.listRight, _("Activate right-hand file list as multi-select source")),
@@ -1316,6 +1401,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"yellow": (self.goYellow, _("Copy files/directories to target directory")),
 			"blue": bluebutton,
 			"0": (self.doRefresh, _("Refresh screen")),
+			"2": (boundFunction(self.selectGroup, True), _("Select group")),
+			"5": (boundFunction(self.selectGroup, False), _("Deselect group")),
 			"8": (self.openTasklist, _("Show task list")),
 			"keyRecord": (self.goBlue, _("Leave multi-select mode")),
 			"showMovies": (self.goBlue, _("Leave multi-select mode")),
@@ -1342,6 +1429,85 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def invertSelection(self):
 		if self.ACTIVELIST == self.SOURCELIST:
 			self.ACTIVELIST.toggleAllSelection()
+
+	def selectAction(self):
+		menu = []
+		menu.append((_("Select group"), boundFunction(self.selectGroup, True)))							# 2
+		menu.append((_("Deselect group"), boundFunction(self.selectGroup, False)))						# 5
+		menu.append((_("Invert Selection"), self.invertSelection))								# blue
+		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.selectAction, MultiSelectionSetup)))	# menu
+		keys=["2", "5", "blue", "menu"]
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
+
+	def menuCallback(self, choice):
+		if choice is None:
+			return
+		if choice[1]:
+			choice[1]()
+
+	def selectGroup(self, mark=True):
+		if self.ACTIVELIST != self.SOURCELIST:
+			return
+		def getSubstring(value):
+			if value == "begin":
+				return _("starts with...")
+			elif value == "end":
+				return _("ends with...")
+			else:
+				return _("contains...")
+		if mark:
+			txt = _("Add to selection (%s)") % getSubstring(config.plugins.filecommander.search.value)
+		else:
+			txt = _("Remove from selection (%s)")  % getSubstring(config.plugins.filecommander.search.value)
+
+		item = self.SOURCELIST.l.getCurrentSelection()
+		length = int(config.plugins.filecommander.length.value)
+		endlength = int(config.plugins.filecommander.endlength.value)
+		name = ""
+		if item:
+			if config.plugins.filecommander.search.value == "begin" and length:
+				name = NAME(item).decode('UTF-8', 'replace')[0:length]
+				txt += 10*" " + "%s" % length
+			elif config.plugins.filecommander.search.value == "end" and endlength:
+				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
+				txt += 10*" " + "%s" % endlength
+		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title = txt, text = name)
+
+	def changeItems(self, mark, searchString = None):
+		if searchString:
+			searchString = searchString.decode('UTF-8', 'replace')
+			if not config.plugins.filecommander.sensitive.value:
+				searchString = searchString.lower()
+			for item in self.SOURCELIST.list:
+				if config.plugins.filecommander.sensitive.value:
+					if config.plugins.filecommander.search.value == "begin":
+						exist = NAME(item).decode('UTF-8', 'replace').startswith(searchString)
+					elif config.plugins.filecommander.search.value == "end":
+						exist = NAME(item).decode('UTF-8', 'replace').endswith(searchString)
+					else:
+						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString)== -1 else True
+				else:
+					if config.plugins.filecommander.search.value == "begin":
+						exist = NAME(item).decode('UTF-8', 'replace').lower().startswith(searchString)
+					elif config.plugins.filecommander.search.value == "end":
+						exist = NAME(item).decode('UTF-8', 'replace').lower().endswith(searchString)
+					else:
+						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString)== -1 else True
+				if exist:
+					if mark:
+						if not SELECTED(item):
+							self.ACTIVELIST.toggleItemSelection(item)
+					else:
+						if SELECTED(item):
+							self.ACTIVELIST.toggleItemSelection(item)
+###	only for tests	- will be removed after tests
+	def groupSelection(self):
+		searchString = "enigm"
+		if self.ACTIVELIST == self.SOURCELIST:
+			for idx,item in enumerate(self.SOURCELIST.list):
+				if item[0][4].startswith(searchString):
+					self.ACTIVELIST.toggleItemSelection(item)
+###
 
 	def exit(self, jobs=None, updateDirs=None):
 		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
