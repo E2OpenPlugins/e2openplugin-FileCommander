@@ -179,7 +179,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, can you set the cursor start position at end or begin of the line.")))
 		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
 		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
-		self.list.append(getConfigListEntry(_("Select across directories"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
+		self.list.append(getConfigListEntry(_("Directories to group selections"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels.")))
@@ -1249,7 +1249,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection.")))
 		self.list.append(getConfigListEntry(_("Compare case sensitive"), cfg.sensitive, _("Sets whether to distinguish between uper case and lower case for searching.")))
 		#duplicity from main setting:
-		self.list.append(getConfigListEntry(_("Select across directories"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
+		self.list.append(getConfigListEntry(_("Directories to group selections"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
 		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 
@@ -1432,8 +1432,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 	def selectAction(self):
 		menu = []
-		menu.append((_("Select group"), boundFunction(self.selectGroup, True)))							# 2
-		menu.append((_("Deselect group"), boundFunction(self.selectGroup, False)))						# 5
+		menu.append((_("Select group..."), boundFunction(self.selectGroup, True)))						# 2
+		menu.append((_("Deselect group..."), boundFunction(self.selectGroup, False)))						# 5
 		menu.append((_("Invert Selection"), self.invertSelection))								# blue
 		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	# menu
 		keys=["2", "5", "blue", "menu"]
