@@ -146,7 +146,7 @@ for i in range(1, 11, 1):
 choicelist.append(("15","15"))
 choicelist.append(("20","20"))
 config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
-config.plugins.filecommander.endlength = ConfigSelection(default = "5", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 
 # ####################
 # ## Config Screen ###
