@@ -304,6 +304,34 @@ class MultiFileSelectList(FileList):
 		for f in self.onSelectionChanged:
 			f()
 
+	def selectAllSelection(self):
+		self.setAllSelection(True)
+
+	def deselectAllSelection(self):
+		self.setAllSelection(False)
+
+	def setAllSelection(self, select = False):
+		for idx,x in enumerate(self.list):
+			if x[0][4].startswith('<'):
+				self.list[idx] = x
+			else:
+				if x[0][1] is True:
+					if config.plugins.filecommander.select_across_dirs.value:
+						realPathname = x[0][0]
+					else:
+						continue
+				else:
+					realPathname = self.current_directory + x[0][0]
+				SelectState = bool(1) if select else bool(0)
+				if SelectState:
+					if realPathname not in self.selectedFiles:
+						self.selectedFiles.append(realPathname)
+				else:
+					if realPathname in self.selectedFiles:
+						self.selectedFiles.remove(realPathname)
+				self.list[idx] = MultiFileSelectEntryComponent(name=x[0][4], absolute=x[0][0], isDir=x[0][1], isLink=x[0][2], selected=SelectState)
+		self.l.setList(self.list)
+
 	def toggleAllSelection(self):
 		for idx,x in enumerate(self.list):
 			if x[0][4].startswith('<'):

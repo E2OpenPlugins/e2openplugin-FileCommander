@@ -1450,13 +1450,27 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.getSelectedFilesInfos(self.selectedFiles)
 			self.updateHead()
 
+	def deselectAll(self):
+		if self.ACTIVELIST == self.SOURCELIST:
+			self.ACTIVELIST.deselectAllSelection()
+			self.getSelectedFilesInfos(self.selectedFiles)
+			self.updateHead()
+
+	def selectAll(self):
+		if self.ACTIVELIST == self.SOURCELIST:
+			self.ACTIVELIST.selectAllSelection()
+			self.getSelectedFilesInfos(self.selectedFiles)
+			self.updateHead()
+
 	def selectAction(self):
 		menu = []
 		menu.append((_("Select group..."), boundFunction(self.selectGroup, True)))						# 2
 		menu.append((_("Deselect group..."), boundFunction(self.selectGroup, False)))						# 5
+		menu.append((_("Select All"), self.selectAll))									        # ""
+		menu.append((_("Deselect All"), self.deselectAll))									# ""
 		menu.append((_("Invert Selection"), self.invertSelection))								# blue
 		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	# menu
-		keys=["2", "5", "blue", "menu"]
+		keys=["2", "5", "", "", "blue", "menu"]
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
