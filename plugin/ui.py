@@ -259,16 +259,17 @@ def cutLargePath(path, side, label):
 		label.instance.setNoWrap(1)
 		label.setText("%s" % string)
 		return label.instance.calculateSize().width()
-
+	path = path.rstrip('/')
 	w = label.instance.size().width()
 	sw = getStringSize(path, side, label)
 	if sw > w:
 		path = path.split('/')
 		for i,idx in enumerate(path):
-			x = ".../" + '/'.join((path[i:]))
+			x = "/"+ (i-1)*".../" + '/'.join((path[i:]))
 			if getStringSize(x, side, label) <= w:
 				return x
-#		return "max:%d real:%d" % (w, sw)
+		# print "max:%d real:%d" % (w, sw)
+		return path[len(path)-1]
 	return path
 
 ###################
@@ -1122,7 +1123,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				file = self[side].getFilename() or ''
 				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir.rstrip('/'), side, self[side + "_head1"])
+					pathname = cutLargePath(dir, side, self[side + "_head1"])
 				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
@@ -1744,7 +1745,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				file = self[side].getFilename() or ''
 				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir.rstrip('/'), side, self[side + "_head1"])
+					pathname = cutLargePath(dir, side, self[side + "_head1"])
 				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
