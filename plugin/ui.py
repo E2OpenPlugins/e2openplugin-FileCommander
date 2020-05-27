@@ -1303,18 +1303,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget source="list_left_head3" render="Listbox" position="10,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-				<convert type="TemplatedMultiContent">
-					{"template": [
-						MultiContentEntryText(pos = (0, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is size
-						MultiContentEntryText(pos = (210, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is selected items
-						],
-						"fonts": [gFont("Regular", 18)],
-						"itemHeight": 20,
-						"selectionEnabled": False
-					}
-				</convert>
-			</widget>
+			<widget name="list_left_head3" position="10,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
+
 			<widget name="list_right_head1" position="595,10" size="570,40" font="Regular;18" foregroundColor="#00fff000"/>
 			<widget source="list_right_head2" render="Listbox" position="595,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
 				<convert type="TemplatedMultiContent">
@@ -1329,18 +1319,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget source="list_right_head3" render="Listbox" position="595,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-				<convert type="TemplatedMultiContent">
-					{"template": [
-						MultiContentEntryText(pos = (0, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 0), # index 1 is a symbolic mode
-						MultiContentEntryText(pos = (210, 0), size = (200, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is selected items
-						],
-						"fonts": [gFont("Regular", 18)],
-						"itemHeight": 20,
-						"selectionEnabled": False
-					}
-				</convert>
-			</widget>
+			<widget name="list_right_head3" position="595,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
+
 			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
@@ -1381,10 +1361,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		# set current folder
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
-		self["list_left_head3"] = List()
+		self["list_left_head3"] = Label()
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
-		self["list_right_head3"] = List()
+		self["list_right_head3"] = Label()
 
 		if leftactive:
 			self["list_left"] = MultiFileSelectList(self.selectedFiles, path_left, matchingPattern=filter, sortDirs=sortDirsLeft, sortFiles=sortFilesLeft, firstDirs=firstDirs)
@@ -1757,14 +1737,14 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
-					self[side + "_head3"].updateList(self.selInfo(self.selItems, self.selSize))
+					self[side + "_head3"].text = self.selInfo(self.selItems, self.selSize)
 				else:
 					self[side + "_head2"].updateList(self.statInfo(self[side]))
-					self[side + "_head3"].updateList(())
+					self[side + "_head3"].text = ""
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
-				self[side + "_head3"].updateList(())
+				self[side + "_head3"].text = ""
 
 	def doRefresh(self):
 		print "[FileCommander] selectedFiles:", self.selectedFiles

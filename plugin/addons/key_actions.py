@@ -283,17 +283,11 @@ class key_actions(stat_info):
 		return info
 
 	def selInfo(self, numbers, size):
-		# Numbers in trailing comments are the template text indexes
 		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
 		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
-		sizes = (
-			_("%s  (%s)") % (bytesizedivided, scaledsize ),  # 0
-		)
+		sizes = "%s  (%s)" % (bytesizedivided, scaledsize )
 		num = _("in %s selected files") % numbers if numbers > 1 else _("in %s selected file") % numbers
-		nr = (
-			"%s" % num,  # 1
-		)
-		return [ sizes + nr ]
+		return "%s     %s" % (sizes,num) # )[ sizes + nr ]
 
 	def statInfo(self, dirsource):
 		filename = dirsource.getFilename()
