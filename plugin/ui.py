@@ -1851,7 +1851,7 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		self["link_sep"].hide()
 
 		self["actions"] = ActionMap(
-			["SetupActions", "DirectionActions","ChannelSelectEPGActions"],
+			["SetupActions", "DirectionActions","EPGSelectActions"],
 			{
 				"cancel": self.close,
 				"ok": self.close,
