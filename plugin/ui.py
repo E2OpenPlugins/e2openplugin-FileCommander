@@ -1406,6 +1406,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"green": (self.goGreen, _("Move files/directories to target directory")),
 			"yellow": (self.goYellow, _("Copy files/directories to target directory")),
 			"blue": bluebutton,
+			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
 			"0": (self.doRefresh, _("Refresh screen")),
 			"2": (boundFunction(self.selectGroup, True), _("Select group")),
 			"5": (boundFunction(self.selectGroup, False), _("Deselect group")),
@@ -1553,6 +1554,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
 		config.plugins.filecommander.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
 		self.close(jobs, updateDirs)
+
+	def gofileStatInfo(self):
+		self.session.open(FileCommanderFileStatInfo, self.SOURCELIST)
 
 	def ok(self):
 		if self.ACTIVELIST == self.SOURCELIST:
