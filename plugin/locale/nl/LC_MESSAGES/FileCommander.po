@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-27 11:23+0200\n"
+"POT-Creation-Date: 2020-05-27 21:37+0200\n"
 "PO-Revision-Date: 2019-08-08 09:34+0200\n"
 "Last-Translator: Tehc <tech@openpli.org>\n"
 "Language-Team: NL <translators@openpli.org>\n"
@@ -74,7 +74,7 @@ msgstr " of sla de afbeelding op bij het bestand"
 msgid "%s"
 msgstr "%sB"
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -100,7 +100,7 @@ msgstr "%s is met een wachtwoord beveiligd."
 msgid "%s successfully extracted."
 msgstr "%s met succes uitgepakt."
 
-#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1901
+#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1902
 #, python-format
 msgid "%s: %s"
 msgstr "%s: %s"
@@ -135,7 +135,7 @@ msgstr ": "
 msgid "?"
 msgstr "?"
 
-#: ../ui.py:1914
+#: ../ui.py:1915
 msgid "Accessed:"
 msgstr "Toegankelijk:"
 
@@ -223,14 +223,14 @@ msgstr ""
 "Kan %s: %s. niet uitvoeren\n"
 "%s zit mogelijk in een niet geïnstalleerde plug-in."
 
-#: ../ui.py:1930
+#: ../ui.py:1931
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Kan de inhoud van de koppeling niet lezen:% s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:199 ../ui.py:1225
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:199 ../ui.py:1225
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -254,7 +254,7 @@ msgstr "De CH knop wijzigt altijd de zijkanten"
 msgid "Character device"
 msgstr "Teken apparaat"
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr "Sluit"
 
@@ -262,7 +262,7 @@ msgstr "Sluit"
 msgid "Compare case sensitive"
 msgstr ""
 
-#: ../ui.py:1920
+#: ../ui.py:1921
 msgid "Content size:"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgid "Default folder"
 msgstr "Standaard map"
 
 #: ../ui.py:185
-msgid "Default sorting method for directories in both panels."
+msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../ui.py:183
@@ -511,7 +511,7 @@ msgstr "Verlaat de fotoviewer."
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:11 ../addons/type_utils.py:140 ../ui.py:87
+#: ../addons/type_utils.py:140 ../ui.py:87 ../plugin.py:11
 msgid "File Commander"
 msgstr "File Commander"
 
@@ -573,7 +573,7 @@ msgstr "Bestandsoverdracht gestopt door de gebruiker"
 msgid "File write error: '%s'"
 msgstr "Fout bij schrijven van bestand: ‘%s’"
 
-#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1861
+#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1862
 msgid "File/Directory Status Information"
 msgstr "Status informatie van bestand of directory"
 
@@ -605,7 +605,7 @@ msgstr "Ga naar de bovenliggende map"
 msgid "Go to start of file"
 msgstr "Ga naar het begin van het bestand"
 
-#: ../ui.py:1909
+#: ../ui.py:1910
 msgid "Group:"
 msgstr "Groep:"
 
@@ -625,7 +625,7 @@ msgstr ""
 msgid "In multi-selection mode using under blue button inversion of the selection instead cancel this mode."
 msgstr ""
 
-#: ../ui.py:1917
+#: ../ui.py:1918
 msgid "Inode:"
 msgstr "Inode:"
 
@@ -668,7 +668,7 @@ msgstr "Het is niet mogelijk om de hashes op <List of Storage Devices> te bereke
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de mode van bestand <List of Storage Devices> te veranderen"
 
-#: ../ui.py:1879
+#: ../ui.py:1880
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de bestandsstatus van <List of Storage Devices> op te halen"
 
@@ -689,11 +689,11 @@ msgstr "Verlaat File Commander"
 msgid "Leave multi-select mode"
 msgstr "Multi-select mode verlaten"
 
-#: ../ui.py:1926
+#: ../ui.py:1927
 msgid "Link target:"
 msgstr "Koppel het doel"
 
-#: ../ui.py:1916
+#: ../ui.py:1917
 msgid "Links:"
 msgstr "Links:"
 
@@ -715,7 +715,7 @@ msgstr "File Commander context menu"
 msgid "Make File Commander accessible from the main menu."
 msgstr "File Commander context menu"
 
-#: ../ui.py:1915
+#: ../ui.py:1916
 msgid "Metadata changed:"
 msgstr "Veranderde metadata:"
 
@@ -724,7 +724,7 @@ msgstr "Veranderde metadata:"
 msgid "Mode %s (%04o)"
 msgstr "Modus %s (%04o)"
 
-#: ../ui.py:1913
+#: ../ui.py:1914
 msgid "Modified:"
 msgstr "Aangepast:"
 
@@ -838,7 +838,7 @@ msgstr "Aantal regels in script berichten"
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:1918
+#: ../ui.py:1919
 msgid "On device:"
 msgstr "Op apparaat:"
 
@@ -851,11 +851,11 @@ msgstr "Open instellingen/aktie menu"
 msgid "Open settings/actions menu"
 msgstr "Open instellingen/aktie menu"
 
-#: ../plugin.py:35 ../ui.py:1967
+#: ../ui.py:1968 ../plugin.py:35
 msgid "Open with File Commander"
 msgstr "Open met FileCommander"
 
-#: ../ui.py:1908
+#: ../ui.py:1909
 msgid "Owner:"
 msgstr "Eigenaar:"
 
@@ -875,7 +875,7 @@ msgstr "Bovenliggende map"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Het path om naar op te slaan bestaat niet: '/tmp'"
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 msgid "Permissions:"
 msgstr "Machtigingen:"
 
@@ -1009,9 +1009,9 @@ msgstr "Omgekeerd sorteren rechter zijde"
 msgid "Run '%s' command"
 msgstr "Run ‘%s’ commando"
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:500 ../ui.py:783
+#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:500 ../ui.py:783
 msgid "Run script"
 msgstr "Run script"
 
@@ -1175,7 +1175,7 @@ msgid "Show directories first"
 msgstr "Toon mappen eerst"
 
 #: ../ui.py:174
-msgid "Show directories on first or last positions in panel (FileCommander must be restarted)."
+msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../addons/type_utils.py:300
@@ -1220,7 +1220,7 @@ msgstr "Grootte"
 msgid "Size reverse"
 msgstr "Grootte omgekeerd"
 
-#: ../ui.py:1912
+#: ../ui.py:1913
 msgid "Size:"
 msgstr "Grootte:"
 
@@ -1296,7 +1296,7 @@ msgstr ""
 msgid "Time for Slideshow"
 msgstr "Foto voorstelling tijd"
 
-#: ../ui.py:1907
+#: ../ui.py:1908
 msgid "Type:"
 msgstr "Type:"
 
@@ -1319,15 +1319,15 @@ msgstr "Onbekende groep” %d"
 msgid "Unknown user: %d"
 msgstr "Onbekende gebruiker: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
+#: ../addons/tar.py:21 ../addons/tar.py:22
 #, python-format
 msgid "Unpack to %s"
 msgstr "Uitpakken in %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
+#: ../addons/tar.py:20
 msgid "Unpack to current folder"
 msgstr "In huidige map uitpakken"
 
@@ -1435,7 +1435,7 @@ msgstr "Verwijder bestand"
 msgid "install/unpack ipk Files"
 msgstr "installeer of pak ipk bestanden uit"
 
-#: ../plugin.py:12 ../ui.py:88
+#: ../ui.py:88 ../plugin.py:12
 msgid "manage local Files"
 msgstr "beheer de lokale bestanden"
 

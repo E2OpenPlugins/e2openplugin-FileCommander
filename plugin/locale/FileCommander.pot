@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-27 11:23+0200\n"
+"POT-Creation-Date: 2020-05-27 21:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 #, python-format
 msgid "%s (%04o)"
 msgstr ""
@@ -96,7 +96,7 @@ msgstr ""
 msgid "%s successfully extracted."
 msgstr ""
 
-#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1901
+#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1902
 #, python-format
 msgid "%s: %s"
 msgstr ""
@@ -131,7 +131,7 @@ msgstr ""
 msgid "?"
 msgstr ""
 
-#: ../ui.py:1914
+#: ../ui.py:1915
 msgid "Accessed:"
 msgstr ""
 
@@ -215,14 +215,14 @@ msgid ""
 "%s may be in a plugin that is not installed."
 msgstr ""
 
-#: ../ui.py:1930
+#: ../ui.py:1931
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr ""
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:199 ../ui.py:1225
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:199 ../ui.py:1225
 msgid "Cancel"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Character device"
 msgstr ""
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Compare case sensitive"
 msgstr ""
 
-#: ../ui.py:1920
+#: ../ui.py:1921
 msgid "Content size:"
 msgstr ""
 
@@ -344,7 +344,7 @@ msgid "Default folder"
 msgstr ""
 
 #: ../ui.py:185
-msgid "Default sorting method for directories in both panels."
+msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../ui.py:183
@@ -493,7 +493,7 @@ msgstr ""
 msgid "FIFO"
 msgstr ""
 
-#: ../plugin.py:11 ../addons/type_utils.py:140 ../ui.py:87
+#: ../addons/type_utils.py:140 ../ui.py:87 ../plugin.py:11
 msgid "File Commander"
 msgstr ""
 
@@ -555,7 +555,7 @@ msgstr ""
 msgid "File write error: '%s'"
 msgstr ""
 
-#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1861
+#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1862
 msgid "File/Directory Status Information"
 msgstr ""
 
@@ -587,7 +587,7 @@ msgstr ""
 msgid "Go to start of file"
 msgstr ""
 
-#: ../ui.py:1909
+#: ../ui.py:1910
 msgid "Group:"
 msgstr ""
 
@@ -607,7 +607,7 @@ msgstr ""
 msgid "In multi-selection mode using under blue button inversion of the selection instead cancel this mode."
 msgstr ""
 
-#: ../ui.py:1917
+#: ../ui.py:1918
 msgid "Inode:"
 msgstr ""
 
@@ -648,7 +648,7 @@ msgstr ""
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr ""
 
-#: ../ui.py:1879
+#: ../ui.py:1880
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr ""
 
@@ -669,11 +669,11 @@ msgstr ""
 msgid "Leave multi-select mode"
 msgstr ""
 
-#: ../ui.py:1926
+#: ../ui.py:1927
 msgid "Link target:"
 msgstr ""
 
-#: ../ui.py:1916
+#: ../ui.py:1917
 msgid "Links:"
 msgstr ""
 
@@ -693,7 +693,7 @@ msgstr ""
 msgid "Make File Commander accessible from the main menu."
 msgstr ""
 
-#: ../ui.py:1915
+#: ../ui.py:1916
 msgid "Metadata changed:"
 msgstr ""
 
@@ -702,7 +702,7 @@ msgstr ""
 msgid "Mode %s (%04o)"
 msgstr ""
 
-#: ../ui.py:1913
+#: ../ui.py:1914
 msgid "Modified:"
 msgstr ""
 
@@ -814,7 +814,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: ../ui.py:1918
+#: ../ui.py:1919
 msgid "On device:"
 msgstr ""
 
@@ -826,11 +826,11 @@ msgstr ""
 msgid "Open settings/actions menu"
 msgstr ""
 
-#: ../plugin.py:35 ../ui.py:1967
+#: ../ui.py:1968 ../plugin.py:35
 msgid "Open with File Commander"
 msgstr ""
 
-#: ../ui.py:1908
+#: ../ui.py:1909
 msgid "Owner:"
 msgstr ""
 
@@ -850,7 +850,7 @@ msgstr ""
 msgid "Path to save not exist: '/tmp/'"
 msgstr ""
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 msgid "Permissions:"
 msgstr ""
 
@@ -976,9 +976,9 @@ msgstr ""
 msgid "Run '%s' command"
 msgstr ""
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:500 ../ui.py:783
+#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:500 ../ui.py:783
 msgid "Run script"
 msgstr ""
 
@@ -1131,7 +1131,7 @@ msgid "Show directories first"
 msgstr ""
 
 #: ../ui.py:174
-msgid "Show directories on first or last positions in panel (FileCommander must be restarted)."
+msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../addons/type_utils.py:300
@@ -1174,7 +1174,7 @@ msgstr ""
 msgid "Size reverse"
 msgstr ""
 
-#: ../ui.py:1912
+#: ../ui.py:1913
 msgid "Size:"
 msgstr ""
 
@@ -1248,7 +1248,7 @@ msgstr ""
 msgid "Time for Slideshow"
 msgstr ""
 
-#: ../ui.py:1907
+#: ../ui.py:1908
 msgid "Type:"
 msgstr ""
 
@@ -1271,15 +1271,15 @@ msgstr ""
 msgid "Unknown user: %d"
 msgstr ""
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
+#: ../addons/tar.py:21 ../addons/tar.py:22
 #, python-format
 msgid "Unpack to %s"
 msgstr ""
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
+#: ../addons/tar.py:20
 msgid "Unpack to current folder"
 msgstr ""
 
@@ -1385,7 +1385,7 @@ msgstr ""
 msgid "install/unpack ipk Files"
 msgstr ""
 
-#: ../plugin.py:12 ../ui.py:88
+#: ../ui.py:88 ../plugin.py:12
 msgid "manage local Files"
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-27 11:23+0200\n"
+"POT-Creation-Date: 2020-05-27 21:37+0200\n"
 "PO-Revision-Date: 2020-05-27 11:24+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -69,7 +69,7 @@ msgstr " nebo uložit obrázek navíc do souboru"
 msgid "%s"
 msgstr ""
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 #, python-format
 msgid "%s (%04o)"
 msgstr ""
@@ -95,7 +95,7 @@ msgstr "%s je zabezpečen heslem."
 msgid "%s successfully extracted."
 msgstr "%s úspěšně rozbalen."
 
-#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1901
+#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1902
 #, python-format
 msgid "%s: %s"
 msgstr ""
@@ -130,7 +130,7 @@ msgstr ""
 msgid "?"
 msgstr ""
 
-#: ../ui.py:1914
+#: ../ui.py:1915
 msgid "Accessed:"
 msgstr ""
 
@@ -216,14 +216,14 @@ msgstr ""
 "Nelze spustit %s: %s.\n"
 "%s může být plugin, který není nainstalován."
 
-#: ../ui.py:1930
+#: ../ui.py:1931
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Nelze číst obsah odkazu: %s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:199 ../ui.py:1225
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:199 ../ui.py:1225
 msgid "Cancel"
 msgstr "Zavřít"
 
@@ -247,7 +247,7 @@ msgstr "Ch+/- vždy mění panely"
 msgid "Character device"
 msgstr ""
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr "Zavřít"
 
@@ -255,7 +255,7 @@ msgstr "Zavřít"
 msgid "Compare case sensitive"
 msgstr "Rozlišovat velikost písmen"
 
-#: ../ui.py:1920
+#: ../ui.py:1921
 msgid "Content size:"
 msgstr "Velikost obsahu:"
 
@@ -345,7 +345,8 @@ msgid "Default folder"
 msgstr "Výchozí adresář"
 
 #: ../ui.py:185
-msgid "Default sorting method for directories in both panels."
+#, fuzzy
+msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr "Výchozí metoda třídění adresářů v obou panelech."
 
 #: ../ui.py:183
@@ -500,7 +501,7 @@ msgstr "Ukončit prohlížeč obrázků"
 msgid "FIFO"
 msgstr ""
 
-#: ../plugin.py:11 ../addons/type_utils.py:140 ../ui.py:87
+#: ../addons/type_utils.py:140 ../ui.py:87 ../plugin.py:11
 msgid "File Commander"
 msgstr ""
 
@@ -562,7 +563,7 @@ msgstr "Přenos souboru byl ukončen uživatelem"
 msgid "File write error: '%s'"
 msgstr "Chyba zápisu souboru: '%s'"
 
-#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1861
+#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1862
 msgid "File/Directory Status Information"
 msgstr "Informace o souboru/adresáři"
 
@@ -594,7 +595,7 @@ msgstr "Přejít na rodičovský adresář"
 msgid "Go to start of file"
 msgstr "Přejít na začátek souboru"
 
-#: ../ui.py:1909
+#: ../ui.py:1910
 msgid "Group:"
 msgstr "Skupina:"
 
@@ -614,7 +615,7 @@ msgstr "V režimu s vícenásobným výběrem přesune po označení položky ku
 msgid "In multi-selection mode using under blue button inversion of the selection instead cancel this mode."
 msgstr "V režimu s vícenásobným výběrem znamená modré tlačítko 'Inverzi výběru' namísto ukončení tohoto režimu."
 
-#: ../ui.py:1917
+#: ../ui.py:1918
 msgid "Inode:"
 msgstr ""
 
@@ -655,7 +656,7 @@ msgstr "Nelze počítat hash pro <List of Storage Devices>"
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Nelze měnit mód souboru pro <List of Storage Devices>"
 
-#: ../ui.py:1879
+#: ../ui.py:1880
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Nelze získat status pro <List of Storage Devices>"
 
@@ -676,11 +677,11 @@ msgstr "Ukončit File Commander"
 msgid "Leave multi-select mode"
 msgstr "Opustit vícenásobný výběr"
 
-#: ../ui.py:1926
+#: ../ui.py:1927
 msgid "Link target:"
 msgstr "Cíl odkazu:"
 
-#: ../ui.py:1916
+#: ../ui.py:1917
 msgid "Links:"
 msgstr "Odkazy:"
 
@@ -700,7 +701,7 @@ msgstr "Zpřístupní spouštění File Commanderu z Extension menu."
 msgid "Make File Commander accessible from the main menu."
 msgstr "Zpřístupní spouštění File Commanderu z hlavní nabídky."
 
-#: ../ui.py:1915
+#: ../ui.py:1916
 msgid "Metadata changed:"
 msgstr "Metadata změněna:"
 
@@ -709,7 +710,7 @@ msgstr "Metadata změněna:"
 msgid "Mode %s (%04o)"
 msgstr ""
 
-#: ../ui.py:1913
+#: ../ui.py:1914
 msgid "Modified:"
 msgstr "Změněno:"
 
@@ -821,7 +822,7 @@ msgstr "Počet řádků ve zprávách skriptu"
 msgid "OK"
 msgstr ""
 
-#: ../ui.py:1918
+#: ../ui.py:1919
 msgid "On device:"
 msgstr ""
 
@@ -833,11 +834,11 @@ msgstr "Otevřít menu nastavení"
 msgid "Open settings/actions menu"
 msgstr "Otevřít menu nastavení"
 
-#: ../plugin.py:35 ../ui.py:1967
+#: ../ui.py:1968 ../plugin.py:35
 msgid "Open with File Commander"
 msgstr "Otevřít s File Commander"
 
-#: ../ui.py:1908
+#: ../ui.py:1909
 msgid "Owner:"
 msgstr "Vlastník:"
 
@@ -857,7 +858,7 @@ msgstr "Rodičovský adresář"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Cesta pro uložení neexistuje: '/tmp/"
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 msgid "Permissions:"
 msgstr "Práva:"
 
@@ -991,9 +992,9 @@ msgstr "Otočit třídění souborů pro pravý"
 msgid "Run '%s' command"
 msgstr "Spustit příkaz '%s'"
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:500 ../ui.py:783
+#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:500 ../ui.py:783
 msgid "Run script"
 msgstr "Spustit skript"
 
@@ -1150,7 +1151,8 @@ msgid "Show directories first"
 msgstr "Adresáře na začátku"
 
 #: ../ui.py:174
-msgid "Show directories on first or last positions in panel (FileCommander must be restarted)."
+#, fuzzy
+msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr "Zobrazuje adresáře na první nebo na poslední pozici v panelu (File Commander musí být restartován)."
 
 #: ../addons/type_utils.py:300
@@ -1193,7 +1195,7 @@ msgstr "Velikost"
 msgid "Size reverse"
 msgstr "Velikost v opačném pořadí"
 
-#: ../ui.py:1912
+#: ../ui.py:1913
 msgid "Size:"
 msgstr "Velikost:"
 
@@ -1269,7 +1271,7 @@ msgstr "Čas mezi snímky v prezentaci prohlížeče obrázků."
 msgid "Time for Slideshow"
 msgstr "Čas prezentace"
 
-#: ../ui.py:1907
+#: ../ui.py:1908
 msgid "Type:"
 msgstr "Typ:"
 
@@ -1292,15 +1294,15 @@ msgstr "Neznámá skupina: %d"
 msgid "Unknown user: %d"
 msgstr "Neznámý uživatel: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
+#: ../addons/tar.py:21 ../addons/tar.py:22
 #, python-format
 msgid "Unpack to %s"
 msgstr "Rozbalit do %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
+#: ../addons/tar.py:20
 msgid "Unpack to current folder"
 msgstr "Rozbalit do aktuálního adresáře"
 
@@ -1406,7 +1408,7 @@ msgstr "v %s vybraných souborech"
 msgid "install/unpack ipk Files"
 msgstr "instalovat/rozbalit ipk soubory"
 
-#: ../plugin.py:12 ../ui.py:88
+#: ../ui.py:88 ../plugin.py:12
 msgid "manage local Files"
 msgstr "správa místních souborů"
 

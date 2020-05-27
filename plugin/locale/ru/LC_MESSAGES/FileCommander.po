@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-27 11:23+0200\n"
+"POT-Creation-Date: 2020-05-27 21:37+0200\n"
 "PO-Revision-Date: 2019-08-09 11:04+0200\n"
 "Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
 "Language-Team: SkinerMan\n"
@@ -74,7 +74,7 @@ msgstr " или сохраните изображение дополнитель
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -100,7 +100,7 @@ msgstr "%s защищено паролем."
 msgid "%s successfully extracted."
 msgstr "%s успешно извлечено."
 
-#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1901
+#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1902
 #, python-format
 msgid "%s: %s"
 msgstr "%s: %s"
@@ -135,7 +135,7 @@ msgstr ": "
 msgid "?"
 msgstr " ?"
 
-#: ../ui.py:1914
+#: ../ui.py:1915
 msgid "Accessed:"
 msgstr "Доступно с:"
 
@@ -223,14 +223,14 @@ msgstr ""
 "Невозможно запустить %s: %s.\n"
 "Возможно дополнение, %s - не установлено."
 
-#: ../ui.py:1930
+#: ../ui.py:1931
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Не прочитать содержание ссылки: %s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:199 ../ui.py:1225
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:199 ../ui.py:1225
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -254,7 +254,7 @@ msgstr "Кнопка CH+- переход на правую левую панел
 msgid "Character device"
 msgstr "Символьное устройство"
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr "Закрыть"
 
@@ -262,7 +262,7 @@ msgstr "Закрыть"
 msgid "Compare case sensitive"
 msgstr ""
 
-#: ../ui.py:1920
+#: ../ui.py:1921
 msgid "Content size:"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgid "Default folder"
 msgstr "Каталог по умолчанию"
 
 #: ../ui.py:185
-msgid "Default sorting method for directories in both panels."
+msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../ui.py:183
@@ -511,7 +511,7 @@ msgstr "Выход из просмотра изображений"
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:11 ../addons/type_utils.py:140 ../ui.py:87
+#: ../addons/type_utils.py:140 ../ui.py:87 ../plugin.py:11
 msgid "File Commander"
 msgstr "File Commander"
 
@@ -573,7 +573,7 @@ msgstr "Передача файла была отменена пользоват
 msgid "File write error: '%s'"
 msgstr "Ошибка записи файла: '%s'"
 
-#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1861
+#: ../ui.py:456 ../ui.py:566 ../ui.py:1409 ../ui.py:1862
 msgid "File/Directory Status Information"
 msgstr "Информация о статусе файла/каталога"
 
@@ -605,7 +605,7 @@ msgstr "Перейти в родительский каталог"
 msgid "Go to start of file"
 msgstr "Перейти к началу файла"
 
-#: ../ui.py:1909
+#: ../ui.py:1910
 msgid "Group:"
 msgstr "Группа:"
 
@@ -625,7 +625,7 @@ msgstr ""
 msgid "In multi-selection mode using under blue button inversion of the selection instead cancel this mode."
 msgstr ""
 
-#: ../ui.py:1917
+#: ../ui.py:1918
 msgid "Inode:"
 msgstr "Индексный дескриптор:"
 
@@ -668,7 +668,7 @@ msgstr "Невозможно вычислить контрольную сумм�
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Невозможно изменить режим файла <список устройств хранения>"
 
-#: ../ui.py:1879
+#: ../ui.py:1880
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Невозможно прочитать состояние файлов в <Списке устройств хранения>"
 
@@ -689,11 +689,11 @@ msgstr "Выйти из File Commander"
 msgid "Leave multi-select mode"
 msgstr "Выйти из режима множественного выбора"
 
-#: ../ui.py:1926
+#: ../ui.py:1927
 msgid "Link target:"
 msgstr "Целевая ссылка:"
 
-#: ../ui.py:1916
+#: ../ui.py:1917
 msgid "Links:"
 msgstr "Ссылки:"
 
@@ -715,7 +715,7 @@ msgstr "File Commander - контекстное меню"
 msgid "Make File Commander accessible from the main menu."
 msgstr "File Commander - контекстное меню"
 
-#: ../ui.py:1915
+#: ../ui.py:1916
 msgid "Metadata changed:"
 msgstr "Метаданные изменены:"
 
@@ -724,7 +724,7 @@ msgstr "Метаданные изменены:"
 msgid "Mode %s (%04o)"
 msgstr "Режим %s (%04o)"
 
-#: ../ui.py:1913
+#: ../ui.py:1914
 msgid "Modified:"
 msgstr "Изменено:"
 
@@ -838,7 +838,7 @@ msgstr "Количество строк в сообщении скрипта"
 msgid "OK"
 msgstr "ОК"
 
-#: ../ui.py:1918
+#: ../ui.py:1919
 msgid "On device:"
 msgstr "На устройстве:"
 
@@ -851,11 +851,11 @@ msgstr "Открыть меню настроек/действий"
 msgid "Open settings/actions menu"
 msgstr "Открыть меню настроек/действий"
 
-#: ../plugin.py:35 ../ui.py:1967
+#: ../ui.py:1968 ../plugin.py:35
 msgid "Open with File Commander"
 msgstr "Открыть при помощи File Commander"
 
-#: ../ui.py:1908
+#: ../ui.py:1909
 msgid "Owner:"
 msgstr "Владелец:"
 
@@ -875,7 +875,7 @@ msgstr "Родительский каталог"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Путь для сохранения не существует: '/tmp/'"
 
-#: ../ui.py:1910
+#: ../ui.py:1911
 msgid "Permissions:"
 msgstr "Права:"
 
@@ -1009,9 +1009,9 @@ msgstr "Обратная сортировка файлов справа"
 msgid "Run '%s' command"
 msgstr "Выполнить команду '%s'"
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:500 ../ui.py:783
+#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:500 ../ui.py:783
 msgid "Run script"
 msgstr "Запустить скрипт"
 
@@ -1175,7 +1175,7 @@ msgid "Show directories first"
 msgstr "Показывать каталоги в начале списка"
 
 #: ../ui.py:174
-msgid "Show directories on first or last positions in panel (FileCommander must be restarted)."
+msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
 #: ../addons/type_utils.py:300
@@ -1220,7 +1220,7 @@ msgstr "Размер"
 msgid "Size reverse"
 msgstr "Размер по убыванию"
 
-#: ../ui.py:1912
+#: ../ui.py:1913
 msgid "Size:"
 msgstr "Размер:"
 
@@ -1296,7 +1296,7 @@ msgstr ""
 msgid "Time for Slideshow"
 msgstr "Время для слайд-шоу"
 
-#: ../ui.py:1907
+#: ../ui.py:1908
 msgid "Type:"
 msgstr "Тип:"
 
@@ -1319,15 +1319,15 @@ msgstr "Неизвестная группа: %d"
 msgid "Unknown user: %d"
 msgstr "Неизвестный пользователь: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
+#: ../addons/tar.py:21 ../addons/tar.py:22
 #, python-format
 msgid "Unpack to %s"
 msgstr "Распаковать в %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
+#: ../addons/tar.py:20
 msgid "Unpack to current folder"
 msgstr "Распаковать в текущий каталог"
 
@@ -1435,7 +1435,7 @@ msgstr "Удалить файл"
 msgid "install/unpack ipk Files"
 msgstr "установить/распаковать ipk Файлы"
 
-#: ../plugin.py:12 ../ui.py:88
+#: ../ui.py:88 ../plugin.py:12
 msgid "manage local Files"
 msgstr "Менеджер локальных Файлов"
 
