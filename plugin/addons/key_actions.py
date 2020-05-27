@@ -285,9 +285,9 @@ class key_actions(stat_info):
 	def selInfo(self, numbers, size):
 		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
 		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
-		sizes = "%s  (%s)" % (bytesizedivided, scaledsize )
+		sizes = "%s (%s)" % (bytesizedivided, scaledsize )
 		num = _("in %s selected files") % numbers if numbers > 1 else _("in %s selected file") % numbers
-		return "%s     %s" % (sizes,num) # )[ sizes + nr ]
+		return "%s %s" % (sizes,num) # )[ sizes + nr ]
 
 	def statInfo(self, dirsource):
 		filename = dirsource.getFilename()
