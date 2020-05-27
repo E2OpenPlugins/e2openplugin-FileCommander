@@ -1850,12 +1850,13 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		self["link_sep"].hide()
 
 		self["actions"] = ActionMap(
-			["SetupActions", "DirectionActions"],
+			["SetupActions", "DirectionActions","ChannelSelectEPGActions"],
 			{
 				"cancel": self.close,
 				"ok": self.close,
 				"up": self.pageUp,
 				"down": self.pageDown,
+				"info": self.close,
 			}, prio=-1)
 
 		self.setTitle(_("File/Directory Status Information"))
