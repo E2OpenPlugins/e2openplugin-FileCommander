@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-27 21:37+0200\n"
-"PO-Revision-Date: 2020-05-27 11:24+0200\n"
+"POT-Creation-Date: 2020-05-27 21:33+0200\n"
+"PO-Revision-Date: 2020-05-27 21:52+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -221,9 +221,9 @@ msgstr ""
 msgid "Can't read link contents: %s"
 msgstr "Nelze číst obsah odkazu: %s"
 
-#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
-#: ../addons/unarchiver.py:242 ../ui.py:199 ../ui.py:1225
+#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
+#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../ui.py:199 ../ui.py:1225
 msgid "Cancel"
 msgstr "Zavřít"
 
@@ -247,7 +247,7 @@ msgstr "Ch+/- vždy mění panely"
 msgid "Character device"
 msgstr ""
 
-#: ../Console.py:81 ../TaskList.py:50
+#: ../TaskList.py:50 ../Console.py:81
 msgid "Close"
 msgstr "Zavřít"
 
@@ -345,9 +345,8 @@ msgid "Default folder"
 msgstr "Výchozí adresář"
 
 #: ../ui.py:185
-#, fuzzy
 msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
-msgstr "Výchozí metoda třídění adresářů v obou panelech."
+msgstr "Výchozí metoda třídění adresářů v obou panelech (pro uplatnění změn musí být File Commander restartován)."
 
 #: ../ui.py:183
 msgid "Default sorting method for files in left panel."
@@ -436,7 +435,7 @@ msgstr "Úprava řádku "
 
 #: ../ui.py:179
 msgid "Edit position is the line end"
-msgstr "Pozice pro úpravu je konec řádku"
+msgstr "Pozice pro úpravu je na konci řádku"
 
 #: ../ui.py:457 ../ui.py:458 ../ui.py:567
 msgid "Enter multi-file selection mode"
@@ -501,7 +500,7 @@ msgstr "Ukončit prohlížeč obrázků"
 msgid "FIFO"
 msgstr ""
 
-#: ../addons/type_utils.py:140 ../ui.py:87 ../plugin.py:11
+#: ../plugin.py:11 ../addons/type_utils.py:140 ../ui.py:87
 msgid "File Commander"
 msgstr ""
 
@@ -828,13 +827,13 @@ msgstr ""
 
 #: ../ui.py:1394
 msgid "Open actions menu"
-msgstr "Otevřít menu nastavení"
+msgstr "Menu"
 
 #: ../ui.py:441
 msgid "Open settings/actions menu"
 msgstr "Otevřít menu nastavení"
 
-#: ../ui.py:1968 ../plugin.py:35
+#: ../plugin.py:35 ../ui.py:1968
 msgid "Open with File Commander"
 msgstr "Otevřít s File Commander"
 
@@ -844,11 +843,11 @@ msgstr "Vlastník:"
 
 #: ../ui.py:462 ../ui.py:1404
 msgid "Page down list"
-msgstr "Stránka dolů"
+msgstr "O stránku dolů"
 
 #: ../ui.py:461 ../ui.py:1403
 msgid "Page up list"
-msgstr "Stránka nahoru"
+msgstr "O stránku nahoru"
 
 #: ../FileList.py:191 ../FileList.py:488
 msgid "Parent Directory"
@@ -981,20 +980,20 @@ msgstr "Přejmenovat soubor nebo adresář"
 
 #: ../ui.py:464
 msgid "Reverse left file sorting"
-msgstr "Otočit třídění souborů pro levý"
+msgstr "Opačné třídění souborů pro levý panel"
 
 #: ../ui.py:465
 msgid "Reverse right file sorting"
-msgstr "Otočit třídění souborů pro pravý"
+msgstr "Opačné třídění souborů pro pravý panel"
 
 #: ../addons/key_actions.py:519
 #, python-format
 msgid "Run '%s' command"
 msgstr "Spustit příkaz '%s'"
 
-#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:500 ../ui.py:783
+#: ../addons/key_actions.py:433 ../ui.py:500 ../ui.py:783
 msgid "Run script"
 msgstr "Spustit skript"
 
@@ -1151,9 +1150,8 @@ msgid "Show directories first"
 msgstr "Adresáře na začátku"
 
 #: ../ui.py:174
-#, fuzzy
 msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
-msgstr "Zobrazuje adresáře na první nebo na poslední pozici v panelu (File Commander musí být restartován)."
+msgstr "Zobrazuje adresáře na první nebo na poslední pozici v panelu (pro uplatnění změn musí být File Commander restartován)."
 
 #: ../addons/type_utils.py:300
 msgid "Show image information"
@@ -1209,11 +1207,11 @@ msgstr ""
 
 #: ../ui.py:463
 msgid "Sorting left files by name, date or size"
-msgstr "Třídit soubory podle názvu, stáří a velikosti pro levý"
+msgstr "Třídění souborů dle názvu, stáří a velikosti pro levý panel"
 
 #: ../ui.py:466
 msgid "Sorting right files by name, date or size"
-msgstr "Třídit soubory podle názvu, stáří a velikosti pro pravý"
+msgstr "Třídění souborů dle názvu, stáří a velikosti pro pravý panel"
 
 #: ../addons/type_utils.py:299
 msgid "Start/stop slide show"
@@ -1294,15 +1292,15 @@ msgstr "Neznámá skupina: %d"
 msgid "Unknown user: %d"
 msgstr "Neznámý uživatel: %d"
 
-#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
-#: ../addons/tar.py:21 ../addons/tar.py:22
+#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
+#: ../addons/unzip.py:26 ../addons/unzip.py:27
 #, python-format
 msgid "Unpack to %s"
 msgstr "Rozbalit do %s"
 
-#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
-#: ../addons/tar.py:20
+#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
+#: ../addons/unzip.py:25
 msgid "Unpack to current folder"
 msgstr "Rozbalit do aktuálního adresáře"
 
@@ -1408,7 +1406,7 @@ msgstr "v %s vybraných souborech"
 msgid "install/unpack ipk Files"
 msgstr "instalovat/rozbalit ipk soubory"
 
-#: ../ui.py:88 ../plugin.py:12
+#: ../plugin.py:12 ../ui.py:88
 msgid "manage local Files"
 msgstr "správa místních souborů"
 
