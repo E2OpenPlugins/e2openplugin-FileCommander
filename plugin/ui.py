@@ -176,7 +176,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
 		self.list.append(getConfigListEntry(_("Number of lines in script messages"), config.plugins.filecommander.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
 		self.list.append(getConfigListEntry(_("Show unknown extension as text"), config.plugins.filecommander.unknown_extension_as_text, _("Show unknown file extensions with 'Addon File-Viewer'.")))
-		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, can you set the cursor start position at end or begin of the line.")))
+		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, you can set the cursor start position at end or begin of the line.")))
 		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
 		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
 		self.list.append(getConfigListEntry(_("Directories to group selections"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
@@ -254,22 +254,28 @@ def formatSortingTyp(sortDirs, sortFiles):
 	rF = ('+','-')[reverseFiles]
 	return '[D]%s%s[F]%s%s' %(sD,rD,sF,rF)
 
-def cutLargePath(path, side, label):
-	def getStringSize(string, side, label):
+def cutLargePath(path, label):
+	def getStringSize(string, label):
 		label.instance.setNoWrap(1)
 		label.setText("%s" % string)
 		return label.instance.calculateSize().width()
 	path = path.rstrip('/')
-	w = label.instance.size().width()
-	sw = getStringSize(path, side, label)
-	if sw > w:
+	w = label.instance.size().width()	# label width
+	path_w = getStringSize(path, label)	# text width
+	if path_w > w:
 		path = path.split('/')
 		for i,idx in enumerate(path):
 			x = "/"+ (i-1)*".../" + '/'.join((path[i:]))
-			if getStringSize(x, side, label) <= w:
+			if getStringSize(x, label) <= w:
 				return x
-		# print "max:%d real:%d" % (w, sw)
-		return path[len(path)-1]
+		prefix = "%s..." % ((i-1)*".../")
+		prefix_w = getStringSize(prefix , label)
+		lastpath = path[len(path)-1]
+		for j,idx in enumerate(lastpath):
+			lcutstr = lastpath[j:]
+			lcutstr_w = getStringSize(lcutstr, label)
+			if lcutstr_w < (w - prefix_w):
+				return '%s%s' % (prefix, lcutstr)
 	return path
 
 def freeDiskSpace(path):
@@ -1143,7 +1149,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				file = self[side].getFilename() or ''
 				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir, side, self[side + "_head1"])
+					pathname = cutLargePath(dir, self[side + "_head1"])
 				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
@@ -1650,9 +1656,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		for file in self.selectedFiles:
 			print 'delete: %s' %file
 			if not cnt:
-				filename += '%s' %file
+				filename += '%s' % file
 			elif cnt < 5:
-				filename += ', %s' %file
+				filename += ', %s' % file
 			elif cnt < 6:
 				filename += ', ...'
 			cnt += 1
@@ -1686,18 +1692,15 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.move_jobs = []
 		for file in self.selectedFiles:
 			if not cnt:
-				filename += '%s' %file
+				filename += '%s' % file
 			elif cnt < 3:
-				filename += ', %s' %file
+				filename += ', %s' % file
 			elif cnt < 4:
 				filename += ', ...'
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
-				if warncnt > 1:
-					warntxt = _(" - %d elements exist! Overwrite") %warncnt
-				else:
-					warntxt = _(" - 1 element exist! Overwrite")
+				warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt
 			dst_file = targetDir
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
@@ -1725,18 +1728,15 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.copy_jobs = []
 		for file in self.selectedFiles:
 			if not cnt:
-				filename += '%s' %file
+				filename += '%s' % file
 			elif cnt < 3:
-				filename += ', %s' %file
+				filename += ', %s' % file
 			elif cnt < 4:
 				filename += ', ...'
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
-				if warncnt > 1:
-					warntxt = _(" - %d elements exist! Overwrite") %warncnt
-				else:
-					warntxt = _(" - 1 element exist! Overwrite")
+				warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt
 			dst_file = targetDir
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
@@ -1762,7 +1762,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				file = self[side].getFilename() or ''
 				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir, side, self[side + "_head1"])
+					pathname = cutLargePath(dir, self[side + "_head1"])
 				elif file.startswith(dir):
 					pathname = file # subfolder
 				elif not dir.startswith(file):
