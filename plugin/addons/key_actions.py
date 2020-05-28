@@ -52,7 +52,7 @@ from ipk import ipkMenuScreen
 from type_utils import ImageViewer, MoviePlayer, vEditor
 
 # for locale (gettext)
-from . import _
+from . import _, ngettext
 
 TEXT_EXTENSIONS = frozenset((".txt", ".log", ".py", ".xml", ".html", ".meta", ".bak", ".lst", ".cfg", ".conf", ".srt"))
 
@@ -286,7 +286,7 @@ class key_actions(stat_info):
 		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
 		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
 		sizes = "%s (%s)" % (bytesizedivided, scaledsize )
-		num = _("in %s selected files") % numbers if numbers > 1 else _("in %s selected file") % numbers
+		num = ngettext("in %s selected file" ,"in %s selected files", numbers) % numbers
 		return "%s %s" % (sizes,num) # )[ sizes + nr ]
 
 	def statInfo(self, dirsource):

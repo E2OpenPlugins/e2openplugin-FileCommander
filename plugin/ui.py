@@ -62,7 +62,7 @@ from addons.key_actions import key_actions, stat_info
 from addons.type_utils import vEditor
 
 # for locale (gettext)
-from . import _
+from . import _, ngettext
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -1660,10 +1660,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.delete_dirs.append(file)
 			else:
 				self.delete_files.append(file)
-		if cnt > 1:
-			deltext = _("Delete %d elements") %len(self.selectedFiles)
-		else:
-			deltext = _("Delete 1 element")
+		deltext = ngettext("Delete %d element" ,"Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def doDelete(self, result = False):
@@ -1705,10 +1702,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
 			self.move_jobs.append(FileTransferJob(file, targetDir, False, False, "%s : %s" % (_("move file"), file)))
-		if cnt > 1:
-			movetext = (_("Move %d elements") %len(self.selectedFiles)) + warntxt
-		else:
-			movetext = _("Move 1 element") + warntxt
+		movetext = ngettext("Move %d element" ,"Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def doMove(self, result = False):
@@ -1750,10 +1744,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.copy_jobs.append(FileTransferJob(file, targetDir, True, True, "%s : %s" % (_("copy folder"), file)))
 			else:
 				self.copy_jobs.append(FileTransferJob(file, targetDir, False, True, "%s : %s" % (_("copy file"), file)))
-		if cnt > 1:
-			copytext = (_("Copy %d elements") %len(self.selectedFiles)) + warntxt
-		else:
-			copytext = _("Copy 1 element") + warntxt
+		copytext = ngettext("Copy %d element" ,"Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 
