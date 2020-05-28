@@ -272,6 +272,20 @@ def cutLargePath(path, side, label):
 		return path[len(path)-1]
 	return path
 
+def freeDiskSpace(path):
+	try:
+		fs = os.statvfs(path)
+		free = fs.f_bfree * fs.f_bsize
+		if free < 10000000:
+			free = _("%d kB") % (free >> 10)
+		elif free < 10000000000:
+			free = _("%d MB") % (free >> 20)
+		else:
+			free = _("%d GB") % (free >> 30)
+		return "%s" % free
+	except:
+		return "-?-"
+
 ###################
 # ## Main Screen ###
 ###################
@@ -284,6 +298,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		<screen position="40,80" size="1840,920" title="" >
 			<widget name="list_left_head1" position="10,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
 			<widget source="list_left_head2" render="Listbox" position="10,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+			<widget name="list_left_head4" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -298,6 +313,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			</widget>
 			<widget name="list_right_head1" position="900,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
 			<widget source="list_right_head2" render="Listbox" position="900,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+			<widget name="list_right_head4" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -328,6 +344,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		<screen position="40,80" size="1200,600" title="" >
 			<widget name="list_left_head1" position="10,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
 			<widget source="list_left_head2" render="Listbox" position="10,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+			<widget name="list_left_head4" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -342,6 +359,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			</widget>
 			<widget name="list_right_head1" position="595,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
 			<widget source="list_right_head2" render="Listbox" position="595,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
+			<widget name="list_right_head4" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -413,8 +431,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		# set current folder
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
+		self["list_left_head4"] = Label()
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
+		self["list_right_head4"] = Label()
 
 		# set sorting
 		sortDirs = config.plugins.filecommander.sortDirs.value
@@ -1132,9 +1152,11 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					pathname = dir # parent folder
 				self[side + "_head1"].text = pathname
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
+				self[side + "_head4"].text = "%s" % freeDiskSpace(dir)
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
+				self[side + "_head4"].text = ""
 		self["VKeyIcon"].boolean = self.viewable_file() is not None
 
 	def doRefreshDir(self, jobs, updateDirs):
@@ -1305,6 +1327,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				</convert>
 			</widget>
 			<widget name="list_left_head3" position="10,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_left_head4" position="30,60" size="300,25" font="Regular;22"/>
 
 			<widget name="list_right_head1" position="595,10" size="570,40" font="Regular;18" foregroundColor="#00fff000"/>
 			<widget source="list_right_head2" render="Listbox" position="595,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
@@ -1321,6 +1344,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				</convert>
 			</widget>
 			<widget name="list_right_head3" position="595,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_right_head4" position="965,60" size="300,25" font="Regular;22"/>
 
 			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
@@ -1363,9 +1387,11 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
 		self["list_left_head3"] = Label()
+		self["list_left_head4"] = Label()
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
 		self["list_right_head3"] = Label()
+		self["list_right_head4"] = Label()
 
 		if leftactive:
 			self["list_left"] = MultiFileSelectList(self.selectedFiles, path_left, matchingPattern=filter, sortDirs=sortDirsLeft, sortFiles=sortFilesLeft, firstDirs=firstDirs)
@@ -1753,7 +1779,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				else:
 					pathname = dir # parent folder
 				self[side + "_head1"].text = pathname
-
+				self[side + "_head4"].text = "%s" % freeDiskSpace(dir)
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
 					self[side + "_head3"].text = self.selInfo(self.selItems, self.selSize)
@@ -1764,6 +1790,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
 				self[side + "_head3"].text = ""
+				self[side + "_head4"].text = ""
 
 	def doRefresh(self):
 		print "[FileCommander] selectedFiles:", self.selectedFiles
