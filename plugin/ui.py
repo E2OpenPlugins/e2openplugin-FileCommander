@@ -94,7 +94,6 @@ config.plugins.filecommander.editposition_lineend = ConfigYesNo(default=False)
 config.plugins.filecommander.path_default = ConfigDirectory(default="")
 config.plugins.filecommander.path_left = ConfigText(default="")
 config.plugins.filecommander.path_right = ConfigText(default="")
-config.plugins.filecommander.short_header = ConfigYesNo(default=True)
 config.plugins.filecommander.all_movie_ext = ConfigYesNo(default=True)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
@@ -137,7 +136,6 @@ config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.pl
 config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_right.value))
 
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
-config.plugins.filecommander.invert_selection = ConfigYesNo(default=True)
 config.plugins.filecommander.sensitive = ConfigYesNo(default=False)
 config.plugins.filecommander.search = ConfigSelection(default = "begin", choices = [("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
 choicelist = []
@@ -170,7 +168,6 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make File Commander accessible from the Extensions menu.")))
 		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left, _("Save the left directory list location on exit.")))
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right, _("Save the right folder list location on exit.")))
-		self.list.append(getConfigListEntry(_("Short path in headers"),config.plugins.filecommander.short_header, _("Displays only directories in panel headers.")))
 		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
 		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
@@ -187,7 +184,6 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
-		self.list.append(getConfigListEntry(_("Blue in MultiSelection as Invert"), config.plugins.filecommander.invert_selection, _("In multi-selection mode using under blue button inversion of the selection instead cancel this mode.")))
 		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
@@ -1147,15 +1143,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
-				file = self[side].getFilename() or ''
-				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir, self[side + "_head1"])
-				elif file.startswith(dir):
-					pathname = file # subfolder
-				elif not dir.startswith(file):
-					pathname = dir + file # filepath
-				else:
-					pathname = dir # parent folder
+				pathname = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head1"].text = pathname
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
@@ -1415,13 +1403,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["key_red"] = StaticText(_("Delete"))
 		self["key_green"] = StaticText(_("Move"))
 		self["key_yellow"] = StaticText(_("Copy"))
-		if config.plugins.filecommander.invert_selection.value:
-			text = _("Invert selection")
-			bluebutton = (self.invertSelection, _("Invert selection"))
-		else:
-			text = _("Skip selection")
-			bluebutton = (self.goBlue, _("Leave multi-select mode"))
-		self["key_blue"] = StaticText(text)
+		self["key_blue"] = StaticText(_("Invert selection"))
 
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
 			"menu": (self.selectAction, _("Open actions menu")),
@@ -1438,7 +1420,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"red": (self.goRed, _("Delete the selected files or directories")),
 			"green": (self.goGreen, _("Move files/directories to target directory")),
 			"yellow": (self.goYellow, _("Copy files/directories to target directory")),
-			"blue": bluebutton,
+			"blue": (self.invertSelection, _("Invert selection")),
 			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
 			"0": (self.doRefresh, _("Refresh screen")),
 			"2": (boundFunction(self.selectGroup, True), _("Select group")),
@@ -1760,15 +1742,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
-				file = self[side].getFilename() or ''
-				if config.plugins.filecommander.short_header.value: # parent folder always
-					pathname = cutLargePath(dir, self[side + "_head1"])
-				elif file.startswith(dir):
-					pathname = file # subfolder
-				elif not dir.startswith(file):
-					pathname = dir + file # filepath
-				else:
-					pathname = dir # parent folder
+				pathname = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head1"].text = pathname
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
 				if self.selItems and self.SOURCELIST == self[side]:
