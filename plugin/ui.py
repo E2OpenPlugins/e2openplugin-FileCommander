@@ -1567,7 +1567,6 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def gomakeDir(self):
 		filename = self.TARGETLIST.getFilename()
 		sourceDir = self.TARGETLIST.getCurrentDirectory()
-		print filename, sourceDir
 		if (filename is None) or (sourceDir is None):
 			self.session.open(MessageBox, _("Directory cannot be created here on\n<List of Storage Devices> or <Receiver>.\nMove selector one line below or change directory."), type=MessageBox.TYPE_WARNING, simple=True)
 			return
