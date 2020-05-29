@@ -255,7 +255,8 @@ def cutLargePath(path, label):
 		label.instance.setNoWrap(1)
 		label.setText("%s" % string)
 		return label.instance.calculateSize().width()
-	path = path.rstrip('/')
+	if path != "/":
+		path = path.rstrip('/')
 	w = label.instance.size().width()	# label width
 	path_w = getStringSize(path, label)	# text width
 	if path_w > w:
@@ -464,7 +465,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			"0": (self.doRefresh, _("Refresh screen")),
 			"2": (self.goBlue, _("Rename file/directory")),
 			"3": (self.file_viewer, _("View or edit file (if size < 1MB)")),
-			"7": (self.gomakeDir, _("Create directory/folder")),
+			"7": (self.gomakeDir, _("Create directory")),
 			"8": (self.openTasklist, _("Show task list")),
 #			"9": self.downloadSubtitles,  # Unimplemented
 			"red": (self.goRed, _("Delete file or directory (and all its contents)")),
@@ -572,7 +573,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
 		menu.append((_("Copy file/directory to target directory"), self.goYellow))	#5
 		menu.append((_("Move file/directory to target directory"), self.goGreen))	#6
-		menu.append((_("Create directory/folder"), self.gomakeDir))			#7
+		menu.append((_("Create directory"), self.gomakeDir))				#7
 		menu.append((_("Delete file or directory (and all its contents)"), self.goRed))	#8
 		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))	#info
 		menu.append((_("Enter multi-file selection mode"), self.listSelect))		#green
@@ -1099,8 +1100,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		filename = self.SOURCELIST.getFilename()
 		sourceDir = self.SOURCELIST.getCurrentDirectory()
 		if (filename is None) or (sourceDir is None):
+			self.session.open(MessageBox, _("Directory cannot be created here on\n<List of Storage Devices> or <Receiver>.\nMove selector one line below or change directory."), type=MessageBox.TYPE_WARNING, simple=True)
 			return
-		#self.session.openWithCallback(self.doMakedir, InputBox, text="", title=_("Please enter name of the new directory"), windowTitle=_("New folder"))
 		self.session.openWithCallback(self.doMakedir, VirtualKeyBoard, title=_("Please enter name of the new directory"), text=_('New folder'))
 
 	def doMakedir(self, newname):
@@ -1108,15 +1109,11 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
 			if sourceDir is None:
 				return
-			# self.session.openWithCallback(self.doMakedirCB, Console, title = _("create folder"), cmdlist=["mkdir \"" + sourceDir + newname + "\""])
 			try:
 				os.mkdir(sourceDir + newname)
 			except OSError as oe:
 				self.session.open(MessageBox, _("Error creating directory %s:\n%s") % (sourceDir + newname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.doRefresh()
-
-	def doMakedirCB(self):
-		self.doRefresh()
 
 # ## download subtitles ###
 	def downloadSubtitles(self):
@@ -1138,10 +1135,13 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def updateHead(self):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
+			filename = self[side].getFilename()
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
+			elif not dir and filename:
+				self[side + "_head1"].text = cutLargePath(_("<Receiver>"), self[side + "_head1"])
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
@@ -1427,13 +1427,14 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 	def selectAction(self):
 		menu = []
-		menu.append((_("Select group..."), boundFunction(self.selectGroup, True)))						# 2
-		menu.append((_("Deselect group..."), boundFunction(self.selectGroup, False)))						# 5
-		menu.append((_("Select All"), self.selectAll))									        # ""
-		menu.append((_("Deselect All"), self.deselectAll))									# ""
-		menu.append((_("Invert Selection"), self.invertSelection))								# blue
-		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	# menu
-		keys=["2", "5", "", "", "blue", "menu"]
+		menu.append((_("Select group..."), boundFunction(self.selectGroup, True)))						#2
+		menu.append((_("Deselect group..."), boundFunction(self.selectGroup, False)))						#5
+		menu.append((_("Select All"), self.selectAll))									        #""
+		menu.append((_("Deselect All"), self.deselectAll))									#""
+		menu.append((_("Create directory in 'Target' panel"), self.gomakeDir))							#7
+		menu.append((_("Invert Selection"), self.invertSelection))								#blue
+		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	#menu
+		keys=["2", "5", "", "", "7", "blue", "menu"]
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
@@ -1562,6 +1563,27 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
 		self.session.open(TaskListScreen, self.tasklist)
 
+# ## new folder in !Target! ###
+	def gomakeDir(self):
+		filename = self.TARGETLIST.getFilename()
+		sourceDir = self.TARGETLIST.getCurrentDirectory()
+		print filename, sourceDir
+		if (filename is None) or (sourceDir is None):
+			self.session.open(MessageBox, _("Directory cannot be created here on\n<List of Storage Devices> or <Receiver>.\nMove selector one line below or change directory."), type=MessageBox.TYPE_WARNING, simple=True)
+			return
+		self.session.openWithCallback(self.doMakedir, VirtualKeyBoard, title=_("Please enter name of the new directory"), text=_('New folder'))
+
+	def doMakedir(self, newname):
+		if newname:
+			targetDir = self.TARGETLIST.getCurrentDirectory()
+			if targetDir is None:
+				return
+			try:
+				os.mkdir(targetDir + newname)
+			except OSError as oe:
+				self.session.open(MessageBox, _("Error creating directory %s:\n%s") % (targetDir + newname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
+			self.doRefresh()
+
 # ## delete select ###
 	def goRed(self):
 		if not len(self.selectedFiles):
@@ -1679,6 +1701,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def updateHead(self):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
+			filename = self[side].getFilename()
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
@@ -1688,6 +1711,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				else:
 					self[side + "_head2"].updateList(self.statInfo(self[side]))
 					self[side + "_select"].text = ""
+			elif not dir and filename:
+				self[side + "_head1"].text = cutLargePath(_("<Receiver>"), self[side + "_head1"])
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
