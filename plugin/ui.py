@@ -299,8 +299,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		skin = """
 		<screen position="40,80" size="1840,920" title="" >
 			<widget name="list_left_head1" position="10,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
-			<widget source="list_left_head2" render="Listbox" position="10,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-			<widget name="list_left_free" position="30,60" size="300,25" font="Regular;22"/>
+			<widget name="list_left_select" position="10,43" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_left_head2" render="Listbox" position="10,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -314,8 +314,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				</convert>
 			</widget>
 			<widget name="list_right_head1" position="900,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
-			<widget source="list_right_head2" render="Listbox" position="900,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-			<widget name="list_right_free" position="30,60" size="300,25" font="Regular;22"/>
+			<widget name="list_right_select" position="900,43" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_right_head2" render="Listbox" position="900,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -328,10 +328,12 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_left" position="10,85" size="890,699" itemHeight="46" scrollbarMode="showOnDemand"/>
-			<widget name="list_right" position="900,85" size="890,699" itemHeight="46" scrollbarMode="showOnDemand"/>
-			<widget name="sort_left" position="10,831" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
-			<widget name="sort_right" position="900,831" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
+			<widget name="list_left" position="10,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
+			<widget name="list_right" position="900,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
+			<widget name="list_left_free" position="30,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
+			<widget name="list_right_free" position="920,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
+			<widget name="sort_left" position="10,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
+			<widget name="sort_right" position="900,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
 			<widget source="key_red" render="Label" position="150,855" size="390,38" transparent="1" font="Regular;30"/>
 			<widget source="key_green" render="Label" position="593,855" size="390,38"  transparent="1" font="Regular;30"/>
 			<widget source="key_yellow" render="Label" position="1035,855" size="390,38" transparent="1" font="Regular;30"/>
@@ -345,6 +347,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		skin = """
 		<screen position="40,80" size="1200,600" title="" >
 			<widget name="list_left_head1" position="10,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_left_select" position="10,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
 			<widget source="list_left_head2" render="Listbox" position="10,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
 			<widget name="list_left_free" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
@@ -360,6 +363,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				</convert>
 			</widget>
 			<widget name="list_right_head1" position="595,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_right_select" position="595,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
 			<widget source="list_right_head2" render="Listbox" position="595,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
 			<widget name="list_right_free" position="30,60" size="300,25" font="Regular;22"/>
 				<convert type="TemplatedMultiContent">
@@ -376,6 +380,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			</widget>
 			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
 			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
+			<widget name="list_left_free" position="10,551" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
+			<widget name="list_right_free" position="595,554" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
 			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
 			<widget name="sort_right" position="595,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
 			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
@@ -1135,8 +1141,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
-				pathname = cutLargePath(dir, self[side + "_head1"])
-				self[side + "_head1"].text = pathname
+				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
 			else:
@@ -1296,59 +1301,11 @@ def SELECTED(item):
 	return item[0][3]
 
 class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
-	skin = """
-		<screen position="40,80" size="1200,600" title="" >
-			<widget name="list_left_head1" position="10,10" size="570,40" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget source="list_left_head2" render="Listbox" position="10,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-				<convert type="TemplatedMultiContent">
-					{"template": [
-						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
-						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
-						],
-						"fonts": [gFont("Regular", 18)],
-						"itemHeight": 20,
-						"selectionEnabled": False
-					}
-				</convert>
-			</widget>
-			<widget name="list_left_select" position="10,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget name="list_left_free" position="30,60" size="300,25" font="Regular;22"/>
-
-			<widget name="list_right_head1" position="595,10" size="570,40" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget source="list_right_head2" render="Listbox" position="595,50" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-				<convert type="TemplatedMultiContent">
-					{"template": [
-						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
-						MultiContentEntryText(pos = (130, 0), size = (90, 20), font = 0, flags = RT_HALIGN_RIGHT, text = 11), # index 11 is the scaled size
-						MultiContentEntryText(pos = (235, 0), size = (260, 20), font = 0, flags = RT_HALIGN_LEFT, text = 15), # index 15 is the modification time
-						],
-						"fonts": [gFont("Regular", 18)],
-						"itemHeight": 20,
-						"selectionEnabled": False
-					}
-				</convert>
-			</widget>
-			<widget name="list_right_select" position="595,50" size="570,20" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget name="list_right_free" position="965,60" size="300,25" font="Regular;22"/>
-
-			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget name="sort_right" position="595,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
-			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
-			<widget source="key_blue" render="Label" position="985,570" size="260,25" transparent="1" font="Regular;20"/>
-			<ePixmap position="70,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
-			<ePixmap position="365,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
-			<ePixmap position="660,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
-			<ePixmap position="955,570" size="260,25" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_blue.png" transparent="1" alphatest="on"/>
-		</screen>"""
-
 	def __init__(self, session, leftactive, selectedid):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
+
+		self.skin=FileCommanderScreen.skin
 
 		self.selectedFiles = []
 		self.selectedid = selectedid
@@ -1734,8 +1691,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		for side in ("list_left", "list_right"):
 			dir = self[side].getCurrentDirectory()
 			if dir is not None:
-				pathname = cutLargePath(dir, self[side + "_head1"])
-				self[side + "_head1"].text = pathname
+				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
