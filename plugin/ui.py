@@ -180,7 +180,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("Default folder and bookmarks"), config.plugins.filecommander.path_default, _("Press 'OK' and set target folder for 'Go to default directory' or manage plugin's bookmarks.")))
+		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventual You can manage plugin's bookmarks here too.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
@@ -578,11 +578,11 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))	#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))		#
 		menu.append((_("Go to parent directory"), self.goParentfolder))			#
-		menu.append((_("Go to default directory"), self.goDefaultfolderSingle))		#yellow
+		menu.append((_("Go to default directory"), self.goDefaultfolder))		#yellow
 		menu.append((self.help_run_file(), self.run_file))				#
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))			#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))	#menu
-		menu.append((_("Go to bookmarked folder"), self.goDefaultfolder))		#
+		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))		#
 
 		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "blue", "", "", "", "", "yellow", "", "", "menu", ""]
 
@@ -634,14 +634,14 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		config.plugins.filecommander.bookmarks.value = bookmarks
 		config.plugins.filecommander.bookmarks.save()
 
-	def goDefaultfolderSingle(self):
+	def goDefaultfolder(self):
 		if self.disableActions_Timer.isActive():
 			return
 		if config.plugins.filecommander.path_default.value:
 			self.SOURCELIST.changeDir(config.plugins.filecommander.path_default.value)
 			self.updateHead()
 
-	def goDefaultfolder(self):
+	def goBookmarkedfolder(self):
 		if self.disableActions_Timer.isActive():
 			return
 		bookmarks = config.plugins.filecommander.bookmarks.value
