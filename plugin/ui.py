@@ -180,7 +180,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Default directory if the left or right folder isn't saved, and target folder for 'Go to parent directory'.")))
+		self.list.append(getConfigListEntry(_("Default folder and bookmarks"), config.plugins.filecommander.path_default, _("Press 'OK' and set target folder for 'Go to default directory' or manage plugin's bookmarks.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
@@ -216,7 +216,7 @@ class Setup(ConfigListScreen, Screen):
 
 	def ok(self):
 		if self["config"].getCurrent()[1] is config.plugins.filecommander.path_default:
-			self.session.openWithCallback(self.pathSelected, LocationBox, text=_("Default Folder"), currDir=config.plugins.filecommander.path_default.getValue(), minFree=100)
+			self.session.openWithCallback(self.pathSelected, LocationBox, text=_("Default Folder"), currDir=config.plugins.filecommander.path_default.getValue(), bookmarks=config.plugins.filecommander.bookmarks)
 
 	def pathSelected(self, res):
 		if res is not None:
@@ -390,18 +390,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 	def __init__(self, session, path_left=None):
 		# path_left == "" means device list, whereas path_left == None means saved or default value
-		if path_left is None:
-			if config.plugins.filecommander.savedir_left.value and config.plugins.filecommander.path_left.value and os.path.isdir(config.plugins.filecommander.path_left.value):
-				path_left = config.plugins.filecommander.path_left.value
-			elif config.plugins.filecommander.path_default.value and os.path.isdir(config.plugins.filecommander.path_default.value):
-				path_left = config.plugins.filecommander.path_default.value
 
-		if config.plugins.filecommander.savedir_right.value and config.plugins.filecommander.path_right.value and os.path.isdir(config.plugins.filecommander.path_right.value):
-			path_right = config.plugins.filecommander.path_right.value
-		elif config.plugins.filecommander.path_default.value and os.path.isdir(config.plugins.filecommander.path_default.value):
-			path_right = config.plugins.filecommander.path_default.value
-		else:
-			path_right = None
+		path_left = config.plugins.filecommander.path_left.value if os.path.isdir(config.plugins.filecommander.path_left.value) else None
+		path_right = config.plugins.filecommander.path_right.value if os.path.isdir(config.plugins.filecommander.path_right.value) else None
 
 		if path_left and os.path.isdir(path_left) and path_left[-1] != "/":
 			path_left += "/"
@@ -492,10 +483,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		global glob_running
 		glob_running = True
 
-		if config.plugins.filecommander.path_left_selected:
-			self.onLayoutFinish.append(self.listLeft)
-		else:
-			self.onLayoutFinish.append(self.listRight)
+		self.onLayoutFinish.append(self.listLeft if config.plugins.filecommander.path_left_selected else self.listRight)
 		
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
@@ -553,14 +541,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if self["list_left"].getCurrentDirectory() and config.plugins.filecommander.savedir_left.value:
 			config.plugins.filecommander.path_left.value = self["list_left"].getCurrentDirectory()
 			config.plugins.filecommander.path_left.save()
-		else:
-			config.plugins.filecommander.path_left.value = config.plugins.filecommander.path_default.value
 
 		if self["list_right"].getCurrentDirectory() and config.plugins.filecommander.savedir_right.value:
 			config.plugins.filecommander.path_right.value = self["list_right"].getCurrentDirectory()
 			config.plugins.filecommander.path_right.save()
-		else:
-			config.plugins.filecommander.path_right.value = config.plugins.filecommander.path_default.value
 
 		global glob_running
 		glob_running = False
@@ -593,13 +577,14 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("Calculate file checksums"), self.run_hashes))			#
 		menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))	#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))		#
-		menu.append((_("Go to parent directory"), self.goParentfolder))			#yellow
+		menu.append((_("Go to parent directory"), self.goParentfolder))			#
+		menu.append((_("Go to default directory"), self.goDefaultfolderSingle))		#yellow
 		menu.append((self.help_run_file(), self.run_file))				#
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))			#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))	#menu
 		menu.append((_("Go to bookmarked folder"), self.goDefaultfolder))		#
 
-		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "blue", "", "", "", "yellow", "", "", "menu", ""]
+		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "blue", "", "", "", "", "yellow", "", "", "menu", ""]
 
 		item = self.help_uninstall_file()
 		if item:
@@ -648,6 +633,13 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			#	config.misc.pluginlist.fc_bookmarks_order.save()
 		config.plugins.filecommander.bookmarks.value = bookmarks
 		config.plugins.filecommander.bookmarks.save()
+
+	def goDefaultfolderSingle(self):
+		if self.disableActions_Timer.isActive():
+			return
+		if config.plugins.filecommander.path_default.value:
+			self.SOURCELIST.changeDir(config.plugins.filecommander.path_default.value)
+			self.updateHead()
 
 	def goDefaultfolder(self):
 		if self.disableActions_Timer.isActive():
