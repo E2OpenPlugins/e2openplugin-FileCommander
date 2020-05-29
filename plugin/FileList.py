@@ -385,38 +385,6 @@ class MultiFileSelectList(FileList):
 		if item:
 			# note: singleItem set as True ... manually must be directory selectable/deselectable
 			self.toggleItemSelection(item, singleItem = True)
-		return
-
-		# delete it  - slower, redundant, will be removed after tests
-		idx = self.l.getCurrentSelectionIndex()
-		# os.system('echo %s >> /tmp/test1.log' % ("- xxx - "))
-		count = 0
-		newList = []
-		for x in self.list:
-			# os.system('echo %s >> /tmp/test1.log' % ("- state0 - "))
-			if idx == count:
-				if x[0][4].startswith('<'):
-					newList.append(x)
-				else:
-					if x[0][1] is True:
-						realPathname = x[0][0]
-					else:
-						realPathname = self.current_directory + x[0][0]
-					SelectState = not x[0][3]
-					if SelectState:
-						if realPathname not in self.selectedFiles:
-							self.selectedFiles.append(realPathname)
-					else:
-						if realPathname in self.selectedFiles:
-							self.selectedFiles.remove(realPathname)
-					newList.append(MultiFileSelectEntryComponent(name=x[0][4], absolute=x[0][0], isDir=x[0][1], isLink=x[0][2], selected=SelectState))
-			else:
-				newList.append(x)
-
-			count += 1
-
-		self.list = newList
-		self.l.setList(self.list)
 
 	def getSelectedList(self):
 		return self.selectedFiles

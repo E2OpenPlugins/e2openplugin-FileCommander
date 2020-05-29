@@ -330,8 +330,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			</widget>
 			<widget name="list_left" position="10,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
 			<widget name="list_right" position="900,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
-			<widget name="list_left_free" position="30,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
-			<widget name="list_right_free" position="920,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
+			<widget name="list_left_free" position="30,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="list_right_free" position="920,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
 			<widget name="sort_left" position="10,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
 			<widget name="sort_right" position="900,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
 			<widget source="key_red" render="Label" position="150,855" size="390,38" transparent="1" font="Regular;30"/>
@@ -346,10 +346,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	else:
 		skin = """
 		<screen position="40,80" size="1200,600" title="" >
-			<widget name="list_left_head1" position="10,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_left_head1" position="10,10" size="570,21" font="Regular;18" foregroundColor="#00fff000"/>
 			<widget name="list_left_select" position="10,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_left_head2" render="Listbox" position="10,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-			<widget name="list_left_free" position="30,60" size="300,25" font="Regular;22"/>
+			<widget source="list_left_head2" render="Listbox" position="10,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -362,10 +361,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_right_head1" position="595,10" size="570,42" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget name="list_right_select" position="595,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_right_head2" render="Listbox" position="595,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1" >
-			<widget name="list_right_free" position="30,60" size="300,25" font="Regular;22"/>
+			<widget name="list_right_head1" position="610,10" size="570,21" font="Regular;18" foregroundColor="#00fff000"/>
+			<widget name="list_right_select" position="610,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_right_head2" render="Listbox" position="610,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -379,11 +377,11 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				</convert>
 			</widget>
 			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="list_right" position="595,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="list_left_free" position="10,551" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
-			<widget name="list_right_free" position="595,554" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it --!>
-			<widget name="sort_left" position="10,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget name="sort_right" position="595,554" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
+			<widget name="list_right" position="610,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
+			<widget name="list_left_free" position="10,32" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="list_right_free" position="610,32" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="sort_left" position="10,32" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
+			<widget name="sort_right" position="610,32" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
 			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
 			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
 			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
@@ -1505,15 +1503,6 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.getSelectedFilesInfos(self.selectedFiles)
 		self.updateHead()
 
-###	only for tests	- will be removed after tests
-	def groupSelection(self):
-		searchString = "enigm"
-		if self.ACTIVELIST == self.SOURCELIST:
-			for idx,item in enumerate(self.SOURCELIST.list):
-				if item[0][4].startswith(searchString):
-					self.ACTIVELIST.toggleItemSelection(item)
-###
-
 	def exit(self, jobs=None, updateDirs=None):
 		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
 		config.plugins.filecommander.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
@@ -1754,9 +1743,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 class FileCommanderFileStatInfo(Screen, stat_info):
 	skin = """
-		<screen name="FileCommanderFileStatInfo" position="center,center" size="545,345" title="File/Directory Status Information">
+		<screen name="FileCommanderFileStatInfo" position="center,center" size="545,370" title="File/Directory Status Information">
 			<widget name="filename" position="10,0" size="525,46" font="Regular;20"/>
-			<widget source="list" render="Listbox" position="10,60" size="525,275" scrollbarMode="showOnDemand" selectionDisabled="1" transparent="1" >
+			<widget source="list" render="Listbox" position="10,60" size="525,300" scrollbarMode="showOnDemand" selectionDisabled="1" transparent="1" >
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						# 0   100 200 300 400 500
