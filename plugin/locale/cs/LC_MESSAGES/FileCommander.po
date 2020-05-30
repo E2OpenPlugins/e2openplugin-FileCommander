@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 16:19+0200\n"
-"PO-Revision-Date: 2020-05-29 16:21+0200\n"
+"POT-Creation-Date: 2020-05-30 09:04+0200\n"
+"PO-Revision-Date: 2020-05-30 09:11+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -43,7 +43,7 @@ msgstr " ('%s') dokončeno s chybovými hlášeními."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') dokončeno s chybou číslo [%d]."
 
-#: ../ui.py:1677 ../ui.py:1713
+#: ../ui.py:1644 ../ui.py:1680
 #, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
@@ -51,11 +51,11 @@ msgstr[0] " - %d položka existuje! Přepsat"
 msgstr[1] " - %d položky existují! Přepsat"
 msgstr[2] " - %d položek existuje! Přepsat"
 
-#: ../ui.py:877 ../ui.py:939
+#: ../ui.py:882 ../ui.py:944
 msgid " - file exist! Overwrite"
 msgstr " - soubor existuje! Přepsat"
 
-#: ../ui.py:881 ../ui.py:943
+#: ../ui.py:886 ../ui.py:948
 msgid " - folder exist! Overwrite"
 msgstr " - adresář existuje! Přepsat"
 
@@ -63,17 +63,17 @@ msgstr " - adresář existuje! Přepsat"
 msgid " or save the picture additionally to a file"
 msgstr " nebo uložit obrázek navíc do souboru"
 
-#: ../ui.py:286
+#: ../ui.py:287
 #, python-format
 msgid "%d GB"
 msgstr ""
 
-#: ../ui.py:284
+#: ../ui.py:285
 #, python-format
 msgid "%d MB"
 msgstr ""
 
-#: ../ui.py:282
+#: ../ui.py:283
 #, python-format
 msgid "%d kB"
 msgstr ""
@@ -87,7 +87,7 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../ui.py:1896
+#: ../ui.py:1865
 #, python-format
 msgid "%s (%04o)"
 msgstr ""
@@ -113,7 +113,7 @@ msgstr "%s je zabezpečen heslem."
 msgid "%s successfully extracted."
 msgstr "%s úspěšně rozbalen."
 
-#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1887
+#: ../addons/key_actions.py:419 ../addons/key_actions.py:723 ../ui.py:1856
 #, python-format
 msgid "%s: %s"
 msgstr ""
@@ -123,52 +123,56 @@ msgstr ""
 msgid "'%s' not installed and no known package"
 msgstr "'%s' není nainstalován a není znám balíček"
 
-#: ../ui.py:179 ../ui.py:1261
+#: ../ui.py:179 ../ui.py:1264
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr "'Skupinový výběr' a 'Inverze výběru' v režimu vícenásobného výběru mohou pracovat také s adresáři."
 
-#: ../ui.py:503
+#: ../ui.py:508
 #, python-format
 msgid "(%d jobs)"
 msgstr "(%d úloh)"
 
-#: ../ui.py:503
+#: ../ui.py:508
 msgid "(1 job)"
 msgstr "(1 úloha)"
 
-#: ../ui.py:1433
+#: ../ui.py:1388
 msgid "(Selectmode)"
-msgstr ""
+msgstr "(výběr)"
 
 #: ../addons/type_utils.py:206
 msgid ": "
 msgstr ""
 
+#: ../ui.py:1144 ../ui.py:1714
+msgid "<Receiver>"
+msgstr "<Přijímač>"
+
 #: ../addons/key_actions.py:97
 msgid "?"
 msgstr ""
 
-#: ../ui.py:1900
+#: ../ui.py:1869
 msgid "Accessed:"
 msgstr ""
 
-#: ../ui.py:1405 ../ui.py:1407
+#: ../ui.py:1360 ../ui.py:1362
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Přepnout do levého panelu"
 
-#: ../ui.py:457 ../ui.py:459
+#: ../ui.py:462 ../ui.py:464
 msgid "Activate left-hand file list as source"
 msgstr "Přepnout do levého panelu"
 
-#: ../ui.py:1404 ../ui.py:1406
+#: ../ui.py:1359 ../ui.py:1361
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Přepnout do pravého panelu"
 
-#: ../ui.py:456 ../ui.py:458
+#: ../ui.py:461 ../ui.py:463
 msgid "Activate right-hand file list as source"
 msgstr "Přepnout do pravého panelu"
 
-#: ../ui.py:604
+#: ../ui.py:609
 msgid "Add current folder to bookmarks"
 msgstr "Přidat aktuální adresář do záložek"
 
@@ -180,11 +184,11 @@ msgstr "Přidat plugin do Extension menu"
 msgid "Add plugin to main menu"
 msgstr "Přidat plugin do hlavního menu"
 
-#: ../ui.py:600
+#: ../ui.py:605
 msgid "Add selected folder to bookmarks"
 msgstr "Přidat vybraný adresář do záložek"
 
-#: ../ui.py:1504
+#: ../ui.py:1460
 #, python-format
 msgid "Add to selection (%s)"
 msgstr "Přidat do výběru (%s)"
@@ -193,11 +197,11 @@ msgstr "Přidat do výběru (%s)"
 msgid "All"
 msgstr "Vše"
 
-#: ../ui.py:184 ../ui.py:1263
+#: ../ui.py:184 ../ui.py:1266
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr "Všechny soubory v adresáři se stejným názvem jako má vybraný film budou též zkopírovány nebo přesunuty."
 
-#: ../ui.py:184 ../ui.py:1263
+#: ../ui.py:184 ../ui.py:1266
 msgid "All movie extensions"
 msgstr "Všechny přípony filmu"
 
@@ -209,7 +213,7 @@ msgstr ""
 msgid "CPU priority for script execution"
 msgstr "Priorita CPU pro spouštění skriptu"
 
-#: ../ui.py:577
+#: ../ui.py:582
 msgid "Calculate file checksums"
 msgstr "Spočítat kontrolní součet souboru"
 
@@ -230,14 +234,14 @@ msgstr ""
 "Nelze spustit %s: %s.\n"
 "%s může být plugin, který není nainstalován."
 
-#: ../ui.py:1916
+#: ../ui.py:1885
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Nelze číst obsah odkazu: %s"
 
 #: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
 #: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:195 ../ui.py:1234
+#: ../addons/key_actions.py:593 ../ui.py:195 ../ui.py:1237
 msgid "Cancel"
 msgstr "Zavřít"
 
@@ -249,7 +253,7 @@ msgstr "Zrušit provádění?"
 msgid "Change buttons for list navigation"
 msgstr "Změnit tlačítka pro pohyb v panelu"
 
-#: ../ui.py:578
+#: ../ui.py:583
 msgid "Change execute permissions (755/644)"
 msgstr "Změna prováděcích práv (755/644)"
 
@@ -265,19 +269,19 @@ msgstr ""
 msgid "Close"
 msgstr "Zavřít"
 
-#: ../ui.py:1259
+#: ../ui.py:1262
 msgid "Compare case sensitive"
 msgstr "Rozlišovat velikost písmen"
 
-#: ../ui.py:1906
+#: ../ui.py:1875
 msgid "Content size:"
 msgstr "Velikost obsahu:"
 
-#: ../ui.py:448 ../ui.py:1397
+#: ../ui.py:453 ../ui.py:1352
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: ../ui.py:1721
+#: ../ui.py:1688
 #, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
@@ -285,19 +289,19 @@ msgstr[0] "Kopírovat %d položku"
 msgstr[1] "Kopírovat %d položky"
 msgstr[2] "Kopírovat %d položek"
 
-#: ../ui.py:878
+#: ../ui.py:883
 msgid "Copy file"
 msgstr "Kopírovat soubor"
 
-#: ../ui.py:468 ../ui.py:569
+#: ../ui.py:473 ../ui.py:574
 msgid "Copy file/directory to target directory"
 msgstr "Zkopírovat soubor nebo adresář"
 
-#: ../ui.py:1414
+#: ../ui.py:1369
 msgid "Copy files/directories to target directory"
 msgstr "Kopírovat soubory/adresáře do cílového adresáře"
 
-#: ../ui.py:882
+#: ../ui.py:887
 msgid "Copy folder"
 msgstr "Kopírovat adresář"
 
@@ -305,15 +309,19 @@ msgstr "Kopírovat adresář"
 msgid "Count directory content size"
 msgstr "Počítat velikost obsahu adreáře"
 
-#: ../ui.py:463 ../ui.py:571
-msgid "Create directory/folder"
+#: ../ui.py:468 ../ui.py:576
+msgid "Create directory"
 msgstr "Založit adresář"
 
-#: ../ui.py:1071
+#: ../ui.py:1434
+msgid "Create directory in 'Target' panel"
+msgstr "Založit adresář v 'Cílovém' panelu"
+
+#: ../ui.py:1076
 msgid "Create symlink to file"
 msgstr "Založit symbolický odkaz k souboru"
 
-#: ../ui.py:579
+#: ../ui.py:584
 msgid "Create user-named symbolic link"
 msgstr "Vytvořit uživatelsky pojmenovaný symbolický odkaz"
 
@@ -365,11 +373,11 @@ msgstr "Výchozí metoda třídění souborů v levém panelu."
 msgid "Default sorting method for files in right panel."
 msgstr "Výchozí metoda třídění souborů v pravém panelu."
 
-#: ../addons/type_utils.py:117 ../ui.py:446 ../ui.py:1395
+#: ../addons/type_utils.py:117 ../ui.py:451 ../ui.py:1350
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../ui.py:1643
+#: ../ui.py:1610
 #, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -381,41 +389,51 @@ msgstr[2] "Smazat %d položek"
 msgid "Delete current line"
 msgstr "Smazat aktuální řádek"
 
-#: ../ui.py:909
+#: ../ui.py:914
 msgid "Delete file"
 msgstr "Smazat soubor"
 
-#: ../ui.py:466 ../ui.py:572
+#: ../ui.py:471 ../ui.py:577
 msgid "Delete file or directory (and all its contents)"
 msgstr "Smazat soubor nebo adresář (včetně obsahu)"
 
-#: ../ui.py:911
+#: ../ui.py:916
 msgid "Delete folder"
 msgstr "Smazat adresář"
 
-#: ../ui.py:1412
+#: ../ui.py:1367
 msgid "Delete the selected files or directories"
 msgstr "Odstranit vybrané soubory a adresáře"
 
-#: ../ui.py:1478
+#: ../ui.py:1433
 msgid "Deselect All"
 msgstr "Odebrat vše z výběru"
 
-#: ../ui.py:1419
+#: ../ui.py:1374
 msgid "Deselect group"
 msgstr "Odebrat z výběru"
 
-#: ../ui.py:1476
+#: ../ui.py:1431
 msgid "Deselect group..."
 msgstr "Odebrat z výběru..."
 
-#: ../ui.py:179 ../ui.py:1261
+#: ../ui.py:179 ../ui.py:1264
 msgid "Directories to group selections"
 msgstr "Adresáře do skupinového výběru"
 
 #: ../addons/key_actions.py:82
 msgid "Directory"
 msgstr "Adresář"
+
+#: ../ui.py:1103 ../ui.py:1571
+msgid ""
+"Directory cannot be created here on\n"
+"<List of Storage Devices> or <Receiver>.\n"
+"Move selector one line below or change directory."
+msgstr ""
+"Adresář nelze založit na položce\n"
+"<Seznam záznamových zařízení> nebo <Přijímač>.\n"
+"Přesunte kurzor nebo změňte adresář."
 
 #: ../addons/key_actions.py:243
 msgid "Do you want change rights?\n"
@@ -441,15 +459,15 @@ msgstr "Úprava řádku "
 msgid "Edit position is the line end"
 msgstr "Pozice pro úpravu je na konci řádku"
 
-#: ../ui.py:471 ../ui.py:472 ../ui.py:574
+#: ../ui.py:476 ../ui.py:477 ../ui.py:579
 msgid "Enter multi-file selection mode"
 msgstr "Přejít na vícenásobný výběr"
 
-#: ../ui.py:774
+#: ../ui.py:779
 msgid "Error"
 msgstr "Chyba"
 
-#: ../ui.py:1111
+#: ../ui.py:1115 ../ui.py:1583
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -458,7 +476,7 @@ msgstr ""
 "Chyba při zakládání adresáře %s:\n"
 "%s"
 
-#: ../ui.py:1052
+#: ../ui.py:1057
 #, python-format
 msgid ""
 "Error linking %s to %s:\n"
@@ -467,7 +485,7 @@ msgstr ""
 "Chyba při odkazování %s na %s:\n"
 "%s"
 
-#: ../ui.py:1010
+#: ../ui.py:1015
 #, python-format
 msgid ""
 "Error renaming %s to %s:\n"
@@ -520,7 +538,7 @@ msgstr "File Commander - doplněk Mediaplayer"
 msgid "File Commander - Addon Movieplayer"
 msgstr "File Commander - doplněk MoviePlayer"
 
-#: ../ui.py:802
+#: ../ui.py:807
 msgid "File Commander - all Task's completed!"
 msgstr "File Commander - všechny úlohy dokončeny!"
 
@@ -566,7 +584,7 @@ msgstr "Přenos souboru byl ukončen uživatelem"
 msgid "File write error: '%s'"
 msgstr "Chyba zápisu souboru: '%s'"
 
-#: ../ui.py:470 ../ui.py:573 ../ui.py:1416 ../ui.py:1847
+#: ../ui.py:475 ../ui.py:578 ../ui.py:1371 ../ui.py:1816
 msgid "File/Directory Status Information"
 msgstr "Informace o souboru/adresáři"
 
@@ -582,11 +600,11 @@ msgstr "Filtr pro přípony, (*) se objeví v názvu"
 msgid "Filter visible file classes by extension."
 msgstr "Filtrujte viditelné třídy souborů podle přípony."
 
-#: ../ui.py:585
+#: ../ui.py:590
 msgid "Go to bookmarked folder"
 msgstr "Přejít na záložky"
 
-#: ../ui.py:581
+#: ../ui.py:586
 msgid "Go to default directory"
 msgstr "Přejít na výchozí adresář"
 
@@ -594,7 +612,7 @@ msgstr "Přejít na výchozí adresář"
 msgid "Go to end of file"
 msgstr "Přejít na konec souboru"
 
-#: ../ui.py:580
+#: ../ui.py:585
 msgid "Go to parent directory"
 msgstr "Přejít na rodičovský adresář"
 
@@ -602,7 +620,7 @@ msgstr "Přejít na rodičovský adresář"
 msgid "Go to start of file"
 msgstr "Přejít na začátek souboru"
 
-#: ../ui.py:1895
+#: ../ui.py:1864
 msgid "Group:"
 msgstr "Skupina:"
 
@@ -614,11 +632,11 @@ msgstr "I/O priorita provádění skriptu"
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr "Jestliže upravujete soubor, můžete nastavit počáteční pozici kurzoru na konci nebo na začátku řádku."
 
-#: ../ui.py:178 ../ui.py:1262
+#: ../ui.py:178 ../ui.py:1265
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr "V režimu s vícenásobným výběrem přesune po označení položky kurzor na další položku."
 
-#: ../ui.py:1903
+#: ../ui.py:1872
 msgid "Inode:"
 msgstr ""
 
@@ -643,11 +661,11 @@ msgstr "Instalovat '%s' a povolit tuto operaci"
 msgid "Installing Plugin ..."
 msgstr "Instalace pluginu ..."
 
-#: ../ui.py:1479
+#: ../ui.py:1435
 msgid "Invert Selection"
 msgstr "Invertovat výběr"
 
-#: ../ui.py:1398 ../ui.py:1415
+#: ../ui.py:1353 ../ui.py:1370
 msgid "Invert selection"
 msgstr "Invertovat výběr"
 
@@ -659,7 +677,7 @@ msgstr "Nelze počítat hash pro <List of Storage Devices>"
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Nelze měnit mód souboru pro <List of Storage Devices>"
 
-#: ../ui.py:1865
+#: ../ui.py:1834
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Nelze získat status pro <List of Storage Devices>"
 
@@ -668,27 +686,27 @@ msgstr "Nelze získat status pro <List of Storage Devices>"
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
 msgstr "Nelze spustit '%s' na <List of Storage Devices>"
 
-#: ../ui.py:974
+#: ../ui.py:979
 msgid "It's not possible to rename the filesystem root."
 msgstr "Není možné přejmenovat kořen souborového systému."
 
-#: ../ui.py:454
+#: ../ui.py:459
 msgid "Leave File Commander"
 msgstr "Ukončit File Commander"
 
-#: ../ui.py:1403 ../ui.py:1421 ../ui.py:1422
+#: ../ui.py:1358 ../ui.py:1376 ../ui.py:1377
 msgid "Leave multi-select mode"
 msgstr "Opustit vícenásobný výběr"
 
-#: ../ui.py:1912
+#: ../ui.py:1881
 msgid "Link target:"
 msgstr "Cíl odkazu:"
 
-#: ../ui.py:1902
+#: ../ui.py:1871
 msgid "Links:"
 msgstr "Odkazy:"
 
-#: ../FileList.py:187 ../FileList.py:486
+#: ../FileList.py:187 ../FileList.py:454
 msgid "List of Storage Devices"
 msgstr "Seznam záznamových zařízení"
 
@@ -704,7 +722,7 @@ msgstr "Zpřístupní spouštění File Commanderu z Extension menu."
 msgid "Make File Commander accessible from the main menu."
 msgstr "Zpřístupní spouštění File Commanderu z hlavní nabídky."
 
-#: ../ui.py:1901
+#: ../ui.py:1870
 msgid "Metadata changed:"
 msgstr "Metadata změněna:"
 
@@ -713,15 +731,15 @@ msgstr "Metadata změněna:"
 msgid "Mode %s (%04o)"
 msgstr ""
 
-#: ../ui.py:1899
+#: ../ui.py:1868
 msgid "Modified:"
 msgstr "Změněno:"
 
-#: ../ui.py:447 ../ui.py:1396
+#: ../ui.py:452 ../ui.py:1351
 msgid "Move"
 msgstr "Přesunout"
 
-#: ../ui.py:1682
+#: ../ui.py:1649
 #, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
@@ -729,31 +747,31 @@ msgstr[0] "Přemístit %d položku"
 msgstr[1] "Přemístit %d položky"
 msgstr[2] "Přemístit %d položek"
 
-#: ../ui.py:474 ../ui.py:1409
+#: ../ui.py:479 ../ui.py:1364
 msgid "Move down list"
 msgstr "Posun dolů"
 
-#: ../ui.py:940
+#: ../ui.py:945
 msgid "Move file"
 msgstr "Přesunout soubor"
 
-#: ../ui.py:467 ../ui.py:570
+#: ../ui.py:472 ../ui.py:575
 msgid "Move file/directory to target directory"
 msgstr "Přesunout soubor nebo adresář"
 
-#: ../ui.py:1413
+#: ../ui.py:1368
 msgid "Move files/directories to target directory"
 msgstr "Přesunout soubory/adresáře do cílového adresáře"
 
-#: ../ui.py:944
+#: ../ui.py:949
 msgid "Move folder"
 msgstr "Přesunout adresář"
 
-#: ../ui.py:178 ../ui.py:1262
+#: ../ui.py:178 ../ui.py:1265
 msgid "Move selector to next item"
 msgstr "Přesunout kurzor na další položku"
 
-#: ../ui.py:473 ../ui.py:1408
+#: ../ui.py:478 ../ui.py:1363
 msgid "Move up list"
 msgstr "Posun nahoru"
 
@@ -761,7 +779,7 @@ msgstr "Posun nahoru"
 msgid "Movie"
 msgstr "Filmy"
 
-#: ../ui.py:1278
+#: ../ui.py:1281
 msgid "MultiSelection Settings"
 msgstr "Nastavení pro vícenásobný výběr"
 
@@ -785,7 +803,7 @@ msgstr "Název"
 msgid "Name reverse"
 msgstr "Název v opačném pořadí"
 
-#: ../ui.py:1100
+#: ../ui.py:1105 ../ui.py:1573
 msgid "New folder"
 msgstr "Nový adresář"
 
@@ -820,39 +838,39 @@ msgid "Number of lines in script messages"
 msgstr "Počet řádků ve zprávách skriptu"
 
 #: ../addons/unarchiver.py:73 ../addons/unarchiver.py:243 ../ui.py:196
-#: ../ui.py:1235
+#: ../ui.py:1238
 msgid "OK"
 msgstr ""
 
-#: ../ui.py:1904
+#: ../ui.py:1873
 msgid "On device:"
 msgstr ""
 
-#: ../ui.py:1401
+#: ../ui.py:1356
 msgid "Open actions menu"
 msgstr "Menu"
 
-#: ../ui.py:455
+#: ../ui.py:460
 msgid "Open settings/actions menu"
 msgstr "Otevřít menu nastavení"
 
-#: ../plugin.py:35 ../ui.py:1953
+#: ../plugin.py:35 ../ui.py:1922
 msgid "Open with File Commander"
 msgstr "Otevřít s File Commander"
 
-#: ../ui.py:1894
+#: ../ui.py:1863
 msgid "Owner:"
 msgstr "Vlastník:"
 
-#: ../ui.py:476 ../ui.py:1411
+#: ../ui.py:481 ../ui.py:1366
 msgid "Page down list"
 msgstr "O stránku dolů"
 
-#: ../ui.py:475 ../ui.py:1410
+#: ../ui.py:480 ../ui.py:1365
 msgid "Page up list"
 msgstr "O stránku nahoru"
 
-#: ../FileList.py:191 ../FileList.py:490
+#: ../FileList.py:191 ../FileList.py:458
 msgid "Parent Directory"
 msgstr "Rodičovský adresář"
 
@@ -860,7 +878,7 @@ msgstr "Rodičovský adresář"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Cesta pro uložení neexistuje: '/tmp/"
 
-#: ../ui.py:1896
+#: ../ui.py:1865
 msgid "Permissions:"
 msgstr "Práva:"
 
@@ -876,15 +894,15 @@ msgstr "Přehrát adresář"
 msgid "Play title"
 msgstr ""
 
-#: ../ui.py:453
+#: ../ui.py:458
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Přehrát/prohlížet/upravit/instalovat/rozbalit/spustit/otevřít"
 
-#: ../ui.py:1100
+#: ../ui.py:1105 ../ui.py:1573
 msgid "Please enter name of the new directory"
 msgstr "Zadejte název nového adresáře"
 
-#: ../ui.py:1033
+#: ../ui.py:1038
 msgid "Please enter name of the new symlink"
 msgstr "Zadejte název nového symbolického odkazu"
 
@@ -892,11 +910,11 @@ msgstr "Zadejte název nového symbolického odkazu"
 msgid "Please enter password"
 msgstr "Zadejte heslo"
 
-#: ../ui.py:978
+#: ../ui.py:983
 msgid "Please enter the new directory name"
 msgstr "Zadejte nový název adresáře"
 
-#: ../ui.py:976
+#: ../ui.py:981
 msgid "Please enter the new file name"
 msgstr "Zadejte nový název souboru"
 
@@ -904,11 +922,11 @@ msgstr "Zadejte nový název souboru"
 msgid "Please wait, Loading image."
 msgstr "Prosím, čekejte. Nahrávám obrázek."
 
-#: ../ui.py:1256
+#: ../ui.py:1259
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr "Předvyplnit prvních 'n' znaků názvu do virtuální klávesnice"
 
-#: ../ui.py:1258
+#: ../ui.py:1261
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Předvyplnit posledních 'n' znaků názvu do virtuální klávesnice"
 
@@ -956,7 +974,7 @@ msgstr ""
 msgid "Records"
 msgstr "Nahrávky"
 
-#: ../ui.py:460 ../ui.py:575 ../ui.py:1417
+#: ../ui.py:465 ../ui.py:580 ../ui.py:1372
 msgid "Refresh screen"
 msgstr "Obnovit obrazovku"
 
@@ -964,32 +982,32 @@ msgstr "Obnovit obrazovku"
 msgid "Regular file"
 msgstr "Regulární soubor"
 
-#: ../ui.py:604
+#: ../ui.py:609
 msgid "Remove current folder from bookmarks"
 msgstr "Odstranit aktuální adresář ze záložek"
 
-#: ../ui.py:1506
+#: ../ui.py:1462
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr "Odebrat z výběru (%s)"
 
-#: ../ui.py:600
+#: ../ui.py:605
 msgid "Remove selected folder from bookmarks"
 msgstr "Odstranit vybraný adresář ze záložek"
 
-#: ../ui.py:449
+#: ../ui.py:454
 msgid "Rename"
 msgstr "Přejmenovat"
 
-#: ../ui.py:461 ../ui.py:469 ../ui.py:567
+#: ../ui.py:466 ../ui.py:474 ../ui.py:572
 msgid "Rename file/directory"
 msgstr "Přejmenovat soubor nebo adresář"
 
-#: ../ui.py:478
+#: ../ui.py:483
 msgid "Reverse left file sorting"
 msgstr "Opačné třídění souborů pro levý panel"
 
-#: ../ui.py:479
+#: ../ui.py:484
 msgid "Reverse right file sorting"
 msgstr "Opačné třídění souborů pro pravý panel"
 
@@ -1000,7 +1018,7 @@ msgstr "Spustit příkaz '%s'"
 
 #: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:511 ../ui.py:798
+#: ../addons/key_actions.py:433 ../ui.py:516 ../ui.py:803
 msgid "Run script"
 msgstr "Spustit skript"
 
@@ -1050,31 +1068,31 @@ msgstr "Při ukončení uloží umístění pravého seznamu."
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Aby bylo možné spustit skript '%s', musí mít oprávnění ke čtení"
 
-#: ../ui.py:1253
+#: ../ui.py:1256
 msgid "Search in group selection by"
 msgstr "Skupinový výběr vyhledává podle"
 
-#: ../ui.py:1402
+#: ../ui.py:1357
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Výběr (aktivní panel) nebo volba adresáře (cílový panel)"
 
-#: ../ui.py:1477
+#: ../ui.py:1432
 msgid "Select All"
 msgstr "Přidat vše do výběru"
 
-#: ../ui.py:659
+#: ../ui.py:664
 msgid "Select a path"
 msgstr "Vyberte cestu"
 
-#: ../ui.py:1418
+#: ../ui.py:1373
 msgid "Select group"
 msgstr "Přidat do výběru"
 
-#: ../ui.py:1475
+#: ../ui.py:1430
 msgid "Select group..."
 msgstr "Přidat do výběru..."
 
-#: ../ui.py:607 ../ui.py:1482
+#: ../ui.py:612 ../ui.py:1438
 msgid "Select operation:"
 msgstr "Zvolte operaci:"
 
@@ -1094,7 +1112,7 @@ msgstr "Nastavitspouštěcí mod (755)"
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr "Nastavte pro „stout“ a „sterr“ počet řádků v informacích o skriptech nebo chybových zprávách o skriptech."
 
-#: ../ui.py:1259
+#: ../ui.py:1262
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr "Nastavuje, zda chcete při vyhledávání rozlišovat mezi velkými a malými písmeny."
 
@@ -1102,7 +1120,7 @@ msgstr "Nastavuje, zda chcete při vyhledávání rozlišovat mezi velkými a ma
 msgid "Settings"
 msgstr "Nastavení"
 
-#: ../ui.py:584 ../ui.py:1480
+#: ../ui.py:589 ../ui.py:1436
 msgid "Settings..."
 msgstr "Nastavení..."
 
@@ -1176,7 +1194,7 @@ msgstr "Zobrazit další obrázek"
 msgid "Show previous picture"
 msgstr "Zobrazit předchozí obrázek"
 
-#: ../ui.py:464 ../ui.py:576 ../ui.py:1420
+#: ../ui.py:469 ../ui.py:581 ../ui.py:1375
 msgid "Show task list"
 msgstr "Zobrazit seznam úloh"
 
@@ -1196,7 +1214,7 @@ msgstr "Velikost"
 msgid "Size reverse"
 msgstr "Velikost v opačném pořadí"
 
-#: ../ui.py:1898
+#: ../ui.py:1867
 msgid "Size:"
 msgstr "Velikost:"
 
@@ -1204,11 +1222,11 @@ msgstr "Velikost:"
 msgid "Socket"
 msgstr ""
 
-#: ../ui.py:477
+#: ../ui.py:482
 msgid "Sorting left files by name, date or size"
 msgstr "Třídění souborů dle názvu, stáří a velikosti pro levý panel"
 
-#: ../ui.py:480
+#: ../ui.py:485
 msgid "Sorting right files by name, date or size"
 msgstr "Třídění souborů dle názvu, stáří a velikosti pro pravý panel"
 
@@ -1216,7 +1234,7 @@ msgstr "Třídění souborů dle názvu, stáří a velikosti pro pravý panel"
 msgid "Start/stop slide show"
 msgstr "Spustit/zastavit prezentaci"
 
-#: ../ui.py:656
+#: ../ui.py:661
 msgid "Storage devices"
 msgstr "Záznamová zařízení"
 
@@ -1228,7 +1246,7 @@ msgstr "Zamění tlačítka vpravo/vlevo s tlačítky Ch+/- nebo tlačítka Ch+/
 msgid "Symbolic link"
 msgstr "Symbolický odkaz"
 
-#: ../ui.py:1073
+#: ../ui.py:1078
 msgid "Symlink to "
 msgstr "Symbolický odkaz na"
 
@@ -1268,7 +1286,7 @@ msgstr "Čas mezi snímky v prezentaci prohlížeče obrázků."
 msgid "Time for Slideshow"
 msgstr "Čas prezentace"
 
-#: ../ui.py:1893
+#: ../ui.py:1862
 msgid "Type:"
 msgstr "Typ:"
 
@@ -1303,7 +1321,7 @@ msgstr "Rozbalit do %s"
 msgid "Unpack to current folder"
 msgstr "Rozbalit do aktuálního adresáře"
 
-#: ../ui.py:462 ../ui.py:568
+#: ../ui.py:467 ../ui.py:573
 msgid "View or edit file (if size < 1MB)"
 msgstr "Zobrazit nebo upravit soubor (velikost < 1MB)"
 
@@ -1324,15 +1342,15 @@ msgstr "Co chcete přehrát?\n"
 msgid "Yes"
 msgstr "Ano"
 
-#: ../ui.py:1256
+#: ../ui.py:1259
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Můžete nastavit počet písmen od začátku aktuálního názvu souboru jako předvyplněný text do virtuální klávesnice pro snadnější zadávání pomocí skupinového výběru."
 
-#: ../ui.py:1258
+#: ../ui.py:1261
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Můžete nastavit počet písmen od konce aktuálního názvu souboru jako předvyplněný text do virtuální klávesnice pro snadnější zadávání pomocí skupinového výběru."
 
-#: ../ui.py:1254
+#: ../ui.py:1257
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr "Můžete zvolit, podle čeho bude skupinový výběr vybírat - podle začátku, podle konce nebo podle zadaného obsahu v názvu."
 
@@ -1350,19 +1368,19 @@ msgstr "Nelze úspěšně spustit '%s' na 'adresář."
 msgid "contains in title"
 msgstr "obsahu v názvu"
 
-#: ../ui.py:1502
+#: ../ui.py:1458
 msgid "contains..."
 msgstr "obsahuje..."
 
-#: ../ui.py:511 ../ui.py:798 ../ui.py:895 ../ui.py:1720
+#: ../ui.py:516 ../ui.py:803 ../ui.py:900 ../ui.py:1687
 msgid "copy file"
 msgstr "Kopíruje se soubor"
 
-#: ../ui.py:511 ../ui.py:798 ../ui.py:897 ../ui.py:1718
+#: ../ui.py:516 ../ui.py:803 ../ui.py:902 ../ui.py:1685
 msgid "copy folder"
 msgstr "Kopíruje se adresář"
 
-#: ../ui.py:1089
+#: ../ui.py:1094
 msgid "create symlink ..."
 msgstr "zakládá se symbolický odkaz ..."
 
@@ -1370,7 +1388,7 @@ msgstr "zakládá se symbolický odkaz ..."
 msgid "end title"
 msgstr "konce názvu"
 
-#: ../ui.py:1500
+#: ../ui.py:1456
 msgid "ends with..."
 msgstr "končí na..."
 
@@ -1378,8 +1396,8 @@ msgstr "končí na..."
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "za ztrátu nebo poškození dat!"
 
-#: ../ui.py:883 ../ui.py:912 ../ui.py:945 ../ui.py:1644 ../ui.py:1683
-#: ../ui.py:1722
+#: ../ui.py:888 ../ui.py:917 ../ui.py:950 ../ui.py:1611 ../ui.py:1650
+#: ../ui.py:1689
 msgid "from dir"
 msgstr "z adresáře"
 
@@ -1407,11 +1425,11 @@ msgstr "instalovat/rozbalit ipk soubory"
 msgid "manage local Files"
 msgstr "správa místních souborů"
 
-#: ../ui.py:511 ../ui.py:798 ../ui.py:959 ../ui.py:1681
+#: ../ui.py:516 ../ui.py:803 ../ui.py:964 ../ui.py:1648
 msgid "move file"
 msgstr "Přesouvá se soubor"
 
-#: ../ui.py:511 ../ui.py:798 ../ui.py:961
+#: ../ui.py:516 ../ui.py:803 ../ui.py:966
 msgid "move folder"
 msgstr "Přesouvá se adresář"
 
@@ -1451,11 +1469,11 @@ msgstr ""
 msgid "start title"
 msgstr "začátku názvu"
 
-#: ../ui.py:1498
+#: ../ui.py:1454
 msgid "starts with..."
 msgstr "začíná na..."
 
-#: ../ui.py:883 ../ui.py:945 ../ui.py:1683 ../ui.py:1722
+#: ../ui.py:888 ../ui.py:950 ../ui.py:1650 ../ui.py:1689
 msgid "to dir"
 msgstr "do adresáře"
 
