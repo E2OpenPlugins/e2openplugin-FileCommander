@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 22:07+0200\n"
+"POT-Creation-Date: 2020-05-30 23:02+0200\n"
 "PO-Revision-Date: 2020-05-27 21:49+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -131,13 +131,11 @@ msgid "'Group selection' and 'Invert selection' in Multiselection mode can work 
 msgstr "'Grouper sélection' et 'Inverser sélection' en mode MultiSelection peut fonctionner aussi avec les répertoires."
 
 #: ../ui.py:505
-#, python-format
-msgid "(%d jobs)"
-msgstr "(%d tâches)"
-
-#: ../ui.py:505
-msgid "(1 job)"
-msgstr "(1 tâche)"
+#, fuzzy, python-format
+msgid "(%d job)"
+msgid_plural "(%d jobs)"
+msgstr[0] "(%d tâches)"
+msgstr[1] "(%d tâches)"
 
 #: ../ui.py:1385
 msgid "(Selectmode)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 22:07+0200\n"
+"POT-Creation-Date: 2020-05-30 23:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,12 +130,10 @@ msgstr ""
 
 #: ../ui.py:505
 #, python-format
-msgid "(%d jobs)"
-msgstr ""
-
-#: ../ui.py:505
-msgid "(1 job)"
-msgstr ""
+msgid "(%d job)"
+msgid_plural "(%d jobs)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../ui.py:1385
 msgid "(Selectmode)"

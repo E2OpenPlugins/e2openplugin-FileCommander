@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 22:07+0200\n"
+"POT-Creation-Date: 2020-05-30 23:02+0200\n"
 "PO-Revision-Date: 2019-08-09 11:04+0200\n"
 "Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
 "Language-Team: SkinerMan\n"
@@ -132,13 +132,11 @@ msgid "'Group selection' and 'Invert selection' in Multiselection mode can work 
 msgstr ""
 
 #: ../ui.py:505
-#, python-format
-msgid "(%d jobs)"
-msgstr "(%d задания)"
-
-#: ../ui.py:505
-msgid "(1 job)"
-msgstr "(1 задание)"
+#, fuzzy, python-format
+msgid "(%d job)"
+msgid_plural "(%d jobs)"
+msgstr[0] "(%d задания)"
+msgstr[1] "(%d задания)"
 
 #: ../ui.py:1385
 msgid "(Selectmode)"

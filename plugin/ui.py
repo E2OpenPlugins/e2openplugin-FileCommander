@@ -502,7 +502,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			filtered = "(*)"
 
 		if self.jobs or self.jobs_old:
-			jobs = ngettext(_("(%d job)"), _("(%d jobs)"), (self.jobs+self.jobs_old)) % (self.jobs+self.jobs_old)
+			jobs = ngettext("(%d job)", "(%d jobs)", (self.jobs+self.jobs_old)) % (self.jobs+self.jobs_old)
 		else:
 			jobs = ""
 		self.setTitle(pname + " " + filtered + " " + jobs)
