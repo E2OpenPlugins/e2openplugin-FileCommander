@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-30 22:07+0200\n"
-"PO-Revision-Date: 2020-05-30 09:11+0200\n"
+"PO-Revision-Date: 2020-05-30 22:53+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -1423,7 +1423,7 @@ msgstr "instalovat/rozbalit ipk soubory"
 
 #: ../plugin.py:15 ../ui.py:85
 msgid "manage local Files"
-msgstr "správa místních souborů"
+msgstr "Správce místních souborů"
 
 #: ../ui.py:513 ../ui.py:800 ../ui.py:961 ../ui.py:1635
 msgid "move file"

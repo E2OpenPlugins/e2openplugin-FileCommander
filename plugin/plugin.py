@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-1 -*-
 #
-# based on Filebrowser plugin
-#
 # ported from OpenATV to OpenPLi by mrvica April 2019
 # fixed, added features, rebuilded in May 2020 ims
-#
+# based on Filebrowser plugin
+
+from . import _
 
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigText
