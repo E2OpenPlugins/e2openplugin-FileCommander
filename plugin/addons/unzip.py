@@ -54,5 +54,6 @@ class UnpackInfoScreen(ArchiverInfoScreen):
 		self.pdesc = pdesc
 		self.pversion = pversion
 
-		font = skin.fonts.get("FileList", ("Console", 20, 30))
-		self.chooseMenuList.l.setFont(0, gFont('Console', int(font[1]*0.85)))
+		font = skin.fonts.get("FcZipArchiver", ("Fixed", 18, 30))
+		self.chooseMenuList.l.setFont(0, gFont(font[0], font[1]))
+		self.chooseMenuList.l.setItemHeight(font[2])
