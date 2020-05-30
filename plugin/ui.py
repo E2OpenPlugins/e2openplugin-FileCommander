@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-1 -*-
-#
-# ported from OpenATV to OpenPLi by mrvica April 2019
-#
 
 from Plugins.Plugin import PluginDescriptor
 from plugin import pname
@@ -885,7 +882,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if os.path.exists(targetDir + filename.split('/')[-2]):
 				warntxt = _(" - folder exist! Overwrite")
 			copytext = _("Copy folder") + warntxt
-		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
+		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
 
 	def doCopy(self, result = True):
 		if result:
@@ -914,7 +911,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			deltext = _("Delete file")
 		else:
 			deltext = _("Delete folder")
-		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
+		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def doDelete(self, result = False):
 		if result:
@@ -947,7 +944,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if os.path.exists(targetDir + filename.split('/')[-2]):
 				warntxt = _(" - folder exist! Overwrite")
 			movetext = _("Move folder") + warntxt
-		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
+		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def doMove(self, result = False):
 		if result:
@@ -1595,13 +1592,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.delete_files = []
 		self.delete_updateDirs = [self.SOURCELIST.getCurrentDirectory()]
 		for file in self.selectedFiles:
-			print 'delete: %s' %file
-			if not cnt:
-				filename += '%s' % file
-			elif cnt < 5:
-				filename += ', %s' % file
-			elif cnt < 6:
-				filename += ', ...'
+			file = file.rstrip('/').split('/')[-1]
+			filename += '%s' % file if not cnt else ', %s' % file if cnt < 5 else ', ...' if cnt < 6 else ''
 			cnt += 1
 			if os.path.isdir(file):
 				self.delete_dirs.append(file)
@@ -1632,20 +1624,16 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.move_updateDirs = [targetDir, self.SOURCELIST.getCurrentDirectory()]
 		self.move_jobs = []
 		for file in self.selectedFiles:
-			if not cnt:
-				filename += '%s' % file
-			elif cnt < 3:
-				filename += ', %s' % file
-			elif cnt < 4:
-				filename += ', ...'
+			file = file.rstrip('/').split('/')[-1]
+			filename += '%s' % file if not cnt else ', %s' % file if cnt < 3 else ', ...' if cnt < 4 else ''
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
-				warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt
 			dst_file = targetDir
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
 			self.move_jobs.append(FileTransferJob(file, targetDir, False, False, "%s : %s" % (_("move file"), file)))
+		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
 		movetext = ngettext("Move %d element" ,"Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
@@ -1668,16 +1656,11 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.copy_updateDirs = [targetDir]
 		self.copy_jobs = []
 		for file in self.selectedFiles:
-			if not cnt:
-				filename += '%s' % file
-			elif cnt < 3:
-				filename += ', %s' % file
-			elif cnt < 4:
-				filename += ', ...'
+			file = file.rstrip('/').split('/')[-1]
+			filename += '%s' % file if not cnt else ', %s' % file if cnt < 3 else ', ...' if cnt < 4 else ''
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
-				warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt
 			dst_file = targetDir
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
@@ -1685,6 +1668,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.copy_jobs.append(FileTransferJob(file, targetDir, True, True, "%s : %s" % (_("copy folder"), file)))
 			else:
 				self.copy_jobs.append(FileTransferJob(file, targetDir, False, True, "%s : %s" % (_("copy file"), file)))
+		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
 		copytext = ngettext("Copy %d element" ,"Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
@@ -1902,53 +1886,3 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 				return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
 			size /= 1024.0
 		return "%3.2f %s" % (size, 'TB')
-
-# #####################
-# ## Start routines ###
-# #####################
-def filescan_open(list, session, **kwargs):
-	path = "/".join(list[0].path.split("/")[:-1]) + "/"
-	session.open(FileCommanderScreen, path_left=path)
-
-def start_from_filescan(**kwargs):
-	from Components.Scanner import Scanner, ScanPath
-	return \
-		Scanner(
-			mimetypes=None,
-			paths_to_scan=[
-				ScanPath(path="", with_subdirs=False),
-			],
-			name=pname,
-			description=_("Open with File Commander"),
-			openfnc=filescan_open,
-		)
-
-def start_from_mainmenu(menuid, **kwargs):
-	# starting from main menu
-	if menuid == "mainmenu":
-		return [(pname, start_from_pluginmenu, "filecommand", 1)]
-	return []
-
-def start_from_pluginmenu(session, **kwargs):
-	session.openWithCallback(exit, FileCommanderScreen)
-
-def exit(session, result):
-	if not result:
-		session.openWithCallback(exit, FileCommanderScreen)
-
-def Plugins(path, **kwargs):
-	desc_mainmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_MENU, fnc=start_from_mainmenu)
-	desc_pluginmenu = PluginDescriptor(name=pname, description=pdesc,  where=PluginDescriptor.WHERE_PLUGINMENU, icon="FileCommander.png", fnc=start_from_pluginmenu)
-	desc_extensionmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_from_pluginmenu)
-	desc_filescan = PluginDescriptor(name=pname, where=PluginDescriptor.WHERE_FILESCAN, fnc=start_from_filescan)
-	list = []
-	list.append(desc_pluginmenu)
-####
-# 	buggy
-# 	list.append(desc_filescan)
-####
-	if config.plugins.filecommander.add_extensionmenu_entry.value:
-		list.append(desc_extensionmenu)
-	if config.plugins.filecommander.add_mainmenu_entry.value:
-		list.append(desc_mainmenu)
-	return list
