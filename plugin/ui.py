@@ -177,7 +177,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
 		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventual You can manage plugin's bookmarks here too.")))
+		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))

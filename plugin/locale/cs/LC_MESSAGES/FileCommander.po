@@ -930,7 +930,7 @@ msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Předvyplnit posledních 'n' znaků názvu do virtuální klávesnice"
 
 #: ../ui.py:180
-msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventual You can manage plugin's bookmarks here too."
+msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too."
 msgstr "Stiskněte 'OK' a vyberte ze seznamu nebo ze záložek adresář pro 'Přejít na výchozí adresář', případně upravte záložky pluginu."
 
 #: ../addons/key_actions.py:543

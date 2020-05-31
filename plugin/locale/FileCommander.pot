@@ -916,7 +916,7 @@ msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr ""
 
 #: ../ui.py:180
-msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventual You can manage plugin's bookmarks here too."
+msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too."
 msgstr ""
 
 #: ../addons/key_actions.py:543

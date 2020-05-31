@@ -993,7 +993,7 @@ msgstr ""
 #: ../ui.py:180
 msgid ""
 "Press 'OK' and select from list or bookmarks directory for 'Go to default "
-"directory'. Eventual You can manage plugin's bookmarks here too."
+"directory'. Eventually you can manage plugin's bookmarks here too."
 msgstr ""
 "Druk op 'Ok' en kies 'Ga naar de standaardmap' uit de lijst of map met "
 "bladwijzers. Uiteindelijk kunt u ook de bladwijzers van plug-ins hier "
