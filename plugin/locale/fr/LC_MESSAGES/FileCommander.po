@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 23:02+0200\n"
-"PO-Revision-Date: 2020-05-27 21:49+0200\n"
+"POT-Creation-Date: 2020-05-31 17:39+0200\n"
+"PO-Revision-Date: 2020-05-31 17:39+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../addons/key_actions.py:383
 #, python-format
@@ -48,10 +49,10 @@ msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') a terminé avec le numéro d'erreur [%d]."
 
 #: ../ui.py:1636 ../ui.py:1671
-#, fuzzy, python-format
+#, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
-msgstr[0] " - %d éléments existent! Ecraser"
+msgstr[0] " - %d élément existe! Ecraser"
 msgstr[1] " - %d éléments existent! Ecraser"
 
 #: ../ui.py:879 ../ui.py:941
@@ -69,21 +70,21 @@ msgstr " ou enregistrer l'image en plus d'un fichier"
 #: ../ui.py:284
 #, python-format
 msgid "%d GB"
-msgstr ""
+msgstr "%d GB"
 
 #: ../ui.py:282
 #, python-format
 msgid "%d MB"
-msgstr ""
+msgstr "%d MB"
 
 #: ../ui.py:280
 #, python-format
 msgid "%d kB"
-msgstr ""
+msgstr "%d kB"
 
 #: ../addons/key_actions.py:137
 msgid "%d.%m.%Y, %H:%M:%S"
-msgstr ""
+msgstr "%d.%m.%Y, %H:%M:%S"
 
 #: ../addons/key_actions.py:326
 #, python-format
@@ -131,10 +132,10 @@ msgid "'Group selection' and 'Invert selection' in Multiselection mode can work 
 msgstr "'Grouper sélection' et 'Inverser sélection' en mode MultiSelection peut fonctionner aussi avec les répertoires."
 
 #: ../ui.py:505
-#, fuzzy, python-format
+#, python-format
 msgid "(%d job)"
 msgid_plural "(%d jobs)"
-msgstr[0] "(%d tâches)"
+msgstr[0] "(%d tâche)"
 msgstr[1] "(%d tâches)"
 
 #: ../ui.py:1385
@@ -147,7 +148,7 @@ msgstr ": "
 
 #: ../ui.py:1141 ../ui.py:1698
 msgid "<Receiver>"
-msgstr ""
+msgstr "<Récepteur>"
 
 #: ../addons/key_actions.py:97
 msgid "?"
@@ -200,7 +201,7 @@ msgstr "Tout"
 
 #: ../ui.py:181 ../ui.py:1263
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
-msgstr "Tous les fichiers dans le répertoire avec le même nom que le film sélectionné seront également copiés ou déplacés"
+msgstr "Tous les fichiers dans le répertoire avec le même nom que le film sélectionné seront également copiés ou déplacés."
 
 #: ../ui.py:181 ../ui.py:1263
 msgid "All movie extensions"
@@ -240,9 +241,9 @@ msgstr ""
 msgid "Can't read link contents: %s"
 msgstr "Impossible de lire le contenu du lien: %s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:192 ../ui.py:1234
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:192 ../ui.py:1234
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -266,7 +267,7 @@ msgstr "Le bouton de chaîne change toujours de côté"
 msgid "Character device"
 msgstr "Périphérique caractère"
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr "Fermer"
 
@@ -283,10 +284,10 @@ msgid "Copy"
 msgstr "Copier"
 
 #: ../ui.py:1672
-#, fuzzy, python-format
+#, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
-msgstr[0] "Copier %d éléments"
+msgstr[0] "Copier %d élément"
 msgstr[1] "Copier %d éléments"
 
 #: ../ui.py:880
@@ -310,13 +311,12 @@ msgid "Count directory content size"
 msgstr "Caculer la taille du contenu du répertoire"
 
 #: ../ui.py:465 ../ui.py:573
-#, fuzzy
 msgid "Create directory"
-msgstr "Créer un répertoire/dossier"
+msgstr "Créer un répertoire"
 
 #: ../ui.py:1431
 msgid "Create directory in 'Target' panel"
-msgstr ""
+msgstr "Créer un répertoire dans le panneau 'Cible'"
 
 #: ../ui.py:1073
 msgid "Create symlink to file"
@@ -359,7 +359,6 @@ msgid "Default file sorting right"
 msgstr "Tri de fichiers par défaut à droite"
 
 #: ../ui.py:180
-#, fuzzy
 msgid "Default folder"
 msgstr "Dossier par défaut"
 
@@ -380,10 +379,10 @@ msgid "Delete"
 msgstr "Supprimer"
 
 #: ../ui.py:1602
-#, fuzzy, python-format
+#, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
-msgstr[0] "Supprimer %d éléments"
+msgstr[0] "Supprimer %d élément"
 msgstr[1] "Supprimer %d éléments"
 
 #: ../addons/type_utils.py:109
@@ -432,6 +431,9 @@ msgid ""
 "<List of Storage Devices> or <Receiver>.\n"
 "Move selector one line below or change directory."
 msgstr ""
+"Le répertoire ne peut pas être créé ici\n"
+"<Liste des périphériques de stockage> ou <Récepteur>.\n"
+"Déplacer la sélection une ligne en dessous ou changer de répertoire."
 
 #: ../addons/key_actions.py:243
 msgid "Do you want change rights?\n"
@@ -520,7 +522,7 @@ msgstr "Quitter le visionneur de photos"
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:14 ../addons/type_utils.py:140 ../ui.py:84
+#: ../addons/type_utils.py:140 ../ui.py:84 ../plugin.py:14
 msgid "File Commander"
 msgstr "File Commander"
 
@@ -603,9 +605,8 @@ msgid "Go to bookmarked folder"
 msgstr "Aller au dossier signet"
 
 #: ../ui.py:583
-#, fuzzy
 msgid "Go to default directory"
-msgstr "Aller au répertoire parent"
+msgstr "Aller au répertoire par défaut"
 
 #: ../addons/type_utils.py:112
 msgid "Go to end of file"
@@ -628,9 +629,8 @@ msgid "I/O priority for script execution"
 msgstr "Priorité I/O pour l'exécution du script"
 
 #: ../ui.py:173
-#, fuzzy
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
-msgstr "En éditant un fichier, vous pouvez mettre la position du curseur à la fin ou au début de la ligne."
+msgstr "En éditant un fichier, vous pouvez mettre la position de départ du curseur à la fin ou au début de la ligne."
 
 #: ../ui.py:175 ../ui.py:1262
 msgid "In multi-selection mode moves cursor to next item after marking."
@@ -740,10 +740,10 @@ msgid "Move"
 msgstr "Déplacer"
 
 #: ../ui.py:1637
-#, fuzzy, python-format
+#, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
-msgstr[0] "Déplacer %d éléments"
+msgstr[0] "Déplacer %d élément"
 msgstr[1] "Déplacer %d éléments"
 
 #: ../ui.py:476 ../ui.py:1361
@@ -931,7 +931,7 @@ msgstr "Pré-remplir les derniers 'n' caractères du nom de fichier dans le clav
 
 #: ../ui.py:180
 msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventual You can manage plugin's bookmarks here too."
-msgstr ""
+msgstr "Appuyez sur 'OK' et sélectionner dans la liste des répertoires favoris 'Aller au répertoire par défaut'. Eventuellement vous pouvez gérer la liste des favoris des plugins ici."
 
 #: ../addons/key_actions.py:543
 #, python-format
@@ -1015,9 +1015,9 @@ msgstr "Inverser le tri des fichiers à droite"
 msgid "Run '%s' command"
 msgstr "Exécuter la commande ‘%s’"
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
+#: ../addons/key_actions.py:152 ../addons/key_actions.py:155
 #: ../addons/key_actions.py:169 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:433 ../ui.py:513 ../ui.py:800
+#: ../addons/key_actions.py:433 ../TaskList.py:74 ../ui.py:513 ../ui.py:800
 msgid "Run script"
 msgstr "Exécuter le script"
 
@@ -1308,15 +1308,15 @@ msgstr "Groupe inconnu: %d"
 msgid "Unknown user: %d"
 msgstr "Utilisateur inconnu: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unzip.py:26 ../addons/unzip.py:27 ../addons/gz.py:25
+#: ../addons/gz.py:26 ../addons/unrar.py:30 ../addons/unrar.py:31
+#: ../addons/tar.py:21 ../addons/tar.py:22
 #, python-format
 msgid "Unpack to %s"
 msgstr "Décompresser vers %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unzip.py:25 ../addons/gz.py:24 ../addons/unrar.py:29
+#: ../addons/tar.py:20
 msgid "Unpack to current folder"
 msgstr "Décompresser dans le dossier actuel"
 
@@ -1409,17 +1409,17 @@ msgid "hide"
 msgstr "masquer"
 
 #: ../addons/key_actions.py:289
-#, fuzzy, python-format
+#, python-format
 msgid "in %s selected file"
 msgid_plural "in %s selected files"
 msgstr[0] "dans %s fichier sélectionné"
-msgstr[1] "dans %s fichier sélectionné"
+msgstr[1] "dans %s fichiers sélectionnés"
 
 #: ../addons/ipk.py:25
 msgid "install/unpack ipk Files"
 msgstr "installer/décompresser les fichiers ipk"
 
-#: ../plugin.py:15 ../ui.py:85
+#: ../ui.py:85 ../plugin.py:15
 msgid "manage local Files"
 msgstr "gérer les fichiers locaux"
 
