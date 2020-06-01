@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 23:08+0200\n"
+"POT-Creation-Date: 2020-06-01 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Calculates the size of directory contents for Info."
 msgstr ""
 
-#: ../addons/unrar.py:50 ../addons/unarchiver.py:141
+#: ../addons/unarchiver.py:141 ../addons/unrar.py:50
 #, python-format
 msgid ""
 "Can not run %s: %s.\n"
@@ -236,9 +236,9 @@ msgstr ""
 msgid "Can't read link contents: %s"
 msgstr ""
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:192 ../ui.py:1234
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:192 ../ui.py:1234
 msgid "Cancel"
 msgstr ""
 
@@ -262,7 +262,7 @@ msgstr ""
 msgid "Character device"
 msgstr ""
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "FIFO"
 msgstr ""
 
-#: ../plugin.py:14 ../addons/type_utils.py:140 ../ui.py:84
+#: ../addons/type_utils.py:140 ../plugin.py:14 ../ui.py:84
 msgid "File Commander"
 msgstr ""
 
@@ -1280,14 +1280,14 @@ msgstr ""
 msgid "Unknown user: %d"
 msgstr ""
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
+#: ../addons/gz.py:25 ../addons/gz.py:26 ../addons/tar.py:21
+#: ../addons/tar.py:22 ../addons/unrar.py:30 ../addons/unrar.py:31
 #: ../addons/unzip.py:26 ../addons/unzip.py:27
 #, python-format
 msgid "Unpack to %s"
 msgstr ""
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
+#: ../addons/gz.py:24 ../addons/tar.py:20 ../addons/unrar.py:29
 #: ../addons/unzip.py:25
 msgid "Unpack to current folder"
 msgstr ""

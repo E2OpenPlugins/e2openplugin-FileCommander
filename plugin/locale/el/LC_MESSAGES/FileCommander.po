@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-30 23:02+0200\n"
+"POT-Creation-Date: 2020-06-01 15:58+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -229,7 +229,7 @@ msgstr "Υπολογισμός συνόλου ελέγχου αρχείου"
 msgid "Calculates the size of directory contents for Info."
 msgstr ""
 
-#: ../addons/unrar.py:50 ../addons/unarchiver.py:141
+#: ../addons/unarchiver.py:141 ../addons/unrar.py:50
 #, python-format
 msgid ""
 "Can not run %s: %s.\n"
@@ -243,9 +243,9 @@ msgstr ""
 msgid "Can't read link contents: %s"
 msgstr "Αδυναμία ανάγνωσης περιεχομένων: %s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:377
-#: ../addons/key_actions.py:593 ../ui.py:192 ../ui.py:1234
+#: ../Console.py:26 ../addons/key_actions.py:242 ../addons/key_actions.py:377
+#: ../addons/key_actions.py:593 ../addons/unarchiver.py:72
+#: ../addons/unarchiver.py:242 ../ui.py:192 ../ui.py:1234
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -269,7 +269,7 @@ msgstr "Το πλήκτρο καναλιών αλλάζει πάντα πλευ�
 msgid "Character device"
 msgstr "Χαρακτήρας συσκευής"
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../Console.py:81 ../TaskList.py:50
 msgid "Close"
 msgstr "Κλείσιμο"
 
@@ -527,7 +527,7 @@ msgstr "Έξοδος από την προβολή εικόνων"
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:14 ../addons/type_utils.py:140 ../ui.py:84
+#: ../addons/type_utils.py:140 ../plugin.py:14 ../ui.py:84
 msgid "File Commander"
 msgstr "File Commander"
 
@@ -1330,14 +1330,14 @@ msgstr "Άγνωστη ομάδα: %d"
 msgid "Unknown user: %d"
 msgstr "Άγνωστος χρήστης: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
+#: ../addons/gz.py:25 ../addons/gz.py:26 ../addons/tar.py:21
+#: ../addons/tar.py:22 ../addons/unrar.py:30 ../addons/unrar.py:31
 #: ../addons/unzip.py:26 ../addons/unzip.py:27
 #, python-format
 msgid "Unpack to %s"
 msgstr "Αποσυμπίεση στο %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
+#: ../addons/gz.py:24 ../addons/tar.py:20 ../addons/unrar.py:29
 #: ../addons/unzip.py:25
 msgid "Unpack to current folder"
 msgstr "Αποσυμπίεση στον τρέχοντα φάκελο"
