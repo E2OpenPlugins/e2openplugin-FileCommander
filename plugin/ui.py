@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 
 from Plugins.Plugin import PluginDescriptor
-from plugin import pname
+from plugin import pname, pvers
 
 # Components
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigDirectory, ConfigSelection, ConfigSet, NoSave, ConfigNothing, ConfigLocations, ConfigSelectionNumber, getConfigListEntry
@@ -202,8 +202,7 @@ class Setup(ConfigListScreen, Screen):
 		self.onLayoutFinish.append(self.onLayout)
 
 	def onLayout(self):
-		#self.setTitle(pname+" ("+pversion+") "+_("Settings"))
-		self.setTitle(pname+" - "+_("Settings"))
+		self.setTitle("%s %s - %s" % (pname, pvers, _("Settings")))
 
 	def getCurrentEntry(self):
 		x =  self["config"].getCurrent()
@@ -1592,8 +1591,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.delete_files = []
 		self.delete_updateDirs = [self.SOURCELIST.getCurrentDirectory()]
 		for file in self.selectedFiles:
-			file = file.rstrip('/').split('/')[-1]
-			filename += '%s' % file if not cnt else ', %s' % file if cnt < 5 else ', ...' if cnt < 6 else ''
+			fn = file.rstrip('/').split('/')[-1]
+			filename += '%s' % fn if not cnt else ', %s' % fn if cnt < 5 else ', ...' if cnt < 6 else ''
 			cnt += 1
 			if os.path.isdir(file):
 				self.delete_dirs.append(file)
@@ -1624,8 +1623,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.move_updateDirs = [targetDir, self.SOURCELIST.getCurrentDirectory()]
 		self.move_jobs = []
 		for file in self.selectedFiles:
-			file = file.rstrip('/').split('/')[-1]
-			filename += '%s' % file if not cnt else ', %s' % file if cnt < 3 else ', ...' if cnt < 4 else ''
+			fn = file.rstrip('/').split('/')[-1]
+			filename += '%s' % fn if not cnt else ', %s' % fn if cnt < 3 else ', ...' if cnt < 4 else ''
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
@@ -1656,8 +1655,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.copy_updateDirs = [targetDir]
 		self.copy_jobs = []
 		for file in self.selectedFiles:
-			file = file.rstrip('/').split('/')[-1]
-			filename += '%s' % file if not cnt else ', %s' % file if cnt < 3 else ', ...' if cnt < 4 else ''
+			fn = file.rstrip('/').split('/')[-1]
+			filename += '%s' % fn if not cnt else ', %s' % fn if cnt < 3 else ', ...' if cnt < 4 else ''
 			cnt += 1
 			if os.path.exists(targetDir + '/' + file.rstrip('/').split('/')[-1]):
 				warncnt += 1
