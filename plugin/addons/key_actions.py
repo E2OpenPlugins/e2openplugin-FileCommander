@@ -287,7 +287,7 @@ class key_actions(stat_info):
 		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
 		sizes = "%s (%s)" % (bytesizedivided, scaledsize )
 		num = ngettext("in %s selected file" ,"in %s selected files", numbers) % numbers
-		return "%s %s" % (sizes,num) # )[ sizes + nr ]
+		return "%s %s" % (sizes, num)
 
 	def statInfo(self, dirsource):
 		filename = dirsource.getFilename()
@@ -325,8 +325,8 @@ class key_actions(stat_info):
 				bytesize,  # 10
 				_("%s") % scaledsize,  # 11
 				_("%s (%s)") % (bytesize, scaledsize),  # 12
-				_("%s (%s)") % (scaledsize, bytesizedivided),  # 13
-				_("%s (%s)") % (scaledsize, bytesizedividedspace)  # 14
+				_("%s (%s)") % (scaledsize, bytesizedivided) if st.st_size > 1024 else _("%s B") % bytesizedivided,  # 13
+				_("%s (%s)") % (scaledsize, bytesizedividedspace) if st.st_size > 1024 else _("%s B") % bytesizedividedspace # 14
 			)
 
 		return [modes + (
