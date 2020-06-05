@@ -255,11 +255,11 @@ class key_actions(stat_info):
 
 	def Humanizer(self, size):
 		if (size < 1024):
-			humansize = str(size) + " B"
+			humansize = "%s %s" % (str(size), _("B"))
 		elif (size < 1048576):
-			humansize = str(size / 1024) + " KB"
+			humansize = "%s %s" % (str(size / 1024), _("KB"))
 		else:
-			humansize = str(round(float(size) / 1048576, 2)) + " MB"
+			humansize = "%s %s" % (str(round(float(size) / 1048576, 2)), _("MB"))
 		return humansize
 
 	def Info(self, dirsource):
@@ -277,14 +277,14 @@ class key_actions(stat_info):
 			st = os.lstat(os.path.normpath(pathname))
 		except:
 			return ""
-		info = ' '.join(self.SIZESCALER.scale(st.st_size)) + "B    "
+		info = ' '.join(self.SIZESCALER.scale(st.st_size)) + _("B") + "    "
 		info += self.formatTime(st.st_mtime) + "    "
 		info += _("Mode %s (%04o)") % (self.fileModeStr(st.st_mode), stat.S_IMODE(st.st_mode))
 		return info
 
 	def selInfo(self, numbers, size):
 		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
-		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + 'B'
+		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + _('B')
 		sizes = "%s (%s)" % (bytesizedivided, scaledsize )
 		num = ngettext("in %s selected file" ,"in %s selected files", numbers) % numbers
 		return "%s %s" % (sizes, num)
@@ -320,13 +320,13 @@ class key_actions(stat_info):
 			bytesize = "%s" % "{:n}".format(st.st_size)
 			bytesizedivided = "%s" % "{:,d}".format(st.st_size)
 			bytesizedividedspace = bytesizedivided.replace(',',' ')
-			scaledsize = ' '.join(self.SIZESCALER.scale(st.st_size)) + 'B'
+			scaledsize = ' '.join(self.SIZESCALER.scale(st.st_size)) + _('B')
 			sizes = (
 				bytesize,  # 10
 				_("%s") % scaledsize,  # 11
 				_("%s (%s)") % (bytesize, scaledsize),  # 12
-				_("%s (%s)") % (scaledsize, bytesizedivided) if st.st_size > 1023 else _("%s B") % bytesizedivided,  # 13
-				_("%s (%s)") % (scaledsize, bytesizedividedspace) if st.st_size > 1023 else _("%s B") % bytesizedividedspace # 14
+				_("%s (%s)") % (scaledsize, bytesizedivided) if st.st_size > 1023 else "%s %s" % (bytesizedivided, _('B')),  # 13
+				_("%s (%s)") % (scaledsize, bytesizedividedspace) if st.st_size > 1023 else "%s %s" % (bytesizedividedspace, _('B')) # 14
 			)
 
 		return [modes + (

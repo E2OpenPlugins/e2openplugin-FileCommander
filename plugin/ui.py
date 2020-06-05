@@ -16,6 +16,8 @@ from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Components.ConfigList import ConfigListScreen
+from Components.Pixmap import Pixmap
+from Components.Sources.Boolean import Boolean
 
 # Screens
 from Screens.Screen import Screen
@@ -154,8 +156,6 @@ class Setup(ConfigListScreen, Screen):
 
 		self["help"] = Label(_("Select your personal settings:"))
 		self["description"] = Label()
-		from Components.Pixmap import Pixmap
-		from Components.Sources.Boolean import Boolean
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
 		self["VKeyIcon"] = Boolean(False)
@@ -240,11 +240,11 @@ class Setup(ConfigListScreen, Screen):
 def formatSortingTyp(sortDirs, sortFiles):
 	sortDirs, reverseDirs = [int(x) for x in sortDirs.split('.')]
 	sortFiles, reverseFiles = [int(x) for x in sortFiles.split('.')]
-	sD = ('n','d','s')[sortDirs] #name, date, size
-	sF = ('n','d','s')[sortFiles]
+	sD = (_('n'),_('d'),_('s'))[sortDirs] #name, date, size
+	sF = (_('n'),_('d'),_('s'))[sortFiles]
 	rD = ('+','-')[reverseDirs] #normal, reverse
 	rF = ('+','-')[reverseFiles]
-	return '[D]%s%s[F]%s%s' %(sD,rD,sF,rF)
+	return _('[D]%s%s[F]%s%s') % (sD,rD,sF,rF)
 
 def cutLargePath(path, label):
 	def getStringSize(string, label):
@@ -1836,7 +1836,7 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 		try:
 			st = os.lstat(filepath)
 		except OSError as oe:
-			self.session.open(MessageBox, _("%s: %s") % (filepath, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
+			self.session.open(MessageBox, "%s: %s" % (filepath, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 			self.close()
 			return
 

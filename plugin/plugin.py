@@ -13,7 +13,7 @@ from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigText
 ##################################
 pname = _("File Commander")
 pdesc = _("manage local Files")
-pvers = _("v2.01")
+pvers = "%s%s" % (_("v"),"2.02")
 
 config.plugins.filecommander = ConfigSubsection()
 config.plugins.filecommander.add_mainmenu_entry = ConfigYesNo(default=False)

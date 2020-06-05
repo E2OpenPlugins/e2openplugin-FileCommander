@@ -112,7 +112,7 @@ class Console(Screen):
 			pass
 		elif self.output_file.startswith('/tmp/'):
 			self["text"].setText(self.readFile(self.output_file))
-			self["key_green"].setText(_(" "))
+			self["key_green"].setText('')
 			self.output_file = 'end'
 		elif self.run == len(self.cmdlist):
 			self.saveOutputText()
@@ -178,7 +178,7 @@ class Console(Screen):
 				except:
 					failtext = _("File write error: '%s'") %self.output_file
 			self.output_file = 'end'
-			self["key_green"].setText(_(" "))
+			self["key_green"].setText('')
 			self.session.open(MessageBox, failtext, type=MessageBox.TYPE_ERROR, simple=True)
 		else:
 			self.output_file = ''
