@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 
 from Plugins.Plugin import PluginDescriptor
-from plugin import pname, pvers
+from plugin import pname
 
 # Components
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigDirectory, ConfigSelection, ConfigSet, NoSave, ConfigNothing, ConfigLocations, ConfigSelectionNumber, getConfigListEntry
@@ -62,6 +62,8 @@ from addons.type_utils import vEditor
 
 # for locale (gettext)
 from . import _, ngettext
+
+pvers = "%s%s" % (_("v"),"2.03")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -144,6 +146,7 @@ choicelist.append(("15","15"))
 choicelist.append(("20","20"))
 config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
 
 # ####################
 # ## Config Screen ###
@@ -161,8 +164,8 @@ class Setup(ConfigListScreen, Screen):
 		self["VKeyIcon"] = Boolean(False)
 
 		self.list = []
-		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry, _("Make File Commander accessible from the main menu.")))
-		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make File Commander accessible from the Extensions menu.")))
+		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry, _("Make FileCommander accessible from the main menu.")))
+		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make FileCommander accessible from the Extensions menu.")))
 		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left, _("Save the left directory list location on exit.")))
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right, _("Save the right folder list location on exit.")))
 		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
@@ -182,11 +185,12 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
 		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
+		self.list.append(getConfigListEntry(_("Swap buttons for reverse sorting"),config.plugins.filecommander.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes, _("Calculates file checksums.")))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow, _("Time between slides in image viewer slideshow.")))
-		
+
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
 
 		self["key_red"] = StaticText(_("Cancel"))
@@ -450,6 +454,13 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["key_blue"] = StaticText(_("Rename"))
 		self["VKeyIcon"] = Boolean(False)
 
+		if config.plugins.filecommander.toggle_stop_pause.value:
+			file_left_sort = (self.goYellowLong, _("Reverse right file sorting"))
+			file_right_sort = (self.goGreenLong, _("Reverse left file sorting"))
+		else:
+			file_left_sort = (self.goGreenLong, _("Reverse left file sorting"))
+			file_right_sort = (self.goYellowLong, _("Reverse right file sorting"))
+
 		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "InfobarTeletextActions", "InfobarSubtitleSelectionActions", "EPGSelectActions", "MediaPlayerActions", "MediaPlayerSeekActions"], {
 			"ok": (self.ok, _("Play/view/edit/install/extract/run file or enter directory")),
 			"back": (self.exit, _("Leave File Commander")),
@@ -476,8 +487,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			"left": (self.goLeftB, _("Page up list")),
 			"right": (self.goRightB, _("Page down list")),
 			"seekBack": (self.goRedLong, _("Sorting left files by name, date or size")),
-			"pause": (self.goGreenLong, _("Reverse left file sorting")),
-			"stop": (self.goYellowLong, _("Reverse right file sorting")),
+			"pause": file_right_sort,
+			"stop": file_left_sort,
 			"seekFwd": (self.goBlueLong, _("Sorting right files by name, date or size")),
 		}, -1)
 
