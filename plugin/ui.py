@@ -461,7 +461,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			file_left_sort = (self.goGreenLong, _("Reverse left file sorting"))
 			file_right_sort = (self.goYellowLong, _("Reverse right file sorting"))
 
-		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "InfobarTeletextActions", "InfobarSubtitleSelectionActions", "EPGSelectActions", "MediaPlayerActions", "MediaPlayerSeekActions"], {
+		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions", "MediaPlayerActions", "MediaPlayerSeekActions"], {
 			"ok": (self.ok, _("Play/view/edit/install/extract/run file or enter directory")),
 			"back": (self.exit, _("Leave File Commander")),
 			"menu": (self.selectAction, _("Open settings/actions menu")),
@@ -1359,7 +1359,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["key_yellow"] = StaticText(_("Copy"))
 		self["key_blue"] = StaticText(_("Invert selection"))
 
-		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "FileNavigateActions", "MenuActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
+		self["actions"] = HelpableActionMap(self, ["ChannelSelectBaseActions", "WizardActions", "NumberActions", "ColorActions", "InfobarActions", "EPGSelectActions"], {
 			"menu": (self.selectAction, _("Open actions menu")),
 			"ok": (self.ok, _("Select (source list) or enter directory (target list)")),
 			"back": (self.exit, _("Leave multi-select mode")),
