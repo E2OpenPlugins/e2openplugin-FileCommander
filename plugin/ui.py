@@ -474,7 +474,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			"nextBouquet": (self.listRightB, _("Activate right-hand file list as source")),
 			"prevBouquet": (self.listLeftB, _("Activate left-hand file list as source")),
 			"0": (self.doRefresh, _("Refresh screen")),
-			"1": (self.dirSizeWalk, _("Counting directory content size while walking on/off")),
+			"1": (self.dirSizeWalk, _("Counting directory content size while walking (on/off)")),
 			"2": (self.goBlue, _("Rename file/directory")),
 			"3": (self.file_viewer, _("View or edit file (if size < 1MB)")),
 			"7": (self.gomakeDir, _("Create directory")),
