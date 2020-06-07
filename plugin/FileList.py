@@ -316,7 +316,7 @@ class MultiFileSelectList(FileList):
 				self.list[idx] = x
 			else:
 				if x[0][1] is True:
-					if config.plugins.filecommander.select_across_dirs.value:
+					if config.plugins.filecommander.select_across_dirs.value or not select:
 						realPathname = x[0][0]
 					else:
 						continue

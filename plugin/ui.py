@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 
 from Plugins.Plugin import PluginDescriptor
-from plugin import pname
+from plugin import pname, pdesc
 
 # Components
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigDirectory, ConfigSelection, ConfigSet, NoSave, ConfigNothing, ConfigLocations, ConfigSelectionNumber, getConfigListEntry
@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.03")
+pvers = "%s%s" % (_("v"),"2.04")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -84,9 +84,6 @@ records = _make_rec_filter()
 
 dmnapi_py = "/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/addons/dmnapi.py"
 ##################################
-
-pname = _("File Commander")
-pdesc = _("manage local Files")
 
 config.plugins.filecommander.savedir_left = ConfigYesNo(default=False)
 config.plugins.filecommander.savedir_right = ConfigYesNo(default=False)
@@ -137,6 +134,7 @@ config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.pl
 config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_right.value))
 
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
+config.plugins.filecommander.dir_sizewalk = NoSave(ConfigYesNo(default=False))
 config.plugins.filecommander.sensitive = ConfigYesNo(default=False)
 config.plugins.filecommander.search = ConfigSelection(default = "begin", choices = [("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
 choicelist = []
@@ -147,6 +145,12 @@ choicelist.append(("20","20"))
 config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
+
+WALKDIRFLAG = ''
+def setWalkdir():
+	config.plugins.filecommander.dir_sizewalk.value = not config.plugins.filecommander.dir_sizewalk.value
+	global WALKDIRFLAG
+	WALKDIRFLAG = ' *' if config.plugins.filecommander.dir_sizewalk.value else ''
 
 # ####################
 # ## Config Screen ###
@@ -470,6 +474,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			"nextBouquet": (self.listRightB, _("Activate right-hand file list as source")),
 			"prevBouquet": (self.listLeftB, _("Activate left-hand file list as source")),
 			"0": (self.doRefresh, _("Refresh screen")),
+			"1": (self.dirSizeWalk, _("Counting directory content size while walking on/off")),
 			"2": (self.goBlue, _("Rename file/directory")),
 			"3": (self.file_viewer, _("View or edit file (if size < 1MB)")),
 			"7": (self.gomakeDir, _("Create directory")),
@@ -736,6 +741,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if self.disableActions_Timer.isActive():
 			return
 		self.SOURCELIST.down()
+		self.updateHead()
+
+	def dirSizeWalk(self):
+		setWalkdir()
 		self.updateHead()
 
 # ## Multiselect ###
@@ -1146,7 +1155,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
-				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
+				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + WALKDIRFLAG
 			elif not dir and filename:
 				self[side + "_head1"].text = cutLargePath(_("<Receiver>"), self[side + "_head1"])
 			else:
@@ -1377,6 +1386,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"blue": (self.invertSelection, _("Invert selection")),
 			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
 			"0": (self.doRefresh, _("Refresh screen")),
+			"1": (self.dirSizeWalk, _("Counting directory content size while walking on/off")),
 			"2": (boundFunction(self.selectGroup, True), _("Select group")),
 			"5": (boundFunction(self.selectGroup, False), _("Deselect group")),
 			"8": (self.openTasklist, _("Show task list")),
@@ -1570,6 +1580,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
 		self.session.open(TaskListScreen, self.tasklist)
 
+	def dirSizeWalk(self):
+		setWalkdir()
+		self.updateHead()
+
 # ## new folder in !Target! ###
 	def gomakeDir(self):
 		filename = self.TARGETLIST.getFilename()
@@ -1697,7 +1711,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			filename = self[side].getFilename()
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
-				self[side + "_free"].text = "%s" % freeDiskSpace(dir)
+				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + WALKDIRFLAG
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
 					self[side + "_select"].text = self.selInfo(self.selItems, self.selSize)
@@ -1759,7 +1773,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				if extension in ALL_MOVIE_EXTENSIONS and movie in self.selectedFiles:
 					self.selectedFiles.remove(file)
 
-class FileCommanderFileStatInfo(Screen, stat_info):
+class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 	skin = """
 		<screen name="FileCommanderFileStatInfo" position="center,center" size="545,370" title="File/Directory Status Information">
 			<widget name="filename" position="10,0" size="525,46" font="Regular;20"/>
@@ -1881,18 +1895,3 @@ class FileCommanderFileStatInfo(Screen, stat_info):
 			self["link_sep"].hide()
 			self["link_label"].text = ""
 			self["link_value"].text = ""
-
-	def dirContentSize(self, directory):
-		size = 0
-		for dirpath, dirnames, filenames in os.walk(directory):
-			for f in filenames:
-				fp = os.path.join(dirpath, f)
-				size += os.path.getsize(fp) if os.path.isfile(fp) else 0
-		return self.humanizer(size)
-
-	def humanizer(self, size):
-		for index,count in enumerate(['B','KB','MB','GB']):
-			if size < 1024.0:
-				return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
-			size /= 1024.0
-		return "%3.2f %s" % (size, 'TB')

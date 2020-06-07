@@ -214,7 +214,7 @@ class key_actions(stat_info):
 		#  "mediainfo": "mediainfo",
 	}
 
-	SIZESCALER = UnitScaler(scaleTable=UnitMultipliers.Jedec, maxNumLen=3, decimals=1)
+	SIZESCALER = UnitScaler(scaleTable=UnitMultipliers.Jedec, maxNumLen=3, decimals=2)
 
 	def __init__(self):
 		stat_info.__init__(self)
@@ -253,14 +253,22 @@ class key_actions(stat_info):
 			os.system("chmod 755 " + self.longname)
 		self.doRefresh()
 
+	def dirContentSize(self, directory, humanized = True):
+		size = 0
+		for dirpath, dirnames, filenames in os.walk(directory):
+			for f in filenames:
+				fp = os.path.join(dirpath, f)
+				size += os.path.getsize(fp) if os.path.isfile(fp) else 0
+		if humanized:
+			return self.Humanizer(size)
+		return size
+
 	def Humanizer(self, size):
-		if (size < 1024):
-			humansize = "%s %s" % (str(size), _("B"))
-		elif (size < 1048576):
-			humansize = "%s %s" % (str(size / 1024), _("KB"))
-		else:
-			humansize = "%s %s" % (str(round(float(size) / 1048576, 2)), _("MB"))
-		return humansize
+		for index,count in enumerate([_('B'),_('KB'),_('MB'),_('GB')]):
+			if size < 1024.0:
+				return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
+			size /= 1024.0
+		return "%3.2f %s" % (size, _('TB'))
 
 	def Info(self, dirsource):
 		filename = dirsource.getFilename()
@@ -305,6 +313,8 @@ class key_actions(stat_info):
 		except:
 			return ()
 
+		dirname = filename if config.plugins.filecommander.dir_sizewalk.value and os.path.isdir(filename) else None
+
 		# Numbers in trailing comments are the template text indexes
 		symbolicmode = self.fileModeStr(st.st_mode)
 		octalmode = "%04o" % stat.S_IMODE(st.st_mode)
@@ -315,7 +325,10 @@ class key_actions(stat_info):
 		)
 
 		if stat.S_ISCHR(st.st_mode) or stat.S_ISBLK(st.st_mode):
-			sizes = ("", "", "")
+			sizes = ("", "", "", "", "")
+		elif config.plugins.filecommander.dir_sizewalk.value and dirname:
+			size = self.dirContentSize(dirname)
+			sizes = ( "%s" % size, "%s" % size, "%s" % size, "%s" % size, "%s" % size )
 		else:
 			bytesize = "%s" % "{:n}".format(st.st_size)
 			bytesizedivided = "%s" % "{:,d}".format(st.st_size)
