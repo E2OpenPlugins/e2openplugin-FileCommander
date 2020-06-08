@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.04")
+pvers = "%s%s" % (_("v"),"2.05")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -590,7 +590,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))	#info
 		menu.append((_("Enter multi-file selection mode"), self.listSelect))		#green
 		menu.append((_("Refresh screen"),self.doRefresh))				#0
-		menu.append((_("Show task list"), self.openTasklist))				#blue
+		menu.append((_("Show task list"), self.openTasklist))				#red
 		menu.append((_("Calculate file checksums"), self.run_hashes))			#
 		menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))	#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))		#
@@ -599,9 +599,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((self.help_run_file(), self.run_file))				#
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))			#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))	#menu
-		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))		#
+		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))		#blue
 
-		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "blue", "", "", "", "", "yellow", "", "", "menu", ""]
+		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "red", "", "", "", "", "yellow", "", "", "menu", "blue"]
 
 		item = self.help_uninstall_file()
 		if item:
