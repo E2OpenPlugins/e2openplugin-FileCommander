@@ -1387,7 +1387,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"blue": (self.invertSelection, _("Invert selection")),
 			"info": (self.gofileStatInfo, _("File/Directory Status Information")),
 			"0": (self.doRefresh, _("Refresh screen")),
-			"1": (self.dirSizeWalk, _("Counting directory content size while walking on/off")),
+			"1": (self.dirSizeWalk, _("Counting directory content size while walking (on/off)")),
 			"2": (boundFunction(self.selectGroup, True), _("Select group")),
 			"5": (boundFunction(self.selectGroup, False), _("Deselect group")),
 			"8": (self.openTasklist, _("Show task list")),
