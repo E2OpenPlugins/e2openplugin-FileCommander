@@ -146,12 +146,6 @@ config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [
 config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
 
-WALKDIRFLAG = ''
-def setWalkdir():
-	config.plugins.filecommander.dir_sizewalk.value = not config.plugins.filecommander.dir_sizewalk.value
-	global WALKDIRFLAG
-	WALKDIRFLAG = ' *' if config.plugins.filecommander.dir_sizewalk.value else ''
-
 # ####################
 # ## Config Screen ###
 # ####################
@@ -292,6 +286,7 @@ def freeDiskSpace(path):
 		return "%s" % free
 	except:
 		return "-?-"
+
 
 ###################
 # ## Main Screen ###
@@ -500,12 +495,17 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		global glob_running
 		glob_running = True
 
+		self.walkdirflag = ''
 		self.onLayoutFinish.append(self.listLeft if config.plugins.filecommander.path_left_selected else self.listRight)
 		
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
 		#self.onLayoutFinish.append(self.onLayout)
 		self.onLayoutFinish.append(self.checkJobs_TimerCB)
+
+	def setWalkdir(self):
+		config.plugins.filecommander.dir_sizewalk.value = not config.plugins.filecommander.dir_sizewalk.value
+		self.walkdirflag = ' *' if config.plugins.filecommander.dir_sizewalk.value else ''
 
 	def onLayout(self):
 		if self.jobs_old:
@@ -744,7 +744,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.updateHead()
 
 	def dirSizeWalk(self):
-		setWalkdir()
+		self.setWalkdir()
 		self.updateHead()
 
 # ## Multiselect ###
@@ -761,7 +761,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		else:
 			leftactive = False
 
-		self.session.openWithCallback(self.doRefreshDir, FileCommanderScreenFileSelect, leftactive, selectedid)
+		self.session.openWithCallback(self.doRefreshDir, FileCommanderScreenFileSelect, self, leftactive, selectedid)
 		self.updateHead()
 
 	def openTasklist(self):
@@ -1155,7 +1155,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
-				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + WALKDIRFLAG
+				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + self.walkdirflag
 			elif not dir and filename:
 				self[side + "_head1"].text = cutLargePath(_("<Receiver>"), self[side + "_head1"])
 			else:
@@ -1315,12 +1315,13 @@ def SELECTED(item):
 	return item[0][3]
 
 class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
-	def __init__(self, session, leftactive, selectedid):
+	def __init__(self, session, parent, leftactive, selectedid):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
 
 		self.skin=FileCommanderScreen.skin
 
+		self.parent = parent
 		self.selectedFiles = []
 		self.selectedid = selectedid
 
@@ -1581,7 +1582,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.session.open(TaskListScreen, self.tasklist)
 
 	def dirSizeWalk(self):
-		setWalkdir()
+		self.parent.setWalkdir()
 		self.updateHead()
 
 # ## new folder in !Target! ###
@@ -1711,7 +1712,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			filename = self[side].getFilename()
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
-				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + WALKDIRFLAG
+				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + self.parent.walkdirflag
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
 					self[side + "_select"].text = self.selInfo(self.selItems, self.selSize)
