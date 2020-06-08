@@ -496,7 +496,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		glob_running = True
 
 		self.walkdirflag = ''
-		self.onLayoutFinish.append(self.listLeft if config.plugins.filecommander.path_left_selected else self.listRight)
+		self.onLayoutFinish.append(self.listLeft if config.plugins.filecommander.path_left_selected.value else self.listRight)
 		
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
@@ -562,6 +562,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if self["list_right"].getCurrentDirectory() and config.plugins.filecommander.savedir_right.value:
 			config.plugins.filecommander.path_right.value = self["list_right"].getCurrentDirectory()
 			config.plugins.filecommander.path_right.save()
+
+		config.plugins.filecommander.path_left_selected.value = True if self.SOURCELIST == self["list_left"] else False
+		config.plugins.filecommander.path_left_selected.save()
 
 		global glob_running
 		glob_running = False
