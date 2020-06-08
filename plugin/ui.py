@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.05")
+pvers = "%s%s" % (_("v"),"2.06")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -93,6 +93,7 @@ config.plugins.filecommander.path_default = ConfigDirectory(default="")
 config.plugins.filecommander.path_left = ConfigText(default="")
 config.plugins.filecommander.path_right = ConfigText(default="")
 config.plugins.filecommander.all_movie_ext = ConfigYesNo(default=True)
+config.plugins.filecommander.cursorposition = ConfigYesNo(default=False)
 config.plugins.filecommander.my_extension = ConfigText(default="", visible_width=15, fixed_size=False)
 config.plugins.filecommander.extension = ConfigSelection(default="^.*", choices=[("^.*", _("without")), ("myfilter", _("My Extension")), (records, _("Records")), (movie, _("Movie")), (music, _("Music")), (pictures, _("Pictures"))])
 config.plugins.filecommander.change_navbutton = ConfigSelection(default="no", choices=[("no", _("No")), ("always", _("Channel button always changes sides")), ("yes", _("Yes"))])
@@ -120,6 +121,7 @@ config.plugins.filecommander.sortFiles_left = ConfigSelection(default = "1.1", c
 config.plugins.filecommander.sortFiles_right = ConfigSelection(default = "1.1", choices = choicelist)
 config.plugins.filecommander.firstDirs = ConfigYesNo(default=True)
 config.plugins.filecommander.path_left_selected = ConfigYesNo(default=True)
+config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
 config.plugins.filecommander.showTaskCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.showScriptCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), default=["MD5"])
@@ -166,6 +168,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make FileCommander accessible from the Extensions menu.")))
 		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left, _("Save the left directory list location on exit.")))
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right, _("Save the right folder list location on exit.")))
+		self.list.append(getConfigListEntry(_("Save cursor position"), config.plugins.filecommander.cursorposition, _("Save cursor position in active panel.")))
 		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
 		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
@@ -496,7 +499,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		glob_running = True
 
 		self.walkdirflag = ''
-		self.onLayoutFinish.append(self.listLeft if config.plugins.filecommander.path_left_selected.value else self.listRight)
+		self.onLayoutFinish.append(self.listLeftStart if config.plugins.filecommander.path_left_selected.value else self.listRightStart)
 		
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
@@ -565,6 +568,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		config.plugins.filecommander.path_left_selected.value = True if self.SOURCELIST == self["list_left"] else False
 		config.plugins.filecommander.path_left_selected.save()
+
+		if config.plugins.filecommander.cursorposition.value:
+			config.plugins.filecommander.lastcursorposition.value = self.SOURCELIST.getSelectionID()
+			config.plugins.filecommander.lastcursorposition.save()
 
 		global glob_running
 		glob_running = False
@@ -1214,6 +1221,16 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			self.listRight()
 		else:
 			self.listLeft()
+
+	def listRightStart(self):
+		self.listRight()
+		if config.plugins.filecommander.cursorposition.value:
+			self.SOURCELIST.moveToIndex(config.plugins.filecommander.lastcursorposition.value)
+
+	def listLeftStart(self):
+		self.listLeft()
+		if config.plugins.filecommander.cursorposition.value:
+			self.SOURCELIST.moveToIndex(config.plugins.filecommander.lastcursorposition.value)
 
 	def listRight(self):
 		if self.disableActions_Timer.isActive():
