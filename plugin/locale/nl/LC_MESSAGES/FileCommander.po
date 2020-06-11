@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-08 22:54+0200\n"
-"PO-Revision-Date: 2020-05-31 00:27+0200\n"
+"PO-Revision-Date: 2020-06-11 15:02+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: NL <translators@openpli.org>\n"
 "Language: nl\n"
@@ -203,7 +203,7 @@ msgstr "Alle video extensies"
 #: ../addons/key_actions.py:295 ../addons/key_actions.py:336
 #: ../addons/key_actions.py:341 ../addons/key_actions.py:342
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ../addons/key_actions.py:81
 msgid "Block device"
@@ -309,9 +309,8 @@ msgid "Count directory content size"
 msgstr "Tel de grootte van de inhoud van de directory"
 
 #: ../ui.py:475 ../ui.py:1410
-#, fuzzy
 msgid "Counting directory content size while walking (on/off)"
-msgstr "Tel de grootte van de inhoud van de directory"
+msgstr "Tel de grootte van de inhoud van de directory tijdens andere werkzaamheden."
 
 #: ../ui.py:478 ../ui.py:598
 msgid "Create directory"
@@ -613,7 +612,7 @@ msgstr "Filtering gebaseerd op de gewenste extensie. Dat kunnen muziekbestanden,
 
 #: ../addons/key_actions.py:267
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: ../ui.py:612
 msgid "Go to bookmarked folder"
@@ -707,7 +706,7 @@ msgstr "Het is niet mogelijk om 'root filesystem’ te hernoemen."
 
 #: ../addons/key_actions.py:267
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: ../ui.py:468
 msgid "Leave File Commander"
@@ -735,7 +734,7 @@ msgstr "Laden"
 
 #: ../addons/key_actions.py:267
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: ../ui.py:168
 msgid "Make FileCommander accessible from the Extensions menu."
@@ -1066,11 +1065,11 @@ msgstr "Opslaan"
 
 #: ../ui.py:171
 msgid "Save cursor position"
-msgstr ""
+msgstr "Sla de cursor positie op"
 
 #: ../ui.py:171
 msgid "Save cursor position in active panel."
-msgstr ""
+msgstr "Indien geactiveerd, dan wordt de cursor positie opgeslagen. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
 
 #: ../ui.py:169
 msgid "Save left folder on exit"
@@ -1275,9 +1274,8 @@ msgid "Storage devices"
 msgstr "Opslag media"
 
 #: ../ui.py:189
-#, fuzzy
 msgid "Swap buttons for reverse file sorting"
-msgstr "Omgekeerd sorteren linker zijde"
+msgstr "Keer de functie van de toetsen om m.b.t. omgekeerd sorteren"
 
 #: ../ui.py:178
 msgid "Swap buttons right/left with channel +/- or the channel button changed always the side."
@@ -1293,7 +1291,7 @@ msgstr "Symlink naar "
 
 #: ../addons/key_actions.py:271
 msgid "TB"
-msgstr ""
+msgstr "TB"
 
 #: ../TaskList.py:86
 msgid "Task list"
@@ -1367,9 +1365,8 @@ msgid "Unpack to current folder"
 msgstr "In huidige map uitpakken"
 
 #: ../ui.py:189
-#, fuzzy
 msgid "Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted)."
-msgstr "Indien geactiveerd, dan worden de mappen op de eerste of de laatste posities in het paneel weergegeven. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
+msgstr "Handig als de RC een 'pauzetoets' beschikbaar heeft om te stoppen. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
 
 #: ../ui.py:477 ../ui.py:595
 msgid "View or edit file (if size < 1MB)"
@@ -1417,7 +1414,7 @@ msgstr "Je kunt normaliter ‘%s’ niet uitvoeren in een map."
 #: ../ui.py:252
 #, python-format
 msgid "[D]%s%s[F]%s%s"
-msgstr ""
+msgstr "[D]%s%s[F]%s%s"
 
 #: ../ui.py:141
 msgid "contains in title"
@@ -1441,7 +1438,7 @@ msgstr "maak een symlink aan …"
 
 #: ../ui.py:248 ../ui.py:249
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: ../ui.py:141
 msgid "end title"
@@ -1493,7 +1490,7 @@ msgstr "verplaats directory"
 
 #: ../ui.py:248 ../ui.py:249
 msgid "n"
-msgstr ""
+msgstr "n"
 
 #: ../FileList.py:233
 msgid "nothing connected"
@@ -1513,7 +1510,7 @@ msgstr "python"
 
 #: ../ui.py:248 ../ui.py:249
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: ../addons/key_actions.py:149
 msgid "script 'sterr':"
@@ -1561,7 +1558,7 @@ msgstr "pak de zip bestanden uit"
 
 #: ../ui.py:66
 msgid "v"
-msgstr ""
+msgstr "v"
 
 #: ../ui.py:98
 msgid "without"
