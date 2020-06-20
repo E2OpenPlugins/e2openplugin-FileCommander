@@ -149,7 +149,7 @@ config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices 
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
 codepages = []
 for i in range(1250,1259,1):
-	codepages.append(("%s" % i, "cp%s" % i))
+	codepages.append(("%s" % i, "CP%s" % i))
 config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
 
 # ####################
@@ -621,7 +621,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))
 			keys+=[""]
 		if isFile and filename[-4:] in (".srt", ".sub"):
-			menu.append((_("Convert subtitles from 'cp%s' to UTF-8") % config.plugins.filecommander.cp.value, self.convertSubtitles))
+			menu.append((_("Convert subtitles from '%s' to UTF-8") % config.plugins.filecommander.cp(config.plugins.filecommander.cp.value)[1], self.convertSubtitles))
 			keys+=[""]
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
