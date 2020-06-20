@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-20 03:29+0200\n"
-"PO-Revision-Date: 2020-06-20 03:33+0200\n"
+"POT-Creation-Date: 2020-06-20 11:13+0200\n"
+"PO-Revision-Date: 2020-06-20 11:14+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -276,8 +276,8 @@ msgstr "Velikost obsahu:"
 
 #: ../ui.py:624
 #, python-format
-msgid "Convert subtitles from 'cp%s' to UTF-8"
-msgstr "Zkonvertovat titulky z 'cp%s' do UTF-8"
+msgid "Convert subtitles from '%s' to UTF-8"
+msgstr "Zkonvertovat titulky z '%s' do UTF-8"
 
 #: ../ui.py:460 ../ui.py:1437
 msgid "Copy"

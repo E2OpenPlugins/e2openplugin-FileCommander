@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-20 03:29+0200\n"
+"POT-Creation-Date: 2020-06-20 11:13+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -281,7 +281,7 @@ msgstr ""
 
 #: ../ui.py:624
 #, python-format
-msgid "Convert subtitles from 'cp%s' to UTF-8"
+msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
 #: ../ui.py:460 ../ui.py:1437

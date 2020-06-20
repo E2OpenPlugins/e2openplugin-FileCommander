@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e 2openplugin-FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-20 03:29+0200\n"
+"POT-Creation-Date: 2020-06-20 11:13+0200\n"
 "PO-Revision-Date: 2020-06-01 15:58+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: ../ui.py:624
 #, python-format
-msgid "Convert subtitles from 'cp%s' to UTF-8"
+msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
 #: ../ui.py:460 ../ui.py:1437
