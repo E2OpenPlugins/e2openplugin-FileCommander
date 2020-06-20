@@ -152,6 +152,8 @@ for i in range(1250,1259,1):
 	codepages.append(("%s" % i, "CP%s" % i))
 config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
 
+cfg = config.plugins.filecommander
+
 # ####################
 # ## Config Screen ###
 # ####################
@@ -168,34 +170,34 @@ class Setup(ConfigListScreen, Screen):
 		self["VKeyIcon"] = Boolean(False)
 
 		self.list = []
-		self.list.append(getConfigListEntry(_("Add plugin to main menu"), config.plugins.filecommander.add_mainmenu_entry, _("Make FileCommander accessible from the main menu.")))
-		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), config.plugins.filecommander.add_extensionmenu_entry, _("Make FileCommander accessible from the Extensions menu.")))
-		self.list.append(getConfigListEntry(_("Save left folder on exit"), config.plugins.filecommander.savedir_left, _("Save the left directory list location on exit.")))
-		self.list.append(getConfigListEntry(_("Save right folder on exit"), config.plugins.filecommander.savedir_right, _("Save the right folder list location on exit.")))
-		self.list.append(getConfigListEntry(_("Save cursor position"), config.plugins.filecommander.cursorposition, _("Save cursor position in active panel.")))
-		self.list.append(getConfigListEntry(_("Show directories first"), config.plugins.filecommander.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("Show Task's completed message"), config.plugins.filecommander.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
-		self.list.append(getConfigListEntry(_("Show Script completed message"), config.plugins.filecommander.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
-		self.list.append(getConfigListEntry(_("Number of lines in script messages"), config.plugins.filecommander.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
-		self.list.append(getConfigListEntry(_("Show unknown extension as text"), config.plugins.filecommander.unknown_extension_as_text, _("Show unknown file extensions with 'Addon File-Viewer'.")))
-		self.list.append(getConfigListEntry(_("Edit position is the line end"), config.plugins.filecommander.editposition_lineend, _("If editing a file, you can set the cursor start position at end or begin of the line.")))
-		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), config.plugins.filecommander.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
-		self.list.append(getConfigListEntry(_("Directories to group selections"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
-		self.list.append(getConfigListEntry(_("Default file sorting left"), config.plugins.filecommander.sortFiles_left, _("Default sorting method for files in left panel.")))
-		self.list.append(getConfigListEntry(_("Default file sorting right"), config.plugins.filecommander.sortFiles_right, _("Default sorting method for files in right panel.")))
-		self.list.append(getConfigListEntry(_("Default directory sorting"), config.plugins.filecommander.sortDirs, _("Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("Default folder"), config.plugins.filecommander.path_default, _("Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too.")))
-		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
-		self.list.append(getConfigListEntry(_("My extension"), config.plugins.filecommander.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
-		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), config.plugins.filecommander.extension, _("Filter visible file classes by extension.")))
-		self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filecommander.dir_size, _("Calculates the size of directory contents for Info.")))
-		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"),config.plugins.filecommander.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
-		self.list.append(getConfigListEntry(_("CPU priority for script execution"), config.plugins.filecommander.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
-		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
-		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes, _("Calculates file checksums.")))
-		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow, _("Time between slides in image viewer slideshow.")))
-		self.list.append(getConfigListEntry(_("Original subtitles codepage"), config.plugins.filecommander.cp, _("Original subtitles codepage for conversion to UTF-8.")))
+		self.list.append(getConfigListEntry(_("Add plugin to main menu"), cfg.add_mainmenu_entry, _("Make FileCommander accessible from the main menu.")))
+		self.list.append(getConfigListEntry(_("Add plugin to Extensions menu"), cfg.add_extensionmenu_entry, _("Make FileCommander accessible from the Extensions menu.")))
+		self.list.append(getConfigListEntry(_("Save left folder on exit"), cfg.savedir_left, _("Save the left directory list location on exit.")))
+		self.list.append(getConfigListEntry(_("Save right folder on exit"), cfg.savedir_right, _("Save the right folder list location on exit.")))
+		self.list.append(getConfigListEntry(_("Save cursor position"), cfg.cursorposition, _("Save cursor position in active panel.")))
+		self.list.append(getConfigListEntry(_("Show directories first"), cfg.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("Show Task's completed message"), cfg.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
+		self.list.append(getConfigListEntry(_("Show Script completed message"), cfg.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
+		self.list.append(getConfigListEntry(_("Number of lines in script messages"), cfg.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
+		self.list.append(getConfigListEntry(_("Show unknown extension as text"), cfg.unknown_extension_as_text, _("Show unknown file extensions with 'Addon File-Viewer'.")))
+		self.list.append(getConfigListEntry(_("Edit position is the line end"), cfg.editposition_lineend, _("If editing a file, you can set the cursor start position at end or begin of the line.")))
+		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), cfg.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
+		self.list.append(getConfigListEntry(_("Default file sorting left"), cfg.sortFiles_left, _("Default sorting method for files in left panel.")))
+		self.list.append(getConfigListEntry(_("Default file sorting right"), cfg.sortFiles_right, _("Default sorting method for files in right panel.")))
+		self.list.append(getConfigListEntry(_("Default directory sorting"), cfg.sortDirs, _("Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("Default folder"), cfg.path_default, _("Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too.")))
+		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
+		self.list.append(getConfigListEntry(_("My extension"), cfg.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
+		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), cfg.extension, _("Filter visible file classes by extension.")))
+		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for Info.")))
+		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"),cfg.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("CPU priority for script execution"), cfg.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
+		self.list.append(getConfigListEntry(_("I/O priority for script execution"), cfg.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
+		self.list.append(getConfigListEntry(_("File checksums/hashes"), cfg.hashes, _("Calculates file checksums.")))
+		self.list.append(getConfigListEntry(_("Time for Slideshow"), cfg.diashow, _("Time between slides in image viewer slideshow.")))
+		self.list.append(getConfigListEntry(_("Original subtitles codepage"), cfg.cp, _("Original subtitles codepage for conversion to UTF-8.")))
 
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
 
@@ -221,12 +223,12 @@ class Setup(ConfigListScreen, Screen):
 			self["description"].setText(text)
 
 	def ok(self):
-		if self["config"].getCurrent()[1] is config.plugins.filecommander.path_default:
-			self.session.openWithCallback(self.pathSelected, LocationBox, text=_("Default Folder"), currDir=config.plugins.filecommander.path_default.getValue(), bookmarks=config.plugins.filecommander.bookmarks)
+		if self["config"].getCurrent()[1] is cfg.path_default:
+			self.session.openWithCallback(self.pathSelected, LocationBox, text=_("Default Folder"), currDir=cfg.path_default.getValue(), bookmarks=cfg.bookmarks)
 
 	def pathSelected(self, res):
 		if res is not None:
-			config.plugins.filecommander.path_default.value = res
+			cfg.path_default.value = res
 		
 	def save(self):
 		print "[FileCommander]: Settings saved"
@@ -403,8 +405,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def __init__(self, session, path_left=None):
 		# path_left == "" means device list, whereas path_left == None means saved or default value
 
-		path_left = config.plugins.filecommander.path_left.value if os.path.isdir(config.plugins.filecommander.path_left.value) else None
-		path_right = config.plugins.filecommander.path_right.value if os.path.isdir(config.plugins.filecommander.path_right.value) else None
+		path_left = cfg.path_left.value if os.path.isdir(cfg.path_left.value) else None
+		path_right = cfg.path_right.value if os.path.isdir(cfg.path_right.value) else None
 
 		if path_left and os.path.isdir(path_left) and path_left[-1] != "/":
 			path_left += "/"
@@ -442,10 +444,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["list_right_free"] = Label()
 
 		# set sorting
-		sortDirs = config.plugins.filecommander.sortDirs.value
-		sortFilesLeft = config.plugins.filecommander.sortFiles_left.value
-		sortFilesRight = config.plugins.filecommander.sortFiles_right.value
-		firstDirs = config.plugins.filecommander.firstDirs.value
+		sortDirs = cfg.sortDirs.value
+		sortFilesLeft = cfg.sortFiles_left.value
+		sortFilesRight = cfg.sortFiles_right.value
+		firstDirs = cfg.firstDirs.value
 
 		self["list_left"] = FileList(path_left, matchingPattern=filter, sortDirs=sortDirs, sortFiles=sortFilesLeft, firstDirs=firstDirs)
 		self["list_right"] = FileList(path_right, matchingPattern=filter, sortDirs=sortDirs, sortFiles=sortFilesRight, firstDirs=firstDirs)
@@ -461,7 +463,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["key_blue"] = StaticText(_("Rename"))
 		self["VKeyIcon"] = Boolean(False)
 
-		if config.plugins.filecommander.toggle_stop_pause.value:
+		if cfg.toggle_stop_pause.value:
 			file_left_sort = (self.goYellowLong, _("Reverse right file sorting"))
 			file_right_sort = (self.goGreenLong, _("Reverse left file sorting"))
 		else:
@@ -504,7 +506,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		glob_running = True
 
 		self.walkdirflag = ''
-		self.onLayoutFinish.append(self.listLeftStart if config.plugins.filecommander.path_left_selected.value else self.listRightStart)
+		self.onLayoutFinish.append(self.listLeftStart if cfg.path_left_selected.value else self.listRightStart)
 		
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
@@ -512,14 +514,14 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.onLayoutFinish.append(self.checkJobs_TimerCB)
 
 	def setWalkdir(self):
-		config.plugins.filecommander.dir_sizewalk.value = not config.plugins.filecommander.dir_sizewalk.value
-		self.walkdirflag = ' *' if config.plugins.filecommander.dir_sizewalk.value else ''
+		cfg.dir_sizewalk.value = not cfg.dir_sizewalk.value
+		self.walkdirflag = ' *' if cfg.dir_sizewalk.value else ''
 
 	def onLayout(self):
 		if self.jobs_old:
 			self.checkJobs_Timer.startLongTimer(5)
 
-		if config.plugins.filecommander.extension.value == "^.*":
+		if cfg.extension.value == "^.*":
 			filtered = ""
 		else:
 			filtered = "(*)"
@@ -563,20 +565,20 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def exit(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if self["list_left"].getCurrentDirectory() and config.plugins.filecommander.savedir_left.value:
-			config.plugins.filecommander.path_left.value = self["list_left"].getCurrentDirectory()
-			config.plugins.filecommander.path_left.save()
+		if self["list_left"].getCurrentDirectory() and cfg.savedir_left.value:
+			cfg.path_left.value = self["list_left"].getCurrentDirectory()
+			cfg.path_left.save()
 
-		if self["list_right"].getCurrentDirectory() and config.plugins.filecommander.savedir_right.value:
-			config.plugins.filecommander.path_right.value = self["list_right"].getCurrentDirectory()
-			config.plugins.filecommander.path_right.save()
+		if self["list_right"].getCurrentDirectory() and cfg.savedir_right.value:
+			cfg.path_right.value = self["list_right"].getCurrentDirectory()
+			cfg.path_right.save()
 
-		config.plugins.filecommander.path_left_selected.value = True if self.SOURCELIST == self["list_left"] else False
-		config.plugins.filecommander.path_left_selected.save()
+		cfg.path_left_selected.value = True if self.SOURCELIST == self["list_left"] else False
+		cfg.path_left_selected.save()
 
-		if config.plugins.filecommander.cursorposition.value:
-			config.plugins.filecommander.lastcursorposition.value = self.SOURCELIST.getSelectionID()
-			config.plugins.filecommander.lastcursorposition.save()
+		if cfg.cursorposition.value:
+			cfg.lastcursorposition.value = self.SOURCELIST.getSelectionID()
+			cfg.lastcursorposition.save()
 
 		global glob_running
 		glob_running = False
@@ -621,7 +623,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))
 			keys+=[""]
 		if isFile and filename[-4:] in (".srt", ".sub"):
-			menu.append((_("Convert subtitles from '%s' to UTF-8") % config.plugins.filecommander.cp(config.plugins.filecommander.cp.value)[1], self.convertSubtitles))
+			menu.append((_("Convert subtitles from '%s' to UTF-8") % cfg.cp(cfg.cp.value)[1], self.convertSubtitles))
 			keys+=[""]
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
@@ -643,11 +645,11 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		dirname = self.SOURCELIST.getFilename()
 		if dirname and dirname.endswith("/"):
-			menu.append((dirname in config.plugins.filecommander.bookmarks.value and _("Remove selected folder from bookmarks") or _("Add selected folder to bookmarks"), boundFunction(self.goBookmark, False)))
+			menu.append((dirname in cfg.bookmarks.value and _("Remove selected folder from bookmarks") or _("Add selected folder to bookmarks"), boundFunction(self.goBookmark, False)))
 			keys += ["bullet"]
 		dirname = self.SOURCELIST.getCurrentDirectory()
 		if dirname:
-			menu.append((dirname in config.plugins.filecommander.bookmarks.value and _("Remove current folder from bookmarks") or _("Add current folder to bookmarks"), boundFunction(self.goBookmark, True)))
+			menu.append((dirname in cfg.bookmarks.value and _("Remove current folder from bookmarks") or _("Add current folder to bookmarks"), boundFunction(self.goBookmark, True)))
 			keys += ["bullet"]
 
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
@@ -666,7 +668,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 	def goBookmark(self, current):
 		dirname = current and self.SOURCELIST.getCurrentDirectory() or self.SOURCELIST.getFilename()
-		bookmarks = config.plugins.filecommander.bookmarks.value
+		bookmarks = cfg.bookmarks.value
 		if dirname in bookmarks:
 			bookmarks.remove(dirname)
 		else:
@@ -677,27 +679,27 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			#	order = dirname + "," + order
 			#	config.misc.pluginlist.fc_bookmarks_order.value = order
 			#	config.misc.pluginlist.fc_bookmarks_order.save()
-		config.plugins.filecommander.bookmarks.value = bookmarks
-		config.plugins.filecommander.bookmarks.save()
+		cfg.bookmarks.value = bookmarks
+		cfg.bookmarks.save()
 
 	def goDefaultfolder(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if config.plugins.filecommander.path_default.value:
-			self.SOURCELIST.changeDir(config.plugins.filecommander.path_default.value)
+		if cfg.path_default.value:
+			self.SOURCELIST.changeDir(cfg.path_default.value)
 			self.updateHead()
 
 	def goBookmarkedfolder(self):
 		if self.disableActions_Timer.isActive():
 			return
-		bookmarks = config.plugins.filecommander.bookmarks.value
+		bookmarks = cfg.bookmarks.value
 		if not bookmarks:
-			if config.plugins.filecommander.path_default.value:
-				bookmarks.append(config.plugins.filecommander.path_default.value)
+			if cfg.path_default.value:
+				bookmarks.append(cfg.path_default.value)
 			bookmarks.append('/home/root/')
 			bookmarks.append(defaultMoviePath())
-			config.plugins.filecommander.bookmarks.value = bookmarks
-			config.plugins.filecommander.bookmarks.save()
+			cfg.bookmarks.value = bookmarks
+			cfg.bookmarks.save()
 		bookmarks = [(x, x) for x in bookmarks]
 		bookmarks.append((_("Storage devices"), None))
 		# commented out
@@ -725,9 +727,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				self.onLayout()
 			del self.oldFilterSettings
 
-		sortDirs = config.plugins.filecommander.sortDirs.value
-		sortFilesLeft = config.plugins.filecommander.sortFiles_left.value
-		sortFilesRight = config.plugins.filecommander.sortFiles_right.value
+		sortDirs = cfg.sortDirs.value
+		sortFilesLeft = cfg.sortFiles_left.value
+		sortFilesRight = cfg.sortFiles_right.value
 
 		self["list_left"].setSortBy(sortDirs, True)
 		self["list_right"].setSortBy(sortDirs, True)
@@ -739,7 +741,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def goLeftB(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.listLeft()
 		else:
 			self.goLeft()
@@ -747,7 +749,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def goRightB(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.listRight()
 		else:
 			self.goRight()
@@ -781,10 +783,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if not self.SOURCELIST.getCurrentDirectory() or self.disableActions_Timer.isActive():
 			return
 		selectedid = self.SOURCELIST.getSelectionID()
-		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
-		config.plugins.filecommander.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
-		config.plugins.filecommander.sortingLeft_tmp.value = self["list_left"].getSortBy()
-		config.plugins.filecommander.sortingRight_tmp.value = self["list_right"].getSortBy()
+		cfg.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
+		cfg.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
+		cfg.sortingLeft_tmp.value = self["list_left"].getSortBy()
+		cfg.sortingRight_tmp.value = self["list_right"].getSortBy()
 		if self.SOURCELIST == self["list_left"]:
 			leftactive = True
 		else:
@@ -843,7 +845,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			if not self.jobs:
 				self.updateDirs.clear()
 				del self.containers[:]
-		if not glob_running and config.plugins.filecommander.showTaskCompleted_message.value:
+		if not glob_running and cfg.showTaskCompleted_message.value:
 			for job in job_manager.getPendingJobs():
 				if (job.name.startswith(_('copy file')) or job.name.startswith(_('copy folder')) or job.name.startswith(_('move file')) or job.name.startswith(_('move folder'))or job.name.startswith(_('Run script'))):
 					return
@@ -929,7 +931,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					fo = open(name, "wt")
 					try:
 						for line in fi:
-							fo.write(line.decode(config.plugins.filecommander.cp.value).encode('utf-8', 'ignore'))
+							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
 					except Exception as error:
 						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
 						target = name
@@ -1055,7 +1057,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		fname = _("Please enter the new file name")
 		if sourceDir in filename:
 			fname = _("Please enter the new directory name")
-		#length = config.plugins.filecommander.input_length.value
+		#length = cfg.input_length.value
 		#self.session.openWithCallback(self.doRename, InputBox, text=filename, visible_width=length, overwrite=False, firstpos_end=True, allmarked=False, title=_("Please enter file/folder name"), windowTitle=_("Rename file"))
 		# overwrite : False = insert mode (not overwrite) when InputBox is created
 		# firstpos_end : True = cursor at end of text on InputBox creation - False = cursor at start of text on InputBox creation
@@ -1226,8 +1228,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if jobs:
 			for job in jobs:
 				self.addJob(job, updateDirs)
-		self["list_left"].changeDir(config.plugins.filecommander.path_left_tmp.value or None)
-		self["list_right"].changeDir(config.plugins.filecommander.path_right_tmp.value or None)
+		self["list_left"].changeDir(cfg.path_left_tmp.value or None)
+		self["list_right"].changeDir(cfg.path_right_tmp.value or None)
 		if self.SOURCELIST == self["list_left"]:
 			self["list_left"].selectionEnabled(1)
 			self["list_right"].selectionEnabled(0)
@@ -1253,9 +1255,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def listRightB(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.goLeft()
-		elif config.plugins.filecommander.change_navbutton.value == 'always' and self.SOURCELIST == self["list_right"]:
+		elif cfg.change_navbutton.value == 'always' and self.SOURCELIST == self["list_right"]:
 			self.listLeft()
 		else:
 			self.listRight()
@@ -1263,22 +1265,22 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def listLeftB(self):
 		if self.disableActions_Timer.isActive():
 			return
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.goRight()
-		elif config.plugins.filecommander.change_navbutton.value == 'always' and self.SOURCELIST == self["list_left"]:
+		elif cfg.change_navbutton.value == 'always' and self.SOURCELIST == self["list_left"]:
 			self.listRight()
 		else:
 			self.listLeft()
 
 	def listRightStart(self):
 		self.listRight()
-		if config.plugins.filecommander.cursorposition.value:
-			self.SOURCELIST.moveToIndex(config.plugins.filecommander.lastcursorposition.value)
+		if cfg.cursorposition.value:
+			self.SOURCELIST.moveToIndex(cfg.lastcursorposition.value)
 
 	def listLeftStart(self):
 		self.listLeft()
-		if config.plugins.filecommander.cursorposition.value:
-			self.SOURCELIST.moveToIndex(config.plugins.filecommander.lastcursorposition.value)
+		if cfg.cursorposition.value:
+			self.SOURCELIST.moveToIndex(cfg.lastcursorposition.value)
 
 	def listRight(self):
 		if self.disableActions_Timer.isActive():
@@ -1336,7 +1338,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 
 	def loadMenu(self):
 		self.list = []
-		cfg = config.plugins.filecommander
+		cfg = cfg
 		self.search = _("Search in group selection by")
 		self.list.append(getConfigListEntry(self.search, cfg.search, _("You can set what will group selection use - start of title, end of title or contains in title.")))
 		if cfg.search.value == "begin":
@@ -1345,9 +1347,9 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection.")))
 		self.list.append(getConfigListEntry(_("Compare case sensitive"), cfg.sensitive, _("Sets whether to distinguish between uper case and lower case for searching.")))
 		#duplicity from main setting:
-		self.list.append(getConfigListEntry(_("Directories to group selections"), config.plugins.filecommander.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), config.plugins.filecommander.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
-		self.list.append(getConfigListEntry(_("All movie extensions"), config.plugins.filecommander.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
+		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 
 		self["config"].list = self.list
 
@@ -1393,13 +1395,13 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.selectedFiles = []
 		self.selectedid = selectedid
 
-		path_left = config.plugins.filecommander.path_left_tmp.value or None
-		path_right = config.plugins.filecommander.path_right_tmp.value or None
+		path_left = cfg.path_left_tmp.value or None
+		path_right = cfg.path_right_tmp.value or None
 
 		# set sorting
-		sortDirsLeft, sortFilesLeft = config.plugins.filecommander.sortingLeft_tmp.value.split(',')
-		sortDirsRight, sortFilesRight = config.plugins.filecommander.sortingRight_tmp.value.split(',')
-		firstDirs = config.plugins.filecommander.firstDirs.value
+		sortDirsLeft, sortFilesLeft = cfg.sortingLeft_tmp.value.split(',')
+		sortDirsRight, sortFilesRight = cfg.sortingRight_tmp.value.split(',')
+		firstDirs = cfg.firstDirs.value
 
 		sortLeft = formatSortingTyp(sortDirsLeft,sortFilesLeft)
 		sortRight = formatSortingTyp(sortDirsRight,sortFilesRight)
@@ -1467,7 +1469,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.onLayoutFinish.append(self.onLayout)
 
 	def onLayout(self):
-		if config.plugins.filecommander.extension.value == "^.*":
+		if cfg.extension.value == "^.*":
 			filtered = ""
 		else:
 			filtered = "(*)"
@@ -1481,7 +1483,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.selectedFiles = self.ACTIVELIST.getSelectedList()
 			self.getSelectedFilesInfos(self.selectedFiles)
 #			print "[FileCommander] selectedFiles:", self.selectedFiles
-			if config.plugins.filecommander.move_selector.value:
+			if cfg.move_selector.value:
 				self.goDown()
 			else:
 				self.updateHead()
@@ -1543,19 +1545,19 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			else:
 				return _("contains...")
 		if mark:
-			txt = _("Add to selection (%s)") % getSubstring(config.plugins.filecommander.search.value)
+			txt = _("Add to selection (%s)") % getSubstring(cfg.search.value)
 		else:
-			txt = _("Remove from selection (%s)")  % getSubstring(config.plugins.filecommander.search.value)
+			txt = _("Remove from selection (%s)")  % getSubstring(cfg.search.value)
 
 		item = self.SOURCELIST.l.getCurrentSelection()
-		length = int(config.plugins.filecommander.length.value)
-		endlength = int(config.plugins.filecommander.endlength.value)
+		length = int(cfg.length.value)
+		endlength = int(cfg.endlength.value)
 		name = ""
 		if item:
-			if config.plugins.filecommander.search.value == "begin" and length:
+			if cfg.search.value == "begin" and length:
 				name = NAME(item).decode('UTF-8', 'replace')[0:length]
 				txt += 10*" " + "%s" % length
-			elif config.plugins.filecommander.search.value == "end" and endlength:
+			elif cfg.search.value == "end" and endlength:
 				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
 				txt += 10*" " + "%s" % endlength
 		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title = txt, text = name)
@@ -1563,20 +1565,20 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def changeItems(self, mark, searchString = None):
 		if searchString:
 			searchString = searchString.decode('UTF-8', 'replace')
-			if not config.plugins.filecommander.sensitive.value:
+			if not cfg.sensitive.value:
 				searchString = searchString.lower()
 			for item in self.SOURCELIST.list:
-				if config.plugins.filecommander.sensitive.value:
-					if config.plugins.filecommander.search.value == "begin":
+				if cfg.sensitive.value:
+					if cfg.search.value == "begin":
 						exist = NAME(item).decode('UTF-8', 'replace').startswith(searchString)
-					elif config.plugins.filecommander.search.value == "end":
+					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').endswith(searchString)
 					else:
 						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString)== -1 else True
 				else:
-					if config.plugins.filecommander.search.value == "begin":
+					if cfg.search.value == "begin":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().startswith(searchString)
-					elif config.plugins.filecommander.search.value == "end":
+					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().endswith(searchString)
 					else:
 						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString)== -1 else True
@@ -1591,8 +1593,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.updateHead()
 
 	def exit(self, jobs=None, updateDirs=None):
-		config.plugins.filecommander.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
-		config.plugins.filecommander.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
+		cfg.path_left_tmp.value = self["list_left"].getCurrentDirectory() or ""
+		cfg.path_right_tmp.value = self["list_right"].getCurrentDirectory() or ""
 		self.close(jobs, updateDirs)
 
 	def gofileStatInfo(self):
@@ -1614,13 +1616,13 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			self.updateHead()
 
 	def goLeftB(self):
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.listLeft()
 		else:
 			self.goLeft()
 
 	def goRightB(self):
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.listRight()
 		else:
 			self.goRight()
@@ -1802,17 +1804,17 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.updateHead()
 
 	def listRightB(self):
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.goLeft()
-		elif config.plugins.filecommander.change_navbutton.value == 'always' and self.ACTIVELIST == self["list_right"]:
+		elif cfg.change_navbutton.value == 'always' and self.ACTIVELIST == self["list_right"]:
 			self.listLeft()
 		else:
 			self.listRight()
 
 	def listLeftB(self):
-		if config.plugins.filecommander.change_navbutton.value == 'yes':
+		if cfg.change_navbutton.value == 'yes':
 			self.goRight()
-		elif config.plugins.filecommander.change_navbutton.value == 'always' and self.ACTIVELIST == self["list_left"]:
+		elif cfg.change_navbutton.value == 'always' and self.ACTIVELIST == self["list_left"]:
 			self.listRight()
 		else:
 			self.listLeft()
@@ -1948,7 +1950,7 @@ class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 		self.list.append((_("Links:"), "%d" % st.st_nlink))
 		self.list.append((_("Inode:"), "%d" % st.st_ino))
 		self.list.append((_("On device:"), "%d, %d" % ((st.st_dev >> 8) & 0xff, st.st_dev & 0xff)))
-		if config.plugins.filecommander.dir_size.value and dirname:
+		if cfg.dir_size.value and dirname:
 			self.list.append((_("Content size:"), "%s" % self.dirContentSize(dirname)))
 
 		self["list"].updateList(self.list)
