@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.06")
+pvers = "%s%s" % (_("v"),"2.07")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -147,6 +147,10 @@ choicelist.append(("20","20"))
 config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
+codepages = []
+for i in range(1250,1259,1):
+	codepages.append(("%s" % i, "cp%s" % i))
+config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
 
 # ####################
 # ## Config Screen ###
@@ -191,6 +195,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), config.plugins.filecommander.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), config.plugins.filecommander.hashes, _("Calculates file checksums.")))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), config.plugins.filecommander.diashow, _("Time between slides in image viewer slideshow.")))
+		self.list.append(getConfigListEntry(_("Original subtitles codepage"), config.plugins.filecommander.cp, _("Original subtitles codepage for conversion to UTF-8.")))
 
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
 
@@ -590,28 +595,42 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			self.doRefresh()
 
 	def selectAction(self):
-		menu = []
-		menu.append((_("Rename file/directory"), self.goBlue))				#2
-		menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
-		menu.append((_("Copy file/directory to target directory"), self.goYellow))	#5
-		menu.append((_("Move file/directory to target directory"), self.goGreen))	#6
-		menu.append((_("Create directory"), self.gomakeDir))				#7
-		menu.append((_("Delete file or directory (and all its contents)"), self.goRed))	#8
-		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))	#info
-		menu.append((_("Enter multi-file selection mode"), self.listSelect))		#green
-		menu.append((_("Refresh screen"),self.doRefresh))				#0
-		menu.append((_("Show task list"), self.openTasklist))				#red
-		menu.append((_("Calculate file checksums"), self.run_hashes))			#
-		menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))	#
-		menu.append((_("Create user-named symbolic link"), self.gomakeSym))		#
-		menu.append((_("Go to parent directory"), self.goParentfolder))			#
-		menu.append((_("Go to default directory"), self.goDefaultfolder))		#yellow
-		menu.append((self.help_run_file(), self.run_file))				#
-		menu.append((self.help_run_ffprobe(), self.run_ffprobe))			#
-		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))	#menu
-		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))		#blue
+		filename = self.SOURCELIST.getFilename()
+		sourceDir = self.SOURCELIST.getCurrentDirectory()
+		isFile = True if sourceDir not in filename else False
 
-		keys=["2", "3", "5", "6", "7", "8", "info", "green", "0", "red", "", "", "", "", "yellow", "", "", "menu", "blue"]
+		menu = []
+		menu.append((_("Rename file/directory"), self.goBlue))
+		keys=["2"]
+		if isFile:
+			menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
+			keys+=["3"]
+		menu.append((_("Copy file/directory to target directory"), self.goYellow))		#5
+		menu.append((_("Move file/directory to target directory"), self.goGreen))		#6
+		menu.append((_("Create directory"), self.gomakeDir))					#7
+		menu.append((_("Delete file or directory (and all its contents)"), self.goRed))		#8
+		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))		#info
+		menu.append((_("Enter multi-file selection mode"), self.listSelect))			#green
+		menu.append((_("Refresh screen"),self.doRefresh))					#0
+		menu.append((_("Show task list"), self.openTasklist))					#red
+		keys+=["5", "6", "7", "8", "info", "green", "0", "red"]
+		if isFile:
+			menu.append((_("Calculate file checksums"), self.run_hashes))
+			keys+=[""]
+		if isFile:
+			menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))
+			keys+=[""]
+		if isFile and filename[-4:] in (".srt", ".sub"):
+			menu.append((_("Convert subtitles from 'cp%s' to UTF-8") % config.plugins.filecommander.cp.value, self.convertSubtitles))
+			keys+=[""]
+		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
+		menu.append((_("Go to parent directory"), self.goParentfolder))				#
+		menu.append((_("Go to default directory"), self.goDefaultfolder))			#yellow
+		menu.append((self.help_run_file(), self.run_file))					#
+		menu.append((self.help_run_ffprobe(), self.run_ffprobe))				#
+		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))		#menu
+		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))			#blue
+		keys+=["", "", "yellow", "", "", "menu", "blue"]
 
 		item = self.help_uninstall_file()
 		if item:
@@ -891,6 +910,35 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			return
 		self["list_right"].setSortBy(self.setSort(self["list_right"]))
 		self.doRefresh()
+
+# ## convert subtitles
+	def convertSubtitles(self):
+		if self.disableActions_Timer.isActive():
+			return
+		filename = self.SOURCELIST.getFilename()
+		if (filename):
+			sourceDir = self.SOURCELIST.getCurrentDirectory()
+			if sourceDir not in filename:
+				name = sourceDir + filename
+				try:
+					os.rename(name, name + ".tmp")
+				except Exception as error:
+					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+				else:
+					fi = open(name + ".tmp" ,"rt")
+					fo = open(name, "wt")
+					try:
+						for line in fi:
+							fo.write(line.decode(config.plugins.filecommander.cp.value).encode('utf-8', 'ignore'))
+					except Exception as error:
+						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+						target = name
+					else:
+						target = name + ".orig"
+					fo.close()
+					fi.close()
+					os.rename(name + ".tmp", target)
+				self.doRefresh()
 
 # ## copy ###
 	def goYellow(self):
