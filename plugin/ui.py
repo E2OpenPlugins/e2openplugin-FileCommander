@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.07")
+pvers = "%s%s" % (_("v"),"2.08")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -599,7 +599,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	def selectAction(self):
 		filename = self.SOURCELIST.getFilename()
 		sourceDir = self.SOURCELIST.getCurrentDirectory()
-		isFile = True if sourceDir not in filename else False
+		isFile = True if filename and sourceDir and sourceDir not in filename else False
 
 		menu = []
 		menu.append((_("Rename file/directory"), self.goBlue))
@@ -625,6 +625,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if isFile and filename[-4:] in (".srt", ".sub"):
 			menu.append((_("Convert subtitles from '%s' to UTF-8") % cfg.cp(cfg.cp.value)[1], self.convertSubtitles))
 			keys+=[""]
+		menu.append((_("Create file"), self.gomakeFile))					#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
 		menu.append((_("Go to default directory"), self.goDefaultfolder))			#yellow
@@ -632,7 +633,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))				#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))		#menu
 		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))			#blue
-		keys+=["", "", "yellow", "", "", "menu", "blue"]
+		keys+=["", "", "", "yellow", "", "", "menu", "blue"]
 
 		item = self.help_uninstall_file()
 		if item:
@@ -1168,6 +1169,30 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				return
 			if sourceDir in filename:
 				self.session.openWithCallback(self.doRenameCB, Console, title=_("create symlink ..."), cmdlist=(("ln", "-s", filename, targetDir),))
+
+# ## new file ###
+	def gomakeFile(self):
+		if self.disableActions_Timer.isActive():
+			return
+		sourceDir = self.SOURCELIST.getCurrentDirectory()
+		if sourceDir is None:
+			self.session.open(MessageBox, _("File cannot be created on\n<List of Storage Devices> or <Receiver>.\nChange directory, please."), type=MessageBox.TYPE_WARNING, simple=True)
+			return
+		self.session.openWithCallback(self.doMakefile, VirtualKeyBoard, title=_("Please enter name of the new file"), text=_('new.txt'))
+
+	def doMakefile(self, newname):
+		if newname:
+			sourceDir = self.SOURCELIST.getCurrentDirectory()
+			if sourceDir is None:
+				return
+			try:
+				if not os.path.exists(sourceDir + newname):
+					open(sourceDir + newname, "wt").close()
+				self.session.open(vEditor, sourceDir + newname)
+				self.onFileActionCB(True)
+			except OSError as oe:
+				self.session.open(MessageBox, _("Error creating file %s:\n%s") % (sourceDir + newname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
+			self.doRefresh()
 
 # ## new folder ###
 	def gomakeDir(self):
