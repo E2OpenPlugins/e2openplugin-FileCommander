@@ -625,7 +625,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if isFile and filename[-4:] in (".srt", ".sub"):
 			menu.append((_("Convert subtitles from '%s' to UTF-8") % cfg.cp(cfg.cp.value)[1], self.convertSubtitles))
 			keys+=[""]
-		menu.append((_("Create file"), self.gomakeFile))					#
+		menu.append((_("Edit new file"), self.gomakeFile))					#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
 		menu.append((_("Go to default directory"), self.goDefaultfolder))			#yellow
@@ -1178,7 +1178,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		if sourceDir is None:
 			self.session.open(MessageBox, _("File cannot be created on\n<List of Storage Devices> or <Receiver>.\nChange directory, please."), type=MessageBox.TYPE_WARNING, simple=True)
 			return
-		self.session.openWithCallback(self.doMakefile, VirtualKeyBoard, title=_("Please enter name of the new file"), text=_('new.txt'))
+		self.session.openWithCallback(self.doMakefile, VirtualKeyBoard, title=_("Type the name for the new file"), text=_('new.txt'))
 
 	def doMakefile(self, newname):
 		if newname:

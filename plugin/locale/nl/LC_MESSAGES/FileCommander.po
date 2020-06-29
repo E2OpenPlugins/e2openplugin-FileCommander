@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2020-06-11 15:02+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: NL <translators@openpli.org>\n"
@@ -325,11 +325,6 @@ msgstr "Maak een directory aan"
 msgid "Create directory in 'Target' panel"
 msgstr "Maak een map aan in het 'Doel' paneel"
 
-#: ../ui.py:628
-#, fuzzy
-msgid "Create file"
-msgstr "Verwijder bestand"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Maak een symlink naar een bestand aan"
@@ -473,6 +468,11 @@ msgstr "Bewerk de huidige regel"
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr "Bewerk de regel "
+
+#: ../ui.py:628
+#, fuzzy
+msgid "Edit new file"
 msgstr "Bewerk de regel "
 
 #: ../ui.py:183
@@ -965,11 +965,6 @@ msgstr "Speel af/bekijk/wijzig/installeer/pak uit/voer een bestand uit of open d
 msgid "Please enter name of the new directory"
 msgstr "Voer de naam voor de nieuwe map in aub"
 
-#: ../ui.py:1181
-#, fuzzy
-msgid "Please enter name of the new file"
-msgstr "Voer de naam voor de nieuwe map in aub"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "Geef de nieuwe naam voor de symlink op aub"
@@ -1371,6 +1366,11 @@ msgstr "Met deze optie stelt u de pauzetijd in bij gebruik van de slideshow t.b.
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Pauze bij diavoorstelling"
+
+#: ../ui.py:1181
+#, fuzzy
+msgid "Type the name for the new file"
+msgstr "Voer de naam voor de nieuwe map in aub"
 
 #: ../ui.py:1966
 msgid "Type:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2019-08-09 11:04+0200\n"
 "Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
 "Language-Team: SkinerMan\n"
@@ -325,11 +325,6 @@ msgstr "Создать каталог"
 msgid "Create directory in 'Target' panel"
 msgstr "Создать каталог в 'Целевой' панели"
 
-#: ../ui.py:628
-#, fuzzy
-msgid "Create file"
-msgstr "Удалить файл"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Создать символическую ссылку на файл"
@@ -465,6 +460,11 @@ msgstr "Редактировать текущую строку"
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr "Редактировать строку "
+
+#: ../ui.py:628
+#, fuzzy
+msgid "Edit new file"
 msgstr "Редактировать строку "
 
 #: ../ui.py:183
@@ -957,11 +957,6 @@ msgstr "Воспроизвести/просмотреть/отредактиро
 msgid "Please enter name of the new directory"
 msgstr "Пожалуйста, введите имя нового каталога"
 
-#: ../ui.py:1181
-#, fuzzy
-msgid "Please enter name of the new file"
-msgstr "Пожалуйста, введите имя нового каталога"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "Пожалуйста, введите имя новой символической ссылки"
@@ -1361,6 +1356,11 @@ msgstr "Время задержки между слайдами в слайд-ш
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Время для слайд-шоу"
+
+#: ../ui.py:1181
+#, fuzzy
+msgid "Type the name for the new file"
+msgstr "Пожалуйста, введите имя нового каталога"
 
 #: ../ui.py:1966
 msgid "Type:"

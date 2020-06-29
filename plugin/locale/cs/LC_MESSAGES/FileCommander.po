@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
-"PO-Revision-Date: 2020-06-28 20:29+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
+"PO-Revision-Date: 2020-06-29 10:30+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -323,10 +323,6 @@ msgstr "Založit adresář"
 msgid "Create directory in 'Target' panel"
 msgstr "Založit adresář v 'Cílovém' panelu"
 
-#: ../ui.py:628
-msgid "Create file"
-msgstr "Vytvořit soubor"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Založit symbolický odkaz k souboru"
@@ -464,6 +460,10 @@ msgstr "Upravit aktuální řádek"
 #: ../addons/type_utils.py:206
 msgid "Edit line "
 msgstr "Úprava řádku "
+
+#: ../ui.py:628
+msgid "Edit new file"
+msgstr "Upravit nový soubor"
 
 #: ../ui.py:183
 msgid "Edit position is the line end"
@@ -955,10 +955,6 @@ msgstr "Přehrát/prohlížet/upravit/instalovat/rozbalit/spustit/otevřít"
 msgid "Please enter name of the new directory"
 msgstr "Zadejte název nového adresáře"
 
-#: ../ui.py:1181
-msgid "Please enter name of the new file"
-msgstr "Zadejte název nového souboru"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "Zadejte název nového symbolického odkazu"
@@ -1358,6 +1354,10 @@ msgstr "Čas mezi snímky v prezentaci prohlížeče obrázků."
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Čas prezentace"
+
+#: ../ui.py:1181
+msgid "Type the name for the new file"
+msgstr "Zadejte název nového souboru"
 
 #: ../ui.py:1966
 msgid "Type:"

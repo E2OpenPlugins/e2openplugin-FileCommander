@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2020-06-23 15:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -325,11 +325,6 @@ msgstr "Créer un répertoire"
 msgid "Create directory in 'Target' panel"
 msgstr "Créer un répertoire dans le panneau 'Cible'"
 
-#: ../ui.py:628
-#, fuzzy
-msgid "Create file"
-msgstr "Effacer fichier"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Créer un lien symbolique vers un fichier"
@@ -465,6 +460,11 @@ msgstr "Modifier la ligne actuelle"
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr "Editer la ligne "
+
+#: ../ui.py:628
+#, fuzzy
+msgid "Edit new file"
 msgstr "Editer la ligne "
 
 #: ../ui.py:183
@@ -957,11 +957,6 @@ msgstr "Lire/voir/modifier/installer/extraire/exécuter un fichier ou entrer un 
 msgid "Please enter name of the new directory"
 msgstr "Veuillez saisir le nom du nouveau répertoire"
 
-#: ../ui.py:1181
-#, fuzzy
-msgid "Please enter name of the new file"
-msgstr "Veuillez saisir le nom du nouveau répertoire"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "S'il vous plaît entrer le nom du nouveau symlink"
@@ -1361,6 +1356,11 @@ msgstr "Durée entre les images dans le mode afficher un diaporama."
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Durée du diaporama"
+
+#: ../ui.py:1181
+#, fuzzy
+msgid "Type the name for the new file"
+msgstr "Veuillez saisir le nom du nouveau répertoire"
 
 #: ../ui.py:1966
 msgid "Type:"

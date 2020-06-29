@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2019-08-06 20:56+0200\n"
 "Last-Translator: Pike_Bishop <alfredzngr023@gmail.com>\n"
 "Language-Team: \n"
@@ -330,11 +330,6 @@ msgstr "Verzeichnis erstellen"
 msgid "Create directory in 'Target' panel"
 msgstr ""
 
-#: ../ui.py:628
-#, fuzzy
-msgid "Create file"
-msgstr "Datei löschen"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Erzeuge Symlink zu Datei"
@@ -471,6 +466,11 @@ msgstr "Aktuelle Zeile bearbeiten"
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr "Bearbeite Zeile "
+
+#: ../ui.py:628
+#, fuzzy
+msgid "Edit new file"
 msgstr "Bearbeite Zeile "
 
 #: ../ui.py:183
@@ -966,11 +966,6 @@ msgstr "Datei abspielen/anzeigen/bearbeiten/installieren/extrahieren/ausführen 
 msgid "Please enter name of the new directory"
 msgstr "Bitte den Namen des neuen Verzeichnisses eingeben"
 
-#: ../ui.py:1181
-#, fuzzy
-msgid "Please enter name of the new file"
-msgstr "Bitte den Namen des neuen Verzeichnisses eingeben"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "Bitte den Namen des neuen Symlinks eingeben"
@@ -1380,6 +1375,11 @@ msgstr ""
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Zeit für die Diashow"
+
+#: ../ui.py:1181
+#, fuzzy
+msgid "Type the name for the new file"
+msgstr "Bitte den Namen des neuen Verzeichnisses eingeben"
 
 #: ../ui.py:1966
 msgid "Type:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e 2openplugin-FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2020-06-01 15:58+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -319,10 +319,6 @@ msgstr ""
 msgid "Create directory in 'Target' panel"
 msgstr ""
 
-#: ../ui.py:628
-msgid "Create file"
-msgstr ""
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr ""
@@ -455,6 +451,10 @@ msgstr ""
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr ""
+
+#: ../ui.py:628
+msgid "Edit new file"
 msgstr ""
 
 #: ../ui.py:183
@@ -935,10 +935,6 @@ msgstr ""
 msgid "Please enter name of the new directory"
 msgstr ""
 
-#: ../ui.py:1181
-msgid "Please enter name of the new file"
-msgstr ""
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr ""
@@ -1323,6 +1319,10 @@ msgstr ""
 
 #: ../ui.py:199
 msgid "Time for Slideshow"
+msgstr ""
+
+#: ../ui.py:1181
+msgid "Type the name for the new file"
 msgstr ""
 
 #: ../ui.py:1966

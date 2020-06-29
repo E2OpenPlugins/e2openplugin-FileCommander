@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-28 20:15+0200\n"
+"POT-Creation-Date: 2020-06-29 10:28+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -330,11 +330,6 @@ msgstr "Δημιουργία φακέλου/καταλόγου"
 msgid "Create directory in 'Target' panel"
 msgstr ""
 
-#: ../ui.py:628
-#, fuzzy
-msgid "Create file"
-msgstr "Διαγραφή αρχείου"
-
 #: ../ui.py:1153
 msgid "Create symlink to file"
 msgstr "Δημιουργία συντόμευσης σε αρχείο"
@@ -471,6 +466,11 @@ msgstr "Επεξεργασία τρέχουσας γραμμής"
 
 #: ../addons/type_utils.py:206
 msgid "Edit line "
+msgstr "Επεξεργασία γραμμής "
+
+#: ../ui.py:628
+#, fuzzy
+msgid "Edit new file"
 msgstr "Επεξεργασία γραμμής "
 
 #: ../ui.py:183
@@ -968,11 +968,6 @@ msgstr "Αναπαραγωγή/προβολή/επεξεργασία/εγκατ�
 msgid "Please enter name of the new directory"
 msgstr "Παρακαλώ εισάγετε όνομα νέου φάκελου"
 
-#: ../ui.py:1181
-#, fuzzy
-msgid "Please enter name of the new file"
-msgstr "Παρακαλώ εισάγετε όνομα νέου φάκελου"
-
 #: ../ui.py:1115
 msgid "Please enter name of the new symlink"
 msgstr "Παρακαλώ εισάγετε το όνομα για τη νέα συντόμευση"
@@ -1382,6 +1377,11 @@ msgstr ""
 #: ../ui.py:199
 msgid "Time for Slideshow"
 msgstr "Χρόνος για προβολή διαφανειών"
+
+#: ../ui.py:1181
+#, fuzzy
+msgid "Type the name for the new file"
+msgstr "Παρακαλώ εισάγετε όνομα νέου φάκελου"
 
 #: ../ui.py:1966
 msgid "Type:"
