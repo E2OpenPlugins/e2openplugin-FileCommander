@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-29 10:28+0200\n"
+"POT-Creation-Date: 2020-07-25 16:19+0200\n"
 "PO-Revision-Date: 2019-08-06 20:56+0200\n"
 "Last-Translator: Pike_Bishop <alfredzngr023@gmail.com>\n"
 "Language-Team: \n"
@@ -44,7 +44,7 @@ msgstr " ('%s') mit Fehlermeldungen beendet."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') mit Fehlernummer [%d] beendet."
 
-#: ../ui.py:1756 ../ui.py:1791
+#: ../ui.py:1768 ../ui.py:1803
 #, fuzzy, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:1969
+#: ../ui.py:1981
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -123,7 +123,7 @@ msgstr "%s: %s"
 msgid "'%s' not installed and no known package"
 msgstr "'%s' nicht installiert und kein bekanntes Paket"
 
-#: ../ui.py:186 ../ui.py:1375
+#: ../ui.py:186 ../ui.py:1374
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr ""
 
@@ -134,11 +134,11 @@ msgid_plural "(%d jobs)"
 msgstr[0] "(%d Aufträge)"
 msgstr[1] "(%d Aufträge)"
 
-#: ../ui.py:1501
+#: ../ui.py:1502
 msgid "(Selectmode)"
 msgstr "(Auswahlmodus)"
 
-#: ../ui.py:1245 ../ui.py:1818
+#: ../ui.py:1245 ../ui.py:1830
 msgid "<Receiver>"
 msgstr ""
 
@@ -146,11 +146,11 @@ msgstr ""
 msgid "?"
 msgstr " ?"
 
-#: ../ui.py:1973
+#: ../ui.py:1985
 msgid "Accessed:"
 msgstr "Zugegriffen:"
 
-#: ../ui.py:1472 ../ui.py:1474
+#: ../ui.py:1471 ../ui.py:1473
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Aktivieren Sie die linke Dateiliste als Mehrfachauswahlquelle"
 
@@ -158,7 +158,7 @@ msgstr "Aktivieren Sie die linke Dateiliste als Mehrfachauswahlquelle"
 msgid "Activate left-hand file list as source"
 msgstr "Linke Dateiliste als Quelle aktivieren"
 
-#: ../ui.py:1471 ../ui.py:1473
+#: ../ui.py:1470 ../ui.py:1472
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Aktivieren Sie die rechte Dateiliste als Mehrfachauswahlquelle"
 
@@ -182,7 +182,7 @@ msgstr "Plugin zum Hauptmenü hinzufügen"
 msgid "Add selected folder to bookmarks"
 msgstr "Ausgewählten Ordner zu Lesezeichen hinzufügen"
 
-#: ../ui.py:1573
+#: ../ui.py:1576
 #, python-format
 msgid "Add to selection (%s)"
 msgstr ""
@@ -191,11 +191,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: ../ui.py:191 ../ui.py:1377
+#: ../ui.py:191 ../ui.py:1376
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr ""
 
-#: ../ui.py:191 ../ui.py:1377
+#: ../ui.py:191 ../ui.py:1376
 #, fuzzy
 msgid "All movie extensions"
 msgstr "Meine Erweiterung"
@@ -236,7 +236,7 @@ msgstr ""
 "Ausführen %s: %s nicht möglich.\n"
 "%s Ist möglicherweise in einem nicht installierten Plugin enthalten."
 
-#: ../ui.py:1989
+#: ../ui.py:2001
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Link Inhalt kann nicht gelesen werden: %s"
@@ -271,11 +271,11 @@ msgstr "Zeichengerät"
 msgid "Close"
 msgstr "Schließen"
 
-#: ../ui.py:1373
+#: ../ui.py:1372
 msgid "Compare case sensitive"
 msgstr ""
 
-#: ../ui.py:1979
+#: ../ui.py:1991
 msgid "Content size:"
 msgstr ""
 
@@ -284,11 +284,11 @@ msgstr ""
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
-#: ../ui.py:462 ../ui.py:1464
+#: ../ui.py:462 ../ui.py:1463
 msgid "Copy"
 msgstr "Kopieren"
 
-#: ../ui.py:1792
+#: ../ui.py:1804
 #, fuzzy, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
@@ -303,7 +303,7 @@ msgstr "Datei kopieren"
 msgid "Copy file/directory to target directory"
 msgstr "Datei/Verzeichnis in Zielverzeichnis kopieren"
 
-#: ../ui.py:1481
+#: ../ui.py:1480
 msgid "Copy files/directories to target directory"
 msgstr "Dateien/Verzeichnisse in das Zielverzeichnis kopieren"
 
@@ -316,7 +316,7 @@ msgstr "Ordner kopieren"
 msgid "Count directory content size"
 msgstr "Standardsortierung für Verzeichnisse"
 
-#: ../ui.py:482 ../ui.py:1485
+#: ../ui.py:482 ../ui.py:1484
 #, fuzzy
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Standardsortierung für Verzeichnisse"
@@ -326,7 +326,7 @@ msgstr "Standardsortierung für Verzeichnisse"
 msgid "Create directory"
 msgstr "Verzeichnis erstellen"
 
-#: ../ui.py:1547
+#: ../ui.py:1548
 msgid "Create directory in 'Target' panel"
 msgstr ""
 
@@ -387,11 +387,11 @@ msgstr ""
 msgid "Default sorting method for files in right panel."
 msgstr ""
 
-#: ../addons/type_utils.py:117 ../ui.py:460 ../ui.py:1462
+#: ../addons/type_utils.py:117 ../ui.py:460 ../ui.py:1461
 msgid "Delete"
 msgstr "Löschen"
 
-#: ../ui.py:1722
+#: ../ui.py:1734
 #, fuzzy, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -414,25 +414,25 @@ msgstr "Datei/Verzeichnis (mit gesamten Inhalt) löschen"
 msgid "Delete folder"
 msgstr "Ordner löschen"
 
-#: ../ui.py:1479
+#: ../ui.py:1478
 msgid "Delete the selected files or directories"
 msgstr "Ausgewählte Dateien oder Verzeichnisse löschen"
 
-#: ../ui.py:1546
+#: ../ui.py:1547
 #, fuzzy
 msgid "Deselect All"
 msgstr "Wähle"
 
-#: ../ui.py:1487
+#: ../ui.py:1486
 msgid "Deselect group"
 msgstr ""
 
-#: ../ui.py:1544
+#: ../ui.py:1545
 #, fuzzy
 msgid "Deselect group..."
 msgstr "Wähle"
 
-#: ../ui.py:186 ../ui.py:1375
+#: ../ui.py:186 ../ui.py:1374
 #, fuzzy
 msgid "Directories to group selections"
 msgstr "Auswahl überspringen"
@@ -441,7 +441,7 @@ msgstr "Auswahl überspringen"
 msgid "Directory"
 msgstr "Verzeichnis"
 
-#: ../ui.py:1204 ../ui.py:1688
+#: ../ui.py:1204 ../ui.py:1700
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -485,7 +485,7 @@ msgstr "Mehrfachauswahlmodus aktivieren"
 msgid "Error"
 msgstr "Fehler"
 
-#: ../ui.py:1216 ../ui.py:1700
+#: ../ui.py:1216 ../ui.py:1712
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -618,7 +618,7 @@ msgstr "Dateiübertragung durch den Benutzer abgebrochen"
 msgid "File write error: '%s'"
 msgstr "Fehler beim Schreiben der Datei: '%s'"
 
-#: ../ui.py:492 ../ui.py:614 ../ui.py:1483 ../ui.py:1920
+#: ../ui.py:492 ../ui.py:614 ../ui.py:1482 ../ui.py:1932
 msgid "File/Directory Status Information"
 msgstr "Datei/Verzeichnis Statusinformationen"
 
@@ -659,7 +659,7 @@ msgstr "Wechsle zum übergeordneten Verzeichnis"
 msgid "Go to start of file"
 msgstr "Zum Anfang der Datei gehen"
 
-#: ../ui.py:1968
+#: ../ui.py:1980
 msgid "Group:"
 msgstr "Gruppe:"
 
@@ -671,11 +671,11 @@ msgstr "I/O-Priorität für die Skriptausführung"
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr ""
 
-#: ../ui.py:185 ../ui.py:1376
+#: ../ui.py:185 ../ui.py:1375
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr ""
 
-#: ../ui.py:1976
+#: ../ui.py:1988
 msgid "Inode:"
 msgstr "Inode:"
 
@@ -700,12 +700,12 @@ msgstr "'%s' installieren und aktivieren"
 msgid "Installing Plugin ..."
 msgstr "Installiere Plugin ..."
 
-#: ../ui.py:1548
+#: ../ui.py:1549
 #, fuzzy
 msgid "Invert Selection"
 msgstr "Ausführung abbrechen ?"
 
-#: ../ui.py:1465 ../ui.py:1482
+#: ../ui.py:1464 ../ui.py:1481
 #, fuzzy
 msgid "Invert selection"
 msgstr "Auswahl überspringen"
@@ -718,7 +718,7 @@ msgstr "Es ist unmöglich in <Liste der Speichergeräte> Hashes zu kalkulieren"
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Es ist unmöglich den Dateimodus von <Liste der Speichergeräte> zu ändern"
 
-#: ../ui.py:1938
+#: ../ui.py:1950
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Es ist unmöglich den Datei Status der <Liste der Speichergeräte> zu holen"
 
@@ -739,15 +739,15 @@ msgstr ""
 msgid "Leave File Commander"
 msgstr "Verlassen Sie den File Commander"
 
-#: ../ui.py:1470 ../ui.py:1489 ../ui.py:1490
+#: ../ui.py:1469 ../ui.py:1489 ../ui.py:1490
 msgid "Leave multi-select mode"
 msgstr "Mehrfachauswahlmodus beenden"
 
-#: ../ui.py:1985
+#: ../ui.py:1997
 msgid "Link target:"
 msgstr "Link Ziel:"
 
-#: ../ui.py:1975
+#: ../ui.py:1987
 msgid "Links:"
 msgstr "Links:"
 
@@ -771,7 +771,7 @@ msgstr "File Commander Kontext Menü"
 msgid "Make FileCommander accessible from the main menu."
 msgstr "File Commander Kontext Menü"
 
-#: ../ui.py:1974
+#: ../ui.py:1986
 msgid "Metadata changed:"
 msgstr "Metadaten geändert:"
 
@@ -780,22 +780,22 @@ msgstr "Metadaten geändert:"
 msgid "Mode %s (%04o)"
 msgstr "Modus %s (%04o)"
 
-#: ../ui.py:1972
+#: ../ui.py:1984
 msgid "Modified:"
 msgstr "Geändert:"
 
-#: ../ui.py:461 ../ui.py:1463
+#: ../ui.py:461 ../ui.py:1462
 msgid "Move"
 msgstr "Verschieben"
 
-#: ../ui.py:1757
+#: ../ui.py:1769
 #, fuzzy, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
 msgstr[0] "%d Elemente verschieben"
 msgstr[1] "%d Elemente verschieben"
 
-#: ../ui.py:496 ../ui.py:1476
+#: ../ui.py:496 ../ui.py:1475
 msgid "Move down list"
 msgstr "Eintrag runter"
 
@@ -807,7 +807,7 @@ msgstr "Datei verschieben"
 msgid "Move file/directory to target directory"
 msgstr "Datei/Verzeichnis in Zielverzeichnis verschieben"
 
-#: ../ui.py:1480
+#: ../ui.py:1479
 msgid "Move files/directories to target directory"
 msgstr "Dateien/Verzeichnisse in das Zielverzeichnis verschieben"
 
@@ -815,12 +815,17 @@ msgstr "Dateien/Verzeichnisse in das Zielverzeichnis verschieben"
 msgid "Move folder"
 msgstr "Ordner verschieben"
 
-#: ../ui.py:185 ../ui.py:1376
+#: ../ui.py:185 ../ui.py:1375
 #, fuzzy
 msgid "Move selector to next item"
 msgstr "Datei/Verzeichnis in Zielverzeichnis verschieben"
 
-#: ../ui.py:495 ../ui.py:1475
+#: ../ui.py:1487
+#, fuzzy
+msgid "Move selector to next item (on/off)"
+msgstr "Datei/Verzeichnis in Zielverzeichnis verschieben"
+
+#: ../ui.py:495 ../ui.py:1474
 msgid "Move up list"
 msgstr "Eintrag hoch"
 
@@ -828,7 +833,7 @@ msgstr "Eintrag hoch"
 msgid "Movie"
 msgstr "Filme"
 
-#: ../ui.py:1392
+#: ../ui.py:1391
 #, fuzzy
 msgid "MultiSelection Settings"
 msgstr "Persönlichen Einstellungen wählen:"
@@ -853,7 +858,7 @@ msgstr "Name"
 msgid "Name reverse"
 msgstr "Name absteigend"
 
-#: ../ui.py:1206 ../ui.py:1690
+#: ../ui.py:1206 ../ui.py:1702
 msgid "New folder"
 msgstr "Neuer Ordner"
 
@@ -892,11 +897,11 @@ msgstr "Anzahl der Zeilen in Skript-Ausgaben"
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:1977
+#: ../ui.py:1989
 msgid "On device:"
 msgstr "Auf Gerät:"
 
-#: ../ui.py:1468
+#: ../ui.py:1467
 #, fuzzy
 msgid "Open actions menu"
 msgstr "Menü Einstellungen/Aktionen öffnen"
@@ -922,15 +927,15 @@ msgstr ""
 msgid "Original:"
 msgstr "Original:"
 
-#: ../ui.py:1967
+#: ../ui.py:1979
 msgid "Owner:"
 msgstr "Besitzer:"
 
-#: ../ui.py:498 ../ui.py:1478
+#: ../ui.py:498 ../ui.py:1477
 msgid "Page down list"
 msgstr "Seite runter"
 
-#: ../ui.py:497 ../ui.py:1477
+#: ../ui.py:497 ../ui.py:1476
 msgid "Page up list"
 msgstr "Seite hoch"
 
@@ -942,7 +947,7 @@ msgstr "Übergeordnetes Verzeichnis"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Pfad zum Speichern nicht vorhanden: '/tmp/'"
 
-#: ../ui.py:1969
+#: ../ui.py:1981
 msgid "Permissions:"
 msgstr "Berechtigungen:"
 
@@ -962,7 +967,7 @@ msgstr "Titel abspielen"
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Datei abspielen/anzeigen/bearbeiten/installieren/extrahieren/ausführen oder Verzeichnis eingeben"
 
-#: ../ui.py:1206 ../ui.py:1690
+#: ../ui.py:1206 ../ui.py:1702
 msgid "Please enter name of the new directory"
 msgstr "Bitte den Namen des neuen Verzeichnisses eingeben"
 
@@ -986,11 +991,11 @@ msgstr "Bitte geben Sie den neuen Dateinamen ein"
 msgid "Please wait, Loading image."
 msgstr "Bitte warten, Bild wird geladen."
 
-#: ../ui.py:1370
+#: ../ui.py:1369
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr ""
 
-#: ../ui.py:1372
+#: ../ui.py:1371
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr ""
 
@@ -1038,7 +1043,7 @@ msgstr ""
 msgid "Records"
 msgstr "Aufnahmen"
 
-#: ../ui.py:481 ../ui.py:616 ../ui.py:1484
+#: ../ui.py:481 ../ui.py:616 ../ui.py:1483
 msgid "Refresh screen"
 msgstr "Anzeige aktualisieren"
 
@@ -1050,7 +1055,7 @@ msgstr "Reguläre Datei"
 msgid "Remove current folder from bookmarks"
 msgstr "Aktuellen Ordner aus Lesezeichen entfernen"
 
-#: ../ui.py:1575
+#: ../ui.py:1578
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr ""
@@ -1142,16 +1147,16 @@ msgstr "Rechten Ordner beim Beenden speichern"
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Skript '%s' muss über Leseberechtigung verfügen, um es ausführen zu können"
 
-#: ../ui.py:1367
+#: ../ui.py:1366
 #, fuzzy
 msgid "Search in group selection by"
 msgstr "Auswahl überspringen"
 
-#: ../ui.py:1469
+#: ../ui.py:1468
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Wählen Sie (Quellenliste) oder betreten Sie das Verzeichnis (Zielliste)"
 
-#: ../ui.py:1545
+#: ../ui.py:1546
 #, fuzzy
 msgid "Select All"
 msgstr "Wähle"
@@ -1160,17 +1165,17 @@ msgstr "Wähle"
 msgid "Select a path"
 msgstr "Pfad auswählen"
 
-#: ../ui.py:1486
+#: ../ui.py:1485
 #, fuzzy
 msgid "Select group"
 msgstr "Wähle"
 
-#: ../ui.py:1543
+#: ../ui.py:1544
 #, fuzzy
 msgid "Select group..."
 msgstr "Wähle"
 
-#: ../ui.py:656 ../ui.py:1551
+#: ../ui.py:656 ../ui.py:1552
 #, fuzzy
 msgid "Select operation:"
 msgstr "Persönlichen Einstellungen wählen:"
@@ -1191,7 +1196,7 @@ msgstr "Setze Ausführbar-Modus (755)"
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr ""
 
-#: ../ui.py:1373
+#: ../ui.py:1372
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr ""
 
@@ -1199,7 +1204,7 @@ msgstr ""
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: ../ui.py:634 ../ui.py:1549
+#: ../ui.py:634 ../ui.py:1550
 msgid "Settings..."
 msgstr "Einstellungen ..."
 
@@ -1295,7 +1300,7 @@ msgstr "Größe"
 msgid "Size reverse"
 msgstr "Größe absteigend"
 
-#: ../ui.py:1971
+#: ../ui.py:1983
 msgid "Size:"
 msgstr "Größe:"
 
@@ -1381,7 +1386,7 @@ msgstr "Zeit für die Diashow"
 msgid "Type the name for the new file"
 msgstr "Bitte den Namen des neuen Verzeichnisses eingeben"
 
-#: ../ui.py:1966
+#: ../ui.py:1978
 msgid "Type:"
 msgstr "Typ:"
 
@@ -1441,15 +1446,15 @@ msgstr "Was möchten Sie abspielen ?\n"
 msgid "Yes"
 msgstr "Ja"
 
-#: ../ui.py:1370
+#: ../ui.py:1369
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr ""
 
-#: ../ui.py:1372
+#: ../ui.py:1371
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr ""
 
-#: ../ui.py:1368
+#: ../ui.py:1367
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr ""
 
@@ -1472,16 +1477,16 @@ msgstr ""
 msgid "contains in title"
 msgstr ""
 
-#: ../ui.py:1571
+#: ../ui.py:1574
 #, fuzzy
 msgid "contains..."
 msgstr "Einstellungen ..."
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:977 ../ui.py:1790
+#: ../ui.py:538 ../ui.py:851 ../ui.py:977 ../ui.py:1802
 msgid "copy file"
 msgstr "Datei kopieren"
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:979 ../ui.py:1788
+#: ../ui.py:538 ../ui.py:851 ../ui.py:979 ../ui.py:1800
 msgid "copy folder"
 msgstr "Ordner kopieren"
 
@@ -1498,7 +1503,7 @@ msgstr ""
 msgid "end title"
 msgstr "Titel abspielen"
 
-#: ../ui.py:1569
+#: ../ui.py:1572
 msgid "ends with..."
 msgstr ""
 
@@ -1506,8 +1511,8 @@ msgstr ""
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "für DATENVERLUST ODER SCHÄDEN !!!"
 
-#: ../ui.py:965 ../ui.py:994 ../ui.py:1027 ../ui.py:1723 ../ui.py:1758
-#: ../ui.py:1793
+#: ../ui.py:965 ../ui.py:994 ../ui.py:1027 ../ui.py:1735 ../ui.py:1770
+#: ../ui.py:1805
 msgid "from dir"
 msgstr "Quellordner"
 
@@ -1534,7 +1539,7 @@ msgstr "Installieren/entpacken von *.ipk-Dateien"
 msgid "manage local Files"
 msgstr "Lokale Dateien verwalten"
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:1041 ../ui.py:1755
+#: ../ui.py:538 ../ui.py:851 ../ui.py:1041 ../ui.py:1767
 msgid "move file"
 msgstr "Datei verschieben"
 
@@ -1588,11 +1593,11 @@ msgstr "Shell"
 msgid "start title"
 msgstr "Titel abspielen"
 
-#: ../ui.py:1567
+#: ../ui.py:1570
 msgid "starts with..."
 msgstr ""
 
-#: ../ui.py:965 ../ui.py:1027 ../ui.py:1758 ../ui.py:1793
+#: ../ui.py:965 ../ui.py:1027 ../ui.py:1770 ../ui.py:1805
 msgid "to dir"
 msgstr "Zielordner"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-29 10:28+0200\n"
+"POT-Creation-Date: 2020-07-25 16:19+0200\n"
 "PO-Revision-Date: 2020-06-11 15:02+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: NL <translators@openpli.org>\n"
@@ -44,7 +44,7 @@ msgstr " ('%s') voltooid maar met fouten."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') voltooid maar met foutnummer [%d]."
 
-#: ../ui.py:1756 ../ui.py:1791
+#: ../ui.py:1768 ../ui.py:1803
 #, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
@@ -87,7 +87,7 @@ msgstr "%d.%m.%Y, %H:%M:%S"
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:1969
+#: ../ui.py:1981
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -123,7 +123,7 @@ msgstr "%s: %s"
 msgid "'%s' not installed and no known package"
 msgstr "'%s' niet geïnstalleerd en ook geen bekend pakket"
 
-#: ../ui.py:186 ../ui.py:1375
+#: ../ui.py:186 ../ui.py:1374
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr "Indien geactiveerd, dan werkt 'Groepsselectie' en 'Omgekeerde Selectie' in de Multi-select mode ook met directories."
 
@@ -134,11 +134,11 @@ msgid_plural "(%d jobs)"
 msgstr[0] "(%d opdracht)"
 msgstr[1] "(%d opdrachten)"
 
-#: ../ui.py:1501
+#: ../ui.py:1502
 msgid "(Selectmode)"
 msgstr "(Keuzemodus)"
 
-#: ../ui.py:1245 ../ui.py:1818
+#: ../ui.py:1245 ../ui.py:1830
 msgid "<Receiver>"
 msgstr "<Ontvanger>"
 
@@ -146,11 +146,11 @@ msgstr "<Ontvanger>"
 msgid "?"
 msgstr "?"
 
-#: ../ui.py:1973
+#: ../ui.py:1985
 msgid "Accessed:"
 msgstr "Toegankelijk:"
 
-#: ../ui.py:1472 ../ui.py:1474
+#: ../ui.py:1471 ../ui.py:1473
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Activeer de linker lijst als een Multi geselecteerde bron"
 
@@ -158,7 +158,7 @@ msgstr "Activeer de linker lijst als een Multi geselecteerde bron"
 msgid "Activate left-hand file list as source"
 msgstr "Activeer de linker lijst als bron"
 
-#: ../ui.py:1471 ../ui.py:1473
+#: ../ui.py:1470 ../ui.py:1472
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Activeer de rechter lijst als een Multi geselecteerde bron"
 
@@ -182,7 +182,7 @@ msgstr "Plug-in toevoegen aan het hoofdmenu"
 msgid "Add selected folder to bookmarks"
 msgstr "Voeg de gekozen map toe aan de bladwijzers"
 
-#: ../ui.py:1573
+#: ../ui.py:1576
 #, python-format
 msgid "Add to selection (%s)"
 msgstr "Voeg toe aan de selectie (%s)"
@@ -191,11 +191,11 @@ msgstr "Voeg toe aan de selectie (%s)"
 msgid "All"
 msgstr "Alles"
 
-#: ../ui.py:191 ../ui.py:1377
+#: ../ui.py:191 ../ui.py:1376
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr "Alle bestanden in de map met dezelfde naam als de geselecteerde film worden eveneens gekopieerd of verplaatst."
 
-#: ../ui.py:191 ../ui.py:1377
+#: ../ui.py:191 ../ui.py:1376
 msgid "All movie extensions"
 msgstr "Alle video extensies"
 
@@ -234,7 +234,7 @@ msgstr ""
 "Kan %s: %s. niet uitvoeren\n"
 "%s zit mogelijk in een niet geïnstalleerde plug-in."
 
-#: ../ui.py:1989
+#: ../ui.py:2001
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Kan de inhoud van de koppeling niet lezen:% s"
@@ -269,11 +269,11 @@ msgstr "Teken apparaat"
 msgid "Close"
 msgstr "Sluit"
 
-#: ../ui.py:1373
+#: ../ui.py:1372
 msgid "Compare case sensitive"
 msgstr "Vergelijk hoofd/kleine letters gevoeligheid"
 
-#: ../ui.py:1979
+#: ../ui.py:1991
 msgid "Content size:"
 msgstr "Grootte van de inhoud:"
 
@@ -282,11 +282,11 @@ msgstr "Grootte van de inhoud:"
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
-#: ../ui.py:462 ../ui.py:1464
+#: ../ui.py:462 ../ui.py:1463
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: ../ui.py:1792
+#: ../ui.py:1804
 #, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
@@ -301,7 +301,7 @@ msgstr "Kopieer bestand"
 msgid "Copy file/directory to target directory"
 msgstr "Kopieer een bestand / map naar de doelmap"
 
-#: ../ui.py:1481
+#: ../ui.py:1480
 msgid "Copy files/directories to target directory"
 msgstr "Kopieer bestanden / mappen naar de doelmap"
 
@@ -313,7 +313,7 @@ msgstr "Kopieer de directory"
 msgid "Count directory content size"
 msgstr "Tel de grootte van de inhoud van de directory"
 
-#: ../ui.py:482 ../ui.py:1485
+#: ../ui.py:482 ../ui.py:1484
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Tel de grootte van de inhoud van de directory tijdens andere werkzaamheden."
 
@@ -321,7 +321,7 @@ msgstr "Tel de grootte van de inhoud van de directory tijdens andere werkzaamhed
 msgid "Create directory"
 msgstr "Maak een directory aan"
 
-#: ../ui.py:1547
+#: ../ui.py:1548
 msgid "Create directory in 'Target' panel"
 msgstr "Maak een map aan in het 'Doel' paneel"
 
@@ -389,11 +389,11 @@ msgstr ""
 "\n"
 "U kunt kiezen uit: Datum, omgekeerde datum, naam, omgekeerde naam, grootte en omgekeerde grootte."
 
-#: ../addons/type_utils.py:117 ../ui.py:460 ../ui.py:1462
+#: ../addons/type_utils.py:117 ../ui.py:460 ../ui.py:1461
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../ui.py:1722
+#: ../ui.py:1734
 #, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -416,23 +416,23 @@ msgstr "Verwijder een bestand of map (en al zijn inhoud)"
 msgid "Delete folder"
 msgstr "Verwijder de map"
 
-#: ../ui.py:1479
+#: ../ui.py:1478
 msgid "Delete the selected files or directories"
 msgstr "Verwijder de geselecteerde bestanden of mappen"
 
-#: ../ui.py:1546
+#: ../ui.py:1547
 msgid "Deselect All"
 msgstr "Déselecteer alles"
 
-#: ../ui.py:1487
+#: ../ui.py:1486
 msgid "Deselect group"
 msgstr "Déselect de groep"
 
-#: ../ui.py:1544
+#: ../ui.py:1545
 msgid "Deselect group..."
 msgstr "Déselecteer de group..."
 
-#: ../ui.py:186 ../ui.py:1375
+#: ../ui.py:186 ../ui.py:1374
 msgid "Directories to group selections"
 msgstr "Directories naar groepselecties"
 
@@ -440,7 +440,7 @@ msgstr "Directories naar groepselecties"
 msgid "Directory"
 msgstr "Map"
 
-#: ../ui.py:1204 ../ui.py:1688
+#: ../ui.py:1204 ../ui.py:1700
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -487,7 +487,7 @@ msgstr "Activeer de meervoudige bestandsselectie"
 msgid "Error"
 msgstr "Fout"
 
-#: ../ui.py:1216 ../ui.py:1700
+#: ../ui.py:1216 ../ui.py:1712
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -624,7 +624,7 @@ msgstr "Bestandsoverdracht gestopt door de gebruiker"
 msgid "File write error: '%s'"
 msgstr "Fout bij schrijven van bestand: ‘%s’"
 
-#: ../ui.py:492 ../ui.py:614 ../ui.py:1483 ../ui.py:1920
+#: ../ui.py:492 ../ui.py:614 ../ui.py:1482 ../ui.py:1932
 msgid "File/Directory Status Information"
 msgstr "Status informatie van een bestand of directory"
 
@@ -664,7 +664,7 @@ msgstr "Ga naar de bovenliggende map"
 msgid "Go to start of file"
 msgstr "Ga naar het begin van het bestand"
 
-#: ../ui.py:1968
+#: ../ui.py:1980
 msgid "Group:"
 msgstr "Groep:"
 
@@ -676,11 +676,11 @@ msgstr "I/O prioriteit voor uitvoeren van scripts"
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr "Indien geactiveerd, dan stelt u hiermee de beginpositie van de te bewerken regel in aan het eind van deze regel. Indien niet geactiveerd dan is de startpositie aan het begin van de betreffende regel."
 
-#: ../ui.py:185 ../ui.py:1376
+#: ../ui.py:185 ../ui.py:1375
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr "Indien geactiveerd, dan wordt in de multi-selectiemodus de cursor verplaatst naar het volgende item na het markeren."
 
-#: ../ui.py:1976
+#: ../ui.py:1988
 msgid "Inode:"
 msgstr "Inode:"
 
@@ -705,11 +705,11 @@ msgstr "Installeer '%s' en activeer deze actie"
 msgid "Installing Plugin ..."
 msgstr "Plugin wordt geïnstalleerd …."
 
-#: ../ui.py:1548
+#: ../ui.py:1549
 msgid "Invert Selection"
 msgstr "Keer de Selectie om"
 
-#: ../ui.py:1465 ../ui.py:1482
+#: ../ui.py:1464 ../ui.py:1481
 msgid "Invert selection"
 msgstr "Keer de selectie om"
 
@@ -721,7 +721,7 @@ msgstr "Het is niet mogelijk om de hashes op <List of Storage Devices> te bereke
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de bestandsmode van <List of Storage Devices> te wijzigen."
 
-#: ../ui.py:1938
+#: ../ui.py:1950
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de bestandsstatus van <List of Storage Devices> op te halen"
 
@@ -742,15 +742,15 @@ msgstr "KB"
 msgid "Leave File Commander"
 msgstr "Verlaat File Commander"
 
-#: ../ui.py:1470 ../ui.py:1489 ../ui.py:1490
+#: ../ui.py:1469 ../ui.py:1489 ../ui.py:1490
 msgid "Leave multi-select mode"
 msgstr "Multi-select mode verlaten"
 
-#: ../ui.py:1985
+#: ../ui.py:1997
 msgid "Link target:"
 msgstr "Link het doel:"
 
-#: ../ui.py:1975
+#: ../ui.py:1987
 msgid "Links:"
 msgstr "Links:"
 
@@ -774,7 +774,7 @@ msgstr "Indien geactiveerd, dan kunt u FileCommander starten vanuit het applicat
 msgid "Make FileCommander accessible from the main menu."
 msgstr "Indien geactiveerd, dan kunt u FileCommander starten vanuit het hoofdmenu."
 
-#: ../ui.py:1974
+#: ../ui.py:1986
 msgid "Metadata changed:"
 msgstr "Veranderde metadata:"
 
@@ -783,22 +783,22 @@ msgstr "Veranderde metadata:"
 msgid "Mode %s (%04o)"
 msgstr "Modus %s (%04o)"
 
-#: ../ui.py:1972
+#: ../ui.py:1984
 msgid "Modified:"
 msgstr "Aangepast:"
 
-#: ../ui.py:461 ../ui.py:1463
+#: ../ui.py:461 ../ui.py:1462
 msgid "Move"
 msgstr "Verplaatsen"
 
-#: ../ui.py:1757
+#: ../ui.py:1769
 #, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
 msgstr[0] "Verplaats %d element"
 msgstr[1] "Verplaats %d elementen"
 
-#: ../ui.py:496 ../ui.py:1476
+#: ../ui.py:496 ../ui.py:1475
 msgid "Move down list"
 msgstr "Verplaast lijst naar beneden"
 
@@ -810,7 +810,7 @@ msgstr "Verplaats een bestand"
 msgid "Move file/directory to target directory"
 msgstr "Verplaats een bestand / map naar de doelmap"
 
-#: ../ui.py:1480
+#: ../ui.py:1479
 msgid "Move files/directories to target directory"
 msgstr "Verplaats een bestanden / mappen naar de doelmap"
 
@@ -818,11 +818,16 @@ msgstr "Verplaats een bestanden / mappen naar de doelmap"
 msgid "Move folder"
 msgstr "Verplaats map"
 
-#: ../ui.py:185 ../ui.py:1376
+#: ../ui.py:185 ../ui.py:1375
 msgid "Move selector to next item"
 msgstr "Verplaats de cursor naar het volgende item"
 
-#: ../ui.py:495 ../ui.py:1475
+#: ../ui.py:1487
+#, fuzzy
+msgid "Move selector to next item (on/off)"
+msgstr "Verplaats de cursor naar het volgende item"
+
+#: ../ui.py:495 ../ui.py:1474
 msgid "Move up list"
 msgstr "Verplaats lijst naar boven"
 
@@ -830,7 +835,7 @@ msgstr "Verplaats lijst naar boven"
 msgid "Movie"
 msgstr "Film"
 
-#: ../ui.py:1392
+#: ../ui.py:1391
 msgid "MultiSelection Settings"
 msgstr "Instellingen inz. multiselectie"
 
@@ -854,7 +859,7 @@ msgstr "Naam"
 msgid "Name reverse"
 msgstr "Naam omgekeerd"
 
-#: ../ui.py:1206 ../ui.py:1690
+#: ../ui.py:1206 ../ui.py:1702
 msgid "New folder"
 msgstr "Nieuwe map"
 
@@ -893,11 +898,11 @@ msgstr "Aantal regels in script berichten"
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:1977
+#: ../ui.py:1989
 msgid "On device:"
 msgstr "Op apparaat:"
 
-#: ../ui.py:1468
+#: ../ui.py:1467
 msgid "Open actions menu"
 msgstr "Open het actie-menu"
 
@@ -921,15 +926,15 @@ msgstr ""
 msgid "Original:"
 msgstr "Origineel:"
 
-#: ../ui.py:1967
+#: ../ui.py:1979
 msgid "Owner:"
 msgstr "Eigenaar:"
 
-#: ../ui.py:498 ../ui.py:1478
+#: ../ui.py:498 ../ui.py:1477
 msgid "Page down list"
 msgstr "Pagina naar beneden"
 
-#: ../ui.py:497 ../ui.py:1477
+#: ../ui.py:497 ../ui.py:1476
 msgid "Page up list"
 msgstr "Pagina naar boven"
 
@@ -941,7 +946,7 @@ msgstr "Bovenliggende map"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Het path om naar op te slaan bestaat niet: '/tmp'"
 
-#: ../ui.py:1969
+#: ../ui.py:1981
 msgid "Permissions:"
 msgstr "Machtigingen:"
 
@@ -961,7 +966,7 @@ msgstr "Speel deze titel af"
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Speel af/bekijk/wijzig/installeer/pak uit/voer een bestand uit of open de map"
 
-#: ../ui.py:1206 ../ui.py:1690
+#: ../ui.py:1206 ../ui.py:1702
 msgid "Please enter name of the new directory"
 msgstr "Voer de naam voor de nieuwe map in aub"
 
@@ -985,11 +990,11 @@ msgstr "Voer de nieuwe bestandsnaam in aub"
 msgid "Please wait, Loading image."
 msgstr "Moment aub, de image wordt geladen."
 
-#: ../ui.py:1370
+#: ../ui.py:1369
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr "Vul de eerste 'n' karakters in op het virtuele toetsenbord"
 
-#: ../ui.py:1372
+#: ../ui.py:1371
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Vul de laatste 'n' karakters van de bestandnaam in op het virtuele toetsenbord"
 
@@ -1037,7 +1042,7 @@ msgstr ""
 msgid "Records"
 msgstr "Opnames"
 
-#: ../ui.py:481 ../ui.py:616 ../ui.py:1484
+#: ../ui.py:481 ../ui.py:616 ../ui.py:1483
 msgid "Refresh screen"
 msgstr "Ververs het scherm"
 
@@ -1049,7 +1054,7 @@ msgstr "Normaal bestand"
 msgid "Remove current folder from bookmarks"
 msgstr "Verwijder de huidige map uit de bladwijzers"
 
-#: ../ui.py:1575
+#: ../ui.py:1578
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr "Verwijder vanuit de selectie (%s)"
@@ -1139,15 +1144,15 @@ msgstr "Indien geactiveerd, dan wordt het rechter directory overzicht opgeslagen
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Om script '%s' uit te voeren zijn leesmachtigingen nodig"
 
-#: ../ui.py:1367
+#: ../ui.py:1366
 msgid "Search in group selection by"
 msgstr "Zoek in de groepsselectie op"
 
-#: ../ui.py:1469
+#: ../ui.py:1468
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Kies de (bronlijst) of voer de map in (doellijst)"
 
-#: ../ui.py:1545
+#: ../ui.py:1546
 msgid "Select All"
 msgstr "Kies alles"
 
@@ -1155,15 +1160,15 @@ msgstr "Kies alles"
 msgid "Select a path"
 msgstr "Kies een path"
 
-#: ../ui.py:1486
+#: ../ui.py:1485
 msgid "Select group"
 msgstr "Kies een groep"
 
-#: ../ui.py:1543
+#: ../ui.py:1544
 msgid "Select group..."
 msgstr "Kies een groep..."
 
-#: ../ui.py:656 ../ui.py:1551
+#: ../ui.py:656 ../ui.py:1552
 msgid "Select operation:"
 msgstr "Kies de uit te voeren actie:"
 
@@ -1185,7 +1190,7 @@ msgstr ""
 "Stel het aantal regels in scriptinfo of scriptfoutmeldingen in voor 'stout' en 'sterr'.\n"
 "U kunt kiezen van 1-10 regels. Standaard is 3 regels."
 
-#: ../ui.py:1373
+#: ../ui.py:1372
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr "Met deze optie stelt in of er tijdens het zoeken onderscheid moet worden gemaakt tussen hoofd- en kleine letters."
 
@@ -1193,7 +1198,7 @@ msgstr "Met deze optie stelt in of er tijdens het zoeken onderscheid moet worden
 msgid "Settings"
 msgstr "Instellingen"
 
-#: ../ui.py:634 ../ui.py:1549
+#: ../ui.py:634 ../ui.py:1550
 msgid "Settings..."
 msgstr "Instellingen ..."
 
@@ -1287,7 +1292,7 @@ msgstr "Grootte"
 msgid "Size reverse"
 msgstr "Grootte omgekeerd"
 
-#: ../ui.py:1971
+#: ../ui.py:1983
 msgid "Size:"
 msgstr "Grootte:"
 
@@ -1372,7 +1377,7 @@ msgstr "Pauze bij diavoorstelling"
 msgid "Type the name for the new file"
 msgstr "Voer de naam voor de nieuwe map in aub"
 
-#: ../ui.py:1966
+#: ../ui.py:1978
 msgid "Type:"
 msgstr "Type:"
 
@@ -1432,15 +1437,15 @@ msgstr "Wil je dit afspelen?\n"
 msgid "Yes"
 msgstr "Ja"
 
-#: ../ui.py:1370
+#: ../ui.py:1369
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Hier kunt u het aantal karakters aangeven waarmee het virtuele toetsenbord wordt gevuld. Dat zijn de eerste 'n' karakters van het momenteel geselecteerde item."
 
-#: ../ui.py:1372
+#: ../ui.py:1371
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Hier kunt u het aantal karakters aangeven waarmee het virtuele toetsenbord wordt gevuld. Dat zijn de laatste 'n' karakters van het momenteel geselecteerde item."
 
-#: ../ui.py:1368
+#: ../ui.py:1367
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr "Hier stelt u in wat de groepsselectie gebruikt - begin van de titel, eind van de titel of titel."
 
@@ -1463,15 +1468,15 @@ msgstr "[D]%s%s[F]%s%s"
 msgid "contains in title"
 msgstr "Bevat in de titel"
 
-#: ../ui.py:1571
+#: ../ui.py:1574
 msgid "contains..."
 msgstr "bevat..."
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:977 ../ui.py:1790
+#: ../ui.py:538 ../ui.py:851 ../ui.py:977 ../ui.py:1802
 msgid "copy file"
 msgstr "kopieer bestand"
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:979 ../ui.py:1788
+#: ../ui.py:538 ../ui.py:851 ../ui.py:979 ../ui.py:1800
 msgid "copy folder"
 msgstr "kopieer map"
 
@@ -1487,7 +1492,7 @@ msgstr "d"
 msgid "end title"
 msgstr "Einde van de titel"
 
-#: ../ui.py:1569
+#: ../ui.py:1572
 msgid "ends with..."
 msgstr "eindigt met..."
 
@@ -1495,8 +1500,8 @@ msgstr "eindigt met..."
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "voor DATA VERLIES OF BESCHADIGING !!!"
 
-#: ../ui.py:965 ../ui.py:994 ../ui.py:1027 ../ui.py:1723 ../ui.py:1758
-#: ../ui.py:1793
+#: ../ui.py:965 ../ui.py:994 ../ui.py:1027 ../ui.py:1735 ../ui.py:1770
+#: ../ui.py:1805
 msgid "from dir"
 msgstr "uit de map"
 
@@ -1523,7 +1528,7 @@ msgstr "installeer of pak ipk bestanden uit"
 msgid "manage local Files"
 msgstr "Beheer de locale bestanden"
 
-#: ../ui.py:538 ../ui.py:851 ../ui.py:1041 ../ui.py:1755
+#: ../ui.py:538 ../ui.py:851 ../ui.py:1041 ../ui.py:1767
 msgid "move file"
 msgstr "verplaats bestand"
 
@@ -1575,11 +1580,11 @@ msgstr "shell"
 msgid "start title"
 msgstr "Start deze titel"
 
-#: ../ui.py:1567
+#: ../ui.py:1570
 msgid "starts with..."
 msgstr "start met..."
 
-#: ../ui.py:965 ../ui.py:1027 ../ui.py:1758 ../ui.py:1793
+#: ../ui.py:965 ../ui.py:1027 ../ui.py:1770 ../ui.py:1805
 msgid "to dir"
 msgstr "naar directory"
 
