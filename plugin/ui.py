@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.08")
+pvers = "%s%s" % (_("v"),"2.09")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -1363,7 +1363,6 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 
 	def loadMenu(self):
 		self.list = []
-		cfg = cfg
 		self.search = _("Search in group selection by")
 		self.list.append(getConfigListEntry(self.search, cfg.search, _("You can set what will group selection use - start of title, end of title or contains in title.")))
 		if cfg.search.value == "begin":
@@ -1485,12 +1484,14 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			"1": (self.dirSizeWalk, _("Counting directory content size while walking (on/off)")),
 			"2": (boundFunction(self.selectGroup, True), _("Select group")),
 			"5": (boundFunction(self.selectGroup, False), _("Deselect group")),
+			"6": (self.moveSelector, _("Move selector to next item (on/off)")),
 			"8": (self.openTasklist, _("Show task list")),
 			"keyRecord": (self.goBlue, _("Leave multi-select mode")),
 			"showMovies": (self.goBlue, _("Leave multi-select mode")),
 		}, -1)
 		self.selItems = 0
 		self.selSize = 0
+		self.setMovieSelectorFlag()
 		self.onLayoutFinish.append(self.onLayout)
 
 	def onLayout(self):
@@ -1557,6 +1558,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			choice[1]()
 
 	def runBacktoMenu(self, dummy=False):
+		self.setMovieSelectorFlag()
+		self.updateHead()
 		self.selectAction()
 
 	def selectGroup(self, mark=True):
@@ -1679,6 +1682,15 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def dirSizeWalk(self):
 		self.parent.setWalkdir()
 		self.updateHead()
+
+	def moveSelector(self):
+		cfg.move_selector.value = not cfg.move_selector.value
+		self.setMovieSelectorFlag()
+		self.updateHead()
+
+	def setMovieSelectorFlag(self):
+		self.moveselectorflag = ' _' if cfg.move_selector.value else ''
+
 
 # ## new folder in !Target! ###
 	def gomakeDir(self):
@@ -1807,7 +1819,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			filename = self[side].getFilename()
 			if dir is not None:
 				self[side + "_head1"].text = cutLargePath(dir, self[side + "_head1"])
-				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + self.parent.walkdirflag
+				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + self.parent.walkdirflag + self.moveselectorflag
 				if self.selItems and self.SOURCELIST == self[side]:
 					self[side + "_head2"].updateList(())
 					self[side + "_select"].text = self.selInfo(self.selItems, self.selSize)
