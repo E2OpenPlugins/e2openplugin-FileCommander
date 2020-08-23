@@ -1064,7 +1064,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		# firstpos_end : True = cursor at end of text on InputBox creation - False = cursor at start of text on InputBox creation
 		# visible_width : if this width is smaller than the skin width, the text will be scrolled if it is too long
 		# allmarked : text all selected at InputBox creation or not
-		self.session.openWithCallback(self.doRename, VirtualKeyBoard, title=fname, text=filename)
+		self.session.openWithCallback(self.doRename, VirtualKeyBoard, title=fname, text=filename, visible_width=48)
 
 	def doRename(self, newname):
 		if newname:
