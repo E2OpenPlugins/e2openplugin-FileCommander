@@ -1301,11 +1301,13 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self.listRight()
 		if cfg.cursorposition.value:
 			self.SOURCELIST.moveToIndex(cfg.lastcursorposition.value)
+			self.updateHead()
 
 	def listLeftStart(self):
 		self.listLeft()
 		if cfg.cursorposition.value:
 			self.SOURCELIST.moveToIndex(cfg.lastcursorposition.value)
+			self.updateHead()
 
 	def listRight(self):
 		if self.disableActions_Timer.isActive():
