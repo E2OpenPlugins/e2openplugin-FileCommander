@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.09")
+pvers = "%s%s" % (_("v"),"2.10")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -151,6 +151,7 @@ codepages = []
 for i in range(1250,1259,1):
 	codepages.append(("%s" % i, "CP%s" % i))
 config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
+config.plugins.filecommander.filename_header = ConfigYesNo(default=True)
 
 cfg = config.plugins.filecommander
 
@@ -176,6 +177,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Save right folder on exit"), cfg.savedir_right, _("Save the right folder list location on exit.")))
 		self.list.append(getConfigListEntry(_("Save cursor position"), cfg.cursorposition, _("Save cursor position in active panel.")))
 		self.list.append(getConfigListEntry(_("Show directories first"), cfg.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("Filenames in header"), cfg.filename_header, _("Display filenames in header. It is useful for filenames that are too long.")))
 		self.list.append(getConfigListEntry(_("Show Task's completed message"), cfg.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
 		self.list.append(getConfigListEntry(_("Show Script completed message"), cfg.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
 		self.list.append(getConfigListEntry(_("Number of lines in script messages"), cfg.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
@@ -308,9 +310,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	if FULLHD:
 		skin = """
 		<screen position="40,80" size="1840,920" title="" >
-			<widget name="list_left_head1" position="10,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
-			<widget name="list_left_select" position="10,43" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_left_head2" render="Listbox" position="10,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
+			<widget name="list_left_head1" position="10,5" size="890,28" itemHeight="28" font="Regular;24" foregroundColor="#00cccc40"/>
+			<widget name="list_left_filename" position="10,31" size="890,21" font="Regular;18" noWrap="1" foregroundColor="grey" backgroundColor="secondBG" transparent="1" zPosition="1"/>
+			<widget name="list_left_select" position="10,50" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_left_head2" render="Listbox" position="10,50" size="890,30" foregroundColor="#00cccc40" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -323,9 +326,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_right_head1" position="900,10" size="890,30" itemHeight="28" font="Regular;24" foregroundColor="#00fff000"/>
-			<widget name="list_right_select" position="900,43" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_right_head2" render="Listbox" position="900,43" size="890,30" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
+			<widget name="list_right_head1" position="900,5" size="890,28" itemHeight="28" font="Regular;24" foregroundColor="#00cccc40"/>
+			<widget name="list_right_filename" position="900,31" size="890,21" font="Regular;18" noWrap="1" foregroundColor="grey" backgroundColor="secondBG" transparent="1" zPosition="1"/>
+			<widget name="list_right_select" position="900,50" size="890,30" zPosition="1" font="Regular;24" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_right_head2" render="Listbox" position="900,50" size="890,30" foregroundColor="#00cccc40" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (30, 0), size = (173, 30), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -338,27 +342,28 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_left" position="10,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
-			<widget name="list_right" position="900,85" size="890,720" itemHeight="45" scrollbarMode="showOnDemand"/>
-			<widget name="list_left_free" position="30,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
-			<widget name="list_right_free" position="920,820" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
-			<widget name="sort_left" position="10,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
-			<widget name="sort_right" position="900,820" size="855,23" halign="center" font="Regular;23" foregroundColor="#00fff000"/>
-			<widget source="key_red" render="Label" position="150,855" size="390,38" transparent="1" font="Regular;30"/>
-			<widget source="key_green" render="Label" position="593,855" size="390,38"  transparent="1" font="Regular;30"/>
-			<widget source="key_yellow" render="Label" position="1035,855" size="390,38" transparent="1" font="Regular;30"/>
-			<widget source="key_blue" render="Label" position="1488,855" size="390,38" transparent="1" font="Regular;30"/>
-			<ePixmap position="105,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
-			<ePixmap position="548,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
-			<ePixmap position="990,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
-			<ePixmap position="1433,855" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_blue.png" transparent="1" alphatest="on"/>
+			<widget name="list_left" position="10,80" size="890,765" itemHeight="45" scrollbarMode="showOnDemand"/>
+			<widget name="list_right" position="900,80" size="890,765" itemHeight="45" scrollbarMode="showOnDemand"/>
+			<widget name="list_left_free" position="30,845" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="list_right_free" position="920,845" size="200,25" font="Regular;22"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="sort_left" position="10,845" size="855,26" halign="center" font="Regular;23" foregroundColor="#00cccc40"/>
+			<widget name="sort_right" position="900,845" size="855,26" halign="center" font="Regular;23" foregroundColor="#00cccc40"/>
+			<widget source="key_red" render="Label" position="150,880" size="390,38" transparent="1" font="Regular;30"/>
+			<widget source="key_green" render="Label" position="593,880" size="390,38"  transparent="1" font="Regular;30"/>
+			<widget source="key_yellow" render="Label" position="1035,880" size="390,38" transparent="1" font="Regular;30"/>
+			<widget source="key_blue" render="Label" position="1488,880" size="390,38" transparent="1" font="Regular;30"/>
+			<ePixmap position="105,880" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_red.png" transparent="1" alphatest="on"/>
+			<ePixmap position="548,880" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_green.png" transparent="1" alphatest="on"/>
+			<ePixmap position="990,880" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_yellow.png" transparent="1" alphatest="on"/>
+			<ePixmap position="1433,880" size="390,33" zPosition="0" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/pic/button_blue.png" transparent="1" alphatest="on"/>
 		</screen>"""
 	else:
 		skin = """
 		<screen position="40,80" size="1200,600" title="" >
-			<widget name="list_left_head1" position="10,10" size="570,21" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget name="list_left_select" position="10,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_left_head2" render="Listbox" position="10,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
+			<widget name="list_left_head1" position="10,5" size="570,21" font="Regular;18" foregroundColor="#00cccc00"/>
+			<widget name="list_left_filename" position="10,26" size="570,16" font="Regular;14" noWrap="1" foregroundColor="grey" backgroundColor="secondBG" transparent="1" zPosition="1"/>
+			<widget name="list_left_select" position="10,42" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_left_head2" render="Listbox" position="10,42" size="570,20" foregroundColor="#00cccc00" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -371,9 +376,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_right_head1" position="610,10" size="570,21" font="Regular;18" foregroundColor="#00fff000"/>
-			<widget name="list_right_select" position="610,56" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
-			<widget source="list_right_head2" render="Listbox" position="610,56" size="570,20" foregroundColor="#00fff000" selectionDisabled="1" transparent="1">
+			<widget name="list_right_head1" position="610,5" size="570,21" font="Regular;18" foregroundColor="#00cccc00"/>
+			<widget name="list_right_filename" position="610,26" size="570,16" font="Regular;14" noWrap="1" foregroundColor="grey" backgroundColor="secondBG" transparent="1" zPosition="1"/>
+			<widget name="list_right_select" position="610,42" size="570,20" zPosition="1" font="Regular;18" transparent="1" foregroundColor="#0000cc60"/>
+			<widget source="list_right_head2" render="Listbox" position="610,42" size="570,20" foregroundColor="#00cccc00" selectionDisabled="1" transparent="1">
 				<convert type="TemplatedMultiContent">
 					{"template": [
 						MultiContentEntryText(pos = (0, 0), size = (115, 20), font = 0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is a symbolic mode
@@ -386,12 +392,12 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 					}
 				</convert>
 			</widget>
-			<widget name="list_left" position="10,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="list_right" position="610,85" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
-			<widget name="list_left_free" position="10,32" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
-			<widget name="list_right_free" position="610,32" size="100,15" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
-			<widget name="sort_left" position="10,32" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
-			<widget name="sort_right" position="610,32" size="570,15" halign="center" font="Regular;15" foregroundColor="#00fff000"/>
+			<widget name="list_left" position="10,70" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
+			<widget name="list_right" position="610,70" size="570,466" itemHeight="31" scrollbarMode="showOnDemand"/>
+			<widget name="list_left_free" position="10,536" size="100,17" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="list_right_free" position="610,536" size="100,17" font="Regular;15"/><!-- for FileCommanderScreenFileSelect, do not remove it -->
+			<widget name="sort_left" position="10,536" size="570,17" halign="center" font="Regular;15" foregroundColor="#00cccc00"/>
+			<widget name="sort_right" position="610,536" size="570,17" halign="center" font="Regular;15" foregroundColor="#00cccc00"/>
 			<widget source="key_red" render="Label" position="100,570" size="260,25" transparent="1" font="Regular;20"/>
 			<widget source="key_green" render="Label" position="395,570" size="260,25"  transparent="1" font="Regular;20"/>
 			<widget source="key_yellow" render="Label" position="690,570" size="260,25" transparent="1" font="Regular;20"/>
@@ -438,9 +444,12 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		# set current folder
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
+		self["list_left_filename"] = Label()
 		self["list_left_free"] = Label()
+
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
+		self["list_right_filename"] = Label()
 		self["list_right_free"] = Label()
 
 		# set sorting
@@ -1247,6 +1256,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
 				self[side + "_free"].text = ""
+			self[side + "_filename"].text = os.path.basename(os.path.normpath(filename)) if cfg.filename_header.value and filename else ""
+
 		self["VKeyIcon"].boolean = self.viewable_file() is not None
 
 	def doRefreshDir(self, jobs, updateDirs):
@@ -1373,6 +1384,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(_("Pre-fill last 'n' filename chars to virtual keyboard"), cfg.endlength, _("You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection.")))
 		self.list.append(getConfigListEntry(_("Compare case sensitive"), cfg.sensitive, _("Sets whether to distinguish between uper case and lower case for searching.")))
 		#duplicity from main setting:
+		self.list.append(getConfigListEntry(_("Filenames in header"), cfg.filename_header, _("Display filenames in header. It is useful for filenames that are too long.")))
 		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
 		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
@@ -1441,10 +1453,13 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self["list_left_head1"] = Label(path_left)
 		self["list_left_head2"] = List()
 		self["list_left_select"] = Label()
+		self["list_left_filename"] = Label()
 		self["list_left_free"] = Label()
+
 		self["list_right_head1"] = Label(path_right)
 		self["list_right_head2"] = List()
 		self["list_right_select"] = Label()
+		self["list_right_filename"] = Label()
 		self["list_right_free"] = Label()
 
 		if leftactive:
@@ -1835,6 +1850,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self[side + "_head2"].updateList(())
 				self[side + "_select"].text = ""
 				self[side + "_free"].text = ""
+			self[side + "_filename"].text = os.path.basename(os.path.normpath(filename)) if cfg.filename_header.value and filename else ""
 
 	def doRefresh(self):
 		print "[FileCommander] selectedFiles:", self.selectedFiles
