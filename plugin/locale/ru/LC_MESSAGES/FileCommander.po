@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: FileCommander - E2OpenPlugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 16:03+0100\n"
-"PO-Revision-Date: 2019-08-09 11:04+0200\n"
+"PO-Revision-Date: 2020-10-30 10:11+0300\n"
 "Last-Translator: SkinerMan <TCSB2012@gmail.com>\n"
 "Language-Team: SkinerMan\n"
 "Language: ru\n"
@@ -282,7 +282,7 @@ msgstr "Размер содержимого:"
 #: ../ui.py:635
 #, python-format
 msgid "Convert subtitles from '%s' to UTF-8"
-msgstr ""
+msgstr "Конвертировать субтитры из '%s' в UTF-8"
 
 #: ../ui.py:471 ../ui.py:1480
 msgid "Copy"
@@ -448,7 +448,7 @@ msgstr ""
 
 #: ../ui.py:180 ../ui.py:1387
 msgid "Display filenames in header. It is useful for filenames that are too long."
-msgstr ""
+msgstr "Отображать имена файлов в заголовке. Это полезно для слишком длинных имен файлов."
 
 #: ../addons/key_actions.py:243
 msgid "Do you want change rights?\n"
@@ -471,9 +471,8 @@ msgid "Edit line "
 msgstr "Редактировать строку "
 
 #: ../ui.py:637
-#, fuzzy
 msgid "Edit new file"
-msgstr "Редактировать строку "
+msgstr "Создать - Редактировать новый файл"
 
 #: ../ui.py:185
 msgid "Edit position is the line end"
@@ -497,12 +496,12 @@ msgstr ""
 "%s"
 
 #: ../ui.py:1203
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Error creating file %s:\n"
 "%s"
 msgstr ""
-"Ошибка при создании каталога %s:\n"
+"Ошибка при создании файла %s:\n"
 "%s"
 
 #: ../ui.py:1143
@@ -596,15 +595,14 @@ msgid "File Commander - unzip Addon"
 msgstr "File Commander - дополнение unzip"
 
 #: ../ui.py:1188
-#, fuzzy
 msgid ""
 "File cannot be created on\n"
 "<List of Storage Devices> or <Receiver>.\n"
 "Change directory, please."
 msgstr ""
-"Каталог не может быть создан здесь на\n"
+"Файл не может быть создан на\n"
 "<Список Устройств Хранения> или <Ресивер>.\n"
-"Переместить селектор на одну строку ниже или изменить каталог."
+"Смените каталог, пожалуйста."
 
 #: ../ui.py:200
 msgid "File checksums/hashes"
@@ -630,7 +628,7 @@ msgstr "Информация о Статусе Файла/Каталога"
 
 #: ../ui.py:180 ../ui.py:1387
 msgid "Filenames in header"
-msgstr ""
+msgstr "Имена файлов в заголовке"
 
 #: ../ui.py:194
 msgid "Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'."
@@ -828,9 +826,8 @@ msgid "Move selector to next item"
 msgstr "Переместить селектор к следующему элементу"
 
 #: ../ui.py:1504
-#, fuzzy
 msgid "Move selector to next item (on/off)"
-msgstr "Переместить селектор к следующему элементу"
+msgstr "Переместить селектор к следующему элементу (вкл/выкл)"
 
 #: ../ui.py:504 ../ui.py:1491
 msgid "Move up list"
@@ -921,11 +918,11 @@ msgstr "Открыть при помощи File Commander"
 
 #: ../ui.py:202
 msgid "Original subtitles codepage"
-msgstr ""
+msgstr "Оригинальная кодовая страница субтитров"
 
 #: ../ui.py:202
 msgid "Original subtitles codepage for conversion to UTF-8."
-msgstr ""
+msgstr "Оригинальная кодовая страница субтитров для преобразования в UTF-8."
 
 #: ../addons/type_utils.py:206
 msgid "Original:"
@@ -1376,9 +1373,8 @@ msgid "Time for Slideshow"
 msgstr "Время для слайд-шоу"
 
 #: ../ui.py:1190
-#, fuzzy
 msgid "Type the name for the new file"
-msgstr "Пожалуйста, введите имя нового каталога"
+msgstr "Введите имя для нового файла"
 
 #: ../ui.py:1996
 msgid "Type:"
@@ -1546,7 +1542,7 @@ msgstr "n"
 
 #: ../ui.py:1190
 msgid "new.txt"
-msgstr ""
+msgstr "новый.txt"
 
 #: ../FileList.py:233
 msgid "nothing connected"
