@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-25 16:03+0100\n"
-"PO-Revision-Date: 2020-10-25 16:05+0100\n"
+"PO-Revision-Date: 2020-11-14 21:15+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../addons/key_actions.py:396
 #, python-format
@@ -297,7 +297,7 @@ msgstr "Kopírovat soubor"
 
 #: ../ui.py:499 ../ui.py:619
 msgid "Copy file/directory to target directory"
-msgstr "Zkopírovat soubor nebo adresář"
+msgstr "Kopírovat"
 
 #: ../ui.py:1497
 msgid "Copy files/directories to target directory"
@@ -401,7 +401,7 @@ msgstr "Smazat soubor"
 
 #: ../ui.py:497 ../ui.py:622
 msgid "Delete file or directory (and all its contents)"
-msgstr "Smazat soubor nebo adresář (včetně obsahu)"
+msgstr "Smazat"
 
 #: ../ui.py:1002
 msgid "Delete folder"
@@ -619,7 +619,7 @@ msgstr "Chyba zápisu souboru: '%s'"
 
 #: ../ui.py:501 ../ui.py:623 ../ui.py:1499 ../ui.py:1950
 msgid "File/Directory Status Information"
-msgstr "Informace o souboru/adresáři"
+msgstr "Vlastnosti"
 
 #: ../ui.py:180 ../ui.py:1387
 msgid "Filenames in header"
@@ -806,7 +806,7 @@ msgstr "Přesunout soubor"
 
 #: ../ui.py:498 ../ui.py:620
 msgid "Move file/directory to target directory"
-msgstr "Přesunout soubor nebo adresář"
+msgstr "Přesunout"
 
 #: ../ui.py:1496
 msgid "Move files/directories to target directory"
@@ -1066,7 +1066,7 @@ msgstr "Přejmenovat"
 
 #: ../ui.py:492 ../ui.py:500 ../ui.py:614
 msgid "Rename file/directory"
-msgstr "Přejmenovat soubor nebo adresář"
+msgstr "Přejmenovat"
 
 #: ../ui.py:477 ../ui.py:479
 msgid "Reverse left file sorting"
