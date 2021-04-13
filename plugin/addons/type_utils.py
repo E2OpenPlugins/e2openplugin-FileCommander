@@ -185,14 +185,14 @@ class vEditor(Screen, HelpableScreen):
 					if sw > w:
 						if end: # editation from end
 							l = len(text)
-							for i,idx in enumerate(text):
+							for i, idx in enumerate(text):
 								x = text[l - i:]
 								print x
 								if getStringSize(x, label) >= w:
 									return i
 							return i
 						else:	# standard editation
-							for i,idx in enumerate(text):
+							for i, idx in enumerate(text):
 								x = text[:i]
 								if getStringSize(x, label) >= w:
 									return i
