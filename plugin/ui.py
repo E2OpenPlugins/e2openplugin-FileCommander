@@ -71,7 +71,7 @@ def _make_filter(media_type):
 	return "(?i)^.*\.(" + '|'.join(sorted((ext for ext, type in EXTENSIONS.iteritems() if type == media_type))) + ")$"
 
 def _make_rec_filter():
-	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext  for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
 
 FULLHD = False
 if getDesktop(0).size().width() >= 1920:
@@ -128,8 +128,8 @@ config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), defau
 config.plugins.filecommander.bookmarks = ConfigLocations()
 config.plugins.filecommander.fake_entry = NoSave(ConfigNothing())
 
-tmpLeft = '%s,%s' %(config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_left.value)
-tmpRight = '%s,%s' %(config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_right.value)
+tmpLeft = '%s,%s' % (config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_left.value)
+tmpRight = '%s,%s' % (config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_right.value)
 config.plugins.filecommander.sortingLeft_tmp = NoSave(ConfigText(default=tmpLeft))
 config.plugins.filecommander.sortingRight_tmp = NoSave(ConfigText(default=tmpRight))
 config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_left.value))
@@ -162,7 +162,7 @@ class Setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		self.skinName=["FileCommanderSetup","Setup"]
+		self.skinName = ["FileCommanderSetup","Setup"]
 
 		self["help"] = Label(_("Select your personal settings:"))
 		self["description"] = Label()
@@ -219,7 +219,7 @@ class Setup(ConfigListScreen, Screen):
 		self.setTitle("%s %s - %s" % (pname, pvers, _("Settings")))
 
 	def getCurrentEntry(self):
-		x =  self["config"].getCurrent()
+		x = self["config"].getCurrent()
 		if x:
 			text = x[2] if len(x) == 3 else ""
 			self["description"].setText(text)
@@ -272,12 +272,12 @@ def cutLargePath(path, label):
 	if path_w > w:
 		path = path.split('/')
 		for i,idx in enumerate(path):
-			x = "/"+ (i-1)*".../" + '/'.join((path[i:]))
+			x = "/" + (i - 1) * ".../" + '/'.join((path[i:]))
 			if getStringSize(x, label) <= w:
 				return x
-		prefix = "%s..." % ((i-1)*".../")
+		prefix = "%s..." % ((i - 1) * ".../")
 		prefix_w = getStringSize(prefix, label)
-		lastpath = path[len(path)-1]
+		lastpath = path[len(path) - 1]
 		for j,idx in enumerate(lastpath):
 			lcutstr = lastpath[j:]
 			lcutstr_w = getStringSize(lcutstr, label)
@@ -536,7 +536,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			filtered = "(*)"
 
 		if self.jobs or self.jobs_old:
-			jobs = ngettext("(%d job)", "(%d jobs)", (self.jobs+self.jobs_old)) % (self.jobs+self.jobs_old)
+			jobs = ngettext("(%d job)", "(%d jobs)", (self.jobs + self.jobs_old)) % (self.jobs + self.jobs_old)
 		else:
 			jobs = ""
 		self.setTitle(pname + " " + filtered + " " + jobs)
@@ -612,10 +612,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		menu = []
 		menu.append((_("Rename file/directory"), self.goBlue))
-		keys=["2"]
+		keys = ["2"]
 		if isFile:
 			menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
-			keys+=["3"]
+			keys += ["3"]
 		menu.append((_("Copy file/directory to target directory"), self.goYellow))		#5
 		menu.append((_("Move file/directory to target directory"), self.goGreen))		#6
 		menu.append((_("Create directory"), self.gomakeDir))					#7
@@ -624,16 +624,16 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("Enter multi-file selection mode"), self.listSelect))			#green
 		menu.append((_("Refresh screen"),self.doRefresh))					#0
 		menu.append((_("Show task list"), self.openTasklist))					#red
-		keys+=["5", "6", "7", "8", "info", "green", "0", "red"]
+		keys += ["5", "6", "7", "8", "info", "green", "0", "red"]
 		if isFile:
 			menu.append((_("Calculate file checksums"), self.run_hashes))
-			keys+=[""]
+			keys += [""]
 		if isFile:
 			menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))
-			keys+=[""]
+			keys += [""]
 		if isFile and filename[-4:] in (".srt", ".sub"):
 			menu.append((_("Convert subtitles from '%s' to UTF-8") % cfg.cp(cfg.cp.value)[1], self.convertSubtitles))
-			keys+=[""]
+			keys += [""]
 		menu.append((_("Edit new file"), self.gomakeFile))					#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
@@ -642,7 +642,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))				#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))		#menu
 		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))			#blue
-		keys+=["", "", "", "yellow", "", "", "menu", "blue"]
+		keys += ["", "", "", "yellow", "", "", "menu", "blue"]
 
 		item = self.help_uninstall_file()
 		if item:
@@ -662,7 +662,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			menu.append((dirname in cfg.bookmarks.value and _("Remove current folder from bookmarks") or _("Add current folder to bookmarks"), boundFunction(self.goBookmark, True)))
 			keys += ["bullet"]
 
-		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key == "" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
 		if choice is None:
@@ -882,7 +882,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			sort += 1
 			if sort > 2:
 				sort = 0
-		return '%d.%d' %(sort, reverse)
+		return '%d.%d' % (sort, reverse)
 
 	def setReverse(self, list, setDirs=False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
@@ -893,7 +893,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		reverse += 1
 		if reverse > 1:
 			reverse = 0
-		return '%d.%d' %(sort, reverse)
+		return '%d.%d' % (sort, reverse)
 
 # ## sorting files left ###
 	def goRedLong(self):
@@ -1354,7 +1354,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		self.session = session
 		Screen.__init__(self, session)
 
-		self.skinName=["FileCommanderSetup","Setup"]
+		self.skinName = ["FileCommanderSetup","Setup"]
 
 #		self["help"] = Label(_("Select your personal settings:"))
 		self["description"] = Label()
@@ -1396,13 +1396,13 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 			if self["config"].getCurrent()[0] == self.search:
 				self.loadMenu()
 	def getCurrentEntry(self):
-		x =  self["config"].getCurrent()
+		x = self["config"].getCurrent()
 		if x:
 			text = x[2] if len(x) == 3 else ""
 			self["description"].setText(text)
 
 	def onLayout(self):
-		self.setTitle(pname+" - "+_("MultiSelection Settings"))
+		self.setTitle(pname + " - " + _("MultiSelection Settings"))
 
 	def ok(self):
 		self.save()
@@ -1427,7 +1427,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
 
-		self.skin=FileCommanderScreen.skin
+		self.skin = FileCommanderScreen.skin
 
 		self.parent = parent
 		self.selectedFiles = []
@@ -1565,8 +1565,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		menu.append((_("Create directory in 'Target' panel"), self.gomakeDir))							#7
 		menu.append((_("Invert Selection"), self.invertSelection))								#blue
 		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	#menu
-		keys=["2", "5", "", "", "7", "blue", "menu"]
-		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
+		keys = ["2", "5", "", "", "7", "blue", "menu"]
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key == "" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
 		if choice is None:
@@ -1592,7 +1592,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		if mark:
 			txt = _("Add to selection (%s)") % getSubstring(cfg.search.value)
 		else:
-			txt = _("Remove from selection (%s)")  % getSubstring(cfg.search.value)
+			txt = _("Remove from selection (%s)") % getSubstring(cfg.search.value)
 
 		item = self.SOURCELIST.l.getCurrentSelection()
 		length = int(cfg.length.value)
@@ -1601,10 +1601,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		if item:
 			if cfg.search.value == "begin" and length:
 				name = NAME(item).decode('UTF-8', 'replace')[0:length]
-				txt += 10*" " + "%s" % length
+				txt += 10 * " " + "%s" % length
 			elif cfg.search.value == "end" and endlength:
 				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
-				txt += 10*" " + "%s" % endlength
+				txt += 10 * " " + "%s" % endlength
 		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title=txt, text=name)
 
 	def changeItems(self, mark, searchString=None):
@@ -1619,14 +1619,14 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString)== -1 else True
+						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString) == -1 else True
 				else:
 					if cfg.search.value == "begin":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().startswith(searchString)
 					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString)== -1 else True
+						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString) == -1 else True
 				if exist:
 					if mark:
 						if not SELECTED(item):

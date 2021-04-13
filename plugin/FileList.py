@@ -120,7 +120,7 @@ class FileList(FileListBase):
 			self.sortFiles = sortBy
 
 	def getSortBy(self):
-		return '%s,%s' %(self.sortDirs, self.sortFiles)
+		return '%s,%s' % (self.sortDirs, self.sortFiles)
 
 	def changeDir(self, directory, select=None):
 		self.list = []
