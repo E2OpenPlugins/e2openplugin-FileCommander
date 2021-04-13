@@ -293,8 +293,8 @@ class key_actions(stat_info):
 	def selInfo(self, numbers, size):
 		bytesizedivided = "%s" % "{:,.0f}".format(size).replace(',',' ')
 		scaledsize = ' '.join(self.SIZESCALER.scale(size)) + _('B')
-		sizes = "%s (%s)" % (bytesizedivided, scaledsize )
-		num = ngettext("in %s selected file" ,"in %s selected files", numbers) % numbers
+		sizes = "%s (%s)" % (bytesizedivided, scaledsize)
+		num = ngettext("in %s selected file","in %s selected files", numbers) % numbers
 		return "%s %s" % (sizes, num)
 
 	def statInfo(self, dirsource):
@@ -328,7 +328,7 @@ class key_actions(stat_info):
 			sizes = ("", "", "", "", "")
 		elif config.plugins.filecommander.dir_sizewalk.value and dirname:
 			size = self.dirContentSize(dirname)
-			sizes = ( "%s" % size, "%s" % size, "%s" % size, "%s" % size, "%s" % size )
+			sizes = ("%s" % size, "%s" % size, "%s" % size, "%s" % size, "%s" % size)
 		else:
 			bytesize = "%s" % "{:n}".format(st.st_size)
 			bytesizedivided = "%s" % "{:,d}".format(st.st_size)
@@ -726,7 +726,7 @@ class key_actions(stat_info):
 			savetext = ''
 			stat = os.statvfs('/tmp/')
 			if stat.f_bavail * stat.f_bsize > 1000000:
-				choice.append((_("Show as Picture and save as file ('%s')")%self.tmp_file , "save"))
+				choice.append((_("Show as Picture and save as file ('%s')")%self.tmp_file, "save"))
 				savetext = _(" or save the picture additionally to a file")
 			self.session.openWithCallback(self.mviFileCB, MessageBox, _("Show '%s' as picture%s?\nThe current service must be interrupted!") %(longname,savetext), simple=True, list=choice)
 		elif filetype in TEXT_EXTENSIONS or config.plugins.filecommander.unknown_extension_as_text.value:

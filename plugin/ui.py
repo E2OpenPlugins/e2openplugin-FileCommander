@@ -276,7 +276,7 @@ def cutLargePath(path, label):
 			if getStringSize(x, label) <= w:
 				return x
 		prefix = "%s..." % ((i-1)*".../")
-		prefix_w = getStringSize(prefix , label)
+		prefix_w = getStringSize(prefix, label)
 		lastpath = path[len(path)-1]
 		for j,idx in enumerate(lastpath):
 			lcutstr = lastpath[j:]
@@ -812,7 +812,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		for job in job_manager.getPendingJobs():
 			#self.tasklist.append((job, job.name, job.getStatustext(), int(100 * job.progress / float(job.end)), str(100 * job.progress / float(job.end)) + "%"))
 			progress = job.getProgress()
-			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
+			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %"))
 		self.session.open(TaskListScreen, self.tasklist)
 
 	def addJob(self, job, updateDirs):
@@ -935,15 +935,15 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				try:
 					os.rename(name, name + ".tmp")
 				except Exception as error:
-					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3 )
+					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3)
 				else:
-					fi = open(name + ".tmp" ,"rt")
+					fi = open(name + ".tmp","rt")
 					fo = open(name, "wt")
 					try:
 						for line in fi:
 							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
 					except Exception as error:
-						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3 )
+						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3)
 						target = name
 					else:
 						target = name + ".orig"
@@ -1693,7 +1693,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		for job in job_manager.getPendingJobs():
 			#self.tasklist.append((job, job.name, job.getStatustext(), int(100 * job.progress / float(job.end)), str(100 * job.progress / float(job.end)) + "%"))
 			progress = job.getProgress()
-			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
+			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %"))
 		self.session.open(TaskListScreen, self.tasklist)
 
 	def dirSizeWalk(self):
@@ -1748,7 +1748,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.delete_dirs.append(file)
 			else:
 				self.delete_files.append(file)
-		deltext = ngettext("Delete %d element" ,"Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
+		deltext = ngettext("Delete %d element","Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
 	def doDelete(self, result=False):
@@ -1782,8 +1782,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
 			self.move_jobs.append(FileTransferJob(file, targetDir, False, False, "%s : %s" % (_("move file"), file)))
-		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
-		movetext = ngettext("Move %d element" ,"Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
+		warntxt = ngettext(" - %d element exist! Overwrite"," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
+		movetext = ngettext("Move %d element","Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 	def doMove(self, result=False):
@@ -1817,8 +1817,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.copy_jobs.append(FileTransferJob(file, targetDir, True, True, "%s : %s" % (_("copy folder"), file)))
 			else:
 				self.copy_jobs.append(FileTransferJob(file, targetDir, False, True, "%s : %s" % (_("copy file"), file)))
-		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
-		copytext = ngettext("Copy %d element" ,"Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
+		warntxt = ngettext(" - %d element exist! Overwrite"," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
+		copytext = ngettext("Copy %d element","Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 
@@ -1996,7 +1996,7 @@ class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 		self.list.append((_("Type:"), self.filetypeStr(mode)))
 		self.list.append((_("Owner:"), "%s (%d)" % (self.username(st.st_uid), st.st_uid)))
 		self.list.append((_("Group:"), "%s (%d)" % (self.groupname(st.st_gid), st.st_gid)))
-		self.list.append((_("Permissions:"), _("%s (%04o)") % ( self.fileModeStr(perms), perms)))
+		self.list.append((_("Permissions:"), _("%s (%04o)") % (self.fileModeStr(perms), perms)))
 		if not (stat.S_ISCHR(mode) or stat.S_ISBLK(mode)):
 			self.list.append((_("Size:"), "%s (%sB)" % ("{:n}".format(st.st_size), ' '.join(self.SIZESCALER.scale(st.st_size)))))
 		self.list.append((_("Modified:"), self.formatTime(st.st_mtime)))

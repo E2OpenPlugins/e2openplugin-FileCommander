@@ -2,7 +2,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.FileCommander'
-setup (name='enigma2-plugin-extensions-filecommander',
+setup(name='enigma2-plugin-extensions-filecommander',
        version='2.10',
        description='Two-panels File manager.',
        packages=[pkg, 'Extensions.FileCommander.addons'],
