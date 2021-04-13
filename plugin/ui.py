@@ -118,7 +118,7 @@ choicelist = [
 				("0.1", _("Name reverse")),
 				("1.0", _("Date")),
 				("1.1", _("Date reverse")),
-				("2.0", _("Size")), 
+				("2.0", _("Size")),
 				("2.1", _("Size reverse"))]
 config.plugins.filecommander.sortFiles_left = ConfigSelection(default="1.1", choices=choicelist)
 config.plugins.filecommander.sortFiles_right = ConfigSelection(default="1.1", choices=choicelist)
@@ -236,7 +236,7 @@ class Setup(ConfigListScreen, Screen):
 	def pathSelected(self, res):
 		if res is not None:
 			cfg.path_default.value = res
-		
+
 	def save(self):
 		print "[FileCommander]: Settings saved"
 		for x in self["config"].list:
@@ -440,10 +440,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		# set filter
 		filter = self.fileFilter()
-		
+
 		# disable actions
 		self.disableActions_Timer = eTimer()
-		
+
 		self.jobs = 0
 		self.jobs_old = 0
 
@@ -525,7 +525,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		self.walkdirflag = ''
 		self.onLayoutFinish.append(self.listLeftStart if cfg.path_left_selected.value else self.listRightStart)
-		
+
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
 		#self.onLayoutFinish.append(self.onLayout)

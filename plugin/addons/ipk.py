@@ -39,7 +39,7 @@ class ipkMenuScreen(ArchiverMenuScreen):
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
-	
+
 	def unpackModus(self, id):
 		if id == 1:
 			# This is done in a subshell because using two
@@ -72,4 +72,3 @@ class UnpackInfoScreen(ArchiverInfoScreen):
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
-
