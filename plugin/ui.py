@@ -105,7 +105,7 @@ config.plugins.filecommander.script_messagelen = ConfigSelectionNumber(default=3
 config.plugins.filecommander.script_priority_nice = ConfigSelectionNumber(default=0, stepwidth=1, min=0, max=19, wraparound=True)
 config.plugins.filecommander.script_priority_ionice = ConfigSelectionNumber(default=0, stepwidth=3, min=0, max=3, wraparound=True)
 config.plugins.filecommander.unknown_extension_as_text = ConfigYesNo(default=False)
-config.plugins.filecommander.sortDirs = ConfigSelection(default = "0.0", choices = [
+config.plugins.filecommander.sortDirs = ConfigSelection(default="0.0", choices=[
 				("0.0", _("Name")),
 				("0.1", _("Name reverse")),
 				("1.0", _("Date")),
@@ -117,8 +117,8 @@ choicelist = [
 				("1.1", _("Date reverse")),
 				("2.0", _("Size")), 
 				("2.1", _("Size reverse"))]
-config.plugins.filecommander.sortFiles_left = ConfigSelection(default = "1.1", choices = choicelist)
-config.plugins.filecommander.sortFiles_right = ConfigSelection(default = "1.1", choices = choicelist)
+config.plugins.filecommander.sortFiles_left = ConfigSelection(default="1.1", choices=choicelist)
+config.plugins.filecommander.sortFiles_right = ConfigSelection(default="1.1", choices=choicelist)
 config.plugins.filecommander.firstDirs = ConfigYesNo(default=True)
 config.plugins.filecommander.path_left_selected = ConfigYesNo(default=True)
 config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
@@ -138,14 +138,14 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
 config.plugins.filecommander.dir_sizewalk = NoSave(ConfigYesNo(default=False))
 config.plugins.filecommander.sensitive = ConfigYesNo(default=False)
-config.plugins.filecommander.search = ConfigSelection(default = "begin", choices = [("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
+config.plugins.filecommander.search = ConfigSelection(default="begin", choices=[("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
 choicelist = []
 for i in range(1, 11, 1):
 	choicelist.append(("%d" % i))
 choicelist.append(("15","15"))
 choicelist.append(("20","20"))
-config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
-config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.length = ConfigSelection(default="3", choices=[("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.endlength = ConfigSelection(default="4", choices=[("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
 codepages = []
 for i in range(1250,1259,1):
@@ -201,7 +201,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), cfg.diashow, _("Time between slides in image viewer slideshow.")))
 		self.list.append(getConfigListEntry(_("Original subtitles codepage"), cfg.cp, _("Original subtitles codepage for conversion to UTF-8.")))
 
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
@@ -870,7 +870,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			#else:
 			Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout, simple=True)
 
-	def setSort(self, list, setDirs = False):
+	def setSort(self, list, setDirs=False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
 		if setDirs:
 			sort, reverse = [int(x) for x in sortDirs.split('.')]
@@ -884,7 +884,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				sort = 0
 		return '%d.%d' %(sort, reverse)
 
-	def setReverse(self, list, setDirs = False):
+	def setReverse(self, list, setDirs=False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
 		if setDirs:
 			sort, reverse = [int(x) for x in sortDirs.split('.')]
@@ -935,7 +935,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				try:
 					os.rename(name, name + ".tmp")
 				except Exception as error:
-					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3 )
 				else:
 					fi = open(name + ".tmp" ,"rt")
 					fo = open(name, "wt")
@@ -943,7 +943,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 						for line in fi:
 							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
 					except Exception as error:
-						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3 )
 						target = name
 					else:
 						target = name + ".orig"
@@ -973,7 +973,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			copytext = _("Copy folder") + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
 
-	def doCopy(self, result = True):
+	def doCopy(self, result=True):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1002,7 +1002,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			deltext = _("Delete folder")
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-	def doDelete(self, result = False):
+	def doDelete(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1035,7 +1035,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			movetext = _("Move folder") + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def doMove(self, result = False):
+	def doMove(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1169,7 +1169,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			return
 		self.session.openWithCallback(self.domakeSymlink, MessageBox, movetext + " %s in %s" % (filename, targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def domakeSymlink(self, result = False):
+	def domakeSymlink(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1370,7 +1370,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		}, -2)
 		self.list = []
 		self.onChangedEntry = []
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 		self.loadMenu()
 		self.onLayoutFinish.append(self.onLayout)
 
@@ -1605,9 +1605,9 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			elif cfg.search.value == "end" and endlength:
 				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
 				txt += 10*" " + "%s" % endlength
-		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title = txt, text = name)
+		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title=txt, text=name)
 
-	def changeItems(self, mark, searchString = None):
+	def changeItems(self, mark, searchString=None):
 		if searchString:
 			searchString = searchString.decode('UTF-8', 'replace')
 			if not cfg.sensitive.value:
@@ -1751,7 +1751,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		deltext = ngettext("Delete %d element" ,"Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-	def doDelete(self, result = False):
+	def doDelete(self, result=False):
 		if result:
 			for file in self.delete_files:
 				print 'delete:', file
@@ -1786,7 +1786,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		movetext = ngettext("Move %d element" ,"Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def doMove(self, result = False):
+	def doMove(self, result=False):
 		if result:
 			self.exit(self.move_jobs, self.move_updateDirs)
 
@@ -1822,7 +1822,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
 
-	def doCopy(self, result = False):
+	def doCopy(self, result=False):
 		if result:
 			self.exit(self.copy_jobs, self.copy_updateDirs)
 

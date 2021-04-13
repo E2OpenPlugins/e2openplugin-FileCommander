@@ -107,7 +107,7 @@ class FileList(FileListBase):
 
 		FileListBase.__init__(self, directory, showDirectories=showDirectories, showFiles=showFiles, showMountpoints=showMountpoints, matchingPattern=matchingPattern, useServiceRef=useServiceRef, inhibitDirs=inhibitDirs, inhibitMounts=inhibitMounts, isTop=isTop, enableWrapAround=enableWrapAround, additionalExtensions=additionalExtensions)
 
-	def setSortBy(self, sortBy, setDir = False):
+	def setSortBy(self, sortBy, setDir=False):
 		#0.0
 		#| 0 - normal
 		#| 1 - reverse
@@ -310,7 +310,7 @@ class MultiFileSelectList(FileList):
 	def deselectAllSelection(self):
 		self.setAllSelection(False)
 
-	def setAllSelection(self, select = False): # select all (True) or deselect all (False)
+	def setAllSelection(self, select=False): # select all (True) or deselect all (False)
 		for idx,x in enumerate(self.list):
 			if x[0][4].startswith('<'):
 				self.list[idx] = x
@@ -355,7 +355,7 @@ class MultiFileSelectList(FileList):
 		self.l.setList(self.list)
 
 	# Note: 0 - absolute path 1 = isDir 2 - isLink 3 - selected 4 - name
-	def toggleItemSelection(self, item, singleItem = False):
+	def toggleItemSelection(self, item, singleItem=False):
 		for idx, x in enumerate(self.list):
 			if x[0][0:3] == item[0][0:3]:
 				if x[0][4].startswith('<'):
@@ -384,7 +384,7 @@ class MultiFileSelectList(FileList):
 		item = self.l.getCurrentSelection()
 		if item:
 			# note: singleItem set as True ... manually must be directory selectable/deselectable
-			self.toggleItemSelection(item, singleItem = True)
+			self.toggleItemSelection(item, singleItem=True)
 
 	def getSelectedList(self):
 		return self.selectedFiles

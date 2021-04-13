@@ -253,7 +253,7 @@ class key_actions(stat_info):
 			os.system("chmod 755 " + self.longname)
 		self.doRefresh()
 
-	def dirContentSize(self, directory, humanized = True):
+	def dirContentSize(self, directory, humanized=True):
 		size = 0
 		for dirpath, dirnames, filenames in os.walk(directory):
 			for f in filenames:
@@ -746,7 +746,7 @@ class key_actions(stat_info):
 			if not found_viewer:
 				self.session.open(MessageBox, _("No viewer installed for this file type: %s") % filename, type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True, simple=True)
 
-	def mviFileCB(self, ret = None):
+	def mviFileCB(self, ret=None):
 		if ret and ret != 'no':
 			global last_service
 			last_service = self.session.nav.getCurrentlyPlayingServiceReference()

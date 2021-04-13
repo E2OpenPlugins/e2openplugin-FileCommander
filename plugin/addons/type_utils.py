@@ -201,7 +201,7 @@ class vEditor(Screen, HelpableScreen):
 				except:
 					return 100 # default value, if missing label "InputBoxWide_input" in vEditor skin
 
-			length = getMaxPosition(editableText, self["InputBoxWide_input"], end = firstpos_end) - 1
+			length = getMaxPosition(editableText, self["InputBoxWide_input"], end=firstpos_end) - 1
 
 			self.session.openWithCallback(self.callbackEditLine, InputBoxWide, title="%s %s" % (_("Original:"), editableText), visible_width=length, overwrite=False, firstpos_end=firstpos_end, allmarked=False, windowTitle=_("Edit line ") + str(self.selLine + 1), text=editableText)
 		except:
