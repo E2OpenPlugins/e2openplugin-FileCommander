@@ -14,6 +14,7 @@ from Components.Task import job_manager
 # for locale (gettext)
 from . import _
 
+
 class TaskListScreen(Screen):
 	skin = """
 		<screen name="TaskListScreen" position="center,center" size="720,600" title="Task list" >

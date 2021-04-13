@@ -9,6 +9,7 @@ from Components.Label import Label
 # for locale (gettext)
 from . import _
 
+
 class Console(Screen):
 
 	# cmdlist mat be a mixed list or tuple of strings

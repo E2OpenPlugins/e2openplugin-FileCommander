@@ -67,11 +67,14 @@ pvers = "%s%s" % (_("v"), "2.10")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
+
 def _make_filter(media_type):
 	return "(?i)^.*\.(" + '|'.join(sorted((ext for ext, type in EXTENSIONS.iteritems() if type == media_type))) + ")$"
 
+
 def _make_rec_filter():
 	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+
 
 FULLHD = False
 if getDesktop(0).size().width() >= 1920:
@@ -158,6 +161,8 @@ cfg = config.plugins.filecommander
 # ####################
 # ## Config Screen ###
 # ####################
+
+
 class Setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
@@ -251,6 +256,7 @@ class Setup(ConfigListScreen, Screen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 def formatSortingTyp(sortDirs, sortFiles):
 	sortDirs, reverseDirs = [int(x) for x in sortDirs.split('.')]
 	sortFiles, reverseFiles = [int(x) for x in sortFiles.split('.')]
@@ -259,6 +265,7 @@ def formatSortingTyp(sortDirs, sortFiles):
 	rD = ('+', '-')[reverseDirs] #normal, reverse
 	rF = ('+', '-')[reverseFiles]
 	return _('[D]%s%s[F]%s%s') % (sD, rD, sF, rF)
+
 
 def cutLargePath(path, label):
 	def getStringSize(string, label):
@@ -285,6 +292,7 @@ def cutLargePath(path, label):
 				return '%s%s' % (prefix, lcutstr)
 	return path
 
+
 def freeDiskSpace(path):
 	try:
 		fs = os.statvfs(path)
@@ -305,6 +313,7 @@ def freeDiskSpace(path):
 ###################
 
 glob_running = False
+
 
 class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	if FULLHD:
@@ -1349,6 +1358,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 # ####################
 # ## Config MultiSelectionScreen ###
 # ####################
+
+
 class MultiSelectionSetup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
@@ -1395,6 +1406,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		if self["config"].getCurrent():
 			if self["config"].getCurrent()[0] == self.search:
 				self.loadMenu()
+
 	def getCurrentEntry(self):
 		x = self["config"].getCurrent()
 		if x:
@@ -1417,10 +1429,14 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 # ## Select Screen ###
 #####################
 
+
 def NAME(item):
 	return item[0][4]
+
+
 def SELECTED(item):
 	return item[0][3]
+
 
 class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def __init__(self, session, parent, leftactive, selectedid):
@@ -1582,6 +1598,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def selectGroup(self, mark=True):
 		if self.ACTIVELIST != self.SOURCELIST:
 			return
+
 		def getSubstring(value):
 			if value == "begin":
 				return _("starts with...")
@@ -1710,6 +1727,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 
 # ## new folder in !Target! ###
+
+
 	def gomakeDir(self):
 		filename = self.TARGETLIST.getFilename()
 		sourceDir = self.TARGETLIST.getCurrentDirectory()
@@ -1821,7 +1840,6 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		copytext = ngettext("Copy %d element", "Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-
 	def doCopy(self, result=False):
 		if result:
 			self.exit(self.copy_jobs, self.copy_updateDirs)
@@ -1898,6 +1916,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					extension = os.path.splitext(movie)[1]
 				if extension in ALL_MOVIE_EXTENSIONS and movie in self.selectedFiles:
 					self.selectedFiles.remove(file)
+
 
 class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 	skin = """

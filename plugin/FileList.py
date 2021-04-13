@@ -41,6 +41,7 @@ EXTENSIONS.update(LOCAL_EXTENSIONS)
 
 imagePath = resolveFilename(SCOPE_PLUGINS, base="Extensions/FileCommander/images/")
 
+
 def getPNGByExt(name):
 	basename, ext = os.path.splitext(name)
 	if ext.startswith('.'):
@@ -56,6 +57,7 @@ def getPNGByExt(name):
 		return LoadPixmap(path=os.path.join(imagePath, EXTENSIONS[ext]) + ".png")
 	else:
 		return LoadPixmap(path=os.path.join(imagePath, "file.png"))
+
 
 def FileEntryComponent(name, absolute=None, isDir=False, isLink=False):
 	res = [(absolute, isDir, isLink)]
@@ -80,6 +82,7 @@ def FileEntryComponent(name, absolute=None, isDir=False, isLink=False):
 
 	return res
 
+
 def getSortedList(list, sortBy, dir=''):
 	sort, reverse = [int(x) for x in sortBy.split('.')]
 	tmplist = []
@@ -95,6 +98,7 @@ def getSortedList(list, sortBy, dir=''):
 	for x in tmplist:
 		list.append(x[0])
 	return list
+
 
 class FileList(FileListBase):
 	def __init__(self, directory, showDirectories=True, showFiles=True, showMountpoints=True, matchingPattern=None, useServiceRef=False, inhibitDirs=False, inhibitMounts=False, isTop=False, enableWrapAround=True, additionalExtensions=None, sortDirs='0.0', sortFiles='0.0', firstDirs=True):
@@ -254,6 +258,7 @@ class FileList(FileListBase):
 		idx = self.l.getCurrentSelectionIndex()
 		return idx
 
+
 def MultiFileSelectEntryComponent(name, absolute=None, isDir=False, isLink=False, selected=False):
 	res = [(absolute, isDir, isLink, selected, name)]
 	x, y, w, h = skin.parameters.get("FcFileListMultiName", (55, 1, 1175, 25))
@@ -289,6 +294,7 @@ def MultiFileSelectEntryComponent(name, absolute=None, isDir=False, isLink=False
 				icon = LoadPixmap(path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, icon, None, None, BT_SCALE))
 	return res
+
 
 class MultiFileSelectList(FileList):
 	def __init__(self, preselectedFiles, directory, showMountpoints=False, matchingPattern=None, showDirectories=True, showFiles=True, useServiceRef=False, inhibitDirs=False, inhibitMounts=False, isTop=False, enableWrapAround=True, additionalExtensions=None, sortDirs='0.0', sortFiles='0.0', firstDirs=True):
