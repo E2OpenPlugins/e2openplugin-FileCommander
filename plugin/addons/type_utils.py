@@ -40,6 +40,7 @@ pversion = "1.0-r0"
 
 # ### play with movieplayer ###
 
+
 class MoviePlayer(Movie_Audio_Player):
 	def __init__(self, session, service):
 		self.session = session
@@ -72,6 +73,7 @@ class MoviePlayer(Movie_Audio_Player):
 			self.session.nav.playService(self.lastservice)
 
 # ### File viewer/line editor ###
+
 
 class vEditor(Screen, HelpableScreen):
 
@@ -185,14 +187,14 @@ class vEditor(Screen, HelpableScreen):
 					if sw > w:
 						if end: # editation from end
 							l = len(text)
-							for i,idx in enumerate(text):
-								x = text[l-i:]
+							for i, idx in enumerate(text):
+								x = text[l - i:]
 								print x
 								if getStringSize(x, label) >= w:
 									return i
 							return i
 						else:	# standard editation
-							for i,idx in enumerate(text):
+							for i, idx in enumerate(text):
 								x = text[:i]
 								if getStringSize(x, label) >= w:
 									return i
@@ -201,7 +203,7 @@ class vEditor(Screen, HelpableScreen):
 				except:
 					return 100 # default value, if missing label "InputBoxWide_input" in vEditor skin
 
-			length = getMaxPosition(editableText, self["InputBoxWide_input"], end = firstpos_end) - 1
+			length = getMaxPosition(editableText, self["InputBoxWide_input"], end=firstpos_end) - 1
 
 			self.session.openWithCallback(self.callbackEditLine, InputBoxWide, title="%s %s" % (_("Original:"), editableText), visible_width=length, overwrite=False, firstpos_end=firstpos_end, allmarked=False, windowTitle=_("Edit line ") + str(self.selLine + 1), text=editableText)
 		except:
@@ -275,6 +277,7 @@ class vEditor(Screen, HelpableScreen):
 			self.close()
 		else:
 			self.close()
+
 
 class ImageViewer(Screen, HelpableScreen):
 	s, w, h = 30, getDesktop(0).size().width(), getDesktop(0).size().height()

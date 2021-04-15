@@ -63,15 +63,18 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"),"2.10")
+pvers = "%s%s" % (_("v"), "2.10")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
+
 
 def _make_filter(media_type):
 	return "(?i)^.*\.(" + '|'.join(sorted((ext for ext, type in EXTENSIONS.iteritems() if type == media_type))) + ")$"
 
+
 def _make_rec_filter():
-	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext  for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+
 
 FULLHD = False
 if getDesktop(0).size().width() >= 1920:
@@ -105,7 +108,7 @@ config.plugins.filecommander.script_messagelen = ConfigSelectionNumber(default=3
 config.plugins.filecommander.script_priority_nice = ConfigSelectionNumber(default=0, stepwidth=1, min=0, max=19, wraparound=True)
 config.plugins.filecommander.script_priority_ionice = ConfigSelectionNumber(default=0, stepwidth=3, min=0, max=3, wraparound=True)
 config.plugins.filecommander.unknown_extension_as_text = ConfigYesNo(default=False)
-config.plugins.filecommander.sortDirs = ConfigSelection(default = "0.0", choices = [
+config.plugins.filecommander.sortDirs = ConfigSelection(default="0.0", choices=[
 				("0.0", _("Name")),
 				("0.1", _("Name reverse")),
 				("1.0", _("Date")),
@@ -115,10 +118,10 @@ choicelist = [
 				("0.1", _("Name reverse")),
 				("1.0", _("Date")),
 				("1.1", _("Date reverse")),
-				("2.0", _("Size")), 
+				("2.0", _("Size")),
 				("2.1", _("Size reverse"))]
-config.plugins.filecommander.sortFiles_left = ConfigSelection(default = "1.1", choices = choicelist)
-config.plugins.filecommander.sortFiles_right = ConfigSelection(default = "1.1", choices = choicelist)
+config.plugins.filecommander.sortFiles_left = ConfigSelection(default="1.1", choices=choicelist)
+config.plugins.filecommander.sortFiles_right = ConfigSelection(default="1.1", choices=choicelist)
 config.plugins.filecommander.firstDirs = ConfigYesNo(default=True)
 config.plugins.filecommander.path_left_selected = ConfigYesNo(default=True)
 config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
@@ -128,8 +131,8 @@ config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), defau
 config.plugins.filecommander.bookmarks = ConfigLocations()
 config.plugins.filecommander.fake_entry = NoSave(ConfigNothing())
 
-tmpLeft = '%s,%s' %(config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_left.value)
-tmpRight = '%s,%s' %(config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_right.value)
+tmpLeft = '%s,%s' % (config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_left.value)
+tmpRight = '%s,%s' % (config.plugins.filecommander.sortDirs.value, config.plugins.filecommander.sortFiles_right.value)
 config.plugins.filecommander.sortingLeft_tmp = NoSave(ConfigText(default=tmpLeft))
 config.plugins.filecommander.sortingRight_tmp = NoSave(ConfigText(default=tmpRight))
 config.plugins.filecommander.path_left_tmp = NoSave(ConfigText(default=config.plugins.filecommander.path_left.value))
@@ -138,17 +141,17 @@ config.plugins.filecommander.path_right_tmp = NoSave(ConfigText(default=config.p
 config.plugins.filecommander.dir_size = ConfigYesNo(default=False)
 config.plugins.filecommander.dir_sizewalk = NoSave(ConfigYesNo(default=False))
 config.plugins.filecommander.sensitive = ConfigYesNo(default=False)
-config.plugins.filecommander.search = ConfigSelection(default = "begin", choices = [("begin", _("start title")), ("end", _("end title")),("in", _("contains in title"))])
+config.plugins.filecommander.search = ConfigSelection(default="begin", choices=[("begin", _("start title")), ("end", _("end title")), ("in", _("contains in title"))])
 choicelist = []
 for i in range(1, 11, 1):
 	choicelist.append(("%d" % i))
-choicelist.append(("15","15"))
-choicelist.append(("20","20"))
-config.plugins.filecommander.length = ConfigSelection(default = "3", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
-config.plugins.filecommander.endlength = ConfigSelection(default = "4", choices = [("0", _("No"))] + choicelist + [("255", _("All"))])
+choicelist.append(("15", "15"))
+choicelist.append(("20", "20"))
+config.plugins.filecommander.length = ConfigSelection(default="3", choices=[("0", _("No"))] + choicelist + [("255", _("All"))])
+config.plugins.filecommander.endlength = ConfigSelection(default="4", choices=[("0", _("No"))] + choicelist + [("255", _("All"))])
 config.plugins.filecommander.toggle_stop_pause = ConfigYesNo(default=False)
 codepages = []
-for i in range(1250,1259,1):
+for i in range(1250, 1259, 1):
 	codepages.append(("%s" % i, "CP%s" % i))
 config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
 config.plugins.filecommander.filename_header = ConfigYesNo(default=True)
@@ -158,11 +161,13 @@ cfg = config.plugins.filecommander
 # ####################
 # ## Config Screen ###
 # ####################
+
+
 class Setup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		self.skinName=["FileCommanderSetup","Setup"]
+		self.skinName = ["FileCommanderSetup", "Setup"]
 
 		self["help"] = Label(_("Select your personal settings:"))
 		self["description"] = Label()
@@ -194,14 +199,14 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("My extension"), cfg.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), cfg.extension, _("Filter visible file classes by extension.")))
 		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for Info.")))
-		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"),cfg.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
+		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"), cfg.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), cfg.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), cfg.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("File checksums/hashes"), cfg.hashes, _("Calculates file checksums.")))
 		self.list.append(getConfigListEntry(_("Time for Slideshow"), cfg.diashow, _("Time between slides in image viewer slideshow.")))
 		self.list.append(getConfigListEntry(_("Original subtitles codepage"), cfg.cp, _("Original subtitles codepage for conversion to UTF-8.")))
 
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
@@ -219,7 +224,7 @@ class Setup(ConfigListScreen, Screen):
 		self.setTitle("%s %s - %s" % (pname, pvers, _("Settings")))
 
 	def getCurrentEntry(self):
-		x =  self["config"].getCurrent()
+		x = self["config"].getCurrent()
 		if x:
 			text = x[2] if len(x) == 3 else ""
 			self["description"].setText(text)
@@ -231,7 +236,7 @@ class Setup(ConfigListScreen, Screen):
 	def pathSelected(self, res):
 		if res is not None:
 			cfg.path_default.value = res
-		
+
 	def save(self):
 		print "[FileCommander]: Settings saved"
 		for x in self["config"].list:
@@ -251,14 +256,16 @@ class Setup(ConfigListScreen, Screen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 def formatSortingTyp(sortDirs, sortFiles):
 	sortDirs, reverseDirs = [int(x) for x in sortDirs.split('.')]
 	sortFiles, reverseFiles = [int(x) for x in sortFiles.split('.')]
-	sD = (_('n'),_('d'),_('s'))[sortDirs] #name, date, size
-	sF = (_('n'),_('d'),_('s'))[sortFiles]
-	rD = ('+','-')[reverseDirs] #normal, reverse
-	rF = ('+','-')[reverseFiles]
-	return _('[D]%s%s[F]%s%s') % (sD,rD,sF,rF)
+	sD = (_('n'), _('d'), _('s'))[sortDirs] #name, date, size
+	sF = (_('n'), _('d'), _('s'))[sortFiles]
+	rD = ('+', '-')[reverseDirs] #normal, reverse
+	rF = ('+', '-')[reverseFiles]
+	return _('[D]%s%s[F]%s%s') % (sD, rD, sF, rF)
+
 
 def cutLargePath(path, label):
 	def getStringSize(string, label):
@@ -271,19 +278,20 @@ def cutLargePath(path, label):
 	path_w = getStringSize(path, label)	# text width
 	if path_w > w:
 		path = path.split('/')
-		for i,idx in enumerate(path):
-			x = "/"+ (i-1)*".../" + '/'.join((path[i:]))
+		for i, idx in enumerate(path):
+			x = "/" + (i - 1) * ".../" + '/'.join((path[i:]))
 			if getStringSize(x, label) <= w:
 				return x
-		prefix = "%s..." % ((i-1)*".../")
-		prefix_w = getStringSize(prefix , label)
-		lastpath = path[len(path)-1]
-		for j,idx in enumerate(lastpath):
+		prefix = "%s..." % ((i - 1) * ".../")
+		prefix_w = getStringSize(prefix, label)
+		lastpath = path[len(path) - 1]
+		for j, idx in enumerate(lastpath):
 			lcutstr = lastpath[j:]
 			lcutstr_w = getStringSize(lcutstr, label)
 			if lcutstr_w < (w - prefix_w):
 				return '%s%s' % (prefix, lcutstr)
 	return path
+
 
 def freeDiskSpace(path):
 	try:
@@ -305,6 +313,7 @@ def freeDiskSpace(path):
 ###################
 
 glob_running = False
+
 
 class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 	if FULLHD:
@@ -431,10 +440,10 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		# set filter
 		filter = self.fileFilter()
-		
+
 		# disable actions
 		self.disableActions_Timer = eTimer()
-		
+
 		self.jobs = 0
 		self.jobs_old = 0
 
@@ -461,8 +470,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		self["list_left"] = FileList(path_left, matchingPattern=filter, sortDirs=sortDirs, sortFiles=sortFilesLeft, firstDirs=firstDirs)
 		self["list_right"] = FileList(path_right, matchingPattern=filter, sortDirs=sortDirs, sortFiles=sortFilesRight, firstDirs=firstDirs)
 
-		sortLeft = formatSortingTyp(sortDirs,sortFilesLeft)
-		sortRight = formatSortingTyp(sortDirs,sortFilesRight)
+		sortLeft = formatSortingTyp(sortDirs, sortFilesLeft)
+		sortRight = formatSortingTyp(sortDirs, sortFilesRight)
 		self["sort_left"] = Label(sortLeft)
 		self["sort_right"] = Label(sortRight)
 
@@ -516,7 +525,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		self.walkdirflag = ''
 		self.onLayoutFinish.append(self.listLeftStart if cfg.path_left_selected.value else self.listRightStart)
-		
+
 		self.checkJobs_Timer = eTimer()
 		self.checkJobs_Timer.callback.append(self.checkJobs_TimerCB)
 		#self.onLayoutFinish.append(self.onLayout)
@@ -536,7 +545,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			filtered = "(*)"
 
 		if self.jobs or self.jobs_old:
-			jobs = ngettext("(%d job)", "(%d jobs)", (self.jobs+self.jobs_old)) % (self.jobs+self.jobs_old)
+			jobs = ngettext("(%d job)", "(%d jobs)", (self.jobs + self.jobs_old)) % (self.jobs + self.jobs_old)
 		else:
 			jobs = ""
 		self.setTitle(pname + " " + filtered + " " + jobs)
@@ -612,28 +621,28 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 		menu = []
 		menu.append((_("Rename file/directory"), self.goBlue))
-		keys=["2"]
+		keys = ["2"]
 		if isFile:
 			menu.append((_("View or edit file (if size < 1MB)"), self.file_viewer))		#3
-			keys+=["3"]
+			keys += ["3"]
 		menu.append((_("Copy file/directory to target directory"), self.goYellow))		#5
 		menu.append((_("Move file/directory to target directory"), self.goGreen))		#6
 		menu.append((_("Create directory"), self.gomakeDir))					#7
 		menu.append((_("Delete file or directory (and all its contents)"), self.goRed))		#8
 		menu.append((_("File/Directory Status Information"), self.gofileStatInfo))		#info
 		menu.append((_("Enter multi-file selection mode"), self.listSelect))			#green
-		menu.append((_("Refresh screen"),self.doRefresh))					#0
+		menu.append((_("Refresh screen"), self.doRefresh))					#0
 		menu.append((_("Show task list"), self.openTasklist))					#red
-		keys+=["5", "6", "7", "8", "info", "green", "0", "red"]
+		keys += ["5", "6", "7", "8", "info", "green", "0", "red"]
 		if isFile:
 			menu.append((_("Calculate file checksums"), self.run_hashes))
-			keys+=[""]
+			keys += [""]
 		if isFile:
 			menu.append((_("Change execute permissions (755/644)"), self.call_change_mode))
-			keys+=[""]
+			keys += [""]
 		if isFile and filename[-4:] in (".srt", ".sub"):
 			menu.append((_("Convert subtitles from '%s' to UTF-8") % cfg.cp(cfg.cp.value)[1], self.convertSubtitles))
-			keys+=[""]
+			keys += [""]
 		menu.append((_("Edit new file"), self.gomakeFile))					#
 		menu.append((_("Create user-named symbolic link"), self.gomakeSym))			#
 		menu.append((_("Go to parent directory"), self.goParentfolder))				#
@@ -642,7 +651,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))				#
 		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))		#menu
 		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))			#blue
-		keys+=["", "", "", "yellow", "", "", "menu", "blue"]
+		keys += ["", "", "", "yellow", "", "", "menu", "blue"]
 
 		item = self.help_uninstall_file()
 		if item:
@@ -662,7 +671,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			menu.append((dirname in cfg.bookmarks.value and _("Remove current folder from bookmarks") or _("Add current folder to bookmarks"), boundFunction(self.goBookmark, True)))
 			keys += ["bullet"]
 
-		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key == "" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
 		if choice is None:
@@ -812,7 +821,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		for job in job_manager.getPendingJobs():
 			#self.tasklist.append((job, job.name, job.getStatustext(), int(100 * job.progress / float(job.end)), str(100 * job.progress / float(job.end)) + "%"))
 			progress = job.getProgress()
-			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
+			self.tasklist.append((job, job.name, job.getStatustext(), progress, str(progress) + " %"))
 		self.session.open(TaskListScreen, self.tasklist)
 
 	def addJob(self, job, updateDirs):
@@ -870,7 +879,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			#else:
 			Notifications.AddNotification(MessageBox, message, type=messageboxtyp, timeout=timeout, simple=True)
 
-	def setSort(self, list, setDirs = False):
+	def setSort(self, list, setDirs=False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
 		if setDirs:
 			sort, reverse = [int(x) for x in sortDirs.split('.')]
@@ -882,9 +891,9 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			sort += 1
 			if sort > 2:
 				sort = 0
-		return '%d.%d' %(sort, reverse)
+		return '%d.%d' % (sort, reverse)
 
-	def setReverse(self, list, setDirs = False):
+	def setReverse(self, list, setDirs=False):
 		sortDirs, sortFiles = list.getSortBy().split(',')
 		if setDirs:
 			sort, reverse = [int(x) for x in sortDirs.split('.')]
@@ -893,7 +902,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		reverse += 1
 		if reverse > 1:
 			reverse = 0
-		return '%d.%d' %(sort, reverse)
+		return '%d.%d' % (sort, reverse)
 
 # ## sorting files left ###
 	def goRedLong(self):
@@ -935,15 +944,15 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				try:
 					os.rename(name, name + ".tmp")
 				except Exception as error:
-					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3)
 				else:
-					fi = open(name + ".tmp" ,"rt")
+					fi = open(name + ".tmp", "rt")
 					fo = open(name, "wt")
 					try:
 						for line in fi:
 							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
 					except Exception as error:
-						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout = 3 )
+						self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3)
 						target = name
 					else:
 						target = name + ".orig"
@@ -973,7 +982,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			copytext = _("Copy folder") + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), default=True, simple=True)
 
-	def doCopy(self, result = True):
+	def doCopy(self, result=True):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1002,7 +1011,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			deltext = _("Delete folder")
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-	def doDelete(self, result = False):
+	def doDelete(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1035,7 +1044,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			movetext = _("Move folder") + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename.rstrip('/').split('/')[-1], _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def doMove(self, result = False):
+	def doMove(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1169,7 +1178,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 			return
 		self.session.openWithCallback(self.domakeSymlink, MessageBox, movetext + " %s in %s" % (filename, targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def domakeSymlink(self, result = False):
+	def domakeSymlink(self, result=False):
 		if result:
 			filename = self.SOURCELIST.getFilename()
 			sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -1349,12 +1358,14 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 # ####################
 # ## Config MultiSelectionScreen ###
 # ####################
+
+
 class MultiSelectionSetup(ConfigListScreen, Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
 
-		self.skinName=["FileCommanderSetup","Setup"]
+		self.skinName = ["FileCommanderSetup", "Setup"]
 
 #		self["help"] = Label(_("Select your personal settings:"))
 		self["description"] = Label()
@@ -1370,7 +1381,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		}, -2)
 		self.list = []
 		self.onChangedEntry = []
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 		self.loadMenu()
 		self.onLayoutFinish.append(self.onLayout)
 
@@ -1395,14 +1406,15 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		if self["config"].getCurrent():
 			if self["config"].getCurrent()[0] == self.search:
 				self.loadMenu()
+
 	def getCurrentEntry(self):
-		x =  self["config"].getCurrent()
+		x = self["config"].getCurrent()
 		if x:
 			text = x[2] if len(x) == 3 else ""
 			self["description"].setText(text)
 
 	def onLayout(self):
-		self.setTitle(pname+" - "+_("MultiSelection Settings"))
+		self.setTitle(pname + " - " + _("MultiSelection Settings"))
 
 	def ok(self):
 		self.save()
@@ -1417,17 +1429,21 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 # ## Select Screen ###
 #####################
 
+
 def NAME(item):
 	return item[0][4]
+
+
 def SELECTED(item):
 	return item[0][3]
+
 
 class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def __init__(self, session, parent, leftactive, selectedid):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
 
-		self.skin=FileCommanderScreen.skin
+		self.skin = FileCommanderScreen.skin
 
 		self.parent = parent
 		self.selectedFiles = []
@@ -1441,8 +1457,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		sortDirsRight, sortFilesRight = cfg.sortingRight_tmp.value.split(',')
 		firstDirs = cfg.firstDirs.value
 
-		sortLeft = formatSortingTyp(sortDirsLeft,sortFilesLeft)
-		sortRight = formatSortingTyp(sortDirsRight,sortFilesRight)
+		sortLeft = formatSortingTyp(sortDirsLeft, sortFilesLeft)
+		sortRight = formatSortingTyp(sortDirsRight, sortFilesRight)
 		self["sort_left"] = Label(sortLeft)
 		self["sort_right"] = Label(sortRight)
 
@@ -1565,8 +1581,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		menu.append((_("Create directory in 'Target' panel"), self.gomakeDir))							#7
 		menu.append((_("Invert Selection"), self.invertSelection))								#blue
 		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.runBacktoMenu, MultiSelectionSetup)))	#menu
-		keys=["2", "5", "", "", "7", "blue", "menu"]
-		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key=="" else key for key in keys], skin_name="ChoiceBox")
+		keys = ["2", "5", "", "", "7", "blue", "menu"]
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=["dummy" if key == "" else key for key in keys], skin_name="ChoiceBox")
 
 	def menuCallback(self, choice):
 		if choice is None:
@@ -1582,6 +1598,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 	def selectGroup(self, mark=True):
 		if self.ACTIVELIST != self.SOURCELIST:
 			return
+
 		def getSubstring(value):
 			if value == "begin":
 				return _("starts with...")
@@ -1592,7 +1609,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		if mark:
 			txt = _("Add to selection (%s)") % getSubstring(cfg.search.value)
 		else:
-			txt = _("Remove from selection (%s)")  % getSubstring(cfg.search.value)
+			txt = _("Remove from selection (%s)") % getSubstring(cfg.search.value)
 
 		item = self.SOURCELIST.l.getCurrentSelection()
 		length = int(cfg.length.value)
@@ -1601,13 +1618,13 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		if item:
 			if cfg.search.value == "begin" and length:
 				name = NAME(item).decode('UTF-8', 'replace')[0:length]
-				txt += 10*" " + "%s" % length
+				txt += 10 * " " + "%s" % length
 			elif cfg.search.value == "end" and endlength:
 				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
-				txt += 10*" " + "%s" % endlength
-		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title = txt, text = name)
+				txt += 10 * " " + "%s" % endlength
+		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title=txt, text=name)
 
-	def changeItems(self, mark, searchString = None):
+	def changeItems(self, mark, searchString=None):
 		if searchString:
 			searchString = searchString.decode('UTF-8', 'replace')
 			if not cfg.sensitive.value:
@@ -1619,14 +1636,14 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString)== -1 else True
+						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString) == -1 else True
 				else:
 					if cfg.search.value == "begin":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().startswith(searchString)
 					elif cfg.search.value == "end":
 						exist = NAME(item).decode('UTF-8', 'replace').lower().endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString)== -1 else True
+						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString) == -1 else True
 				if exist:
 					if mark:
 						if not SELECTED(item):
@@ -1693,7 +1710,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		for job in job_manager.getPendingJobs():
 			#self.tasklist.append((job, job.name, job.getStatustext(), int(100 * job.progress / float(job.end)), str(100 * job.progress / float(job.end)) + "%"))
 			progress = job.getProgress()
-			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
+			self.tasklist.append((job, job.name, job.getStatustext(), progress, str(progress) + " %"))
 		self.session.open(TaskListScreen, self.tasklist)
 
 	def dirSizeWalk(self):
@@ -1710,6 +1727,8 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 
 
 # ## new folder in !Target! ###
+
+
 	def gomakeDir(self):
 		filename = self.TARGETLIST.getFilename()
 		sourceDir = self.TARGETLIST.getCurrentDirectory()
@@ -1748,10 +1767,10 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.delete_dirs.append(file)
 			else:
 				self.delete_files.append(file)
-		deltext = ngettext("Delete %d element" ,"Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
+		deltext = ngettext("Delete %d element", "Delete %d elements", len(self.selectedFiles)) % len(self.selectedFiles)
 		self.session.openWithCallback(self.doDelete, MessageBox, deltext + "?\n\n%s\n\n%s\n%s" % (filename, _("from dir"), sourceDir), type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-	def doDelete(self, result = False):
+	def doDelete(self, result=False):
 		if result:
 			for file in self.delete_files:
 				print 'delete:', file
@@ -1782,11 +1801,11 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 			if dst_file.endswith("/") and dst_file != "/":
 				targetDir = dst_file[:-1]
 			self.move_jobs.append(FileTransferJob(file, targetDir, False, False, "%s : %s" % (_("move file"), file)))
-		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
-		movetext = ngettext("Move %d element" ,"Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
+		warntxt = ngettext(" - %d element exist! Overwrite", " - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
+		movetext = ngettext("Move %d element", "Move %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doMove, MessageBox, movetext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-	def doMove(self, result = False):
+	def doMove(self, result=False):
 		if result:
 			self.exit(self.move_jobs, self.move_updateDirs)
 
@@ -1817,12 +1836,11 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				self.copy_jobs.append(FileTransferJob(file, targetDir, True, True, "%s : %s" % (_("copy folder"), file)))
 			else:
 				self.copy_jobs.append(FileTransferJob(file, targetDir, False, True, "%s : %s" % (_("copy file"), file)))
-		warntxt = ngettext(" - %d element exist! Overwrite" ," - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
-		copytext = ngettext("Copy %d element" ,"Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
+		warntxt = ngettext(" - %d element exist! Overwrite", " - %d elements exist! Overwrite", warncnt) % warncnt if warncnt else ''
+		copytext = ngettext("Copy %d element", "Copy %d elements", len(self.selectedFiles)) % len(self.selectedFiles) + warntxt
 		self.session.openWithCallback(self.doCopy, MessageBox, copytext + "?\n\n%s\n\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir), type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-
-	def doCopy(self, result = False):
+	def doCopy(self, result=False):
 		if result:
 			self.exit(self.copy_jobs, self.copy_updateDirs)
 
@@ -1899,6 +1917,7 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 				if extension in ALL_MOVIE_EXTENSIONS and movie in self.selectedFiles:
 					self.selectedFiles.remove(file)
 
+
 class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 	skin = """
 		<screen name="FileCommanderFileStatInfo" position="center,center" size="545,370" title="File/Directory Status Information">
@@ -1938,7 +1957,7 @@ class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 		self["link_sep"].hide()
 
 		self["actions"] = ActionMap(
-			["SetupActions", "DirectionActions","EPGSelectActions"],
+			["SetupActions", "DirectionActions", "EPGSelectActions"],
 			{
 				"cancel": self.close,
 				"ok": self.close,
@@ -1996,7 +2015,7 @@ class FileCommanderFileStatInfo(Screen, key_actions, stat_info):
 		self.list.append((_("Type:"), self.filetypeStr(mode)))
 		self.list.append((_("Owner:"), "%s (%d)" % (self.username(st.st_uid), st.st_uid)))
 		self.list.append((_("Group:"), "%s (%d)" % (self.groupname(st.st_gid), st.st_gid)))
-		self.list.append((_("Permissions:"), _("%s (%04o)") % ( self.fileModeStr(perms), perms)))
+		self.list.append((_("Permissions:"), _("%s (%04o)") % (self.fileModeStr(perms), perms)))
 		if not (stat.S_ISCHR(mode) or stat.S_ISBLK(mode)):
 			self.list.append((_("Size:"), "%s (%sB)" % ("{:n}".format(st.st_size), ' '.join(self.SIZESCALER.scale(st.st_size)))))
 		self.list.append((_("Modified:"), self.formatTime(st.st_mtime)))

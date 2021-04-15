@@ -14,6 +14,7 @@ from Components.Task import job_manager
 # for locale (gettext)
 from . import _
 
+
 class TaskListScreen(Screen):
 	skin = """
 		<screen name="TaskListScreen" position="center,center" size="720,600" title="Task list" >
@@ -76,7 +77,7 @@ class TaskListScreen(Screen):
 					job.tasks[job.current_task].setProgress(51)
 				else:
 					job.tasks[job.current_task].setProgress(progress + 1)
-			self.tasklist.append((job,job.name,job.getStatustext(),progress,str(progress) + " %" ))
+			self.tasklist.append((job, job.name, job.getStatustext(), progress, str(progress) + " %"))
 		self['tasklist'].setList(self.tasklist)
 		self['tasklist'].updateList(self.tasklist)
 		self['tasklist'].setIndex(idx)
@@ -94,11 +95,10 @@ class TaskListScreen(Screen):
 			self.session.openWithCallback(self.JobViewCB, JobView, job)
 
 	def JobViewCB(self, why):
-		print "WHY---",why
+		print "WHY---", why
 
 	def keyCancel(self):
 		self.close()
 
 	def keySave(self):
 		self.close()
- 

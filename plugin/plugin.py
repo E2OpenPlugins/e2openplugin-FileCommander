@@ -21,10 +21,13 @@ config.plugins.filecommander.add_extensionmenu_entry = ConfigYesNo(default=False
 # #####################
 # ## Start routines ###
 # #####################
+
+
 def filescan_open(list, session, **kwargs):
 	path = "/".join(list[0].path.split("/")[:-1]) + "/"
 	import ui
 	session.open(ui.FileCommanderScreen, path_left=path)
+
 
 def start_from_filescan(**kwargs):
 	from Components.Scanner import Scanner, ScanPath
@@ -39,24 +42,28 @@ def start_from_filescan(**kwargs):
 			openfnc=filescan_open,
 		)
 
+
 def start_from_mainmenu(menuid, **kwargs):
 	# starting from main menu
 	if menuid == "mainmenu":
 		return [(pname, start_from_pluginmenu, "filecommand", 1)]
 	return []
 
+
 def start_from_pluginmenu(session, **kwargs):
 	import ui
 	session.openWithCallback(exit, ui.FileCommanderScreen)
+
 
 def exit(session, result):
 	if not result:
 		import ui
 		session.openWithCallback(exit, ui.FileCommanderScreen)
 
+
 def Plugins(path, **kwargs):
 	desc_mainmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_MENU, fnc=start_from_mainmenu)
-	desc_pluginmenu = PluginDescriptor(name=pname, description=pdesc,  where=PluginDescriptor.WHERE_PLUGINMENU, icon="FileCommander.png", fnc=start_from_pluginmenu)
+	desc_pluginmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_PLUGINMENU, icon="FileCommander.png", fnc=start_from_pluginmenu)
 	desc_extensionmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_from_pluginmenu)
 	desc_filescan = PluginDescriptor(name=pname, where=PluginDescriptor.WHERE_FILESCAN, fnc=start_from_filescan)
 	list = []

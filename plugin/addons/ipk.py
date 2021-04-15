@@ -25,12 +25,13 @@ pname = _("File Commander - ipk Addon")
 pdesc = _("install/unpack ipk Files")
 pversion = "0.2-r1"
 
+
 class ipkMenuScreen(ArchiverMenuScreen):
 
 	def __init__(self, session, sourcelist, targetlist):
 		super(ipkMenuScreen, self).__init__(session, sourcelist, targetlist)
 
-		self.skinName="ArchiverMenuScreen"
+		self.skinName = "ArchiverMenuScreen"
 
 		self.list.append((_("Show contents of ipk file"), 1))
 		self.list.append((_("Install"), 4))
@@ -38,7 +39,7 @@ class ipkMenuScreen(ArchiverMenuScreen):
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
-	
+
 	def unpackModus(self, id):
 		if id == 1:
 			# This is done in a subshell because using two
@@ -67,8 +68,7 @@ class UnpackInfoScreen(ArchiverInfoScreen):
 
 	def __init__(self, session, list, sourceDir, filename):
 		super(UnpackInfoScreen, self).__init__(session, list, sourceDir, filename)
-		self.skinName="ArchiverInfoScreen"
+		self.skinName = "ArchiverInfoScreen"
 		self.pname = pname
 		self.pdesc = pdesc
 		self.pversion = pversion
-
