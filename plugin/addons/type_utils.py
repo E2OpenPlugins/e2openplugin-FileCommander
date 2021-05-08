@@ -49,17 +49,18 @@ class MoviePlayer(Movie_Audio_Player):
 
 	def leavePlayer(self):
 		self.is_closing = True
-		self.close()
+		self.session.openWithCallback(self.leavePlayerConfirmed, MessageBox, _("Exit movie player?"))
 
 	def leavePlayerConfirmed(self, answer):
-		pass
+		if answer:
+			self.close()
 
 	def doEofInternal(self, playing):
 		if not self.execing:
 			return
 		if not playing:
 			return
-		self.leavePlayer()
+		self.close()
 
 	def showMovies(self):
 		self.WithoutStopClose = True
