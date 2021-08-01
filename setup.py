@@ -3,7 +3,7 @@ import setup_translate
 
 pkg = 'Extensions.FileCommander'
 setup(name='enigma2-plugin-extensions-filecommander',
-       version='2.10',
+       version='2.11',
        description='Two-panels File manager.',
        packages=[pkg, 'Extensions.FileCommander.addons'],
        package_dir={pkg: 'plugin'},

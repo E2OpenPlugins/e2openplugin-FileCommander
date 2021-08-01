@@ -693,12 +693,12 @@ class key_actions(stat_info):
 		elif filetype == ".ts":
 			# commented out
 			#fileRef = eServiceReference(eServiceReference.idDVB, eServiceReference.noFlags, longname)
-			fileRef = eServiceReference("1:0:0:0:0:0:0:0:0:0:" + longname)
+			fileRef = eServiceReference("1:0:0:0:0:0:0:0:0:0:" + longname.replace(':', '%3a'))
 			self.session.open(MoviePlayer, fileRef)
 		elif filetype in MOVIE_EXTENSIONS:
 			# commented out
 			#fileRef = eServiceReference(eServiceReference.idServiceMP3, eServiceReference.noFlags, longname)
-			fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + longname)
+			fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + longname.replace(':', '%3a'))
 			self.session.open(MoviePlayer, fileRef)
 		elif filetype in DVD_EXTENSIONS:
 			if DVDPlayerAvailable:
