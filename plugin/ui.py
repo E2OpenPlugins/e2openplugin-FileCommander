@@ -63,7 +63,7 @@ from addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"), "2.11")
+pvers = "%s%s" % (_("v"), "2.12")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -198,7 +198,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), cfg.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), cfg.extension, _("Filter visible file classes by extension.")))
-		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for Info.")))
+		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for Info.") + "\n\n" + _("Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'.")))
 		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"), cfg.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), cfg.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), cfg.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))

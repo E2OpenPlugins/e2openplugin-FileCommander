@@ -333,9 +333,11 @@ class key_actions(stat_info):
 
 		if stat.S_ISCHR(st.st_mode) or stat.S_ISBLK(st.st_mode):
 			sizes = ("", "", "", "", "")
-		elif config.plugins.filecommander.dir_sizewalk.value and dirname:
+		elif dirname:
 			size = self.dirContentSize(dirname)
 			sizes = ("%s" % size, "%s" % size, "%s" % size, "%s" % size, "%s" % size)
+		elif os.path.isdir(filename):
+			sizes = ("", "", "", "", "")
 		else:
 			bytesize = "%s" % "{:n}".format(st.st_size)
 			bytesizedivided = "%s" % "{:,d}".format(st.st_size)
