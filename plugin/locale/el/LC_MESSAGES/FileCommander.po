@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-25 16:03+0100\n"
+"POT-Creation-Date: 2021-09-12 11:18+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../addons/key_actions.py:396
+#: ../addons/key_actions.py:405
 #, python-format
 msgid ""
 "\n"
@@ -29,205 +29,205 @@ msgstr ""
 "προαιρετική παράμετρος:\n"
 "%s"
 
-#: ../addons/key_actions.py:169
+#: ../addons/key_actions.py:173
 #, python-format
 msgid " ('%s') finished successefully."
 msgstr " ('%s') ολοκληρώθηκε επιτυχώς."
 
-#: ../addons/key_actions.py:155
+#: ../addons/key_actions.py:159
 #, python-format
 msgid " ('%s') finished with error messages."
 msgstr " ('%s') ολοκληρώθηκε με μηνύματα σφάλματος."
 
-#: ../addons/key_actions.py:152
+#: ../addons/key_actions.py:156
 #, python-format
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') ολοκληρώθηκε με αριθμό σφάλματος [%d]."
 
-#: ../ui.py:1785 ../ui.py:1820
+#: ../ui.py:1804 ../ui.py:1839
 #, fuzzy, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
 msgstr[0] " - Υπάρχουν %d στοιχεία! Αντικατάσταση"
 msgstr[1] " - Υπάρχουν %d στοιχεία! Αντικατάσταση"
 
-#: ../ui.py:968 ../ui.py:1030
+#: ../ui.py:977 ../ui.py:1039
 msgid " - file exist! Overwrite"
 msgstr " - το αρχείο υπάρχει! Αντικατάσταση"
 
-#: ../ui.py:972 ../ui.py:1034
+#: ../ui.py:981 ../ui.py:1043
 msgid " - folder exist! Overwrite"
 msgstr " - ο φάκελος υπάρχει! Αντικατάσταση"
 
-#: ../addons/key_actions.py:730
+#: ../addons/key_actions.py:739
 msgid " or save the picture additionally to a file"
 msgstr " ή αποθήκευση επιπρόσθετα της εικόνας σε αρχείο"
 
-#: ../ui.py:297
+#: ../ui.py:305
 #, python-format
 msgid "%d GB"
 msgstr ""
 
-#: ../ui.py:295
+#: ../ui.py:303
 #, python-format
 msgid "%d MB"
 msgstr ""
 
-#: ../ui.py:293
+#: ../ui.py:301
 #, python-format
 msgid "%d kB"
 msgstr ""
 
-#: ../addons/key_actions.py:137
+#: ../addons/key_actions.py:138
 msgid "%d.%m.%Y, %H:%M:%S"
 msgstr ""
 
-#: ../addons/key_actions.py:339
+#: ../addons/key_actions.py:348
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:1999
+#: ../ui.py:2018
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
 
-#: ../addons/key_actions.py:324 ../addons/key_actions.py:340
-#: ../addons/key_actions.py:341 ../addons/key_actions.py:342
+#: ../addons/key_actions.py:331 ../addons/key_actions.py:349
+#: ../addons/key_actions.py:350 ../addons/key_actions.py:351
 #, python-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: ../addons/unarchiver.py:187
+#: ../addons/unarchiver.py:188
 #, python-format
 msgid "%s - extraction errors."
 msgstr "%s - σφάλματα εξαγωγής."
 
-#: ../addons/unrar.py:61
+#: ../addons/unrar.py:62
 #, python-format
 msgid "%s is password protected."
 msgstr "Το %s προστατεύεται με κωδικό."
 
-#: ../addons/unarchiver.py:198
+#: ../addons/unarchiver.py:199
 #, python-format
 msgid "%s successfully extracted."
 msgstr "Το %s εξάχθηκε επιτυχώς."
 
-#: ../addons/key_actions.py:432 ../addons/key_actions.py:736
+#: ../addons/key_actions.py:441 ../addons/key_actions.py:745
 #, python-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: ../addons/key_actions.py:537
+#: ../addons/key_actions.py:546
 #, python-format
 msgid "'%s' not installed and no known package"
 msgstr "Το '%s' δεν έχει εγκατασταθεί και δεν είναι γνωστό πακέτο"
 
-#: ../ui.py:188 ../ui.py:1388
+#: ../ui.py:193 ../ui.py:1399
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr ""
 
-#: ../ui.py:539
+#: ../ui.py:548
 #, fuzzy, python-format
 msgid "(%d job)"
 msgid_plural "(%d jobs)"
 msgstr[0] "(%d εργασίες)"
 msgstr[1] "(%d εργασίες)"
 
-#: ../ui.py:1519
+#: ../ui.py:1535
 msgid "(Selectmode)"
 msgstr "(Λειτουργία επιλογής)"
 
-#: ../ui.py:1254 ../ui.py:1847
+#: ../ui.py:1263 ../ui.py:1865
 msgid "<Receiver>"
 msgstr ""
 
-#: ../addons/key_actions.py:97
+#: ../addons/key_actions.py:98
 msgid "?"
 msgstr ";"
 
-#: ../ui.py:2003
+#: ../ui.py:2022
 msgid "Accessed:"
 msgstr "Έγινε πρόσβαση σε:"
 
-#: ../ui.py:1488 ../ui.py:1490
+#: ../ui.py:1504 ../ui.py:1506
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Ενεργοποίηση αριστερού αρχείου ως πηγή πολλαπλής επιλογής"
 
-#: ../ui.py:487 ../ui.py:489
+#: ../ui.py:496 ../ui.py:498
 msgid "Activate left-hand file list as source"
 msgstr "Ενεργοποίηση αριστερού αρχείου ως πηγή"
 
-#: ../ui.py:1487 ../ui.py:1489
+#: ../ui.py:1503 ../ui.py:1505
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Ενεργοποίηση δεξιού αρχείου ως πηγή πολλαπλής επιλογής"
 
-#: ../ui.py:486 ../ui.py:488
+#: ../ui.py:495 ../ui.py:497
 msgid "Activate right-hand file list as source"
 msgstr "Ενεργοποίηση δεξιού αρχείου ως πηγή"
 
-#: ../ui.py:662
+#: ../ui.py:671
 msgid "Add current folder to bookmarks"
 msgstr "Προσθήκη τρέχοντος φακέλου στους σελιδοδείκτες"
 
-#: ../ui.py:175
+#: ../ui.py:180
 msgid "Add plugin to Extensions menu"
 msgstr "Προσθήκη στο μενού επεκτάσεων"
 
-#: ../ui.py:174
+#: ../ui.py:179
 msgid "Add plugin to main menu"
 msgstr "Προσθήκη πρόσθετου στο κύριο μενού"
 
-#: ../ui.py:658
+#: ../ui.py:667
 msgid "Add selected folder to bookmarks"
 msgstr "Προσθήκη επιλεγμένου φακέλου στους σελιδοδείκτες"
 
-#: ../ui.py:1593
+#: ../ui.py:1610
 #, python-format
 msgid "Add to selection (%s)"
 msgstr ""
 
-#: ../ui.py:147 ../ui.py:148
+#: ../ui.py:150 ../ui.py:151
 msgid "All"
 msgstr ""
 
-#: ../ui.py:193 ../ui.py:1390
+#: ../ui.py:198 ../ui.py:1401
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr ""
 
-#: ../ui.py:193 ../ui.py:1390
+#: ../ui.py:198 ../ui.py:1401
 #, fuzzy
 msgid "All movie extensions"
 msgstr "Η επέκτασή μου"
 
-#: ../addons/key_actions.py:267 ../addons/key_actions.py:288
-#: ../addons/key_actions.py:295 ../addons/key_actions.py:336
-#: ../addons/key_actions.py:341 ../addons/key_actions.py:342
+#: ../addons/key_actions.py:274 ../addons/key_actions.py:295
+#: ../addons/key_actions.py:302 ../addons/key_actions.py:345
+#: ../addons/key_actions.py:350 ../addons/key_actions.py:351
 msgid "B"
 msgstr ""
 
-#: ../addons/key_actions.py:81
+#: ../addons/key_actions.py:82
 msgid "Block device"
 msgstr "Μπλοκάρισμα συσκευής"
 
-#: ../ui.py:198
+#: ../ui.py:203
 msgid "CPU priority for script execution"
 msgstr "Προτεραιότητα CPU για εκτέλεση script"
 
-#: ../ui.py:629
+#: ../ui.py:638
 msgid "Calculate file checksums"
 msgstr "Υπολογισμός συνόλου ελέγχου αρχείου"
 
-#: ../ui.py:200
+#: ../ui.py:205
 #, fuzzy
 msgid "Calculates file checksums."
 msgstr "Υπολογισμός συνόλου ελέγχου αρχείου"
 
-#: ../ui.py:196
+#: ../ui.py:201
 msgid "Calculates the size of directory contents for Info."
 msgstr ""
 
-#: ../addons/unrar.py:50 ../addons/unarchiver.py:141
+#: ../addons/unrar.py:51 ../addons/unarchiver.py:142
 #, python-format
 msgid ""
 "Can not run %s: %s.\n"
@@ -236,260 +236,260 @@ msgstr ""
 "Αδυναμία εκτέλεσης του %s: %s.\n"
 "Το %s μπορεί να βρίσκεται σε ένα μη εγκατεστημένο πρόσθετο."
 
-#: ../ui.py:2019
+#: ../ui.py:2038
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Αδυναμία ανάγνωσης περιεχομένων: %s"
 
-#: ../Console.py:26 ../addons/unarchiver.py:72 ../addons/unarchiver.py:242
-#: ../addons/key_actions.py:242 ../addons/key_actions.py:390
-#: ../addons/key_actions.py:606 ../ui.py:206 ../ui.py:1361
+#: ../Console.py:27 ../addons/unarchiver.py:73 ../addons/unarchiver.py:244
+#: ../addons/key_actions.py:249 ../addons/key_actions.py:399
+#: ../addons/key_actions.py:615 ../ui.py:211 ../ui.py:1372
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../Console.py:129
+#: ../Console.py:130
 msgid "Cancel execution?"
 msgstr "Ακύρωση εκτέλεσης;"
 
-#: ../ui.py:186
+#: ../ui.py:191
 msgid "Change buttons for list navigation"
 msgstr "Αλλαγή των πλήκτρων πλοήγησης στη λίστα"
 
-#: ../ui.py:632
+#: ../ui.py:641
 msgid "Change execute permissions (755/644)"
 msgstr "Αλλαγή δικαιωμάτων εκτέλεσης (755/644)"
 
-#: ../ui.py:99
+#: ../ui.py:102
 msgid "Channel button always changes sides"
 msgstr "Το πλήκτρο καναλιών αλλάζει πάντα πλευρά"
 
-#: ../addons/key_actions.py:83
+#: ../addons/key_actions.py:84
 msgid "Character device"
 msgstr "Χαρακτήρας συσκευής"
 
-#: ../TaskList.py:50 ../Console.py:81
+#: ../TaskList.py:51 ../Console.py:82
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ../ui.py:1385
+#: ../ui.py:1396
 msgid "Compare case sensitive"
 msgstr ""
 
-#: ../ui.py:2009
+#: ../ui.py:2028
 msgid "Content size:"
 msgstr ""
 
-#: ../ui.py:635
+#: ../ui.py:644
 #, python-format
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
-#: ../ui.py:471 ../ui.py:1480
+#: ../ui.py:480 ../ui.py:1496
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: ../ui.py:1821
+#: ../ui.py:1840
 #, fuzzy, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
 msgstr[0] "Αντιγραφή% d στοιχείων"
 msgstr[1] "Αντιγραφή% d στοιχείων"
 
-#: ../ui.py:969
+#: ../ui.py:978
 msgid "Copy file"
 msgstr "Αντιγραφή αρχείου"
 
-#: ../ui.py:499 ../ui.py:619
+#: ../ui.py:508 ../ui.py:628
 msgid "Copy file/directory to target directory"
 msgstr "Αντιγραφή αρχείου/καταλόγου στο φάκελο προορισμού"
 
-#: ../ui.py:1497
+#: ../ui.py:1513
 msgid "Copy files/directories to target directory"
 msgstr "Αντιγραφή αρχείων/καταλόγων στο φάκελο προορισμού"
 
-#: ../ui.py:973
+#: ../ui.py:982
 msgid "Copy folder"
 msgstr "Αντιγραφή φακέλου"
 
-#: ../ui.py:196
+#: ../ui.py:201
 #, fuzzy
 msgid "Count directory content size"
 msgstr "Προεπιλεγμένη ταξινόμηση φακέλων"
 
-#: ../ui.py:491 ../ui.py:1501
+#: ../ui.py:500 ../ui.py:1517
 #, fuzzy
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Προεπιλεγμένη ταξινόμηση φακέλων"
 
-#: ../ui.py:494 ../ui.py:621
+#: ../ui.py:503 ../ui.py:630
 #, fuzzy
 msgid "Create directory"
 msgstr "Δημιουργία φακέλου/καταλόγου"
 
-#: ../ui.py:1565
+#: ../ui.py:1581
 msgid "Create directory in 'Target' panel"
 msgstr ""
 
-#: ../ui.py:1162
+#: ../ui.py:1171
 msgid "Create symlink to file"
 msgstr "Δημιουργία συντόμευσης σε αρχείο"
 
-#: ../ui.py:638
+#: ../ui.py:647
 msgid "Create user-named symbolic link"
 msgstr "Δημιουργία συντόμευσης με όνομα χρήστη"
 
-#: ../ui.py:111 ../ui.py:116
+#: ../ui.py:114 ../ui.py:119
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: ../ui.py:112 ../ui.py:117
+#: ../ui.py:115 ../ui.py:120
 msgid "Date reverse"
 msgstr "Αντιστροφή ημερομηνίας"
 
-#: ../ui.py:198
+#: ../ui.py:203
 msgid "Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)"
 msgstr ""
 
-#: ../ui.py:229
+#: ../ui.py:234
 msgid "Default Folder"
 msgstr "Προεπιλεγμένος φάκελος"
 
-#: ../ui.py:199
+#: ../ui.py:204
 msgid "Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)"
 msgstr ""
 
-#: ../ui.py:191
+#: ../ui.py:196
 msgid "Default directory sorting"
 msgstr "Προεπιλεγμένη ταξινόμηση φακέλων"
 
-#: ../ui.py:189
+#: ../ui.py:194
 msgid "Default file sorting left"
 msgstr "Προεπιλεγμένη ταξινόμηση αρχείων αριστερά"
 
-#: ../ui.py:190
+#: ../ui.py:195
 msgid "Default file sorting right"
 msgstr "Προεπιλεγμένη ταξινόμηση αρχείων δεξιά"
 
-#: ../ui.py:192
+#: ../ui.py:197
 #, fuzzy
 msgid "Default folder"
 msgstr "Προεπιλεγμένος φάκελος"
 
-#: ../ui.py:191
+#: ../ui.py:196
 msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
-#: ../ui.py:189
+#: ../ui.py:194
 msgid "Default sorting method for files in left panel."
 msgstr ""
 
-#: ../ui.py:190
+#: ../ui.py:195
 msgid "Default sorting method for files in right panel."
 msgstr ""
 
-#: ../addons/type_utils.py:117 ../ui.py:469 ../ui.py:1478
+#: ../addons/type_utils.py:120 ../ui.py:478 ../ui.py:1494
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: ../ui.py:1751
+#: ../ui.py:1770
 #, fuzzy, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
 msgstr[0] "Διαγραφή %d στοιχείων"
 msgstr[1] "Διαγραφή %d στοιχείων"
 
-#: ../addons/type_utils.py:109
+#: ../addons/type_utils.py:112
 msgid "Delete current line"
 msgstr "Διαγραφή τρέχουσας γραμμής"
 
-#: ../ui.py:1000
+#: ../ui.py:1009
 msgid "Delete file"
 msgstr "Διαγραφή αρχείου"
 
-#: ../ui.py:497 ../ui.py:622
+#: ../ui.py:506 ../ui.py:631
 msgid "Delete file or directory (and all its contents)"
 msgstr "Διαγραφή φακέλου ή καταλόγου (και όλων των περιεχομένων)"
 
-#: ../ui.py:1002
+#: ../ui.py:1011
 msgid "Delete folder"
 msgstr "Διαγραφή φακέλου"
 
-#: ../ui.py:1495
+#: ../ui.py:1511
 msgid "Delete the selected files or directories"
 msgstr "Διαγραφή των επιλεγμένων αρχείων ή φακέλων"
 
-#: ../ui.py:1564
+#: ../ui.py:1580
 #, fuzzy
 msgid "Deselect All"
 msgstr "Επιλογή"
 
-#: ../ui.py:1503
+#: ../ui.py:1519
 msgid "Deselect group"
 msgstr ""
 
-#: ../ui.py:1562
+#: ../ui.py:1578
 #, fuzzy
 msgid "Deselect group..."
 msgstr "Επιλογή"
 
-#: ../ui.py:188 ../ui.py:1388
+#: ../ui.py:193 ../ui.py:1399
 #, fuzzy
 msgid "Directories to group selections"
 msgstr "Παράκαμψη επιλογής"
 
-#: ../addons/key_actions.py:82
+#: ../addons/key_actions.py:83
 msgid "Directory"
 msgstr "Φάκελος"
 
-#: ../ui.py:1213 ../ui.py:1717
+#: ../ui.py:1222 ../ui.py:1736
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
 "Move selector one line below or change directory."
 msgstr ""
 
-#: ../ui.py:180 ../ui.py:1387
+#: ../ui.py:185 ../ui.py:1398
 msgid "Display filenames in header. It is useful for filenames that are too long."
 msgstr ""
 
-#: ../addons/key_actions.py:243
+#: ../addons/key_actions.py:250
 msgid "Do you want change rights?\n"
 msgstr "Θέλετε να γίνει αλλαγή δικαιωμάτων;\n"
 
-#: ../addons/key_actions.py:397
+#: ../addons/key_actions.py:406
 msgid "Do you want to view or run the script?\n"
 msgstr "Θέλετε να δείτε ή να τρέξετε το script;\n"
 
-#: ../addons/type_utils.py:116
+#: ../addons/type_utils.py:119
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: ../addons/type_utils.py:105 ../addons/type_utils.py:106
+#: ../addons/type_utils.py:108 ../addons/type_utils.py:109
 msgid "Edit current line"
 msgstr "Επεξεργασία τρέχουσας γραμμής"
 
-#: ../addons/type_utils.py:206
+#: ../addons/type_utils.py:209
 msgid "Edit line "
 msgstr "Επεξεργασία γραμμής "
 
-#: ../ui.py:637
+#: ../ui.py:646
 #, fuzzy
 msgid "Edit new file"
 msgstr "Επεξεργασία γραμμής "
 
-#: ../ui.py:185
+#: ../ui.py:190
 msgid "Edit position is the line end"
 msgstr "Επεξεργασία θέσης στο τέλος της γραμμής"
 
-#: ../ui.py:502 ../ui.py:503 ../ui.py:624
+#: ../ui.py:511 ../ui.py:512 ../ui.py:633
 msgid "Enter multi-file selection mode"
 msgstr "Μετάβαση στη λειτουργία πολλαπλής επιλογής"
 
-#: ../ui.py:836
+#: ../ui.py:845
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../ui.py:1225 ../ui.py:1729
+#: ../ui.py:1234 ../ui.py:1748
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -498,7 +498,7 @@ msgstr ""
 "Σφάλμα δημιουργίας φακέλου %s:\n"
 "%s"
 
-#: ../ui.py:1203
+#: ../ui.py:1212
 #, fuzzy, python-format
 msgid ""
 "Error creating file %s:\n"
@@ -507,7 +507,7 @@ msgstr ""
 "Σφάλμα δημιουργίας φακέλου %s:\n"
 "%s"
 
-#: ../ui.py:1143
+#: ../ui.py:1152
 #, python-format
 msgid ""
 "Error linking %s to %s:\n"
@@ -516,7 +516,7 @@ msgstr ""
 "Σφάλμα σύνδεσης του %s στο %s:\n"
 "%s"
 
-#: ../ui.py:1101
+#: ../ui.py:1110
 #, python-format
 msgid ""
 "Error renaming %s to %s:\n"
@@ -525,39 +525,43 @@ msgstr ""
 "Σφάλμα μετονομασίας του %s σε %s:\n"
 "%s"
 
-#: ../addons/type_utils.py:209
+#: ../addons/type_utils.py:212
 msgid "Error..."
 msgstr "Σφάλμα..."
 
-#: ../Console.py:87 ../Console.py:88
+#: ../Console.py:88 ../Console.py:89
 msgid "Execution finished!!"
 msgstr "Η εκτέλεση ολοκληρώθηκε!!"
 
-#: ../Console.py:66 ../Console.py:67
+#: ../Console.py:67 ../Console.py:68
 msgid "Execution progress:"
 msgstr "Πρόοδος εκτέλεσης:"
 
-#: ../addons/type_utils.py:115
+#: ../addons/type_utils.py:118
 msgid "Exit"
 msgstr "Έξοδος"
 
-#: ../addons/type_utils.py:107 ../addons/type_utils.py:108
+#: ../addons/type_utils.py:110 ../addons/type_utils.py:111
 msgid "Exit editor and write changes (if any)"
 msgstr "'Εξοδος από την επεξεργασία και αποθήκευση αλλαγών (αν υπάρχουν)"
 
-#: ../addons/type_utils.py:296
+#: ../addons/type_utils.py:52
+msgid "Exit movie player?"
+msgstr ""
+
+#: ../addons/type_utils.py:300
 msgid "Exit picture viewer"
 msgstr "Έξοδος από την προβολή εικόνων"
 
-#: ../addons/key_actions.py:84
+#: ../addons/key_actions.py:85
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:14 ../addons/type_utils.py:140
+#: ../plugin.py:14 ../addons/type_utils.py:143
 msgid "File Commander"
 msgstr "File Commander"
 
-#: ../addons/type_utils.py:96
+#: ../addons/type_utils.py:99
 msgid "File Commander - Addon File-Viewer"
 msgstr "File Commander - πρόσθετο File-Viewer"
 
@@ -569,7 +573,7 @@ msgstr "File Commander - πρόσθετο Mediaplayer"
 msgid "File Commander - Addon Movieplayer"
 msgstr "File Commander - πρόσθετο Movieplayer"
 
-#: ../ui.py:864
+#: ../ui.py:873
 msgid "File Commander - all Task's completed!"
 msgstr "File Commander - όλες οι εργασίες ολοκληρώθηκαν!"
 
@@ -597,423 +601,427 @@ msgstr "File Commander - πρόσθετο unrar"
 msgid "File Commander - unzip Addon"
 msgstr "File Commander - πρόσθετο unzip"
 
-#: ../ui.py:1188
+#: ../ui.py:1197
 msgid ""
 "File cannot be created on\n"
 "<List of Storage Devices> or <Receiver>.\n"
 "Change directory, please."
 msgstr ""
 
-#: ../ui.py:200
+#: ../ui.py:205
 msgid "File checksums/hashes"
 msgstr "Έλεγχοι/ψηφιακές υπογραφές αρχείων"
 
-#: ../addons/key_actions.py:682 ../addons/key_actions.py:781
+#: ../addons/key_actions.py:691 ../addons/key_actions.py:790
 #, python-format
 msgid "File not found: %s"
 msgstr "Το αρχείο δεν βρέθηκε: %s"
 
-#: ../FileTransfer.py:94
+#: ../FileTransfer.py:96
 msgid "File transfer was cancelled by user"
 msgstr "Η μεταφορά του αρχείου ακυρώθηκε από το χρήστη"
 
-#: ../Console.py:179
+#: ../Console.py:180
 #, python-format
 msgid "File write error: '%s'"
 msgstr "Σφάλμα εγγραφής αρχείου: %s"
 
-#: ../ui.py:501 ../ui.py:623 ../ui.py:1499 ../ui.py:1950
+#: ../ui.py:510 ../ui.py:632 ../ui.py:1515 ../ui.py:1969
 msgid "File/Directory Status Information"
 msgstr "Πληροφορίες κατάστασης αρχείου/φακέλου"
 
-#: ../ui.py:180 ../ui.py:1387
+#: ../ui.py:185 ../ui.py:1398
 msgid "Filenames in header"
 msgstr ""
 
-#: ../ui.py:194
+#: ../ui.py:199
 msgid "Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'."
 msgstr ""
 
-#: ../ui.py:195
+#: ../ui.py:200
 msgid "Filter extension, (*) appears in title"
 msgstr "Φιλτράρισμα επέκτασης, εμφανίζεται το (*) στον τίτλο"
 
-#: ../ui.py:195
+#: ../ui.py:200
 msgid "Filter visible file classes by extension."
 msgstr ""
 
-#: ../addons/key_actions.py:267
+#: ../addons/key_actions.py:274
 msgid "GB"
 msgstr ""
 
-#: ../ui.py:644
+#: ../ui.py:653
 msgid "Go to bookmarked folder"
 msgstr "Μετάβαση στο σελιδοδείκτη φακέλου"
 
-#: ../ui.py:640
+#: ../ui.py:649
 #, fuzzy
 msgid "Go to default directory"
 msgstr "Μετάβαση στο γονικό φάκελο"
 
-#: ../addons/type_utils.py:112
+#: ../addons/type_utils.py:115
 msgid "Go to end of file"
 msgstr "Μετάβαση στο τέλος του αρχείου"
 
-#: ../ui.py:639
+#: ../ui.py:648
 msgid "Go to parent directory"
 msgstr "Μετάβαση στο γονικό φάκελο"
 
-#: ../addons/type_utils.py:111
+#: ../addons/type_utils.py:114
 msgid "Go to start of file"
 msgstr "Μετάβαση στην αρχή του αρχείου"
 
-#: ../ui.py:1998
+#: ../ui.py:2017
 msgid "Group:"
 msgstr "Ομάδα:"
 
-#: ../ui.py:199
+#: ../ui.py:204
 msgid "I/O priority for script execution"
 msgstr "Προτεραιότητα I/O για εκτέλεση script"
 
-#: ../ui.py:185
+#: ../ui.py:190
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr ""
 
-#: ../ui.py:187 ../ui.py:1389
+#: ../ui.py:192 ../ui.py:1400
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr ""
 
-#: ../ui.py:2006
+#: ../ui.py:2025
 msgid "Inode:"
 msgstr "Inode:"
 
-#: ../addons/type_utils.py:118
+#: ../addons/type_utils.py:121
 msgid "Insert"
 msgstr "Εισαγωγή"
 
-#: ../addons/type_utils.py:110
+#: ../addons/type_utils.py:113
 msgid "Insert line before current line"
 msgstr "Εισαγωγή γραμμής πριν την τρέχουσα γραμμή"
 
-#: ../addons/ipk.py:36
+#: ../addons/ipk.py:37
 msgid "Install"
 msgstr "Εγκατάσταση"
 
-#: ../addons/key_actions.py:535
+#: ../addons/key_actions.py:544
 #, python-format
 msgid "Install '%s' and enable this operation"
 msgstr "Εγκατάσταση του '%s' και ενεργοποίηση αυτής της λειτουργίας"
 
-#: ../addons/ipk.py:58
+#: ../addons/ipk.py:59
 msgid "Installing Plugin ..."
 msgstr "Εγκατάσταση προσθέτου..."
 
-#: ../ui.py:1566
+#: ../ui.py:1582
 #, fuzzy
 msgid "Invert Selection"
 msgstr "Ακύρωση εκτέλεσης;"
 
-#: ../ui.py:1481 ../ui.py:1498
+#: ../ui.py:1497 ../ui.py:1514
 #, fuzzy
 msgid "Invert selection"
 msgstr "Παράκαμψη επιλογής"
 
-#: ../addons/key_actions.py:591
+#: ../addons/key_actions.py:600
 msgid "It is not possible to calculate hashes on <List of Storage Devices>"
 msgstr "Δεν είναι δυνατός ο υπολογισμός της ψηφιακής υπογραφής των αρχείων στη <λίστα μέσων αποθήκευσης>"
 
-#: ../addons/key_actions.py:237
+#: ../addons/key_actions.py:244
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Δεν είναι δυνατή η αλλαγή της λειτουργίας των αρχείων στη <λίστα μέσων αποθήκευσης>"
 
-#: ../ui.py:1968
+#: ../ui.py:1987
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Δεν είναι δυνατή η ανάγνωση της κατάστασης των αρχείων στη <λίστα μέσων αποθήκευσης>"
 
-#: ../addons/key_actions.py:486
+#: ../addons/key_actions.py:495
 #, python-format
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
 msgstr "Δεν είναι δυνατή η εκτέλεση του '%s' στη <λίστα μέσων αποθήκευσης>"
 
-#: ../ui.py:1065
+#: ../ui.py:1074
 msgid "It's not possible to rename the filesystem root."
 msgstr "Μη δυνατή η μετονομασία του συστήματος αρχείων του root."
 
-#: ../addons/key_actions.py:267
+#: ../addons/key_actions.py:274
 msgid "KB"
 msgstr ""
 
-#: ../ui.py:484
+#: ../ui.py:493
 msgid "Leave File Commander"
 msgstr "Έξοδος από το File Commander"
 
-#: ../ui.py:1486 ../ui.py:1506 ../ui.py:1507
+#: ../ui.py:1502 ../ui.py:1522 ../ui.py:1523
 msgid "Leave multi-select mode"
 msgstr "Έξοδος από τη λειτουργία πολλαπλής επιλογής"
 
-#: ../ui.py:2015
+#: ../ui.py:2034
 msgid "Link target:"
 msgstr "Προορισμός συντόμευσης:"
 
-#: ../ui.py:2005
+#: ../ui.py:2024
 msgid "Links:"
 msgstr "Συντομεύσεις:"
 
-#: ../FileList.py:187 ../FileList.py:454 ../FileList.py:458
+#: ../FileList.py:191 ../FileList.py:460 ../FileList.py:464
 msgid "List of Storage Devices"
 msgstr "Λίστα συσκευών αποθήκευσης"
 
-#: ../Console.py:176
+#: ../Console.py:177
 msgid "Load"
 msgstr "Φόρτωση"
 
-#: ../addons/key_actions.py:267
+#: ../addons/key_actions.py:274
 msgid "MB"
 msgstr ""
 
-#: ../ui.py:175
+#: ../ui.py:180
 #, fuzzy
 msgid "Make FileCommander accessible from the Extensions menu."
 msgstr "Μενού περιεχομένων του File Commander"
 
-#: ../ui.py:174
+#: ../ui.py:179
 #, fuzzy
 msgid "Make FileCommander accessible from the main menu."
 msgstr "Μενού περιεχομένων του File Commander"
 
-#: ../ui.py:2004
+#: ../ui.py:2023
 msgid "Metadata changed:"
 msgstr "Αλλαγή μεταδεδομένων:"
 
-#: ../addons/key_actions.py:290
+#: ../addons/key_actions.py:297
 #, python-format
 msgid "Mode %s (%04o)"
 msgstr "Λειτουργία %s (%04o)"
 
-#: ../ui.py:2002
+#: ../ui.py:2021
 msgid "Modified:"
 msgstr "Τροποποιήθηκε:"
 
-#: ../ui.py:470 ../ui.py:1479
+#: ../ui.py:479 ../ui.py:1495
 msgid "Move"
 msgstr "Μετακίνηση"
 
-#: ../ui.py:1786
+#: ../ui.py:1805
 #, fuzzy, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
 msgstr[0] "Μετακίνηση %d στοιχείων"
 msgstr[1] "Μετακίνηση %d στοιχείων"
 
-#: ../ui.py:505 ../ui.py:1492
+#: ../ui.py:514 ../ui.py:1508
 msgid "Move down list"
 msgstr "Μετάβαση λίστας προς τα κάτω"
 
-#: ../ui.py:1031
+#: ../ui.py:1040
 msgid "Move file"
 msgstr "Μετακίνηση αρχείου"
 
-#: ../ui.py:498 ../ui.py:620
+#: ../ui.py:507 ../ui.py:629
 msgid "Move file/directory to target directory"
 msgstr "Μετακίνηση αρχείου/καταλόγου στο φάκελο προορισμού"
 
-#: ../ui.py:1496
+#: ../ui.py:1512
 msgid "Move files/directories to target directory"
 msgstr "Μετακίνηση αρχείων/καταλόγων στο φάκελο προορισμού"
 
-#: ../ui.py:1035
+#: ../ui.py:1044
 msgid "Move folder"
 msgstr "Μετακίνηση φακέλου"
 
-#: ../ui.py:187 ../ui.py:1389
+#: ../ui.py:192 ../ui.py:1400
 #, fuzzy
 msgid "Move selector to next item"
 msgstr "Μετακίνηση αρχείου/καταλόγου στο φάκελο προορισμού"
 
-#: ../ui.py:1504
+#: ../ui.py:1520
 #, fuzzy
 msgid "Move selector to next item (on/off)"
 msgstr "Μετακίνηση αρχείου/καταλόγου στο φάκελο προορισμού"
 
-#: ../ui.py:504 ../ui.py:1491
+#: ../ui.py:513 ../ui.py:1507
 msgid "Move up list"
 msgstr "Μετάβαση λίστας προς τα πάνω"
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "Movie"
 msgstr "Ταινία"
 
-#: ../ui.py:1405
+#: ../ui.py:1417
 #, fuzzy
 msgid "MultiSelection Settings"
 msgstr "Επιλογή των προσωπικών σας ρυθμίσεων:"
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "Music"
 msgstr "Μουσική"
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "My Extension"
 msgstr "Η επέκτασή μου"
 
-#: ../ui.py:194
+#: ../ui.py:199
 msgid "My extension"
 msgstr "Η επέκτασή μου"
 
-#: ../ui.py:109 ../ui.py:114
+#: ../ui.py:112 ../ui.py:117
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../ui.py:110 ../ui.py:115
+#: ../ui.py:113 ../ui.py:118
 msgid "Name reverse"
 msgstr "Αντιστροφή ονόματος"
 
-#: ../ui.py:1215 ../ui.py:1719
+#: ../ui.py:1224 ../ui.py:1738
 msgid "New folder"
 msgstr "Νέος φάκελος"
 
-#: ../addons/key_actions.py:724 ../ui.py:99 ../ui.py:147 ../ui.py:148
+#: ../addons/key_actions.py:733 ../ui.py:102 ../ui.py:150 ../ui.py:151
 msgid "No"
 msgstr "Όχι"
 
-#: ../addons/unarchiver.py:150
+#: ../addons/unarchiver.py:151
 msgid "No files found."
 msgstr "Δεν βρέθηκαν αρχεία."
 
-#: ../addons/key_actions.py:582
+#: ../addons/key_actions.py:591
 msgid "No hash calculations configured"
 msgstr "Δεν έχουν παραμετροποιηθεί οι υπολογισμοί των ψηφιακών υπογραφών"
 
-#: ../addons/key_actions.py:747
+#: ../addons/key_actions.py:756
 #, python-format
 msgid "No viewer installed for this file type: %s"
 msgstr "Δεν έχει εγκατασταθεί πρόγραμμα προβολής για αυτό τον τύπο αρχείου: %s"
 
-#: ../addons/key_actions.py:586
+#: ../addons/key_actions.py:595
 #, python-format
 msgid "None of the hash programs for the hashes %s are available"
 msgstr "Καμία από τις υπογραφές προγραμμάτων για τις υπογραφές %s δεν είναι διαθέσιμες"
 
-#: ../addons/key_actions.py:245
+#: ../addons/key_actions.py:252
 msgid "Not allowed with folders"
 msgstr "Δεν επιτρέπεται με τους φακέλους"
 
-#: ../ui.py:183
+#: ../ui.py:201
+msgid "Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'."
+msgstr ""
+
+#: ../ui.py:188
 msgid "Number of lines in script messages"
 msgstr "Αριθμός γραμμών στα μηνύματα script"
 
-#: ../addons/unarchiver.py:73 ../addons/unarchiver.py:243 ../ui.py:207
-#: ../ui.py:1362
+#: ../addons/unarchiver.py:74 ../addons/unarchiver.py:245 ../ui.py:212
+#: ../ui.py:1373
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:2007
+#: ../ui.py:2026
 msgid "On device:"
 msgstr "Στη συσκευή:"
 
-#: ../ui.py:1484
+#: ../ui.py:1500
 #, fuzzy
 msgid "Open actions menu"
 msgstr "Άνοιγμα μενού ρυθμίσεων/ενεργειών"
 
-#: ../ui.py:485
+#: ../ui.py:494
 msgid "Open settings/actions menu"
 msgstr "Άνοιγμα μενού ρυθμίσεων/ενεργειών"
 
-#: ../plugin.py:38
+#: ../plugin.py:41
 msgid "Open with File Commander"
 msgstr "Άνοιγμα με το File Commander"
 
-#: ../ui.py:202
+#: ../ui.py:207
 msgid "Original subtitles codepage"
 msgstr ""
 
-#: ../ui.py:202
+#: ../ui.py:207
 msgid "Original subtitles codepage for conversion to UTF-8."
 msgstr ""
 
-#: ../addons/type_utils.py:206
+#: ../addons/type_utils.py:209
 #, fuzzy
 msgid "Original:"
 msgstr "αρχικό:"
 
-#: ../ui.py:1997
+#: ../ui.py:2016
 msgid "Owner:"
 msgstr "Κάτοχος:"
 
-#: ../ui.py:507 ../ui.py:1494
+#: ../ui.py:516 ../ui.py:1510
 msgid "Page down list"
 msgstr "Σελίδα λίστας κάτω"
 
-#: ../ui.py:506 ../ui.py:1493
+#: ../ui.py:515 ../ui.py:1509
 msgid "Page up list"
 msgstr "Σελίδα λίστας επάνω"
 
-#: ../FileList.py:191 ../FileList.py:458
+#: ../FileList.py:195 ../FileList.py:464
 msgid "Parent Directory"
 msgstr "Γονικός φάκελος"
 
-#: ../Console.py:153
+#: ../Console.py:154
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Η διαδρομή για αποθήκευση δεν υπάρχει: '/tmp/'"
 
-#: ../ui.py:1999
+#: ../ui.py:2018
 msgid "Permissions:"
 msgstr "Δικαιώματα:"
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "Pictures"
 msgstr "Εικόνες"
 
-#: ../addons/key_actions.py:606
+#: ../addons/key_actions.py:615
 msgid "Play folder"
 msgstr "Αναπαραγωγή φακέλου"
 
-#: ../addons/key_actions.py:606
+#: ../addons/key_actions.py:615
 msgid "Play title"
 msgstr "Αναπαραγωγή τίτλου"
 
-#: ../ui.py:483
+#: ../ui.py:492
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Αναπαραγωγή/προβολή/επεξεργασία/εγκατάσταση/αποσυμπίεση/εκτέλεση ενός αρχείου ή εισαγωγή φακέλου"
 
-#: ../ui.py:1215 ../ui.py:1719
+#: ../ui.py:1224 ../ui.py:1738
 msgid "Please enter name of the new directory"
 msgstr "Παρακαλώ εισάγετε όνομα νέου φάκελου"
 
-#: ../ui.py:1124
+#: ../ui.py:1133
 msgid "Please enter name of the new symlink"
 msgstr "Παρακαλώ εισάγετε το όνομα για τη νέα συντόμευση"
 
-#: ../addons/unrar.py:61
+#: ../addons/unrar.py:62
 msgid "Please enter password"
 msgstr "Παρακαλώ εισάγετε κωδικό"
 
-#: ../ui.py:1069
+#: ../ui.py:1078
 msgid "Please enter the new directory name"
 msgstr "Παρακαλώ εισάγετε το όνομα του νέου φάκελου"
 
-#: ../ui.py:1067
+#: ../ui.py:1076
 msgid "Please enter the new file name"
 msgstr "Παρακαλώ εισάγετε το νέο όνομα αρχείου"
 
-#: ../addons/type_utils.py:306
+#: ../addons/type_utils.py:310
 msgid "Please wait, Loading image."
 msgstr "Παρακαλώ περιμένετε, φόρτωση εικόνας."
 
-#: ../ui.py:1382
+#: ../ui.py:1393
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr ""
 
-#: ../ui.py:1384
+#: ../ui.py:1395
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr ""
 
-#: ../ui.py:192
+#: ../ui.py:197
 msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too."
 msgstr ""
 
-#: ../addons/key_actions.py:556
+#: ../addons/key_actions.py:565
 #, python-format
 msgid ""
 "Program '%s' is installed.\n"
@@ -1022,7 +1030,7 @@ msgstr ""
 "Το πρόγραμμα '%s' είναι εγκατεστημένο.\n"
 "Το πακέτο που περιέχει αυτό το πρόγραμμα δεν είναι γνωστό, και έτσι δεν μπορεί να απεγκατασταθεί."
 
-#: ../addons/key_actions.py:553
+#: ../addons/key_actions.py:562
 #, python-format
 msgid ""
 "Program '%s' needs to be installed to run the '%s' action.\n"
@@ -1031,7 +1039,7 @@ msgstr ""
 "Το πρόγραμμα '%s' πρέπει να είναι εγκατεστημένο για να εκτελεστεί η ενέργεια '%s'.\n"
 "Να γίνει απεγκατάσταση του πακέτου '%s' για αφαίρεση του προγράμματος;"
 
-#: ../addons/key_actions.py:478
+#: ../addons/key_actions.py:487
 #, python-format
 msgid ""
 "Program '%s' needs to be installed to run this action.\n"
@@ -1040,7 +1048,7 @@ msgstr ""
 "Το πρόγραμμα '%s' πρέπει να είναι εγκατεστημένο για να εκτελεστεί αυτή η ενέργεια.\n"
 "Να γίνει εγκατάσταση του πακέτου '%s' για την εγκατάσταση του προγράμματος;"
 
-#: ../addons/key_actions.py:480
+#: ../addons/key_actions.py:489
 #, python-format
 msgid ""
 "Program '%s' not installed.\n"
@@ -1049,91 +1057,91 @@ msgstr ""
 "Το πρόγραμμα '%s' δεν είναι εγκατεστημένο.\n"
 "Το πακέτο που περιέχει αυτό το πρόγραμμα δεν είναι γνωστό."
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "Records"
 msgstr "Εγγραφές"
 
-#: ../ui.py:490 ../ui.py:625 ../ui.py:1500
+#: ../ui.py:499 ../ui.py:634 ../ui.py:1516
 msgid "Refresh screen"
 msgstr "Ανανέωση οθόνης"
 
-#: ../addons/key_actions.py:80
+#: ../addons/key_actions.py:81
 msgid "Regular file"
 msgstr "Τυπικό αρχείο"
 
-#: ../ui.py:662
+#: ../ui.py:671
 msgid "Remove current folder from bookmarks"
 msgstr "Αφαίρεση του επιλεγμένου φακέλου από τους σελιδοδείκτες"
 
-#: ../ui.py:1595
+#: ../ui.py:1612
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr ""
 
-#: ../ui.py:658
+#: ../ui.py:667
 msgid "Remove selected folder from bookmarks"
 msgstr "Αφαίρεση του επιλεγμένου φακέλου από τους σελιδοδείκτες"
 
-#: ../ui.py:472
+#: ../ui.py:481
 msgid "Rename"
 msgstr "Μετονομασία"
 
-#: ../ui.py:492 ../ui.py:500 ../ui.py:614
+#: ../ui.py:501 ../ui.py:509 ../ui.py:623
 msgid "Rename file/directory"
 msgstr "Μετονομασία αρχείου/φακέλου"
 
-#: ../ui.py:477 ../ui.py:479
+#: ../ui.py:486 ../ui.py:488
 msgid "Reverse left file sorting"
 msgstr "Αντιστροφή ταξινόμησης αρχείων αριστερά"
 
-#: ../ui.py:476 ../ui.py:480
+#: ../ui.py:485 ../ui.py:489
 msgid "Reverse right file sorting"
 msgstr "Αντιστροφή ταξινόμησης αρχείων δεξιά"
 
-#: ../addons/key_actions.py:532
+#: ../addons/key_actions.py:541
 #, python-format
 msgid "Run '%s' command"
 msgstr "Εκτέλεση εντολής '%s'"
 
-#: ../TaskList.py:74 ../addons/key_actions.py:152 ../addons/key_actions.py:155
-#: ../addons/key_actions.py:169 ../addons/key_actions.py:390
-#: ../addons/key_actions.py:446 ../ui.py:547 ../ui.py:860
+#: ../TaskList.py:75 ../addons/key_actions.py:156 ../addons/key_actions.py:159
+#: ../addons/key_actions.py:173 ../addons/key_actions.py:399
+#: ../addons/key_actions.py:455 ../ui.py:556 ../ui.py:869
 msgid "Run script"
 msgstr "Εκτέλεση script"
 
-#: ../addons/key_actions.py:390
+#: ../addons/key_actions.py:399
 msgid "Run script in background"
 msgstr "Εκτέλεση script στο παρασκήνιο"
 
-#: ../addons/key_actions.py:394
+#: ../addons/key_actions.py:403
 msgid "Run script with optional parameter"
 msgstr "Εκτέλεση script με προαιρετική παράμετρο"
 
-#: ../addons/key_actions.py:395
+#: ../addons/key_actions.py:404
 msgid "Run script with optional parameter in background"
 msgstr "Εκτέλεση script με προαιρετική παράμετρο στο παρασκήνιο"
 
-#: ../Console.py:82
+#: ../Console.py:83
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: ../ui.py:178
+#: ../ui.py:183
 msgid "Save cursor position"
 msgstr ""
 
-#: ../ui.py:178
+#: ../ui.py:183
 msgid "Save cursor position in active panel."
 msgstr ""
 
-#: ../ui.py:176
+#: ../ui.py:181
 msgid "Save left folder on exit"
 msgstr "Αποθήκευση αριστερού φακέλου στην έξοδο"
 
-#: ../ui.py:177
+#: ../ui.py:182
 msgid "Save right folder on exit"
 msgstr "Αποθήκευση δεξιού φακέλου στην έξοδο"
 
-#: ../Console.py:140
+#: ../Console.py:141
 #, python-format
 msgid ""
 "Save the commands and the output to a file?\n"
@@ -1142,83 +1150,83 @@ msgstr ""
 "Να γίνει αποθήκευση των εντολών και η εξαγωγή τους σε αρχείο;\n"
 "('%s')"
 
-#: ../ui.py:176
+#: ../ui.py:181
 #, fuzzy
 msgid "Save the left directory list location on exit."
 msgstr "Αποθήκευση αριστερού φακέλου στην έξοδο"
 
-#: ../ui.py:177
+#: ../ui.py:182
 #, fuzzy
 msgid "Save the right folder list location on exit."
 msgstr "Αποθήκευση δεξιού φακέλου στην έξοδο"
 
-#: ../addons/key_actions.py:403
+#: ../addons/key_actions.py:412
 #, python-format
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Το script '%s' πρέπει να έχει δικαιώματα ανάγνωσης για να μπορεί να τρέξει"
 
-#: ../ui.py:1379
+#: ../ui.py:1390
 #, fuzzy
 msgid "Search in group selection by"
 msgstr "Παράκαμψη επιλογής"
 
-#: ../ui.py:1485
+#: ../ui.py:1501
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Επιλέξτε (τη λίστα πηγής) ή εισάγετε κατάλογο (λίστα προορισμού)"
 
-#: ../ui.py:1563
+#: ../ui.py:1579
 #, fuzzy
 msgid "Select All"
 msgstr "Επιλογή"
 
-#: ../ui.py:717
+#: ../ui.py:726
 msgid "Select a path"
 msgstr "Επιλογή διαδρομής"
 
-#: ../ui.py:1502
+#: ../ui.py:1518
 #, fuzzy
 msgid "Select group"
 msgstr "Επιλογή"
 
-#: ../ui.py:1561
+#: ../ui.py:1577
 #, fuzzy
 msgid "Select group..."
 msgstr "Επιλογή"
 
-#: ../ui.py:665 ../ui.py:1569
+#: ../ui.py:674 ../ui.py:1585
 #, fuzzy
 msgid "Select operation:"
 msgstr "Επιλογή των προσωπικών σας ρυθμίσεων:"
 
-#: ../ui.py:167
+#: ../ui.py:172
 msgid "Select your personal settings:"
 msgstr "Επιλογή των προσωπικών σας ρυθμίσεων:"
 
-#: ../addons/key_actions.py:242
+#: ../addons/key_actions.py:249
 msgid "Set archive mode (644)"
 msgstr "Ορισμός λειτουργίας αρχείου (644)"
 
-#: ../addons/key_actions.py:242
+#: ../addons/key_actions.py:249
 msgid "Set executable mode (755)"
 msgstr "Ορισμός λειτουργίας αρχείου (755)"
 
-#: ../ui.py:183
+#: ../ui.py:188
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr ""
 
-#: ../ui.py:1385
+#: ../ui.py:1396
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr ""
 
-#: ../ui.py:219
+#: ../ui.py:224
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: ../ui.py:643 ../ui.py:1567
+#: ../ui.py:652 ../ui.py:1583
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
 
-#: ../addons/key_actions.py:731
+#: ../addons/key_actions.py:740
 #, python-format
 msgid ""
 "Show '%s' as picture%s?\n"
@@ -1227,147 +1235,147 @@ msgstr ""
 "Εμφάνιση του '%s' ως εικόνα %s;\n"
 "Η τρέχουσα υπηρεσία πρέπει να διακοπεί!"
 
-#: ../ui.py:182
+#: ../ui.py:187
 msgid "Show Script completed message"
 msgstr "Εμφάνιση μυνήματος ολοκλήρωσης script"
 
-#: ../ui.py:181
+#: ../ui.py:186
 msgid "Show Task's completed message"
 msgstr "Εμφάνιση μυνήματος ολοκλήρωσης εργασιών"
 
-#: ../addons/key_actions.py:725
+#: ../addons/key_actions.py:734
 msgid "Show as Picture (press any key to close)"
 msgstr "Εμφάνιση ως εικόνα (πιέστε οποιοδήποτε πλήκτρο για κλείσιμο)"
 
-#: ../addons/key_actions.py:729
+#: ../addons/key_actions.py:738
 #, python-format
 msgid "Show as Picture and save as file ('%s')"
 msgstr "Εμφάνιση ως εικόνα και αποθήκευση ως αρχείο ('%s')"
 
-#: ../addons/ipk.py:35
+#: ../addons/ipk.py:36
 msgid "Show contents of ipk file"
 msgstr "Εμφάνιση περιεχομένων αρχείου ipk"
 
-#: ../addons/unrar.py:28
+#: ../addons/unrar.py:29
 msgid "Show contents of rar file"
 msgstr "Εμφάνιση περιεχομένων αρχείου rar"
 
-#: ../addons/tar.py:19
+#: ../addons/tar.py:20
 msgid "Show contents of tar or compressed tar file"
 msgstr "Εμφάνιση περιεχομένων του tar ή του συμπιεσμένου αρχείου tar"
 
-#: ../addons/unzip.py:24
+#: ../addons/unzip.py:25
 msgid "Show contents of zip file"
 msgstr "Εμφάνιση περιεχομένων αρχείου zip"
 
-#: ../ui.py:179
+#: ../ui.py:184
 msgid "Show directories first"
 msgstr "Εμφάνιση φακέλων πρώτα"
 
-#: ../ui.py:179
+#: ../ui.py:184
 msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
-#: ../addons/type_utils.py:300
+#: ../addons/type_utils.py:304
 msgid "Show image information"
 msgstr "Εμφάνιση πληροφοριών εικόνας"
 
-#: ../ui.py:181
+#: ../ui.py:186
 #, fuzzy
 msgid "Show message if FileCommander is not running and all Task's are completed."
 msgstr "File Commander - όλες οι εργασίες ολοκληρώθηκαν!"
 
-#: ../ui.py:182
+#: ../ui.py:187
 msgid "Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info."
 msgstr ""
 
-#: ../addons/type_utils.py:298
+#: ../addons/type_utils.py:302
 msgid "Show next picture"
 msgstr "Εμφάνιση επόμενης εικόνας"
 
-#: ../addons/type_utils.py:297
+#: ../addons/type_utils.py:301
 msgid "Show previous picture"
 msgstr "Εμφάνιση προηγούμενης εικόνας"
 
-#: ../ui.py:495 ../ui.py:626 ../ui.py:1505
+#: ../ui.py:504 ../ui.py:635 ../ui.py:1521
 msgid "Show task list"
 msgstr "Εμφάνιση λίστας εργασιών"
 
-#: ../ui.py:184
+#: ../ui.py:189
 msgid "Show unknown extension as text"
 msgstr "Εμφάνιση άγνωστης επέκτασης ως κείμενο"
 
-#: ../ui.py:184
+#: ../ui.py:189
 #, fuzzy
 msgid "Show unknown file extensions with 'Addon File-Viewer'."
 msgstr "Εμφάνιση άγνωστης επέκτασης ως κείμενο"
 
-#: ../ui.py:118
+#: ../ui.py:121
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: ../ui.py:119
+#: ../ui.py:122
 msgid "Size reverse"
 msgstr "Αντιστροφή μεγέθους"
 
-#: ../ui.py:2001
+#: ../ui.py:2020
 msgid "Size:"
 msgstr "Μέγεθος:"
 
-#: ../addons/key_actions.py:78
+#: ../addons/key_actions.py:79
 msgid "Socket"
 msgstr "Υποδοχή"
 
-#: ../ui.py:508
+#: ../ui.py:517
 msgid "Sorting left files by name, date or size"
 msgstr "Ταξινόμηση των αρχείων αριστερά κατά όνομα, ημερομηνία ή μέγεθος"
 
-#: ../ui.py:511
+#: ../ui.py:520
 msgid "Sorting right files by name, date or size"
 msgstr "Ταξινόμηση των αρχείων δεξιά κατά όνομα, ημερομηνία ή μέγεθος"
 
-#: ../addons/type_utils.py:299
+#: ../addons/type_utils.py:303
 msgid "Start/stop slide show"
 msgstr "Εκκίνηση/σταμάτημα προβολής διαφανειών"
 
-#: ../ui.py:714
+#: ../ui.py:723
 msgid "Storage devices"
 msgstr "Συσκευές αποθήκευσης"
 
-#: ../ui.py:197
+#: ../ui.py:202
 #, fuzzy
 msgid "Swap buttons for reverse file sorting"
 msgstr "Αντιστροφή ταξινόμησης αρχείων αριστερά"
 
-#: ../ui.py:186
+#: ../ui.py:191
 msgid "Swap buttons right/left with channel +/- or the channel button changed always the side."
 msgstr ""
 
-#: ../addons/key_actions.py:79
+#: ../addons/key_actions.py:80
 msgid "Symbolic link"
 msgstr "Συντόμευση"
 
-#: ../ui.py:1164
+#: ../ui.py:1173
 msgid "Symlink to "
 msgstr "Συντόμευση σε "
 
-#: ../addons/key_actions.py:271
+#: ../addons/key_actions.py:278
 msgid "TB"
 msgstr ""
 
-#: ../TaskList.py:86
+#: ../TaskList.py:87
 msgid "Task list"
 msgstr "Λίστα εργασιών"
 
-#: ../addons/type_utils.py:336
+#: ../addons/type_utils.py:340
 msgid "The Image Viewer component of the File Commander requires the PicturePlayer extension. Install PicturePlayer to enable this operation."
 msgstr "Η προβολή εικόνων του File Commander απαιτεί το πρόσθετο PicturePlayer. Εγκαταστήστε το για να ενεργοποιηθεί αυτή η λειτουργία."
 
-#: ../addons/type_utils.py:137
+#: ../addons/type_utils.py:140
 msgid "The authors are NOT RESPONSIBLE"
 msgstr "Οι δημιουργοί ΔΕΝ ΕΙΝΑΙ ΥΠΕΥΘΥΝΟΙ"
 
-#: ../addons/key_actions.py:788
+#: ../addons/key_actions.py:797
 msgid ""
 "The function has been interrupted.\n"
 "Don't press any key until the picture from mvi-file is displayed!"
@@ -1375,166 +1383,166 @@ msgstr ""
 "Η λειτουργία διακόπηκε.\n"
 "Μη πιέζετε κανένα πλήκτρο την επόμενη φορά μέχρι να εμφανιστεί η εικόνα από το αρχείο mvi!"
 
-#: ../addons/key_actions.py:595
+#: ../addons/key_actions.py:604
 msgid "The hash of a directory can't be calculated."
 msgstr "Η ψηφιακή υπογραφή ενός καταλόγου δεν δύναται να υπολογιστεί."
 
-#: ../addons/type_utils.py:208
+#: ../addons/type_utils.py:211
 msgid "This line is not editable!"
 msgstr "Αδυναμία επεξεργασίας αυτής της γραμμής!"
 
-#: ../ui.py:201
+#: ../ui.py:206
 msgid "Time between slides in image viewer slideshow."
 msgstr ""
 
-#: ../ui.py:201
+#: ../ui.py:206
 msgid "Time for Slideshow"
 msgstr "Χρόνος για προβολή διαφανειών"
 
-#: ../ui.py:1190
+#: ../ui.py:1199
 #, fuzzy
 msgid "Type the name for the new file"
 msgstr "Παρακαλώ εισάγετε όνομα νέου φάκελου"
 
-#: ../ui.py:1996
+#: ../ui.py:2015
 msgid "Type:"
 msgstr "Τύπος:"
 
-#: ../addons/key_actions.py:577
+#: ../addons/key_actions.py:586
 #, python-format
 msgid "Uninstall '%s' package and disable '%s'"
 msgstr "Απεγκατάσταση του πακέτου '%s' και απενεργοποίηση του '%s'"
 
-#: ../addons/key_actions.py:85
+#: ../addons/key_actions.py:86
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: ../addons/key_actions.py:131
+#: ../addons/key_actions.py:132
 #, python-format
 msgid "Unknown group: %d"
 msgstr "Άγνωστη ομάδα: %d"
 
-#: ../addons/key_actions.py:123
+#: ../addons/key_actions.py:124
 #, python-format
 msgid "Unknown user: %d"
 msgstr "Άγνωστος χρήστης: %d"
 
-#: ../addons/unrar.py:30 ../addons/unrar.py:31 ../addons/gz.py:25
-#: ../addons/gz.py:26 ../addons/tar.py:21 ../addons/tar.py:22
-#: ../addons/unzip.py:26 ../addons/unzip.py:27
+#: ../addons/unrar.py:31 ../addons/unrar.py:32 ../addons/gz.py:26
+#: ../addons/gz.py:27 ../addons/tar.py:22 ../addons/tar.py:23
+#: ../addons/unzip.py:27 ../addons/unzip.py:28
 #, python-format
 msgid "Unpack to %s"
 msgstr "Αποσυμπίεση στο %s"
 
-#: ../addons/unrar.py:29 ../addons/gz.py:24 ../addons/tar.py:20
-#: ../addons/unzip.py:25
+#: ../addons/unrar.py:30 ../addons/gz.py:25 ../addons/tar.py:21
+#: ../addons/unzip.py:26
 msgid "Unpack to current folder"
 msgstr "Αποσυμπίεση στον τρέχοντα φάκελο"
 
-#: ../ui.py:197
+#: ../ui.py:202
 msgid "Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted)."
 msgstr ""
 
-#: ../ui.py:493 ../ui.py:617
+#: ../ui.py:502 ../ui.py:626
 msgid "View or edit file (if size < 1MB)"
 msgstr "Προβολή η επεξεργασία αρχείου (αν το μέγεθος < 1MB)"
 
-#: ../addons/key_actions.py:390 ../addons/key_actions.py:392
+#: ../addons/key_actions.py:399 ../addons/key_actions.py:401
 #, python-format
 msgid "View or edit this %s script"
 msgstr "Προβολή η επεξεργασία αυτού του %s script"
 
-#: ../addons/type_utils.py:136
+#: ../addons/type_utils.py:139
 msgid "WARNING!"
 msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ!"
 
-#: ../addons/key_actions.py:607
+#: ../addons/key_actions.py:616
 msgid "What do you want to play?\n"
 msgstr "Τι θέλετε να αναπαραχθεί;\n"
 
-#: ../ui.py:99
+#: ../ui.py:102
 msgid "Yes"
 msgstr "Ναι"
 
-#: ../ui.py:1382
+#: ../ui.py:1393
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr ""
 
-#: ../ui.py:1384
+#: ../ui.py:1395
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr ""
 
-#: ../ui.py:1380
+#: ../ui.py:1391
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr ""
 
-#: ../addons/key_actions.py:508
+#: ../addons/key_actions.py:517
 #, python-format
 msgid "You can't usefully run '%s' on '%s'."
 msgstr "Δεν μπορείτε να τρέξετε το '%s' στο '%s'."
 
-#: ../addons/key_actions.py:491
+#: ../addons/key_actions.py:500
 #, python-format
 msgid "You can't usefully run '%s' on a directory."
 msgstr "Δεν μπορείτε να τρέξετε το '%s' σε κατάλογο."
 
-#: ../ui.py:261
+#: ../ui.py:267
 #, python-format
 msgid "[D]%s%s[F]%s%s"
 msgstr ""
 
-#: ../ui.py:141
+#: ../ui.py:144
 msgid "contains in title"
 msgstr ""
 
-#: ../ui.py:1591
+#: ../ui.py:1608
 #, fuzzy
 msgid "contains..."
 msgstr "Ρυθμίσεις..."
 
-#: ../ui.py:547 ../ui.py:860 ../ui.py:986 ../ui.py:1819
+#: ../ui.py:556 ../ui.py:869 ../ui.py:995 ../ui.py:1838
 msgid "copy file"
 msgstr "αντιγραφή αρχείου"
 
-#: ../ui.py:547 ../ui.py:860 ../ui.py:988 ../ui.py:1817
+#: ../ui.py:556 ../ui.py:869 ../ui.py:997 ../ui.py:1836
 msgid "copy folder"
 msgstr "αντιγραφή φακέλου"
 
-#: ../ui.py:1180
+#: ../ui.py:1189
 msgid "create symlink ..."
 msgstr "δημιουργία συντόμευσης ..."
 
-#: ../ui.py:257 ../ui.py:258
+#: ../ui.py:263 ../ui.py:264
 msgid "d"
 msgstr ""
 
-#: ../ui.py:141
+#: ../ui.py:144
 #, fuzzy
 msgid "end title"
 msgstr "Αναπαραγωγή τίτλου"
 
-#: ../ui.py:1589
+#: ../ui.py:1606
 msgid "ends with..."
 msgstr ""
 
-#: ../addons/type_utils.py:138
+#: ../addons/type_utils.py:141
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "για ΑΠΩΛΕΙΑ ΑΡΧΕΙΩΝ Η ΚΑΤΑΣΤΡΟΦΗ !!!"
 
-#: ../ui.py:974 ../ui.py:1003 ../ui.py:1036 ../ui.py:1752 ../ui.py:1787
-#: ../ui.py:1822
+#: ../ui.py:983 ../ui.py:1012 ../ui.py:1045 ../ui.py:1771 ../ui.py:1806
+#: ../ui.py:1841
 msgid "from dir"
 msgstr "από το φάκελο"
 
-#: ../addons/type_utils.py:135
+#: ../addons/type_utils.py:138
 msgid "has been CHANGED! Do you want to save it?"
 msgstr "έχει ΑΛΛΑΞΕΙ! Θέλετε να το αποθηκεύσετε;"
 
-#: ../Console.py:27
+#: ../Console.py:28
 msgid "hide"
 msgstr "απόκρυψη"
 
-#: ../addons/key_actions.py:297
+#: ../addons/key_actions.py:304
 #, fuzzy, python-format
 msgid "in %s selected file"
 msgid_plural "in %s selected files"
@@ -1549,23 +1557,23 @@ msgstr "εγκατάσταση/αποσυμπίεση αρχείων ipk"
 msgid "manage local Files"
 msgstr "διαχείριση τοπικών αρχείων"
 
-#: ../ui.py:547 ../ui.py:860 ../ui.py:1050 ../ui.py:1784
+#: ../ui.py:556 ../ui.py:869 ../ui.py:1059 ../ui.py:1803
 msgid "move file"
 msgstr "μετακίνηση αρχείου"
 
-#: ../ui.py:547 ../ui.py:860 ../ui.py:1052
+#: ../ui.py:556 ../ui.py:869 ../ui.py:1061
 msgid "move folder"
 msgstr "μετακίνηση φακέλου"
 
-#: ../ui.py:257 ../ui.py:258
+#: ../ui.py:263 ../ui.py:264
 msgid "n"
 msgstr ""
 
-#: ../ui.py:1190
+#: ../ui.py:1199
 msgid "new.txt"
 msgstr ""
 
-#: ../FileList.py:233
+#: ../FileList.py:237
 msgid "nothing connected"
 msgstr "δεν έχει συνδεθεί τίποτα"
 
@@ -1577,37 +1585,37 @@ msgstr "αναπαραγωγή αρχείων"
 msgid "play/show Files"
 msgstr "αναπαραγωγή/εμφάνιση αρχείων"
 
-#: ../addons/key_actions.py:387
+#: ../addons/key_actions.py:396
 msgid "python"
 msgstr "python"
 
-#: ../ui.py:257 ../ui.py:258
+#: ../ui.py:263 ../ui.py:264
 #, fuzzy
 msgid "s"
 msgstr "%s"
 
-#: ../addons/key_actions.py:149
+#: ../addons/key_actions.py:153
 msgid "script 'sterr':"
 msgstr "script 'sterr':"
 
-#: ../addons/key_actions.py:147
+#: ../addons/key_actions.py:151
 msgid "script 'stout':"
 msgstr "script 'stout':"
 
-#: ../addons/key_actions.py:389
+#: ../addons/key_actions.py:398
 msgid "shell"
 msgstr "κέλυφος"
 
-#: ../ui.py:141
+#: ../ui.py:144
 #, fuzzy
 msgid "start title"
 msgstr "Αναπαραγωγή τίτλου"
 
-#: ../ui.py:1587
+#: ../ui.py:1604
 msgid "starts with..."
 msgstr ""
 
-#: ../ui.py:974 ../ui.py:1036 ../ui.py:1787 ../ui.py:1822
+#: ../ui.py:983 ../ui.py:1045 ../ui.py:1806 ../ui.py:1841
 msgid "to dir"
 msgstr "στο φάκελο"
 
@@ -1635,6 +1643,6 @@ msgstr "αποσυμπίεση αρχείων zip"
 msgid "v"
 msgstr ""
 
-#: ../ui.py:98
+#: ../ui.py:101
 msgid "without"
 msgstr "χωρίς"
