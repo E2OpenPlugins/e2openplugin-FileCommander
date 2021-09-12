@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 11:48+0200\n"
+"POT-Creation-Date: 2021-09-12 11:54+0200\n"
 "PO-Revision-Date: 2021-09-12 11:48+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -890,13 +890,9 @@ msgstr "Žádné dostupné hash programy pro hash %s"
 msgid "Not allowed with folders"
 msgstr "Není povoleno u adresářů"
 
-#: ../ui.py:192
+#: ../ui.py:192 ../ui.py:1400
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
 msgstr "Pro přepínání této volby ve vícenásobném výběru můžete používat též klávesu '6'."
-
-#: ../ui.py:1400
-msgid "Note - for switching this option in multi-selection mode you can use key '6'."
-msgstr "Pro přepínání této volby ve vícenásobném výběru můžete používat klávesu '6'."
 
 #: ../ui.py:201
 msgid "Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'."

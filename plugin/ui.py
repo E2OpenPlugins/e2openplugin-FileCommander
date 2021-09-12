@@ -1397,7 +1397,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		#duplicity from main setting:
 		self.list.append(getConfigListEntry(_("Filenames in header"), cfg.filename_header, _("Display filenames in header. It is useful for filenames that are too long.")))
 		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.") + "\n\n" + _("Note - for switching this option in multi-selection mode you can use key '6'.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.") + "\n\n" + _("Note - for switching this option in multi-selection mode you can use key '6' too.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 
 		self["config"].list = self.list

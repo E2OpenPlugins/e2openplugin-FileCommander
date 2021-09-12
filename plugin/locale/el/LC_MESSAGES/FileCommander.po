@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander plugin official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 11:48+0200\n"
+"POT-Creation-Date: 2021-09-12 11:54+0200\n"
 "PO-Revision-Date: 2019-08-06 20:54+0200\n"
 "Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: \n"
@@ -902,12 +902,8 @@ msgstr "Καμία από τις υπογραφές προγραμμάτων γ�
 msgid "Not allowed with folders"
 msgstr "Δεν επιτρέπεται με τους φακέλους"
 
-#: ../ui.py:192
+#: ../ui.py:192 ../ui.py:1400
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
-msgstr ""
-
-#: ../ui.py:1400
-msgid "Note - for switching this option in multi-selection mode you can use key '6'."
 msgstr ""
 
 #: ../ui.py:201
