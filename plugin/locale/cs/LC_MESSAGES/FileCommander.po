@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 11:54+0200\n"
-"PO-Revision-Date: 2021-09-12 11:48+0200\n"
+"PO-Revision-Date: 2021-09-12 21:12+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -309,7 +309,7 @@ msgstr "Kopírovat adresář"
 
 #: ../ui.py:201
 msgid "Count directory content size"
-msgstr "Počítat velikost obsahu adreáře"
+msgstr "Počítat velikost obsahu adresáře"
 
 #: ../ui.py:500 ../ui.py:1517
 msgid "Counting directory content size while walking (on/off)"
@@ -439,7 +439,7 @@ msgid ""
 msgstr ""
 "Adresář nelze založit na položce\n"
 "<Seznam záznamových zařízení> nebo <Přijímač>.\n"
-"Přesunte kurzor nebo změňte adresář."
+"Přesuňte kurzor nebo změňte adresář."
 
 #: ../ui.py:185 ../ui.py:1398
 msgid "Display filenames in header. It is useful for filenames that are too long."
@@ -716,20 +716,20 @@ msgstr "Invertovat výběr"
 
 #: ../addons/key_actions.py:600
 msgid "It is not possible to calculate hashes on <List of Storage Devices>"
-msgstr "Nelze počítat hash pro <List of Storage Devices>"
+msgstr "Nelze počítat hash pro <Seznam záznamových zařízení> "
 
 #: ../addons/key_actions.py:244
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
-msgstr "Nelze měnit mód souboru pro <List of Storage Devices>"
+msgstr "Nelze měnit mód souboru pro <Seznam záznamových zařízení> "
 
 #: ../ui.py:1987
 msgid "It is not possible to get the file status of <List of Storage Devices>"
-msgstr "Nelze získat status pro <List of Storage Devices>"
+msgstr "Nelze získat status pro <Seznam záznamových zařízení> "
 
 #: ../addons/key_actions.py:495
 #, python-format
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
-msgstr "Nelze spustit '%s' na <List of Storage Devices>"
+msgstr "Nelze spustit '%s' na <Seznam záznamových zařízení>"
 
 #: ../ui.py:1074
 msgid "It's not possible to rename the filesystem root."
@@ -879,7 +879,7 @@ msgstr "Nejsou nakonfigurovány žádné hash výpočty"
 #: ../addons/key_actions.py:756
 #, python-format
 msgid "No viewer installed for this file type: %s"
-msgstr "Pro typ souboru '%s' není nainstalován žádný prohlížeč!"
+msgstr "Pro typ souboru '%s' není nainstalován žádný prohlížeč."
 
 #: ../addons/key_actions.py:595
 #, python-format
@@ -1036,7 +1036,7 @@ msgid ""
 "Install the '%s' package to install the program?"
 msgstr ""
 "Program '%s' musí být nainstalován pro spuštění této akce.\n"
-"Nainstallovat balíček '%s' pro instalaci programu?"
+"Nainstalovat balíček '%s' pro instalaci programu?"
 
 #: ../addons/key_actions.py:489
 #, python-format
@@ -1187,11 +1187,11 @@ msgstr "Zvolte Vaše osobní nastavení:"
 
 #: ../addons/key_actions.py:249
 msgid "Set archive mode (644)"
-msgstr "Nastavit archivní mod (644)"
+msgstr "Nastavit archivní mód (644)"
 
 #: ../addons/key_actions.py:249
 msgid "Set executable mode (755)"
-msgstr "Nastavitspouštěcí mod (755)"
+msgstr "Nastavit spouštěcí mód (755)"
 
 #: ../ui.py:188
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
