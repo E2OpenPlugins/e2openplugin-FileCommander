@@ -189,7 +189,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Show unknown extension as text"), cfg.unknown_extension_as_text, _("Show unknown file extensions with 'Addon File-Viewer'.")))
 		self.list.append(getConfigListEntry(_("Edit position is the line end"), cfg.editposition_lineend, _("If editing a file, you can set the cursor start position at end or begin of the line.")))
 		self.list.append(getConfigListEntry(_("Change buttons for list navigation"), cfg.change_navbutton, _("Swap buttons right/left with channel +/- or the channel button changed always the side.")))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.") + "\n\n" + _("Note - for switching this option in multi-selection mode you can use key '6' too.")))
 		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
 		self.list.append(getConfigListEntry(_("Default file sorting left"), cfg.sortFiles_left, _("Default sorting method for files in left panel.")))
 		self.list.append(getConfigListEntry(_("Default file sorting right"), cfg.sortFiles_right, _("Default sorting method for files in right panel.")))
@@ -198,7 +198,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 		self.list.append(getConfigListEntry(_("My extension"), cfg.my_extension, _("Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'.")))
 		self.list.append(getConfigListEntry(_("Filter extension, (*) appears in title"), cfg.extension, _("Filter visible file classes by extension.")))
-		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for Info.") + "\n\n" + _("Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'.")))
+		self.list.append(getConfigListEntry(_("Count directory content size"), cfg.dir_size, _("Calculates the size of directory contents for 'Info'.") + "\n\n" + _("Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'.")))
 		self.list.append(getConfigListEntry(_("Swap buttons for reverse file sorting"), cfg.toggle_stop_pause, _("Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("CPU priority for script execution"), cfg.script_priority_nice, _("Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
 		self.list.append(getConfigListEntry(_("I/O priority for script execution"), cfg.script_priority_ionice, _("Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)")))
@@ -1397,7 +1397,7 @@ class MultiSelectionSetup(ConfigListScreen, Screen):
 		#duplicity from main setting:
 		self.list.append(getConfigListEntry(_("Filenames in header"), cfg.filename_header, _("Display filenames in header. It is useful for filenames that are too long.")))
 		self.list.append(getConfigListEntry(_("Directories to group selections"), cfg.select_across_dirs, _("'Group selection' and 'Invert selection' in Multiselection mode can work with directories too.")))
-		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.")))
+		self.list.append(getConfigListEntry(_("Move selector to next item"), cfg.move_selector, _("In multi-selection mode moves cursor to next item after marking.") + "\n\n" + _("Note - for switching this option in multi-selection mode you can use key '6'.")))
 		self.list.append(getConfigListEntry(_("All movie extensions"), cfg.all_movie_ext, _("All files in the directory with the same name as the selected movie will be copied or moved too.")))
 
 		self["config"].list = self.list

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e 2openplugin-FileCommander\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-12 11:18+0200\n"
+"POT-Creation-Date: 2021-09-12 11:48+0200\n"
 "PO-Revision-Date: 2020-06-01 15:58+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -218,7 +218,7 @@ msgid "Calculates file checksums."
 msgstr ""
 
 #: ../ui.py:201
-msgid "Calculates the size of directory contents for Info."
+msgid "Calculates the size of directory contents for 'Info'."
 msgstr ""
 
 #: ../addons/unrar.py:51 ../addons/unarchiver.py:142
@@ -868,6 +868,14 @@ msgstr ""
 
 #: ../addons/key_actions.py:252
 msgid "Not allowed with folders"
+msgstr ""
+
+#: ../ui.py:192
+msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
+msgstr ""
+
+#: ../ui.py:1400
+msgid "Note - for switching this option in multi-selection mode you can use key '6'."
 msgstr ""
 
 #: ../ui.py:201
