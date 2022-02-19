@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import os
 from re import compile
 from enigma import eEnv
@@ -190,7 +191,7 @@ def resolveFilename(scope, base="", path_prefix=None):
 			try:
 				os.mkdir(path)
 			except OSError:
-				print "resolveFilename: Couldn't create %s" % path
+				print("resolveFilename: Couldn't create %s" % path)
 				return None
 
 	fallbackPath = fallbackPaths.get(scope)
@@ -219,8 +220,8 @@ def resolveFilename(scope, base="", path_prefix=None):
 					if pathExists(x[0]):
 						os.rename(x[0], path + base)
 						break
-			except Exception, e:
-				print "[D] Failed to recover %s:" % (path + base), e
+			except Exception as e:
+				print("[D] Failed to recover %s:" % (path + base), e)
 
 	# FIXME: we also have to handle DATADIR etc. here.
 	return path + base
@@ -256,8 +257,8 @@ def defaultRecordingLocation(candidate=None):
 					path = candidate[1]
 					havelocal = islocal
 					biggest = size
-			except Exception, e:
-				print "[DRL]", e
+			except Exception as e:
+				print("[DRL]", e)
 	if path:
 		# If there's a movie subdir, we'd probably want to use that.
 		movie = os.path.join(path, 'movie')
@@ -384,7 +385,7 @@ def copyfile(src, dst):
 		if have_utime:
 			utime(dst, (st.st_atime, st.st_mtime))
 	except:
-		print "copy", src, "to", dst, "failed!"
+		print("copy", src, "to", dst, "failed!")
 		return -1
 	return 0
 
@@ -409,7 +410,7 @@ def copytree(src, dst, symlinks=False):
 			else:
 				copyfile(srcname, dstname)
 		except:
-			print "dont copy srcname (no file or link or folder)"
+			print("dont copy srcname (no file or link or folder)")
 	try:
 		st = os.stat(src)
 		mode = os.stat.S_IMODE(st.st_mode)
@@ -418,7 +419,7 @@ def copytree(src, dst, symlinks=False):
 		if have_utime:
 			utime(dst, (st.st_atime, st.st_mtime))
 	except:
-		print "copy stats for", src, "failed!"
+		print("copy stats for", src, "failed!")
 
 # Renames files or if source and destination are on different devices moves them in background
 # input list of (source, destination)
@@ -431,21 +432,21 @@ def moveFiles(fileList):
 			for item in fileList:
 				os.rename(item[0], item[1])
 				movedList.append(item)
-		except OSError, e:
+		except OSError as e:
 			if e.errno == 18:
-				print "[Directories] cannot rename across devices, trying slow move"
+				print("[Directories] cannot rename across devices, trying slow move")
 				import Tools.CopyFiles
 				Tools.CopyFiles.moveFiles(fileList, item[0])
-				print "[Directories] Moving in background..."
+				print("[Directories] Moving in background...")
 			else:
 				raise
-	except Exception, e:
-		print "[Directories] Failed move:", e
+	except Exception as e:
+		print("[Directories] Failed move:", e)
 		for item in movedList:
 			try:
 				os.rename(item[1], item[0])
 			except:
-				print "[Directories] Failed to undo move:", item
+				print("[Directories] Failed to undo move:", item)
 				raise
 
 
