@@ -780,6 +780,7 @@ class key_actions(stat_info):
 		self.disableActions_Timer.start(100, True)
 
 	def saveCB(self, extra_args):
+		global last_service
 		if hasattr(self, 'session'):
 			self.disableActions_Timer.startLongTimer(1)
 			self.session.nav.playService(last_service)
@@ -793,7 +794,6 @@ class key_actions(stat_info):
 			import NavigationInstance
 			if last_service and NavigationInstance.instance:
 				NavigationInstance.instance.playService(last_service)
-				global last_service
 				last_service = None
 			Notifications.AddNotification(MessageBox, _("The function has been interrupted.\nDon't press any key until the picture from mvi-file is displayed!"), type=MessageBox.TYPE_ERROR, timeout=10, simple=True)
 
