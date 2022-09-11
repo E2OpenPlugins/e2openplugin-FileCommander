@@ -3,7 +3,7 @@
 
 from __future__ import print_function
 from Plugins.Plugin import PluginDescriptor
-from plugin import pname, pdesc
+from Plugins.Extensions.FileCommander.plugin import pname, pdesc
 
 # Components
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigDirectory, ConfigSelection, ConfigSet, NoSave, ConfigNothing, ConfigLocations, ConfigSelectionNumber, getConfigListEntry
@@ -49,17 +49,17 @@ import string
 import re
 
 # System mods
-from InputBox import InputBox
-from FileList import FileList, MultiFileSelectList, EXTENSIONS
+from Plugins.Extensions.FileCommander.InputBox import InputBox
+from Plugins.Extensions.FileCommander.FileList import FileList, MultiFileSelectList, EXTENSIONS
 # added
-from Console import Console
-from UnitConversions import UnitScaler, UnitMultipliers
-from TaskList import TaskListScreen
-from FileTransfer import FileTransferJob, ALL_MOVIE_EXTENSIONS
+from Plugins.Extensions.FileCommander.Console import Console
+from Plugins.Extensions.FileCommander.UnitConversions import UnitScaler, UnitMultipliers
+from Plugins.Extensions.FileCommander.TaskList import TaskListScreen
+from Plugins.Extensions.FileCommander.FileTransfer import FileTransferJob, ALL_MOVIE_EXTENSIONS
 
 # Addons
-from addons.key_actions import key_actions, stat_info
-from addons.type_utils import vEditor
+from Plugins.Extensions.FileCommander.addons.key_actions import key_actions, stat_info
+from Plugins.Extensions.FileCommander.addons.type_utils import vEditor
 
 # for locale (gettext)
 from . import _, ngettext

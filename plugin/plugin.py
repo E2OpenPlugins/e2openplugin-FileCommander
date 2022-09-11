@@ -25,7 +25,7 @@ config.plugins.filecommander.add_extensionmenu_entry = ConfigYesNo(default=False
 
 def filescan_open(list, session, **kwargs):
 	path = "/".join(list[0].path.split("/")[:-1]) + "/"
-	import ui
+	from Plugins.Extensions.FileCommander import ui
 	session.open(ui.FileCommanderScreen, path_left=path)
 
 
@@ -51,13 +51,13 @@ def start_from_mainmenu(menuid, **kwargs):
 
 
 def start_from_pluginmenu(session, **kwargs):
-	import ui
+	from Plugins.Extensions.FileCommander import ui
 	session.openWithCallback(exit, ui.FileCommanderScreen)
 
 
 def exit(session, result):
 	if not result:
-		import ui
+		from Plugins.Extensions.FileCommander import ui
 		session.openWithCallback(exit, ui.FileCommanderScreen)
 
 

@@ -11,7 +11,7 @@ from enigma import RT_HALIGN_LEFT, BT_SCALE, eListboxPythonMultiContent, \
 # commented out
 #eServiceReferenceFS,
 from Tools.LoadPixmap import LoadPixmap
-from addons.key_actions import TEXT_EXTENSIONS
+from Plugins.Extensions.FileCommander.addons.key_actions import TEXT_EXTENSIONS
 import skin
 
 # for locale (gettext)
