@@ -28,7 +28,7 @@ from Plugins.Extensions.FileCommander.Console import Console
 # Various
 from mimetypes import guess_type
 from enigma import eServiceReference, eActionMap
-from sys import maxint
+from sys import maxsize
 
 # System mods
 from Plugins.Extensions.FileCommander.Console import Console
@@ -45,12 +45,12 @@ import re
 import os
 
 # Addons
-from unrar import RarMenuScreen
-from tar import TarMenuScreen
-from unzip import UnzipMenuScreen
-from gz import GunzipMenuScreen
-from ipk import ipkMenuScreen
-from type_utils import ImageViewer, MoviePlayer, vEditor
+from .unrar import RarMenuScreen
+from .tar import TarMenuScreen
+from .unzip import UnzipMenuScreen
+from .gz import GunzipMenuScreen
+from .ipk import ipkMenuScreen
+from .type_utils import ImageViewer, MoviePlayer, vEditor
 
 # for locale (gettext)
 from . import _, ngettext
@@ -764,7 +764,7 @@ class key_actions(stat_info):
 			self.session.nav.stopService()
 			self.hide()
 		if ret == 'show':
-			eActionMap.getInstance().bindAction('', -maxint - 1, self.showCB)
+			eActionMap.getInstance().bindAction('', -maxsize - 1, self.showCB)
 			console().ePopen(cmd)
 		elif ret == 'save':
 			if os.path.isfile(self.tmp_file):

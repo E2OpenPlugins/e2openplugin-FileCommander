@@ -68,13 +68,13 @@ pvers = "%s%s" % (_("v"), "2.12")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
-
+import six
 def _make_filter(media_type):
-	return "(?i)^.*\.(" + '|'.join(sorted((ext for ext, type in EXTENSIONS.iteritems() if type == media_type))) + ")$"
+	return "(?i)^.*\.(" + '|'.join(sorted((ext for ext, type in six.iteritems(EXTENSIONS) if type == media_type))) + ")$"
 
 
 def _make_rec_filter():
-	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext for ext in MOVIEEXTENSIONS.iterkeys()])) + ")$"
+	return "(?i)^.*\.(" + '|'.join(sorted(["ts"] + [ext == "eit" and ext or "ts." + ext for ext in six.iterkeys(MOVIEEXTENSIONS)])) + ")$"
 
 
 FULLHD = False
