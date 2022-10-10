@@ -265,7 +265,7 @@ class ArchiverInfoScreen(Screen):
 		x = 10
 		w = self['list_left'].l.getItemSize().width()
 		flags = RT_HALIGN_LEFT
-		if 'Plugins.Extensions.FileCommander.addons.unzip.UnpackInfoScreen' in `self`:
+		if 'Plugins.Extensions.FileCommander.addons.unzip.UnpackInfoScreen' in 'self':
 			flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER
 			y *= 2
 		return [
