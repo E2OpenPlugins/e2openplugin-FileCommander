@@ -216,4 +216,4 @@ class Console(Screen):
 				self.container.kill()
 
 	def dataAvail(self, str):
-		self["text"].appendText(str)
+		self["text"].appendText(str.decode())
