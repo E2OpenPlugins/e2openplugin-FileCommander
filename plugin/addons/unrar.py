@@ -88,7 +88,7 @@ class RarMenuScreen(ArchiverMenuScreen):
 
 	def log(self, data):
 		data = data.decode()
-		# print "[RarMenuScreen] log", data
+		# print("[RarMenuScreen] log", data)
 		status = re.findall('(\d+)%', data)
 		if status:
 			if not status[0] in self.ulist:
