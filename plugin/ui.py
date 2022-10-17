@@ -1618,33 +1618,32 @@ class FileCommanderScreenFileSelect(Screen, HelpableScreen, key_actions):
 		name = ""
 		if item:
 			if cfg.search.value == "begin" and length:
-				name = NAME(item).decode('UTF-8', 'replace')[0:length]
+				name = NAME(item)[0:length]
 				txt += 10 * " " + "%s" % length
 			elif cfg.search.value == "end" and endlength:
-				name = NAME(item).decode('UTF-8', 'replace')[-endlength:]
+				name = NAME(item)[-endlength:]
 				txt += 10 * " " + "%s" % endlength
 		self.session.openWithCallback(boundFunction(self.changeItems, mark), VirtualKeyBoard, title=txt, text=name)
 
 	def changeItems(self, mark, searchString=None):
 		if searchString:
-			searchString = searchString.decode('UTF-8', 'replace')
 			if not cfg.sensitive.value:
 				searchString = searchString.lower()
 			for item in self.SOURCELIST.list:
 				if cfg.sensitive.value:
 					if cfg.search.value == "begin":
-						exist = NAME(item).decode('UTF-8', 'replace').startswith(searchString)
+						exist = NAME(item).startswith(searchString)
 					elif cfg.search.value == "end":
-						exist = NAME(item).decode('UTF-8', 'replace').endswith(searchString)
+						exist = NAME(item).endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').find(searchString) == -1 else True
+						exist = False if NAME(item).find(searchString) == -1 else True
 				else:
 					if cfg.search.value == "begin":
-						exist = NAME(item).decode('UTF-8', 'replace').lower().startswith(searchString)
+						exist = NAME(item).lower().startswith(searchString)
 					elif cfg.search.value == "end":
-						exist = NAME(item).decode('UTF-8', 'replace').lower().endswith(searchString)
+						exist = NAME(item).lower().endswith(searchString)
 					else:
-						exist = False if NAME(item).decode('UTF-8', 'replace').lower().find(searchString) == -1 else True
+						exist = False if NAME(item).lower().find(searchString) == -1 else True
 				if exist:
 					if mark:
 						if not SELECTED(item):
