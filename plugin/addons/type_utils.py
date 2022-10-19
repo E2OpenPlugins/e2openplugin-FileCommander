@@ -201,7 +201,7 @@ class vEditor(Screen, HelpableScreen):
 								if getStringSize(x, label) >= w:
 									return i
 							return i
-					return w / getStringSize("0", label) # approximate number of characters in label
+					return w // getStringSize("0", label) # approximate number of characters in label
 				except:
 					return 100 # default value, if missing label "InputBoxWide_input" in vEditor skin
 
