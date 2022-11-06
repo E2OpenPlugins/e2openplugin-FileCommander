@@ -119,8 +119,8 @@ class vEditor(Screen, HelpableScreen):
 			"keyChannelUp": (self.posStart, _("Go to start of file")),
 			"keyChannelDown": (self.posEnd, _("Go to end of file")),
 			"mainMenu": (self.menu, _("Menu...")),
-			"historyBack": (self.prevFound, _("To previous found string")),
-			"historyNext": (self.nextFound, _("To next found string"))
+			"historyBack": (self.prevFound, _("To previous found text")),
+			"historyNext": (self.nextFound, _("To next found text"))
 		}, -1)
 		self["list_head"] = Label(self.file_name)
 		self["key_red"] = StaticText(_("Exit"))
@@ -148,7 +148,7 @@ class vEditor(Screen, HelpableScreen):
 	def menu(self):
 		menu = []
 		keys = ["7", "menu"]
-		menu.append((_("Search text"), self.search, _("Search text in file as %s.") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive"))))
+		menu.append((_("Search text"), self.search, _("Search text in file (%s).") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive"))))
 		menu.append((_("Settings..."), boundFunction(self.session.open, SetupEditor)))
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select action:"), list=menu, keys=keys)
 
@@ -319,7 +319,7 @@ class vEditor(Screen, HelpableScreen):
 				if len(self.foundIndexes):
 					self["filedata"].moveToIndex(self.foundIndexes[0])
 				else:
-					self.session.open(MessageBox, _("Text not found."), MessageBox.TYPE_INFO, timeout=2)
+					self.session.open(MessageBox, _("Text not found."), MessageBox.TYPE_INFO, timeout=3)
 		self.session.openWithCallback(search, VirtualKeyBoard, title=_("Search text (%s):") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive")), text=self.searchText, visible_width=45)
 
 	def prevFound(self):
@@ -345,7 +345,7 @@ class SetupEditor(ConfigListScreen, Screen):
 		self["description"] = Label()
 
 		self.list = []
-		self.list.append(getConfigListEntry(_("Case sensitive"), config.plugins.filecommander.veditor_case_sensitive, _("Search text case sensitive.")))
+		self.list.append(getConfigListEntry(_("Case sensitive search"), config.plugins.filecommander.veditor_case_sensitive, _("Text searching as case sensitive or case insensitive.")))
 
 		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 
