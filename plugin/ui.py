@@ -64,7 +64,7 @@ from Plugins.Extensions.FileCommander.addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"), "2.12")
+pvers = "%s%s" % (_("v"), "2.13")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -129,6 +129,7 @@ config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
 config.plugins.filecommander.showTaskCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.showScriptCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), default=["MD5"])
+
 config.plugins.filecommander.bookmarks = ConfigLocations()
 config.plugins.filecommander.fake_entry = NoSave(ConfigNothing())
 
@@ -156,6 +157,8 @@ for i in range(1250, 1259, 1):
 	codepages.append(("%s" % i, "CP%s" % i))
 config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepages)
 config.plugins.filecommander.filename_header = ConfigYesNo(default=True)
+
+config.plugins.filecommander.veditor_case_sensitive = ConfigYesNo(default=False)
 
 cfg = config.plugins.filecommander
 

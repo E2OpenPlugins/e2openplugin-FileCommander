@@ -3,22 +3,26 @@
 
 # Components
 from __future__ import print_function
-from Components.config import config
+from Components.config import config, getConfigListEntry
 from Components.Label import Label
-from Components.ActionMap import HelpableActionMap
+from Components.ActionMap import ActionMap, HelpableActionMap
 from Components.MenuList import MenuList
 from Components.AVSwitch import AVSwitch
 from Components.Pixmap import Pixmap
 from Components.Sources.StaticText import StaticText
+from Components.ConfigList import ConfigListScreen
 
 # Screens
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.HelpMenu import HelpableScreen
 from Screens.InfoBar import MoviePlayer as Movie_Audio_Player
+from Screens.ChoiceBox import ChoiceBox
+from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # Tools
 from Tools.Directories import fileExists
+from Tools.BoundFunction import boundFunction
 
 # Various
 from Plugins.Extensions.FileCommander.InputBox import InputBoxWide
@@ -105,7 +109,7 @@ class vEditor(Screen, HelpableScreen):
 		self.file_name = file
 		self.list = []
 		self["filedata"] = MenuList(self.list)
-		self["actions"] = HelpableActionMap(self, ["WizardActions", "ColorActions", "InfobarChannelSelection"], {
+		self["actions"] = HelpableActionMap(self, ["WizardActions", "ColorActions", "InfobarChannelSelection", "InfobarMenuActions"], {
 			"ok": (self.editLine, _("Edit current line")),
 			"green": (self.editLine, _("Edit current line")),
 			"back": (self.exitEditor, _("Exit editor and write changes (if any)")),
@@ -114,6 +118,9 @@ class vEditor(Screen, HelpableScreen):
 			"blue": (self.ins_Line, _("Insert line before current line")),
 			"keyChannelUp": (self.posStart, _("Go to start of file")),
 			"keyChannelDown": (self.posEnd, _("Go to end of file")),
+			"mainMenu": (self.menu, _("Menu...")),
+			"historyBack": (self.prevFound, _("To previous found string")),
+			"historyNext": (self.nextFound, _("To next found string"))
 		}, -1)
 		self["list_head"] = Label(self.file_name)
 		self["key_red"] = StaticText(_("Exit"))
@@ -133,6 +140,22 @@ class vEditor(Screen, HelpableScreen):
 		self.skinName = "vEditorScreen"
 		self.GetFileData(file)
 		self.setTitle(pname)
+
+		self.foundIndexes = []
+		self.idx = 0
+		self.searchText = ""
+
+	def menu(self):
+		menu = []
+		keys = ["7", "menu"]
+		menu.append((_("Search text"), self.search, _("Search text in file as %s.") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive"))))
+		menu.append((_("Settings..."), boundFunction(self.session.open, SetupEditor)))
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select action:"), list=menu, keys=keys)
+
+	def menuCallback(self, choice):
+		if choice is None:
+			return
+		choice[1]()
 
 	def exitEditor(self):
 		if self.isChanged:
@@ -279,6 +302,85 @@ class vEditor(Screen, HelpableScreen):
 			self.close()
 		else:
 			self.close()
+
+	def search(self):
+		self.foundIndexes = []
+		def search(text):
+			if text:
+				self.searchText = text
+				if config.plugins.filecommander.veditor_case_sensitive.value:
+					for i, x in enumerate(self.list):
+						if x.find(text) != -1:
+							self.foundIndexes.append(i)
+				else:
+					for i, x in enumerate(self.list):
+						if x.lower().find(text.lower()) != -1:
+							self.foundIndexes.append(i)
+				if len(self.foundIndexes):
+					self["filedata"].moveToIndex(self.foundIndexes[0])
+				else:
+					self.session.open(MessageBox, _("Text not found."), MessageBox.TYPE_INFO, timeout=2)
+		self.session.openWithCallback(search, VirtualKeyBoard, title=_("Search text (%s):") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive")), text=self.searchText, visible_width=45)
+
+	def prevFound(self):
+		n = len(self.foundIndexes)
+		if n:
+			self.idx -= 1
+			self.idx %= n
+			self["filedata"].moveToIndex(self.foundIndexes[self.idx])
+
+	def nextFound(self):
+		n = len(self.foundIndexes)
+		if n:
+			self.idx += 1
+			self.idx %= n
+			self["filedata"].moveToIndex(self.foundIndexes[self.idx])
+
+
+class SetupEditor(ConfigListScreen, Screen):
+	def __init__(self, session):
+		self.session = session
+		Screen.__init__(self, session)
+		self.skinName = ["FileCommanderSetup", "Setup"]
+		self["description"] = Label()
+
+		self.list = []
+		self.list.append(getConfigListEntry(_("Case sensitive"), config.plugins.filecommander.veditor_case_sensitive, _("Search text case sensitive.")))
+
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
+
+		self["key_red"] = StaticText(_("Cancel"))
+		self["key_green"] = StaticText(_("OK"))
+		self["Actions"] = ActionMap(["ColorActions", "SetupActions"],
+		{
+			"green": self.save,
+			"red": self.cancel,
+			"save": self.save,
+			"cancel": self.cancel,
+			"ok": self.save,
+		}, -2)
+		self.onLayoutFinish.append(self.onLayout)
+
+	def onLayout(self):
+		self.setTitle(_("File Commander - Addon File-Viewer Settings"))
+
+	def getCurrentEntry(self):
+		x = self["config"].getCurrent()
+		if x:
+			text = x[2] if len(x) == 3 else ""
+			self["description"].setText(text)
+
+	def save(self):
+		print("[FileCommander]: Settings vEditor saved")
+		for x in self["config"].list:
+			x[1].save()
+		self.close(True)
+
+	def cancel(self):
+		print("[FileCommander]: Settings vEditor canceled")
+		for x in self["config"].list:
+			x[1].cancel()
+		self.close(False)
 
 
 class ImageViewer(Screen, HelpableScreen):
