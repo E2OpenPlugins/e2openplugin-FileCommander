@@ -128,7 +128,10 @@ config.plugins.filecommander.path_left_selected = ConfigYesNo(default=True)
 config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
 config.plugins.filecommander.showTaskCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.showScriptCompleted_message = ConfigYesNo(default=True)
-config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), default=["MD5"])
+choicelist = []
+for i in key_actions.hashes:
+	choicelist.append((i))
+config.plugins.filecommander.hashes = ConfigSelection(default="MD5", choices=choicelist)
 config.plugins.filecommander.bookmarks = ConfigLocations()
 config.plugins.filecommander.fake_entry = NoSave(ConfigNothing())
 
