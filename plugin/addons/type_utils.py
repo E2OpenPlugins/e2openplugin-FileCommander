@@ -149,13 +149,18 @@ class vEditor(Screen, HelpableScreen):
 		menu = []
 		keys = ["7", "menu"]
 		menu.append((_("Search text"), self.search, _("Search text in file (%s).") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive"))))
-		menu.append((_("Settings..."), boundFunction(self.session.open, SetupEditor)))
+		menu.append((_("Settings..."), 100))
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select action:"), list=menu, keys=keys)
 
 	def menuCallback(self, choice):
 		if choice is None:
 			return
-		choice[1]()
+		if choice[1] == 100:
+			def callMenu(answer):
+				self.menu()
+			self.session.openWithCallback(callMenu, SetupEditor)
+		else:
+			choice[1]()
 
 	def exitEditor(self):
 		if self.isChanged:
