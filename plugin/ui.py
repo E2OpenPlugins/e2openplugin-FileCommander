@@ -129,7 +129,6 @@ config.plugins.filecommander.lastcursorposition = ConfigInteger(default=0)
 config.plugins.filecommander.showTaskCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.showScriptCompleted_message = ConfigYesNo(default=True)
 config.plugins.filecommander.hashes = ConfigSet(key_actions.hashes.keys(), default=["MD5"])
-
 config.plugins.filecommander.bookmarks = ConfigLocations()
 config.plugins.filecommander.fake_entry = NoSave(ConfigNothing())
 
@@ -159,7 +158,6 @@ config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepa
 config.plugins.filecommander.filename_header = ConfigYesNo(default=True)
 
 config.plugins.filecommander.veditor_case_sensitive = ConfigYesNo(default=False)
-
 cfg = config.plugins.filecommander
 
 # ####################
