@@ -951,8 +951,8 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				except Exception as error:
 					self.session.open(MessageBox, "%s" % error, MessageBox.TYPE_ERROR, timeout=3)
 				else:
-					fi = open(name + ".tmp", "rt")
-					fo = open(name, "wt")
+					fi = open(name + ".tmp", "rb")
+					fo = open(name, "wb")
 					try:
 						for line in fi:
 							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
