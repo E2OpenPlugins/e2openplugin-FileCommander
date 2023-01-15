@@ -144,12 +144,17 @@ class vEditor(Screen, HelpableScreen):
 		self.foundIndexes = []
 		self.idx = 0
 		self.searchText = ""
+		self["h_prev"] = Pixmap()
+		self["h_next"] = Pixmap()
+		self["h_prev"].hide()
+		self["h_next"].hide()
 
 	def menu(self):
 		menu = []
-		keys = ["7", "menu"]
 		menu.append((_("Search text"), self.search, _("Search text in file (%s).") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive"))))
+		keys = ["7"]
 		menu.append((_("Settings..."), 100))
+		keys += ["menu"]
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select action:"), list=menu, keys=keys)
 
 	def menuCallback(self, choice):
@@ -323,8 +328,12 @@ class vEditor(Screen, HelpableScreen):
 							self.foundIndexes.append(i)
 				if len(self.foundIndexes):
 					self["filedata"].moveToIndex(self.foundIndexes[0])
+					self["h_prev"].show()
+					self["h_next"].show()
 				else:
 					self.session.open(MessageBox, _("Text not found."), MessageBox.TYPE_INFO, timeout=3)
+					self["h_prev"].hide()
+					self["h_next"].hide()
 		self.session.openWithCallback(search, VirtualKeyBoard, title=_("Search text (%s):") % (_("case sensitive") if config.plugins.filecommander.veditor_case_sensitive.value else _("case insensitive")), text=self.searchText, visible_width=45)
 
 	def prevFound(self):
