@@ -939,6 +939,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 
 # ## convert subtitles
 	def convertSubtitles(self):
+		import codecs
 		if self.disableActions_Timer.isActive():
 			return
 		filename = self.SOURCELIST.getFilename()
@@ -953,6 +954,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				else:
 					fi = open(name + ".tmp", "rb")
 					fo = open(name, "wb")
+					fo.write(codecs.BOM_UTF8)
 					try:
 						for line in fi:
 							fo.write(line.decode(cfg.cp.value).encode('utf-8', 'ignore'))
