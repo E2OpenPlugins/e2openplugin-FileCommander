@@ -746,8 +746,9 @@ class key_actions(stat_info):
 				self.session.open(MessageBox, _("%s: %s") % (longname, oe.strerror), type=MessageBox.TYPE_ERROR, simple=True)
 				return
 			if (xfile.st_size < 1000000):
-				self.session.open(vEditor, longname)
-				self.onFileActionCB(True)
+				def do_refresh(result=False):
+					self.onFileActionCB(True)
+				self.session.openWithCallback(do_refresh, vEditor, longname)
 		else:
 			try:
 				found_viewer = openFile(self.session, guess_type(longname)[0], longname)
