@@ -315,6 +315,8 @@ class vEditor(Screen, HelpableScreen):
 
 	def search(self):
 		self.foundIndexes = []
+		self["h_prev"].hide()
+		self["h_next"].hide()
 		def search(text):
 			if text:
 				self.searchText = text
@@ -328,8 +330,9 @@ class vEditor(Screen, HelpableScreen):
 							self.foundIndexes.append(i)
 				if len(self.foundIndexes):
 					self["filedata"].moveToIndex(self.foundIndexes[0])
-					self["h_prev"].show()
-					self["h_next"].show()
+					if len(self.foundIndexes) > 1:
+						self["h_prev"].show()
+						self["h_next"].show()
 				else:
 					self.session.open(MessageBox, _("Text not found."), MessageBox.TYPE_INFO, timeout=3)
 					self["h_prev"].hide()
