@@ -1,9 +1,15 @@
+# Turkish translations for enigma package.
+# Copyright (C) 2020 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# dreamosat <info@dreamosat-forum.com>, 2020.
+# DreamOSat Forum <info@dreamosat-forum.com>, 2023.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander - E2OpenPlugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-12 11:54+0200\n"
-"PO-Revision-Date: 2020-08-18 22:54+0300\n"
+"PO-Revision-Date: 2023-01-26 20:04+0300\n"
 "Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr\n"
@@ -11,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../addons/key_actions.py:405
 #, python-format
@@ -443,7 +449,7 @@ msgstr ""
 
 #: ../ui.py:185 ../ui.py:1398
 msgid "Display filenames in header. It is useful for filenames that are too long."
-msgstr ""
+msgstr "Dosya adlarını başlıkta görüntüleyin. Çok uzun dosya adları için kullanışlıdır."
 
 #: ../addons/key_actions.py:250
 msgid "Do you want change rights?\n"
@@ -539,7 +545,7 @@ msgstr "Düzenleyiciden çık ve değişiklikleri yaz (varsa)"
 
 #: ../addons/type_utils.py:52
 msgid "Exit movie player?"
-msgstr ""
+msgstr "Film oynatıcısından çıkılsın mı?"
 
 #: ../addons/type_utils.py:300
 msgid "Exit picture viewer"
@@ -627,7 +633,7 @@ msgstr "Dosya/Dizin Durum Bilgileri"
 
 #: ../ui.py:185 ../ui.py:1398
 msgid "Filenames in header"
-msgstr ""
+msgstr "Başlıktaki dosya adları"
 
 #: ../ui.py:199
 msgid "Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'."
@@ -892,11 +898,11 @@ msgstr "Klasörlerle izin verilmez"
 
 #: ../ui.py:192 ../ui.py:1400
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
-msgstr ""
+msgstr "Not - çoklu seçim modunda bu seçeneği değiştirmek için '6' tuşunu da kullanabilirsiniz."
 
 #: ../ui.py:201
 msgid "Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'."
-msgstr ""
+msgstr "Not - bu öğeyi ayarlamaktan bağımsız olarak, listede '1' tuşuyla dizin içeriği boyutunu saymayı ve görüntülemeyi açabilir/kapatabilirsiniz."
 
 #: ../ui.py:188
 msgid "Number of lines in script messages"
