@@ -122,6 +122,13 @@ class vEditor(Screen, HelpableScreen):
 			"historyBack": (self.prevFound, _("To previous found text")),
 			"historyNext": (self.nextFound, _("To next found text"))
 		}, -1)
+
+		self["CSFDRunActions"] = HelpableActionMap(self,"CSFDRunActions", # ims
+			{
+				"csfd": (self.csfd, _("CSFD"))
+			}
+		)
+
 		self["list_head"] = Label(self.file_name)
 		self["key_red"] = StaticText(_("Exit"))
 		self["key_green"] = StaticText(_("Edit"))
@@ -148,6 +155,30 @@ class vEditor(Screen, HelpableScreen):
 		self["h_next"] = Pixmap()
 		self["h_prev"].hide()
 		self["h_next"].hide()
+
+	def csfd(self): #ims
+		def isCSFD():
+			try:
+				if config.plugins.csfdtype.value == "CSFD":
+					from Plugins.Extensions.CSFD.plugin import CSFD
+				else:
+					from Plugins.Extensions.CSFDLite.plugin import CSFDLite
+			except ImportError:
+				from Screens.MessageBox import MessageBox
+				self.session.open(MessageBox, _("The %s plugin is not installed!\nPlease install it." % config.plugins.csfdtype.value), type=MessageBox.TYPE_INFO, timeout=5)
+				return False
+			else:
+				return True
+		if isCSFD():
+			event = self["filedata"].getCurrent()
+			if event:
+				eventname = event.split(';')[0].split(':')[1].strip()
+				if config.plugins.csfdtype.value == "CSFD":
+					from Plugins.Extensions.CSFD.plugin import CSFD
+					self.session.open(CSFD, eventnamep)
+				else:
+					from Plugins.Extensions.CSFDLite.plugin import CSFDLite
+					self.session.open(CSFDLite, eventname)
 
 	def menu(self):
 		menu = []
