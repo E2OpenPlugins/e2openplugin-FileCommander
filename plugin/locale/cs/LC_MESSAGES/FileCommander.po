@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 FileCommand Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-06 14:25+0100\n"
-"PO-Revision-Date: 2022-11-06 14:37+0100\n"
+"PO-Revision-Date: 2023-03-27 22:30+0200\n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.2.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: ../addons/key_actions.py:406
 #, python-format
@@ -540,7 +540,7 @@ msgstr "Zavřít"
 
 #: ../addons/type_utils.py:115 ../addons/type_utils.py:116
 msgid "Exit editor and write changes (if any)"
-msgstr "Ukončit editor a zapsat případné změny"
+msgstr "Zavřít editor a uložit případné změny"
 
 #: ../addons/type_utils.py:57
 msgid "Exit movie player?"
@@ -548,7 +548,7 @@ msgstr "Zavřít přehrávač?"
 
 #: ../addons/type_utils.py:403
 msgid "Exit picture viewer"
-msgstr "Ukončit prohlížeč obrázků"
+msgstr "Zavřít prohlížeč obrázků"
 
 #: ../addons/key_actions.py:86
 msgid "FIFO"
