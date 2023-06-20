@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 14:25+0100\n"
-"PO-Revision-Date: 2020-06-23 15:40+0200\n"
+"POT-Creation-Date: 2023-06-20 16:52+0200\n"
+"PO-Revision-Date: 2023-06-20 17:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: ../addons/key_actions.py:406
 #, python-format
@@ -44,18 +44,18 @@ msgstr " ('%s') fini avec des messages d'erreur."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') a terminé avec le numéro d'erreur [%d]."
 
-#: ../ui.py:1808 ../ui.py:1843
+#: ../ui.py:1810 ../ui.py:1845
 #, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
 msgstr[0] " - %d élément existe! Ecraser"
 msgstr[1] " - %d éléments existent! Ecraser"
 
-#: ../ui.py:982 ../ui.py:1044
+#: ../ui.py:984 ../ui.py:1046
 msgid " - file exist! Overwrite"
 msgstr " - fichier existent! Ecraser"
 
-#: ../ui.py:986 ../ui.py:1048
+#: ../ui.py:988 ../ui.py:1050
 msgid " - folder exist! Overwrite"
 msgstr " - dossier existent! Ecraser"
 
@@ -87,7 +87,7 @@ msgstr "%d.%m.%Y, %H:%M:%S"
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:2022
+#: ../ui.py:2024
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -123,7 +123,7 @@ msgstr "%s: %s"
 msgid "'%s' not installed and no known package"
 msgstr "'%s' non installé et aucun paquet connu"
 
-#: ../ui.py:198 ../ui.py:1404
+#: ../ui.py:198 ../ui.py:1406
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr "'Grouper sélection' et 'Inverser sélection' en mode MultiSelection peut fonctionner aussi avec les répertoires."
 
@@ -134,11 +134,11 @@ msgid_plural "(%d jobs)"
 msgstr[0] "(%d tâche)"
 msgstr[1] "(%d tâches)"
 
-#: ../ui.py:1540
+#: ../ui.py:1542
 msgid "(Selectmode)"
 msgstr "(ModeSélection)"
 
-#: ../ui.py:1268 ../ui.py:1869
+#: ../ui.py:1270 ../ui.py:1871
 msgid "<Receiver>"
 msgstr "<Récepteur>"
 
@@ -146,11 +146,11 @@ msgstr "<Récepteur>"
 msgid "?"
 msgstr "?"
 
-#: ../ui.py:2026
+#: ../ui.py:2028
 msgid "Accessed:"
 msgstr "Consulté:"
 
-#: ../ui.py:1509 ../ui.py:1511
+#: ../ui.py:1511 ../ui.py:1513
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Activer la liste de fichiers de gauche en tant que source multi-sélection"
 
@@ -158,7 +158,7 @@ msgstr "Activer la liste de fichiers de gauche en tant que source multi-sélecti
 msgid "Activate left-hand file list as source"
 msgstr "Activer la liste de fichiers de gauche comme source"
 
-#: ../ui.py:1508 ../ui.py:1510
+#: ../ui.py:1510 ../ui.py:1512
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Activer la liste de fichiers de droite en tant que source multi-sélection"
 
@@ -182,7 +182,7 @@ msgstr "Ajouter le plugin au menu principal"
 msgid "Add selected folder to bookmarks"
 msgstr "Ajouter un dossier sélectionné aux signets"
 
-#: ../ui.py:1615
+#: ../ui.py:1617
 #, python-format
 msgid "Add to selection (%s)"
 msgstr "Ajouter à la sélection (%s)"
@@ -191,11 +191,11 @@ msgstr "Ajouter à la sélection (%s)"
 msgid "All"
 msgstr "Tout"
 
-#: ../ui.py:203 ../ui.py:1406
+#: ../ui.py:203 ../ui.py:1408
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr "Tous les fichiers dans le répertoire avec le même nom que le film sélectionné seront également copiés ou déplacés."
 
-#: ../ui.py:203 ../ui.py:1406
+#: ../ui.py:203 ../ui.py:1408
 msgid "All movie extensions"
 msgstr "Toutes les extions des films"
 
@@ -234,15 +234,15 @@ msgstr ""
 "Impossible d'exécuter %s: %s.\n"
 "%s peut être dans un plugin qui n'est pas installé."
 
-#: ../ui.py:2042
+#: ../ui.py:2044
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Impossible de lire le contenu du lien: %s"
 
-#: ../Console.py:28 ../addons/type_utils.py:352 ../addons/unarchiver.py:74
-#: ../addons/unarchiver.py:245 ../addons/key_actions.py:250
+#: ../addons/unarchiver.py:74 ../addons/unarchiver.py:245
+#: ../addons/type_utils.py:369 ../addons/key_actions.py:250
 #: ../addons/key_actions.py:400 ../addons/key_actions.py:616 ../ui.py:216
-#: ../ui.py:1377
+#: ../ui.py:1379 ../Console.py:28
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -250,10 +250,9 @@ msgstr "Annuler"
 msgid "Cancel execution?"
 msgstr "Annuler l'exécution?"
 
-#: ../addons/type_utils.py:348
-#, fuzzy
+#: ../addons/type_utils.py:365
 msgid "Case sensitive search"
-msgstr "Comparaison en respectant la case"
+msgstr "Comparaison en respectant majuscule et minuscule"
 
 #: ../ui.py:196
 msgid "Change buttons for list navigation"
@@ -275,11 +274,11 @@ msgstr "Périphérique caractère"
 msgid "Close"
 msgstr "Fermer"
 
-#: ../ui.py:1401
+#: ../ui.py:1403
 msgid "Compare case sensitive"
 msgstr "Comparaison en respectant la case"
 
-#: ../ui.py:2032
+#: ../ui.py:2034
 msgid "Content size:"
 msgstr "Taille du contenu:"
 
@@ -288,18 +287,18 @@ msgstr "Taille du contenu:"
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr "Convertir les sous-titres de '%s' vers UTF-8"
 
-#: ../ui.py:485 ../ui.py:1501
+#: ../ui.py:485 ../ui.py:1503
 msgid "Copy"
 msgstr "Copier"
 
-#: ../ui.py:1844
+#: ../ui.py:1846
 #, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
 msgstr[0] "Copier %d élément"
 msgstr[1] "Copier %d éléments"
 
-#: ../ui.py:983
+#: ../ui.py:985
 msgid "Copy file"
 msgstr "Copier fichier"
 
@@ -307,11 +306,11 @@ msgstr "Copier fichier"
 msgid "Copy file/directory to target directory"
 msgstr "Copier le fichier/répertoire vers le répertoire cible"
 
-#: ../ui.py:1518
+#: ../ui.py:1520
 msgid "Copy files/directories to target directory"
 msgstr "Copier les fichiers/répertoires vers le répertoire cible"
 
-#: ../ui.py:987
+#: ../ui.py:989
 msgid "Copy folder"
 msgstr "Copier le répertoire"
 
@@ -319,7 +318,7 @@ msgstr "Copier le répertoire"
 msgid "Count directory content size"
 msgstr "Caculer la taille du contenu du répertoire"
 
-#: ../ui.py:505 ../ui.py:1522
+#: ../ui.py:505 ../ui.py:1524
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Calculer la taille du contenu du répertoire en le parcourant (on/off)"
 
@@ -327,11 +326,11 @@ msgstr "Calculer la taille du contenu du répertoire en le parcourant (on/off)"
 msgid "Create directory"
 msgstr "Créer un répertoire"
 
-#: ../ui.py:1586
+#: ../ui.py:1588
 msgid "Create directory in 'Target' panel"
 msgstr "Créer un répertoire dans le panneau 'Cible'"
 
-#: ../ui.py:1176
+#: ../ui.py:1178
 msgid "Create symlink to file"
 msgstr "Créer un lien symbolique vers un fichier"
 
@@ -387,11 +386,11 @@ msgstr "Méthode de tri pour les fichiers dans le panneau de gauche."
 msgid "Default sorting method for files in right panel."
 msgstr "Méthode de tri pour les fichiers dans le panneau de droite."
 
-#: ../addons/type_utils.py:128 ../ui.py:483 ../ui.py:1499
+#: ../addons/type_utils.py:128 ../ui.py:483 ../ui.py:1501
 msgid "Delete"
 msgstr "Supprimer"
 
-#: ../ui.py:1774
+#: ../ui.py:1776
 #, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -402,7 +401,7 @@ msgstr[1] "Supprimer %d éléments"
 msgid "Delete current line"
 msgstr "Supprimer la ligne actuelle"
 
-#: ../ui.py:1014
+#: ../ui.py:1016
 msgid "Delete file"
 msgstr "Effacer fichier"
 
@@ -410,27 +409,27 @@ msgstr "Effacer fichier"
 msgid "Delete file or directory (and all its contents)"
 msgstr "Supprimer le fichier ou le répertoire (et tout son contenu)"
 
-#: ../ui.py:1016
+#: ../ui.py:1018
 msgid "Delete folder"
 msgstr "Supprimer le dossier"
 
-#: ../ui.py:1516
+#: ../ui.py:1518
 msgid "Delete the selected files or directories"
 msgstr "Supprimer les fichiers ou répertoires sélectionnés"
 
-#: ../ui.py:1585
+#: ../ui.py:1587
 msgid "Deselect All"
 msgstr "Tout déselectionner"
 
-#: ../ui.py:1524
+#: ../ui.py:1526
 msgid "Deselect group"
 msgstr "Déselectionner groupe"
 
-#: ../ui.py:1583
+#: ../ui.py:1585
 msgid "Deselect group..."
 msgstr "Déselectionner groupe..."
 
-#: ../ui.py:198 ../ui.py:1404
+#: ../ui.py:198 ../ui.py:1406
 msgid "Directories to group selections"
 msgstr "Répertoires pour la sélection du groupe"
 
@@ -438,7 +437,7 @@ msgstr "Répertoires pour la sélection du groupe"
 msgid "Directory"
 msgstr "Répertoire"
 
-#: ../ui.py:1227 ../ui.py:1740
+#: ../ui.py:1229 ../ui.py:1742
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -448,9 +447,9 @@ msgstr ""
 "<Liste des périphériques de stockage> ou <Récepteur>.\n"
 "Déplacer la sélection une ligne en dessous ou changer de répertoire."
 
-#: ../ui.py:190 ../ui.py:1403
+#: ../ui.py:190 ../ui.py:1405
 msgid "Display filenames in header. It is useful for filenames that are too long."
-msgstr ""
+msgstr "Affiche les noms de fichiers dans l'en-tête. C'est utile pour les noms de fichiers trop longs."
 
 #: ../addons/key_actions.py:251
 msgid "Do you want change rights?\n"
@@ -468,14 +467,13 @@ msgstr "Éditer"
 msgid "Edit current line"
 msgstr "Modifier la ligne actuelle"
 
-#: ../addons/type_utils.py:233
+#: ../addons/type_utils.py:243
 msgid "Edit line "
 msgstr "Editer la ligne "
 
 #: ../ui.py:651
-#, fuzzy
 msgid "Edit new file"
-msgstr "Editer la ligne "
+msgstr "Éditer un nouveau fichier"
 
 #: ../ui.py:195
 msgid "Edit position is the line end"
@@ -489,7 +487,7 @@ msgstr "Entrer en mode de sélection multi-fichier"
 msgid "Error"
 msgstr "Erreur"
 
-#: ../ui.py:1239 ../ui.py:1752
+#: ../ui.py:1241 ../ui.py:1754
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -498,16 +496,16 @@ msgstr ""
 "Erreur lors de la création du répertoire %s:\n"
 "%s"
 
-#: ../ui.py:1217
-#, fuzzy, python-format
+#: ../ui.py:1219
+#, python-format
 msgid ""
 "Error creating file %s:\n"
 "%s"
 msgstr ""
-"Erreur lors de la création du répertoire %s:\n"
+"Erreur lors de la création du fichier %s:\n"
 "%s"
 
-#: ../ui.py:1157
+#: ../ui.py:1159
 #, python-format
 msgid ""
 "Error linking %s to %s:\n"
@@ -516,7 +514,7 @@ msgstr ""
 "Erreur en liant %s vers %s:\n"
 "%s"
 
-#: ../ui.py:1115
+#: ../ui.py:1117
 #, python-format
 msgid ""
 "Error renaming %s to %s:\n"
@@ -525,7 +523,7 @@ msgstr ""
 "Erreur en renommant %s à %s:\n"
 "%s"
 
-#: ../addons/type_utils.py:236
+#: ../addons/type_utils.py:246
 msgid "Error..."
 msgstr "Erreur..."
 
@@ -547,9 +545,9 @@ msgstr "Quitter l’éditeur et sauvegarder les changements (si besoin)"
 
 #: ../addons/type_utils.py:57
 msgid "Exit movie player?"
-msgstr ""
+msgstr "Quitter le lecteur de films?"
 
-#: ../addons/type_utils.py:403
+#: ../addons/type_utils.py:420
 msgid "Exit picture viewer"
 msgstr "Quitter le visionneur de photos"
 
@@ -557,7 +555,7 @@ msgstr "Quitter le visionneur de photos"
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:14 ../addons/type_utils.py:167
+#: ../plugin.py:14 ../addons/type_utils.py:177
 msgid "File Commander"
 msgstr "File Commander"
 
@@ -565,8 +563,7 @@ msgstr "File Commander"
 msgid "File Commander - Addon File-Viewer"
 msgstr "File Commander - Addon Visionneur de fichier"
 
-#: ../addons/type_utils.py:365
-#, fuzzy
+#: ../addons/type_utils.py:382
 msgid "File Commander - Addon File-Viewer Settings"
 msgstr "File Commander - Addon Visionneur de fichier"
 
@@ -606,22 +603,21 @@ msgstr "File Commander - Addon unira"
 msgid "File Commander - unzip Addon"
 msgstr "File Commander - Addon unzip"
 
-#: ../ui.py:1202
-#, fuzzy
+#: ../ui.py:1204
 msgid ""
 "File cannot be created on\n"
 "<List of Storage Devices> or <Receiver>.\n"
 "Change directory, please."
 msgstr ""
-"Le répertoire ne peut pas être créé ici\n"
-"<Liste des périphériques de stockage> ou <Récepteur>.\n"
-"Déplacer la sélection une ligne en dessous ou changer de répertoire."
+"Le fichier ne peut pas être créé sur\n"
+"<List of Storage Devices> ou <Receiver>.\n"
+"Changez de répertoire, s'il vous plaît."
 
 #: ../ui.py:210
 msgid "File checksums/hashes"
 msgstr "Checksums/hashes de fichier"
 
-#: ../addons/key_actions.py:692 ../addons/key_actions.py:792
+#: ../addons/key_actions.py:692 ../addons/key_actions.py:793
 #, python-format
 msgid "File not found: %s"
 msgstr "Le fichier n'a pas été trouvé : %s"
@@ -635,13 +631,13 @@ msgstr "Le transfert de fichier a été annulé par l'utilisateur"
 msgid "File write error: '%s'"
 msgstr "Erreur d'écriture de fichier : '%s'"
 
-#: ../ui.py:515 ../ui.py:637 ../ui.py:1520 ../ui.py:1973
+#: ../ui.py:515 ../ui.py:637 ../ui.py:1522 ../ui.py:1975
 msgid "File/Directory Status Information"
 msgstr "Informations sur l'état du fichier/répertoire"
 
-#: ../ui.py:190 ../ui.py:1403
+#: ../ui.py:190 ../ui.py:1405
 msgid "Filenames in header"
-msgstr ""
+msgstr "Noms de fichiers dans l'en-tête"
 
 #: ../ui.py:204
 msgid "Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'."
@@ -679,7 +675,7 @@ msgstr "Aller au répertoire parent"
 msgid "Go to start of file"
 msgstr "Aller au début du fichier"
 
-#: ../ui.py:2021
+#: ../ui.py:2023
 msgid "Group:"
 msgstr "Groupe:"
 
@@ -691,11 +687,11 @@ msgstr "Priorité I/O pour l'exécution du script"
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr "En éditant un fichier, vous pouvez mettre la position de départ du curseur à la fin ou au début de la ligne."
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr "En mode multi-selection déplacer le curseur sur l'élément suivant après l'avoir marqué."
 
-#: ../ui.py:2029
+#: ../ui.py:2031
 msgid "Inode:"
 msgstr "Inode:"
 
@@ -720,11 +716,11 @@ msgstr "Installer ‘%s’ et activer cette opération"
 msgid "Installing Plugin ..."
 msgstr "Installation Plugin ..."
 
-#: ../ui.py:1587
+#: ../ui.py:1589
 msgid "Invert Selection"
 msgstr "Inverser la sélection"
 
-#: ../ui.py:1502 ../ui.py:1519
+#: ../ui.py:1504 ../ui.py:1521
 msgid "Invert selection"
 msgstr "Inverser la sélection"
 
@@ -736,7 +732,7 @@ msgstr "Il n'est pas possible de calculer les cash sur <List of Storage Devices>
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Il n'est pas possible de modifier le mode de fichier de <List of Storage Devices>"
 
-#: ../ui.py:1991
+#: ../ui.py:1993
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Il n'est pas possible d'obtenir l'état du fichier de <List of Storage Devices>"
 
@@ -745,7 +741,7 @@ msgstr "Il n'est pas possible d'obtenir l'état du fichier de <List of Storage D
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
 msgstr "Il n'est pas possible d'exécuter ‘%s’ de <List of Storage Devices>"
 
-#: ../ui.py:1079
+#: ../ui.py:1081
 msgid "It's not possible to rename the filesystem root."
 msgstr "Il n'est pas possible de renommer la racine du système de fichiers."
 
@@ -757,15 +753,15 @@ msgstr "KB"
 msgid "Leave File Commander"
 msgstr "Quitter File Commander"
 
-#: ../ui.py:1507 ../ui.py:1527 ../ui.py:1528
+#: ../ui.py:1509 ../ui.py:1529 ../ui.py:1530
 msgid "Leave multi-select mode"
 msgstr "Quitter le mode multi-sélection"
 
-#: ../ui.py:2038
+#: ../ui.py:2040
 msgid "Link target:"
 msgstr "Cible de lien :"
 
-#: ../ui.py:2028
+#: ../ui.py:2030
 msgid "Links:"
 msgstr "Liens:"
 
@@ -791,9 +787,9 @@ msgstr "Rendre FileCommander accessible depuis le menu principal."
 
 #: ../addons/type_utils.py:121
 msgid "Menu..."
-msgstr ""
+msgstr "Menu..."
 
-#: ../ui.py:2027
+#: ../ui.py:2029
 msgid "Metadata changed:"
 msgstr "Métadonnées modifiées :"
 
@@ -802,26 +798,26 @@ msgstr "Métadonnées modifiées :"
 msgid "Mode %s (%04o)"
 msgstr "Mode %s (%04o)"
 
-#: ../ui.py:2025
+#: ../ui.py:2027
 msgid "Modified:"
 msgstr "Modifié:"
 
-#: ../ui.py:484 ../ui.py:1500
+#: ../ui.py:484 ../ui.py:1502
 msgid "Move"
 msgstr "Déplacer"
 
-#: ../ui.py:1809
+#: ../ui.py:1811
 #, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
 msgstr[0] "Déplacer %d élément"
 msgstr[1] "Déplacer %d éléments"
 
-#: ../ui.py:519 ../ui.py:1513
+#: ../ui.py:519 ../ui.py:1515
 msgid "Move down list"
 msgstr "Déplacer la liste vers le bas"
 
-#: ../ui.py:1045
+#: ../ui.py:1047
 msgid "Move file"
 msgstr "Déplacer fichier"
 
@@ -829,24 +825,23 @@ msgstr "Déplacer fichier"
 msgid "Move file/directory to target directory"
 msgstr "Déplacer le fichier/répertoire vers le répertoire cible"
 
-#: ../ui.py:1517
+#: ../ui.py:1519
 msgid "Move files/directories to target directory"
 msgstr "Déplacer les fichiers/répertoires vers le répertoire cible"
 
-#: ../ui.py:1049
+#: ../ui.py:1051
 msgid "Move folder"
 msgstr "Déplacer le dossier"
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "Move selector to next item"
 msgstr "Déplacer le curseur vers l'élément suivant"
 
-#: ../ui.py:1525
-#, fuzzy
+#: ../ui.py:1527
 msgid "Move selector to next item (on/off)"
-msgstr "Déplacer le curseur vers l'élément suivant"
+msgstr "Déplacer le curseur vers l'élément suivant (on/off)"
 
-#: ../ui.py:518 ../ui.py:1512
+#: ../ui.py:518 ../ui.py:1514
 msgid "Move up list"
 msgstr "Déplacer vers le haut de la liste"
 
@@ -854,7 +849,7 @@ msgstr "Déplacer vers le haut de la liste"
 msgid "Movie"
 msgstr "Film"
 
-#: ../ui.py:1422
+#: ../ui.py:1424
 msgid "MultiSelection Settings"
 msgstr "Paramètres MultiSélection"
 
@@ -878,7 +873,7 @@ msgstr "Nom"
 msgid "Name reverse"
 msgstr "Nom inverse"
 
-#: ../ui.py:1229 ../ui.py:1742
+#: ../ui.py:1231 ../ui.py:1744
 msgid "New folder"
 msgstr "Nouveau dossier"
 
@@ -894,7 +889,7 @@ msgstr "Aucun fichier trouvé."
 msgid "No hash calculations configured"
 msgstr "Aucun calcul de hash configuré"
 
-#: ../addons/key_actions.py:757
+#: ../addons/key_actions.py:758
 #, python-format
 msgid "No viewer installed for this file type: %s"
 msgstr "Aucun visualiseur installé pour ce type de fichier : %s"
@@ -908,28 +903,28 @@ msgstr "Aucun des programmes de hash pour les hasher %s ne sont disponibles"
 msgid "Not allowed with folders"
 msgstr "Interdit avec des dossiers"
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
-msgstr ""
+msgstr "Note - pour basculer cette option en mode multi-sélection, vous pouvez également utiliser la touche '6'."
 
 #: ../ui.py:206
 msgid "Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'."
-msgstr ""
+msgstr "Note - indépendamment du réglage de cet élément, vous pouvez activer/désactiver le comptage et l'affichage de la taille du contenu du répertoire à l'aide de la touche '1'."
 
 #: ../ui.py:193
 msgid "Number of lines in script messages"
 msgstr "Nombre de lignes dans les messages de script"
 
-#: ../addons/type_utils.py:353 ../addons/unarchiver.py:75
-#: ../addons/unarchiver.py:246 ../ui.py:217 ../ui.py:1378
+#: ../addons/unarchiver.py:75 ../addons/unarchiver.py:246
+#: ../addons/type_utils.py:370 ../ui.py:217 ../ui.py:1380
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:2030
+#: ../ui.py:2032
 msgid "On device:"
 msgstr "Sur le périphérique:"
 
-#: ../ui.py:1505
+#: ../ui.py:1507
 msgid "Open actions menu"
 msgstr "Ouvrir le menu actions"
 
@@ -949,19 +944,19 @@ msgstr "Codepage original des sous-titres"
 msgid "Original subtitles codepage for conversion to UTF-8."
 msgstr "Codepage original des sous-titres pour la conversion vers UTF-8."
 
-#: ../addons/type_utils.py:233
+#: ../addons/type_utils.py:243
 msgid "Original:"
 msgstr "Original:"
 
-#: ../ui.py:2020
+#: ../ui.py:2022
 msgid "Owner:"
 msgstr "Propriétaire :"
 
-#: ../ui.py:521 ../ui.py:1515
+#: ../ui.py:521 ../ui.py:1517
 msgid "Page down list"
 msgstr "Page suivante de la liste"
 
-#: ../ui.py:520 ../ui.py:1514
+#: ../ui.py:520 ../ui.py:1516
 msgid "Page up list"
 msgstr "Page précédente de la liste"
 
@@ -973,7 +968,7 @@ msgstr "Dossier parent"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Chemin de sauvegarde n'existe pas: '/tmp/'"
 
-#: ../ui.py:2022
+#: ../ui.py:2024
 msgid "Permissions:"
 msgstr "Permissions:"
 
@@ -993,11 +988,11 @@ msgstr "Lire le titre"
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Lire/voir/modifier/installer/extraire/exécuter un fichier ou entrer un répertoire"
 
-#: ../ui.py:1229 ../ui.py:1742
+#: ../ui.py:1231 ../ui.py:1744
 msgid "Please enter name of the new directory"
 msgstr "Veuillez saisir le nom du nouveau répertoire"
 
-#: ../ui.py:1138
+#: ../ui.py:1140
 msgid "Please enter name of the new symlink"
 msgstr "S'il vous plaît entrer le nom du nouveau symlink"
 
@@ -1005,23 +1000,23 @@ msgstr "S'il vous plaît entrer le nom du nouveau symlink"
 msgid "Please enter password"
 msgstr "Veuillez entrer le mot de passe"
 
-#: ../ui.py:1083
+#: ../ui.py:1085
 msgid "Please enter the new directory name"
 msgstr "S'il vous plaît entrer le nouveau nom du répertoire"
 
-#: ../ui.py:1081
+#: ../ui.py:1083
 msgid "Please enter the new file name"
 msgstr "S'il vous plaît entrer le nouveau nom de fichier"
 
-#: ../addons/type_utils.py:413
+#: ../addons/type_utils.py:430
 msgid "Please wait, Loading image."
 msgstr "Veuillez patienter, chargement de l'image."
 
-#: ../ui.py:1398
+#: ../ui.py:1400
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr "Pré-remplir les premiers 'n' caractères du nom de fichier dans le clavier virtuel"
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Pré-remplir les derniers 'n' caractères du nom de fichier dans le clavier virtuel"
 
@@ -1069,7 +1064,7 @@ msgstr ""
 msgid "Records"
 msgstr "Enregistrements"
 
-#: ../ui.py:504 ../ui.py:639 ../ui.py:1521
+#: ../ui.py:504 ../ui.py:639 ../ui.py:1523
 msgid "Refresh screen"
 msgstr "Rafraîchir l'écran"
 
@@ -1081,7 +1076,7 @@ msgstr "Fichier régulier"
 msgid "Remove current folder from bookmarks"
 msgstr "Supprimer le dossier actuel des signets"
 
-#: ../ui.py:1617
+#: ../ui.py:1619
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr "Enlever de la sélection (%s)"
@@ -1111,9 +1106,9 @@ msgstr "Inverser le tri des fichiers à droite"
 msgid "Run '%s' command"
 msgstr "Exécuter la commande ‘%s’"
 
-#: ../TaskList.py:76 ../addons/key_actions.py:157 ../addons/key_actions.py:160
+#: ../addons/key_actions.py:157 ../addons/key_actions.py:160
 #: ../addons/key_actions.py:174 ../addons/key_actions.py:400
-#: ../addons/key_actions.py:456 ../ui.py:561 ../ui.py:874
+#: ../addons/key_actions.py:456 ../ui.py:561 ../ui.py:874 ../TaskList.py:76
 msgid "Run script"
 msgstr "Exécuter le script"
 
@@ -1171,29 +1166,29 @@ msgstr "Enregistrez l'emplacement de la liste des dossiers de droite à la sorti
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Script '%s' doit avoir la permission de lecture pour être en mesure de l'exécuter"
 
-#: ../ui.py:1395
+#: ../ui.py:1397
 msgid "Search in group selection by"
 msgstr "Rechercher dans la sélection groupée par"
 
-#: ../addons/type_utils.py:151
+#: ../addons/type_utils.py:154
 msgid "Search text"
-msgstr ""
+msgstr "Texte de recherche"
 
-#: ../addons/type_utils.py:323
+#: ../addons/type_utils.py:340
 #, python-format
 msgid "Search text (%s):"
-msgstr ""
+msgstr "Texte de recherche (%s) :"
 
-#: ../addons/type_utils.py:151
+#: ../addons/type_utils.py:154
 #, python-format
 msgid "Search text in file (%s)."
-msgstr ""
+msgstr "Chercher le texte dans le fichier (%s)."
 
-#: ../ui.py:1506
+#: ../ui.py:1508
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Sélectionner (liste source) ou entrer dans le répertoire (liste cible)"
 
-#: ../ui.py:1584
+#: ../ui.py:1586
 msgid "Select All"
 msgstr "Tout sélectionner"
 
@@ -1201,20 +1196,19 @@ msgstr "Tout sélectionner"
 msgid "Select a path"
 msgstr "Sélectionnez un chemin"
 
-#: ../addons/type_utils.py:153
-#, fuzzy
+#: ../addons/type_utils.py:158
 msgid "Select action:"
-msgstr "Choisir l'opération:"
+msgstr "Choisir l'action:"
 
-#: ../ui.py:1523
+#: ../ui.py:1525
 msgid "Select group"
 msgstr "Sélection groupée"
 
-#: ../ui.py:1582
+#: ../ui.py:1584
 msgid "Select group..."
 msgstr "Sélectionner groupe..."
 
-#: ../ui.py:679 ../ui.py:1590
+#: ../ui.py:679 ../ui.py:1592
 msgid "Select operation:"
 msgstr "Choisir l'opération:"
 
@@ -1234,7 +1228,7 @@ msgstr "Définir le mode exécutable (755)"
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr "Définir pour 'stout' ou 'sterr' le nombre de lignes d'info du script ou les messages d'erreur."
 
-#: ../ui.py:1401
+#: ../ui.py:1403
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr "Défini s'il faut faire la distinction entre majuscules et minuscules lors de la recherche."
 
@@ -1242,7 +1236,7 @@ msgstr "Défini s'il faut faire la distinction entre majuscules et minuscules lo
 msgid "Settings"
 msgstr "Paramètres"
 
-#: ../addons/type_utils.py:152 ../ui.py:657 ../ui.py:1588
+#: ../addons/type_utils.py:156 ../ui.py:657 ../ui.py:1590
 msgid "Settings..."
 msgstr "Paramètres…"
 
@@ -1296,7 +1290,7 @@ msgstr "Afficher d’abord les répertoires"
 msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr "Afficher les répertoires en première ou dernière position dans le panneau (pour appliquer ces changements FileCommander doit être redémarrer)."
 
-#: ../addons/type_utils.py:407
+#: ../addons/type_utils.py:424
 msgid "Show image information"
 msgstr "Afficher les informations d'image"
 
@@ -1308,15 +1302,15 @@ msgstr "Afficher un message si File Commander ne tourne pas et que toutes les t�
 msgid "Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info."
 msgstr "Afficher un message si le script qui tourne en arrière plan fini avec succès. Comme 'stout', alors c'est affiché comme info complétementaire."
 
-#: ../addons/type_utils.py:405
+#: ../addons/type_utils.py:422
 msgid "Show next picture"
 msgstr "Afficher l'image suivante"
 
-#: ../addons/type_utils.py:404
+#: ../addons/type_utils.py:421
 msgid "Show previous picture"
 msgstr "Afficher l'image précédente"
 
-#: ../ui.py:509 ../ui.py:640 ../ui.py:1526
+#: ../ui.py:509 ../ui.py:640 ../ui.py:1528
 msgid "Show task list"
 msgstr "Afficher la liste des tâches"
 
@@ -1336,7 +1330,7 @@ msgstr "Taille"
 msgid "Size reverse"
 msgstr "Taille inverse"
 
-#: ../ui.py:2024
+#: ../ui.py:2026
 msgid "Size:"
 msgstr "Taille:"
 
@@ -1352,7 +1346,7 @@ msgstr "Tri des fichiers à gauche par nom, date ou taille"
 msgid "Sorting right files by name, date or size"
 msgstr "Trier les fichiers à droite par nom, date ou taille"
 
-#: ../addons/type_utils.py:406
+#: ../addons/type_utils.py:423
 msgid "Start/stop slide show"
 msgstr "Arrêter/Démarrer le diaporama"
 
@@ -1372,7 +1366,7 @@ msgstr "Inverser les boutons droite/gauche avec channel +/- ou le bouton des cha
 msgid "Symbolic link"
 msgstr "Lien symbolique"
 
-#: ../ui.py:1178
+#: ../ui.py:1180
 msgid "Symlink to "
 msgstr "Symlink vers "
 
@@ -1384,24 +1378,23 @@ msgstr "TB"
 msgid "Task list"
 msgstr "Liste des tâches"
 
-#: ../addons/type_utils.py:322
-#, fuzzy
+#: ../addons/type_utils.py:337
 msgid "Text not found."
-msgstr "Le fichier n'a pas été trouvé : %s"
+msgstr "Texte non trouvé"
 
-#: ../addons/type_utils.py:348
+#: ../addons/type_utils.py:365
 msgid "Text searching as case sensitive or case insensitive."
-msgstr ""
+msgstr "Recherche de texte sensible ou insensible à la casse."
 
-#: ../addons/type_utils.py:443
+#: ../addons/type_utils.py:460
 msgid "The Image Viewer component of the File Commander requires the PicturePlayer extension. Install PicturePlayer to enable this operation."
 msgstr "Le composant Image Viewer du File Commander nécessite l'extension PicturePlayer. Installez PicturePlayer pour activer cette opération."
 
-#: ../addons/type_utils.py:164
+#: ../addons/type_utils.py:174
 msgid "The authors are NOT RESPONSIBLE"
 msgstr "Les auteurs ne sont PAS RESPONSIBLE"
 
-#: ../addons/key_actions.py:798
+#: ../addons/key_actions.py:799
 msgid ""
 "The function has been interrupted.\n"
 "Don't press any key until the picture from mvi-file is displayed!"
@@ -1413,7 +1406,7 @@ msgstr ""
 msgid "The hash of a directory can't be calculated."
 msgstr "Le hash d'un répertoire ne peut pas être calculé."
 
-#: ../addons/type_utils.py:235
+#: ../addons/type_utils.py:245
 msgid "This line is not editable!"
 msgstr "Cette ligne n'est pas modifiable!"
 
@@ -1427,19 +1420,17 @@ msgstr "Durée du diaporama"
 
 #: ../addons/type_utils.py:123
 msgid "To next found text"
-msgstr ""
+msgstr "Au texte trouvé suivant"
 
 #: ../addons/type_utils.py:122
-#, fuzzy
 msgid "To previous found text"
-msgstr "Afficher l'image précédente"
+msgstr "Vers le texte trouvé précédent"
 
-#: ../ui.py:1204
-#, fuzzy
+#: ../ui.py:1206
 msgid "Type the name for the new file"
-msgstr "Veuillez saisir le nom du nouveau répertoire"
+msgstr "Saisissez le nom du nouveau fichier"
 
-#: ../ui.py:2019
+#: ../ui.py:2021
 msgid "Type:"
 msgstr "Type:"
 
@@ -1462,15 +1453,15 @@ msgstr "Groupe inconnu: %d"
 msgid "Unknown user: %d"
 msgstr "Utilisateur inconnu: %d"
 
-#: ../addons/unrar.py:32 ../addons/unrar.py:33 ../addons/gz.py:27
-#: ../addons/gz.py:28 ../addons/tar.py:23 ../addons/tar.py:24
-#: ../addons/unzip.py:28 ../addons/unzip.py:29
+#: ../addons/unrar.py:32 ../addons/unrar.py:33 ../addons/unzip.py:28
+#: ../addons/unzip.py:29 ../addons/gz.py:27 ../addons/gz.py:28
+#: ../addons/tar.py:23 ../addons/tar.py:24
 #, python-format
 msgid "Unpack to %s"
 msgstr "Décompresser vers %s"
 
-#: ../addons/unrar.py:31 ../addons/gz.py:26 ../addons/tar.py:22
-#: ../addons/unzip.py:27
+#: ../addons/unrar.py:31 ../addons/unzip.py:27 ../addons/gz.py:26
+#: ../addons/tar.py:22
 msgid "Unpack to current folder"
 msgstr "Décompresser dans le dossier actuel"
 
@@ -1487,7 +1478,7 @@ msgstr "Afficher ou modifier le fichier (si la taille < 1 Mo)"
 msgid "View or edit this %s script"
 msgstr "Afficher ou modifier le script %s"
 
-#: ../addons/type_utils.py:163
+#: ../addons/type_utils.py:173
 msgid "WARNING!"
 msgstr "ATTENTION!"
 
@@ -1499,15 +1490,15 @@ msgstr "Que voulez-vous lire?\n"
 msgid "Yes"
 msgstr "Oui"
 
-#: ../ui.py:1398
+#: ../ui.py:1400
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Vous pouvez définir le nombre de lettres au début du nom de fichier actuel comme texte pour pré-remplir le clavier virtuel pour une sélection groupée plus facile."
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Vous pouvez définir le nombre de lettres de la fin du nom de fichier actuel comme texte pour pré-remplir le clavier virtuel pour une sélection groupée plus facile."
 
-#: ../ui.py:1396
+#: ../ui.py:1398
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr "Vous pouvez définir ce que va faire la sélection groupée utiliser -le début du titre, la fin du titre ou le contenu du titre."
 
@@ -1526,33 +1517,31 @@ msgstr "Vous ne pouvez pas exécuter utilement '%s' sur un répertoire."
 msgid "[D]%s%s[F]%s%s"
 msgstr "[D]%s%s[F]%s%s"
 
-#: ../addons/type_utils.py:151 ../addons/type_utils.py:323
-#, fuzzy
+#: ../addons/type_utils.py:154 ../addons/type_utils.py:340
 msgid "case insensitive"
-msgstr "Comparaison en respectant la case"
+msgstr "insensible aux majuscules et minuscules"
 
-#: ../addons/type_utils.py:151 ../addons/type_utils.py:323
-#, fuzzy
+#: ../addons/type_utils.py:154 ../addons/type_utils.py:340
 msgid "case sensitive"
-msgstr "Comparaison en respectant la case"
+msgstr "sensible aux majuscules et minuscules"
 
 #: ../ui.py:148
 msgid "contains in title"
 msgstr "contenu dans le titre"
 
-#: ../ui.py:1613
+#: ../ui.py:1615
 msgid "contains..."
 msgstr "contient..."
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1000 ../ui.py:1842
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1002 ../ui.py:1844
 msgid "copy file"
 msgstr "copier fichier"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1002 ../ui.py:1840
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1004 ../ui.py:1842
 msgid "copy folder"
 msgstr "copier le répertoire"
 
-#: ../ui.py:1194
+#: ../ui.py:1196
 msgid "create symlink ..."
 msgstr "créer un symlink ..."
 
@@ -1564,20 +1553,20 @@ msgstr "d"
 msgid "end title"
 msgstr "fin du titre"
 
-#: ../ui.py:1611
+#: ../ui.py:1613
 msgid "ends with..."
 msgstr "se termine par..."
 
-#: ../addons/type_utils.py:165
+#: ../addons/type_utils.py:175
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "pour PERTE DE DONNEES ou DOMMAGE !!!"
 
-#: ../ui.py:988 ../ui.py:1017 ../ui.py:1050 ../ui.py:1775 ../ui.py:1810
-#: ../ui.py:1845
+#: ../ui.py:990 ../ui.py:1019 ../ui.py:1052 ../ui.py:1777 ../ui.py:1812
+#: ../ui.py:1847
 msgid "from dir"
 msgstr "depuis rep"
 
-#: ../addons/type_utils.py:162
+#: ../addons/type_utils.py:172
 msgid "has been CHANGED! Do you want to save it?"
 msgstr "a été CHANGE! Voulez-vous le sauver?"
 
@@ -1600,11 +1589,11 @@ msgstr "installer/décompresser les fichiers ipk"
 msgid "manage local Files"
 msgstr "gérer les fichiers locaux"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1064 ../ui.py:1807
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1066 ../ui.py:1809
 msgid "move file"
 msgstr "déplacer fichier"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1066
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1068
 msgid "move folder"
 msgstr "déplacer le dossier"
 
@@ -1612,9 +1601,9 @@ msgstr "déplacer le dossier"
 msgid "n"
 msgstr "n"
 
-#: ../ui.py:1204
+#: ../ui.py:1206
 msgid "new.txt"
-msgstr ""
+msgstr "nouveau.txt"
 
 #: ../FileList.py:237
 msgid "nothing connected"
@@ -1652,11 +1641,11 @@ msgstr "ligne de commande"
 msgid "start title"
 msgstr "titre de démarrage"
 
-#: ../ui.py:1609
+#: ../ui.py:1611
 msgid "starts with..."
 msgstr "commence par..."
 
-#: ../ui.py:988 ../ui.py:1050 ../ui.py:1810 ../ui.py:1845
+#: ../ui.py:990 ../ui.py:1052 ../ui.py:1812 ../ui.py:1847
 msgid "to dir"
 msgstr "vers république"
 

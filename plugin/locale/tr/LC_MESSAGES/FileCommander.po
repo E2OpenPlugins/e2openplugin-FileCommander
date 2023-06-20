@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FileCommander - E2OpenPlugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 14:25+0100\n"
+"POT-Creation-Date: 2023-06-20 16:52+0200\n"
 "PO-Revision-Date: 2020-08-18 22:54+0300\n"
 "Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
 "Language-Team: Turkish\n"
@@ -39,7 +39,7 @@ msgstr " ('%s') hata mesajlarıyla tamamlandı."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') [%d] hata numarasıyla tamamlandı."
 
-#: ../ui.py:1808 ../ui.py:1843
+#: ../ui.py:1810 ../ui.py:1845
 #, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
@@ -47,11 +47,11 @@ msgstr[0] " - %d öğesi var! Üzerine Yaz"
 msgstr[1] " - %d öğesi var! Üzerine Yaz"
 msgstr[2] " - %d öğesi var! Üzerine Yaz"
 
-#: ../ui.py:982 ../ui.py:1044
+#: ../ui.py:984 ../ui.py:1046
 msgid " - file exist! Overwrite"
 msgstr " - dosya var! Üzerine yaz"
 
-#: ../ui.py:986 ../ui.py:1048
+#: ../ui.py:988 ../ui.py:1050
 msgid " - folder exist! Overwrite"
 msgstr " - klasör var! Üzerine yaz"
 
@@ -83,7 +83,7 @@ msgstr "%d.%m.%Y, %H:%M:%S"
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:2022
+#: ../ui.py:2024
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
@@ -119,7 +119,7 @@ msgstr "%s: %s"
 msgid "'%s' not installed and no known package"
 msgstr "'%s' kurulu değil ve bilinen paket yok"
 
-#: ../ui.py:198 ../ui.py:1404
+#: ../ui.py:198 ../ui.py:1406
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr "Çoklu seçim modunda 'Grup seçimi' ve 'Seçimi ters çevir' dizinlerle de çalışabilir."
 
@@ -131,11 +131,11 @@ msgstr[0] "(%d görev)"
 msgstr[1] "(%d görevler)"
 msgstr[2] "(%d görevler)"
 
-#: ../ui.py:1540
+#: ../ui.py:1542
 msgid "(Selectmode)"
 msgstr "(Seçim modu)"
 
-#: ../ui.py:1268 ../ui.py:1869
+#: ../ui.py:1270 ../ui.py:1871
 msgid "<Receiver>"
 msgstr "<Receiver>"
 
@@ -143,11 +143,11 @@ msgstr "<Receiver>"
 msgid "?"
 msgstr "?"
 
-#: ../ui.py:2026
+#: ../ui.py:2028
 msgid "Accessed:"
 msgstr "Erişildi:"
 
-#: ../ui.py:1509 ../ui.py:1511
+#: ../ui.py:1511 ../ui.py:1513
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Sol taraftaki dosya listesini çoklu seçim kaynağı olarak etkinleştir"
 
@@ -155,7 +155,7 @@ msgstr "Sol taraftaki dosya listesini çoklu seçim kaynağı olarak etkinleşti
 msgid "Activate left-hand file list as source"
 msgstr "Sol taraftaki dosya listesini kaynak olarak etkinleştir"
 
-#: ../ui.py:1508 ../ui.py:1510
+#: ../ui.py:1510 ../ui.py:1512
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Sağdaki dosya listesini çoklu seçim kaynağı olarak etkinleştir"
 
@@ -179,7 +179,7 @@ msgstr "Ana menüye eklenti ekle"
 msgid "Add selected folder to bookmarks"
 msgstr "Seçili klasörü yer imlerine ekle"
 
-#: ../ui.py:1615
+#: ../ui.py:1617
 #, python-format
 msgid "Add to selection (%s)"
 msgstr "Seçime ekle (%s)"
@@ -188,11 +188,11 @@ msgstr "Seçime ekle (%s)"
 msgid "All"
 msgstr "Tümü"
 
-#: ../ui.py:203 ../ui.py:1406
+#: ../ui.py:203 ../ui.py:1408
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr "Dizindeki seçilen filmle aynı ada sahip tüm dosyalar da kopyalanacak veya taşınacaktır."
 
-#: ../ui.py:203 ../ui.py:1406
+#: ../ui.py:203 ../ui.py:1408
 msgid "All movie extensions"
 msgstr "Tüm film uzantıları"
 
@@ -231,15 +231,15 @@ msgstr ""
 "Çalıştırılamıyor %s: %s.\n"
 "%s, kurulu olmayan bir eklentide olabilir."
 
-#: ../ui.py:2042
+#: ../ui.py:2044
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Bağlantı içeriği okunamıyor: %s"
 
-#: ../Console.py:28 ../addons/type_utils.py:352 ../addons/unarchiver.py:74
-#: ../addons/unarchiver.py:245 ../addons/key_actions.py:250
+#: ../addons/unarchiver.py:74 ../addons/unarchiver.py:245
+#: ../addons/type_utils.py:369 ../addons/key_actions.py:250
 #: ../addons/key_actions.py:400 ../addons/key_actions.py:616 ../ui.py:216
-#: ../ui.py:1377
+#: ../ui.py:1379 ../Console.py:28
 msgid "Cancel"
 msgstr "İptal"
 
@@ -247,7 +247,7 @@ msgstr "İptal"
 msgid "Cancel execution?"
 msgstr "Yürütme iptal edilsin mi?"
 
-#: ../addons/type_utils.py:348
+#: ../addons/type_utils.py:365
 #, fuzzy
 msgid "Case sensitive search"
 msgstr "Büyük/küçük harfe duyarlı karşılaştır"
@@ -272,11 +272,11 @@ msgstr "Karakter cihazı"
 msgid "Close"
 msgstr "Kapat"
 
-#: ../ui.py:1401
+#: ../ui.py:1403
 msgid "Compare case sensitive"
 msgstr "Büyük/küçük harfe duyarlı karşılaştır"
 
-#: ../ui.py:2032
+#: ../ui.py:2034
 msgid "Content size:"
 msgstr "İçerik boyutu:"
 
@@ -285,11 +285,11 @@ msgstr "İçerik boyutu:"
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr "Altyazıları '%s'den UTF-8'e dönüştür"
 
-#: ../ui.py:485 ../ui.py:1501
+#: ../ui.py:485 ../ui.py:1503
 msgid "Copy"
 msgstr "Kopyala"
 
-#: ../ui.py:1844
+#: ../ui.py:1846
 #, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
@@ -297,7 +297,7 @@ msgstr[0] "%d öğesini kopyala"
 msgstr[1] "%d öğelerini kopyala"
 msgstr[2] "%d öğelerini kopyala"
 
-#: ../ui.py:983
+#: ../ui.py:985
 msgid "Copy file"
 msgstr "Dosyayı kopyala"
 
@@ -305,11 +305,11 @@ msgstr "Dosyayı kopyala"
 msgid "Copy file/directory to target directory"
 msgstr "Dosyayı/dizini hedef dizine kopyala"
 
-#: ../ui.py:1518
+#: ../ui.py:1520
 msgid "Copy files/directories to target directory"
 msgstr "Dosyaları/dizinleri hedef dizine kopyala"
 
-#: ../ui.py:987
+#: ../ui.py:989
 msgid "Copy folder"
 msgstr "Klasörü kopyala"
 
@@ -317,7 +317,7 @@ msgstr "Klasörü kopyala"
 msgid "Count directory content size"
 msgstr "Dizin içerik boyutunu say"
 
-#: ../ui.py:505 ../ui.py:1522
+#: ../ui.py:505 ../ui.py:1524
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Yürürken dizin içeriği boyutunu sayma (açık/kapalı)"
 
@@ -325,11 +325,11 @@ msgstr "Yürürken dizin içeriği boyutunu sayma (açık/kapalı)"
 msgid "Create directory"
 msgstr "Dizin oluştur"
 
-#: ../ui.py:1586
+#: ../ui.py:1588
 msgid "Create directory in 'Target' panel"
 msgstr "'Hedef' panelinde dizin oluştur"
 
-#: ../ui.py:1176
+#: ../ui.py:1178
 msgid "Create symlink to file"
 msgstr "Dosyaya sembolik bağlantı oluştur"
 
@@ -385,11 +385,11 @@ msgstr "Sol paneldeki dosyalar için varsayılan sıralama yöntemi."
 msgid "Default sorting method for files in right panel."
 msgstr "Sağ paneldeki dosyalar için varsayılan sıralama yöntemi."
 
-#: ../addons/type_utils.py:128 ../ui.py:483 ../ui.py:1499
+#: ../addons/type_utils.py:128 ../ui.py:483 ../ui.py:1501
 msgid "Delete"
 msgstr "Sil"
 
-#: ../ui.py:1774
+#: ../ui.py:1776
 #, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -401,7 +401,7 @@ msgstr[2] "%d öğeleri Sil"
 msgid "Delete current line"
 msgstr "Mevcut satırı sil"
 
-#: ../ui.py:1014
+#: ../ui.py:1016
 msgid "Delete file"
 msgstr "Dosyayı sil"
 
@@ -409,27 +409,27 @@ msgstr "Dosyayı sil"
 msgid "Delete file or directory (and all its contents)"
 msgstr "Dosyayı veya dizini (ve tüm içeriğini) sil"
 
-#: ../ui.py:1016
+#: ../ui.py:1018
 msgid "Delete folder"
 msgstr "Klasörü sil"
 
-#: ../ui.py:1516
+#: ../ui.py:1518
 msgid "Delete the selected files or directories"
 msgstr "Seçili dosyaları veya dizinleri sil"
 
-#: ../ui.py:1585
+#: ../ui.py:1587
 msgid "Deselect All"
 msgstr "Tüm Seçimleri Kaldır"
 
-#: ../ui.py:1524
+#: ../ui.py:1526
 msgid "Deselect group"
 msgstr "Grubun seçimini kaldır"
 
-#: ../ui.py:1583
+#: ../ui.py:1585
 msgid "Deselect group..."
 msgstr "Grup seçimini kaldır ..."
 
-#: ../ui.py:198 ../ui.py:1404
+#: ../ui.py:198 ../ui.py:1406
 msgid "Directories to group selections"
 msgstr "Seçimleri gruplamak için dizinler"
 
@@ -437,7 +437,7 @@ msgstr "Seçimleri gruplamak için dizinler"
 msgid "Directory"
 msgstr "Dizin"
 
-#: ../ui.py:1227 ../ui.py:1740
+#: ../ui.py:1229 ../ui.py:1742
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -447,7 +447,7 @@ msgstr ""
 "<Depolama Aygıtlarının Listesi> veya <Alıcı>.\n"
 "Seçiciyi bir satır aşağı taşıyın veya dizini değiştirin."
 
-#: ../ui.py:190 ../ui.py:1403
+#: ../ui.py:190 ../ui.py:1405
 msgid "Display filenames in header. It is useful for filenames that are too long."
 msgstr ""
 
@@ -467,7 +467,7 @@ msgstr "Düzenle"
 msgid "Edit current line"
 msgstr "Mevcut satırı düzenle"
 
-#: ../addons/type_utils.py:233
+#: ../addons/type_utils.py:243
 msgid "Edit line "
 msgstr "Satırı düzenle "
 
@@ -487,7 +487,7 @@ msgstr "Çoklu dosya seçim moduna gir"
 msgid "Error"
 msgstr "Hata"
 
-#: ../ui.py:1239 ../ui.py:1752
+#: ../ui.py:1241 ../ui.py:1754
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -496,7 +496,7 @@ msgstr ""
 "%s dizini oluşturulurken hata oluştu:\n"
 "%s"
 
-#: ../ui.py:1217
+#: ../ui.py:1219
 #, python-format
 msgid ""
 "Error creating file %s:\n"
@@ -505,7 +505,7 @@ msgstr ""
 "%s dosyası oluşturulurken hata oluştu:\n"
 "%s"
 
-#: ../ui.py:1157
+#: ../ui.py:1159
 #, python-format
 msgid ""
 "Error linking %s to %s:\n"
@@ -514,7 +514,7 @@ msgstr ""
 "%s ile %s arasında bağlantı kurulurken hata:\n"
 "%s"
 
-#: ../ui.py:1115
+#: ../ui.py:1117
 #, python-format
 msgid ""
 "Error renaming %s to %s:\n"
@@ -523,7 +523,7 @@ msgstr ""
 "%s, %s olarak yeniden adlandırılırken hata oluştu:\n"
 "%s"
 
-#: ../addons/type_utils.py:236
+#: ../addons/type_utils.py:246
 msgid "Error..."
 msgstr "Hata ..."
 
@@ -547,7 +547,7 @@ msgstr "Düzenleyiciden çık ve değişiklikleri yaz (varsa)"
 msgid "Exit movie player?"
 msgstr ""
 
-#: ../addons/type_utils.py:403
+#: ../addons/type_utils.py:420
 msgid "Exit picture viewer"
 msgstr "Resim görüntüleyiciden çık"
 
@@ -555,7 +555,7 @@ msgstr "Resim görüntüleyiciden çık"
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../plugin.py:14 ../addons/type_utils.py:167
+#: ../plugin.py:14 ../addons/type_utils.py:177
 msgid "File Commander"
 msgstr "Dosya Komutanı"
 
@@ -563,7 +563,7 @@ msgstr "Dosya Komutanı"
 msgid "File Commander - Addon File-Viewer"
 msgstr "Dosya Komutanı - Eklenti Dosya Görüntüleyicisi"
 
-#: ../addons/type_utils.py:365
+#: ../addons/type_utils.py:382
 #, fuzzy
 msgid "File Commander - Addon File-Viewer Settings"
 msgstr "Dosya Komutanı - Eklenti Dosya Görüntüleyicisi"
@@ -604,7 +604,7 @@ msgstr "Dosya Komutanı - Eklentiyi unrar"
 msgid "File Commander - unzip Addon"
 msgstr "Dosya Komutanı - Eklentiyi açın"
 
-#: ../ui.py:1202
+#: ../ui.py:1204
 msgid ""
 "File cannot be created on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -618,7 +618,7 @@ msgstr ""
 msgid "File checksums/hashes"
 msgstr "Dosya sağlama toplamları/hash değerleri"
 
-#: ../addons/key_actions.py:692 ../addons/key_actions.py:792
+#: ../addons/key_actions.py:692 ../addons/key_actions.py:793
 #, python-format
 msgid "File not found: %s"
 msgstr "Dosya bulunamadı: %s"
@@ -632,11 +632,11 @@ msgstr "Dosya aktarımı kullanıcı tarafından iptal edildi"
 msgid "File write error: '%s'"
 msgstr "Dosya yazma hatası: '%s'"
 
-#: ../ui.py:515 ../ui.py:637 ../ui.py:1520 ../ui.py:1973
+#: ../ui.py:515 ../ui.py:637 ../ui.py:1522 ../ui.py:1975
 msgid "File/Directory Status Information"
 msgstr "Dosya/Dizin Durum Bilgileri"
 
-#: ../ui.py:190 ../ui.py:1403
+#: ../ui.py:190 ../ui.py:1405
 msgid "Filenames in header"
 msgstr ""
 
@@ -676,7 +676,7 @@ msgstr "Ana dizine git"
 msgid "Go to start of file"
 msgstr "Dosyanın başına git"
 
-#: ../ui.py:2021
+#: ../ui.py:2023
 msgid "Group:"
 msgstr "Grup:"
 
@@ -688,11 +688,11 @@ msgstr "Komut dosyası yürütme için I/O önceliği"
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr "Bir dosyayı düzenliyorsanız, imleç başlangıç ​​konumunu satırın sonunda veya başlangıcında ayarlayabilirsiniz."
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr "Çoklu seçim modunda işaretlemeden sonra imleci sonraki öğeye taşır."
 
-#: ../ui.py:2029
+#: ../ui.py:2031
 msgid "Inode:"
 msgstr "Düğüm:"
 
@@ -717,11 +717,11 @@ msgstr "'%s' kurun ve bu işlemi etkinleştirin"
 msgid "Installing Plugin ..."
 msgstr "Eklenti Yükleniyor ..."
 
-#: ../ui.py:1587
+#: ../ui.py:1589
 msgid "Invert Selection"
 msgstr "Seçimi Ters Çevir"
 
-#: ../ui.py:1502 ../ui.py:1519
+#: ../ui.py:1504 ../ui.py:1521
 msgid "Invert selection"
 msgstr "Seçimi ters çevir"
 
@@ -733,7 +733,7 @@ msgstr "<Depolama Aygıtları Listesi>'nde karmaları hesaplamak mümkün değil
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "<Depolama Aygıtları Listesi> dosya modunu değiştirmek mümkün değil"
 
-#: ../ui.py:1991
+#: ../ui.py:1993
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "<Depolama Aygıtları Listesi>'nin dosya durumunu almak mümkün değil"
 
@@ -742,7 +742,7 @@ msgstr "<Depolama Aygıtları Listesi>'nin dosya durumunu almak mümkün değil"
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
 msgstr "<Depolama Aygıtları Listesi> üzerinde '%s' çalıştırmak mümkün değil"
 
-#: ../ui.py:1079
+#: ../ui.py:1081
 msgid "It's not possible to rename the filesystem root."
 msgstr "Dosya sistemi kökünü yeniden adlandırmak mümkün değil."
 
@@ -754,15 +754,15 @@ msgstr "KB"
 msgid "Leave File Commander"
 msgstr "Dosya Komutanı'ndan Ayrıl"
 
-#: ../ui.py:1507 ../ui.py:1527 ../ui.py:1528
+#: ../ui.py:1509 ../ui.py:1529 ../ui.py:1530
 msgid "Leave multi-select mode"
 msgstr "Çoklu seçim modundan çık"
 
-#: ../ui.py:2038
+#: ../ui.py:2040
 msgid "Link target:"
 msgstr "Bağlantı hedefi:"
 
-#: ../ui.py:2028
+#: ../ui.py:2030
 msgid "Links:"
 msgstr "Bağlantılar:"
 
@@ -790,7 +790,7 @@ msgstr "FileCommander'ı ana menüden erişilebilir yapın."
 msgid "Menu..."
 msgstr ""
 
-#: ../ui.py:2027
+#: ../ui.py:2029
 msgid "Metadata changed:"
 msgstr "Meta veri değişti:"
 
@@ -799,15 +799,15 @@ msgstr "Meta veri değişti:"
 msgid "Mode %s (%04o)"
 msgstr "Mod %s (%04o)"
 
-#: ../ui.py:2025
+#: ../ui.py:2027
 msgid "Modified:"
 msgstr "Değiştirildi:"
 
-#: ../ui.py:484 ../ui.py:1500
+#: ../ui.py:484 ../ui.py:1502
 msgid "Move"
 msgstr "Taşı"
 
-#: ../ui.py:1809
+#: ../ui.py:1811
 #, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
@@ -815,11 +815,11 @@ msgstr[0] "%d öğesini Taşı"
 msgstr[1] "%d öğeleri Taşı"
 msgstr[2] "%d öğeleri Taşı"
 
-#: ../ui.py:519 ../ui.py:1513
+#: ../ui.py:519 ../ui.py:1515
 msgid "Move down list"
 msgstr "Listeyi aşağı taşı"
 
-#: ../ui.py:1045
+#: ../ui.py:1047
 msgid "Move file"
 msgstr "Dosyayı taşı"
 
@@ -827,23 +827,23 @@ msgstr "Dosyayı taşı"
 msgid "Move file/directory to target directory"
 msgstr "Dosya/dizini hedef dizine taşı"
 
-#: ../ui.py:1517
+#: ../ui.py:1519
 msgid "Move files/directories to target directory"
 msgstr "Dosyaları/dizinleri hedef dizine taşı"
 
-#: ../ui.py:1049
+#: ../ui.py:1051
 msgid "Move folder"
 msgstr "Klasörü taşı"
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "Move selector to next item"
 msgstr "Seçiciyi sonraki öğeye taşı"
 
-#: ../ui.py:1525
+#: ../ui.py:1527
 msgid "Move selector to next item (on/off)"
 msgstr "Seçiciyi sonraki öğeye taşı (açık/kapalı)"
 
-#: ../ui.py:518 ../ui.py:1512
+#: ../ui.py:518 ../ui.py:1514
 msgid "Move up list"
 msgstr "Listeyi yukarı taşı"
 
@@ -851,7 +851,7 @@ msgstr "Listeyi yukarı taşı"
 msgid "Movie"
 msgstr "Film"
 
-#: ../ui.py:1422
+#: ../ui.py:1424
 msgid "MultiSelection Settings"
 msgstr "Çoklu Seçim Ayarları"
 
@@ -875,7 +875,7 @@ msgstr "Ad"
 msgid "Name reverse"
 msgstr "Ters ad"
 
-#: ../ui.py:1229 ../ui.py:1742
+#: ../ui.py:1231 ../ui.py:1744
 msgid "New folder"
 msgstr "Yeni klasör"
 
@@ -891,7 +891,7 @@ msgstr "Dosya bulunamadı."
 msgid "No hash calculations configured"
 msgstr "Hiçbir hash hesaplaması yapılandırılmadı"
 
-#: ../addons/key_actions.py:757
+#: ../addons/key_actions.py:758
 #, python-format
 msgid "No viewer installed for this file type: %s"
 msgstr "Bu dosya türü için hiçbir görüntüleyici yüklü değil: %s"
@@ -905,7 +905,7 @@ msgstr "%s karmaları için karma programlardan hiçbiri mevcut değil"
 msgid "Not allowed with folders"
 msgstr "Klasörlerle izin verilmez"
 
-#: ../ui.py:197 ../ui.py:1405
+#: ../ui.py:197 ../ui.py:1407
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
 msgstr ""
 
@@ -917,16 +917,16 @@ msgstr ""
 msgid "Number of lines in script messages"
 msgstr "Komut dosyası mesajlarındaki satır sayısı"
 
-#: ../addons/type_utils.py:353 ../addons/unarchiver.py:75
-#: ../addons/unarchiver.py:246 ../ui.py:217 ../ui.py:1378
+#: ../addons/unarchiver.py:75 ../addons/unarchiver.py:246
+#: ../addons/type_utils.py:370 ../ui.py:217 ../ui.py:1380
 msgid "OK"
 msgstr "TAMAM"
 
-#: ../ui.py:2030
+#: ../ui.py:2032
 msgid "On device:"
 msgstr "Cihazda:"
 
-#: ../ui.py:1505
+#: ../ui.py:1507
 msgid "Open actions menu"
 msgstr "İşlemler menüsünü aç"
 
@@ -946,19 +946,19 @@ msgstr "Orijinal altyazı kod sayfası"
 msgid "Original subtitles codepage for conversion to UTF-8."
 msgstr "UTF-8'e dönüştürmek için orijinal altyazı kod sayfası."
 
-#: ../addons/type_utils.py:233
+#: ../addons/type_utils.py:243
 msgid "Original:"
 msgstr "Orijinal:"
 
-#: ../ui.py:2020
+#: ../ui.py:2022
 msgid "Owner:"
 msgstr "Sahip:"
 
-#: ../ui.py:521 ../ui.py:1515
+#: ../ui.py:521 ../ui.py:1517
 msgid "Page down list"
 msgstr "Sayfa aşağı liste"
 
-#: ../ui.py:520 ../ui.py:1514
+#: ../ui.py:520 ../ui.py:1516
 msgid "Page up list"
 msgstr "Sayfa yukarı listesi"
 
@@ -970,7 +970,7 @@ msgstr "Ana Dizin"
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Kaydetme yolu mevcut değil: '/ tmp /'"
 
-#: ../ui.py:2022
+#: ../ui.py:2024
 msgid "Permissions:"
 msgstr "İzinler:"
 
@@ -990,11 +990,11 @@ msgstr "Başlığı çal"
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Dosyayı oynat/görüntüle/düzenle/yükle/ayıkla/çalıştır veya dizine gir"
 
-#: ../ui.py:1229 ../ui.py:1742
+#: ../ui.py:1231 ../ui.py:1744
 msgid "Please enter name of the new directory"
 msgstr "Lütfen yeni dizinin adını girin"
 
-#: ../ui.py:1138
+#: ../ui.py:1140
 msgid "Please enter name of the new symlink"
 msgstr "Lütfen yeni sembolik bağın adını girin"
 
@@ -1002,23 +1002,23 @@ msgstr "Lütfen yeni sembolik bağın adını girin"
 msgid "Please enter password"
 msgstr "Lütfen parolayı girin"
 
-#: ../ui.py:1083
+#: ../ui.py:1085
 msgid "Please enter the new directory name"
 msgstr "Lütfen yeni dizin adını girin"
 
-#: ../ui.py:1081
+#: ../ui.py:1083
 msgid "Please enter the new file name"
 msgstr "Lütfen yeni dosya adını girin"
 
-#: ../addons/type_utils.py:413
+#: ../addons/type_utils.py:430
 msgid "Please wait, Loading image."
 msgstr "Lütfen bekleyin, Resim yükleniyor."
 
-#: ../ui.py:1398
+#: ../ui.py:1400
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr "Önce 'n' dosya adı karakterlerini sanal klavyeye önceden doldurun"
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Son 'n' dosya adı karakterlerini sanal klavyeye önceden doldurun"
 
@@ -1066,7 +1066,7 @@ msgstr ""
 msgid "Records"
 msgstr "Kayıtlar"
 
-#: ../ui.py:504 ../ui.py:639 ../ui.py:1521
+#: ../ui.py:504 ../ui.py:639 ../ui.py:1523
 msgid "Refresh screen"
 msgstr "Ekranı yenile"
 
@@ -1078,7 +1078,7 @@ msgstr "Normal dosya"
 msgid "Remove current folder from bookmarks"
 msgstr "Geçerli klasörü yer imlerinden kaldır"
 
-#: ../ui.py:1617
+#: ../ui.py:1619
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr "Seçimden kaldır (%s)"
@@ -1108,9 +1108,9 @@ msgstr "Sağa dosya sıralamayı tersine çevir"
 msgid "Run '%s' command"
 msgstr "'%s' komutunu çalıştır"
 
-#: ../TaskList.py:76 ../addons/key_actions.py:157 ../addons/key_actions.py:160
+#: ../addons/key_actions.py:157 ../addons/key_actions.py:160
 #: ../addons/key_actions.py:174 ../addons/key_actions.py:400
-#: ../addons/key_actions.py:456 ../ui.py:561 ../ui.py:874
+#: ../addons/key_actions.py:456 ../ui.py:561 ../ui.py:874 ../TaskList.py:76
 msgid "Run script"
 msgstr "Komut dosyasını çalıştır"
 
@@ -1168,29 +1168,29 @@ msgstr "Çıkışta doğru klasör listesi konumunu kaydedin."
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "'%s' komut dosyasının çalıştırılabilmesi için okuma iznine sahip olması gerekir"
 
-#: ../ui.py:1395
+#: ../ui.py:1397
 msgid "Search in group selection by"
 msgstr "Grup seçiminde ara"
 
-#: ../addons/type_utils.py:151
+#: ../addons/type_utils.py:154
 msgid "Search text"
 msgstr ""
 
-#: ../addons/type_utils.py:323
+#: ../addons/type_utils.py:340
 #, python-format
 msgid "Search text (%s):"
 msgstr ""
 
-#: ../addons/type_utils.py:151
+#: ../addons/type_utils.py:154
 #, python-format
 msgid "Search text in file (%s)."
 msgstr ""
 
-#: ../ui.py:1506
+#: ../ui.py:1508
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Seç (kaynak listesi) veya dizine gir (hedef liste)"
 
-#: ../ui.py:1584
+#: ../ui.py:1586
 msgid "Select All"
 msgstr "Tümünü Seç"
 
@@ -1198,20 +1198,20 @@ msgstr "Tümünü Seç"
 msgid "Select a path"
 msgstr "Bir yol seçin"
 
-#: ../addons/type_utils.py:153
+#: ../addons/type_utils.py:158
 #, fuzzy
 msgid "Select action:"
 msgstr "İşlemi seçin:"
 
-#: ../ui.py:1523
+#: ../ui.py:1525
 msgid "Select group"
 msgstr "Grup seç"
 
-#: ../ui.py:1582
+#: ../ui.py:1584
 msgid "Select group..."
 msgstr "Grup seç ..."
 
-#: ../ui.py:679 ../ui.py:1590
+#: ../ui.py:679 ../ui.py:1592
 msgid "Select operation:"
 msgstr "İşlemi seçin:"
 
@@ -1231,7 +1231,7 @@ msgstr "Yürütülebilir modu ayarla (755)"
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr "Komut dosyası bilgisi veya komut dizisi hata mesajlarındaki satır sayısını 'sağlam' ve 'sterr' olarak ayarlayın."
 
-#: ../ui.py:1401
+#: ../ui.py:1403
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr "Arama için büyük ve küçük harf arasında ayrım yapılıp yapılmayacağını belirler."
 
@@ -1239,7 +1239,7 @@ msgstr "Arama için büyük ve küçük harf arasında ayrım yapılıp yapılma
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: ../addons/type_utils.py:152 ../ui.py:657 ../ui.py:1588
+#: ../addons/type_utils.py:156 ../ui.py:657 ../ui.py:1590
 msgid "Settings..."
 msgstr "Ayarlar ..."
 
@@ -1293,7 +1293,7 @@ msgstr "Önce dizinleri göster"
 msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr "Dizinleri paneldeki ilk veya son konumlarda göster (değişiklikleri uygulamak için FileCommander yeniden başlatılmalıdır)."
 
-#: ../addons/type_utils.py:407
+#: ../addons/type_utils.py:424
 msgid "Show image information"
 msgstr "Resim bilgilerini göster"
 
@@ -1305,15 +1305,15 @@ msgstr "FileCommander çalışmıyorsa ve tüm Görevler tamamlandıysa mesajı 
 msgid "Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info."
 msgstr "Arka plan komut dosyası başarıyla sona ererse mesajı göster. 'sağlam' varsa, bu ek bilgi olarak görüntülenir."
 
-#: ../addons/type_utils.py:405
+#: ../addons/type_utils.py:422
 msgid "Show next picture"
 msgstr "Sonraki resmi göster"
 
-#: ../addons/type_utils.py:404
+#: ../addons/type_utils.py:421
 msgid "Show previous picture"
 msgstr "Önceki resmi göster"
 
-#: ../ui.py:509 ../ui.py:640 ../ui.py:1526
+#: ../ui.py:509 ../ui.py:640 ../ui.py:1528
 msgid "Show task list"
 msgstr "Görev listesini göster"
 
@@ -1333,7 +1333,7 @@ msgstr "Boyut"
 msgid "Size reverse"
 msgstr "Ters boyut"
 
-#: ../ui.py:2024
+#: ../ui.py:2026
 msgid "Size:"
 msgstr "Boyut:"
 
@@ -1349,7 +1349,7 @@ msgstr "Sol dosyaları ada, tarihe veya boyuta göre sıralama"
 msgid "Sorting right files by name, date or size"
 msgstr "Doğru dosyaları ada, tarihe veya boyuta göre sıralama"
 
-#: ../addons/type_utils.py:406
+#: ../addons/type_utils.py:423
 msgid "Start/stop slide show"
 msgstr "Slayt gösterisini başlat/durdur"
 
@@ -1369,7 +1369,7 @@ msgstr "Kanal +/- ile düğmeleri sağa/sola değiştirin veya kanal düğmesi h
 msgid "Symbolic link"
 msgstr "Sembolik bağlantı"
 
-#: ../ui.py:1178
+#: ../ui.py:1180
 msgid "Symlink to "
 msgstr "Symlink to "
 
@@ -1381,24 +1381,24 @@ msgstr "TB"
 msgid "Task list"
 msgstr "Görev listesi"
 
-#: ../addons/type_utils.py:322
+#: ../addons/type_utils.py:337
 #, fuzzy
 msgid "Text not found."
 msgstr "Dosya bulunamadı: %s"
 
-#: ../addons/type_utils.py:348
+#: ../addons/type_utils.py:365
 msgid "Text searching as case sensitive or case insensitive."
 msgstr ""
 
-#: ../addons/type_utils.py:443
+#: ../addons/type_utils.py:460
 msgid "The Image Viewer component of the File Commander requires the PicturePlayer extension. Install PicturePlayer to enable this operation."
 msgstr "File Commander'ın Image Viewer bileşeni PicturePlayer uzantısını gerektirir. Bu işlemi etkinleştirmek için PicturePlayer'ı yükleyin."
 
-#: ../addons/type_utils.py:164
+#: ../addons/type_utils.py:174
 msgid "The authors are NOT RESPONSIBLE"
 msgstr "Yazarlar SORUMLU DEĞİL"
 
-#: ../addons/key_actions.py:798
+#: ../addons/key_actions.py:799
 msgid ""
 "The function has been interrupted.\n"
 "Don't press any key until the picture from mvi-file is displayed!"
@@ -1410,7 +1410,7 @@ msgstr ""
 msgid "The hash of a directory can't be calculated."
 msgstr "Bir dizinin karması hesaplanamıyor."
 
-#: ../addons/type_utils.py:235
+#: ../addons/type_utils.py:245
 msgid "This line is not editable!"
 msgstr "Bu satır düzenlenemez!"
 
@@ -1431,11 +1431,11 @@ msgstr ""
 msgid "To previous found text"
 msgstr "Önceki resmi göster"
 
-#: ../ui.py:1204
+#: ../ui.py:1206
 msgid "Type the name for the new file"
 msgstr "Yeni dosyanın adını yazın"
 
-#: ../ui.py:2019
+#: ../ui.py:2021
 msgid "Type:"
 msgstr "Tip:"
 
@@ -1458,15 +1458,15 @@ msgstr "Bilinmeyen grup: %d"
 msgid "Unknown user: %d"
 msgstr "Bilinmeyen kullanıcı: %d"
 
-#: ../addons/unrar.py:32 ../addons/unrar.py:33 ../addons/gz.py:27
-#: ../addons/gz.py:28 ../addons/tar.py:23 ../addons/tar.py:24
-#: ../addons/unzip.py:28 ../addons/unzip.py:29
+#: ../addons/unrar.py:32 ../addons/unrar.py:33 ../addons/unzip.py:28
+#: ../addons/unzip.py:29 ../addons/gz.py:27 ../addons/gz.py:28
+#: ../addons/tar.py:23 ../addons/tar.py:24
 #, python-format
 msgid "Unpack to %s"
 msgstr "%s paketini açın"
 
-#: ../addons/unrar.py:31 ../addons/gz.py:26 ../addons/tar.py:22
-#: ../addons/unzip.py:27
+#: ../addons/unrar.py:31 ../addons/unzip.py:27 ../addons/gz.py:26
+#: ../addons/tar.py:22
 msgid "Unpack to current folder"
 msgstr "Mevcut klasöre paketten çıkar"
 
@@ -1483,7 +1483,7 @@ msgstr "Dosyayı görüntüle veya düzenle (boyut <1MB ise)"
 msgid "View or edit this %s script"
 msgstr "Bu %s komut dosyasını görüntüleyin veya düzenleyin"
 
-#: ../addons/type_utils.py:163
+#: ../addons/type_utils.py:173
 msgid "WARNING!"
 msgstr "UYARI!"
 
@@ -1495,15 +1495,15 @@ msgstr "Ne oynamak istiyorsun?\n"
 msgid "Yes"
 msgstr "Evet"
 
-#: ../ui.py:1398
+#: ../ui.py:1400
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Grup seçimi yoluyla daha kolay giriş için sanal klavyeye önceden doldurulmuş metin olarak mevcut dosya adının başından itibaren harf sayısını ayarlayabilirsiniz."
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Grup seçimi yoluyla daha kolay giriş için sanal klavyeye önceden doldurulmuş metin olarak mevcut dosya adının sonundan itibaren harf sayısını ayarlayabilirsiniz."
 
-#: ../ui.py:1396
+#: ../ui.py:1398
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr "Hangi grup seçiminin kullanılacağını belirleyebilirsiniz - başlığın başlangıcı, başlığın sonu veya başlıkta bulunur."
 
@@ -1522,12 +1522,12 @@ msgstr "Bir dizinde '%s' yi yararlı bir şekilde çalıştıramazsınız."
 msgid "[D]%s%s[F]%s%s"
 msgstr "[D]%s%s[F]%s%s"
 
-#: ../addons/type_utils.py:151 ../addons/type_utils.py:323
+#: ../addons/type_utils.py:154 ../addons/type_utils.py:340
 #, fuzzy
 msgid "case insensitive"
 msgstr "Büyük/küçük harfe duyarlı karşılaştır"
 
-#: ../addons/type_utils.py:151 ../addons/type_utils.py:323
+#: ../addons/type_utils.py:154 ../addons/type_utils.py:340
 #, fuzzy
 msgid "case sensitive"
 msgstr "Büyük/küçük harfe duyarlı karşılaştır"
@@ -1536,19 +1536,19 @@ msgstr "Büyük/küçük harfe duyarlı karşılaştır"
 msgid "contains in title"
 msgstr "başlıkta içerir"
 
-#: ../ui.py:1613
+#: ../ui.py:1615
 msgid "contains..."
 msgstr "şunu içerir ..."
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1000 ../ui.py:1842
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1002 ../ui.py:1844
 msgid "copy file"
 msgstr "dosyayı kopyala"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1002 ../ui.py:1840
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1004 ../ui.py:1842
 msgid "copy folder"
 msgstr "klasörü kopyala"
 
-#: ../ui.py:1194
+#: ../ui.py:1196
 msgid "create symlink ..."
 msgstr "sembolik bağlantı oluştur ..."
 
@@ -1560,20 +1560,20 @@ msgstr "d"
 msgid "end title"
 msgstr "bitiş başlığı"
 
-#: ../ui.py:1611
+#: ../ui.py:1613
 msgid "ends with..."
 msgstr "şununla biter ..."
 
-#: ../addons/type_utils.py:165
+#: ../addons/type_utils.py:175
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "VERİ KAYBI VEYA HASAR için !!!"
 
-#: ../ui.py:988 ../ui.py:1017 ../ui.py:1050 ../ui.py:1775 ../ui.py:1810
-#: ../ui.py:1845
+#: ../ui.py:990 ../ui.py:1019 ../ui.py:1052 ../ui.py:1777 ../ui.py:1812
+#: ../ui.py:1847
 msgid "from dir"
 msgstr "dir"
 
-#: ../addons/type_utils.py:162
+#: ../addons/type_utils.py:172
 msgid "has been CHANGED! Do you want to save it?"
 msgstr "değiştirildi! Kaydetmek ister misin?"
 
@@ -1597,11 +1597,11 @@ msgstr "ipk Dosyalarını yükle/paketini aç"
 msgid "manage local Files"
 msgstr "yerel Dosyaları yönet"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1064 ../ui.py:1807
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1066 ../ui.py:1809
 msgid "move file"
 msgstr "dosyayı taşı"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1066
+#: ../ui.py:561 ../ui.py:874 ../ui.py:1068
 msgid "move folder"
 msgstr "klasörü taşı"
 
@@ -1609,7 +1609,7 @@ msgstr "klasörü taşı"
 msgid "n"
 msgstr "n"
 
-#: ../ui.py:1204
+#: ../ui.py:1206
 msgid "new.txt"
 msgstr "new.txt"
 
@@ -1649,11 +1649,11 @@ msgstr "shell"
 msgid "start title"
 msgstr "başlangıç ​​başlığı"
 
-#: ../ui.py:1609
+#: ../ui.py:1611
 msgid "starts with..."
 msgstr "şununla başlar ..."
 
-#: ../ui.py:988 ../ui.py:1050 ../ui.py:1810 ../ui.py:1845
+#: ../ui.py:990 ../ui.py:1052 ../ui.py:1812 ../ui.py:1847
 msgid "to dir"
 msgstr "dir"
 
