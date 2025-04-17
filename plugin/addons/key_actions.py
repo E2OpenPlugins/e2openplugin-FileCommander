@@ -200,6 +200,8 @@ def task_processStdout(data):
 
 def task_processSterr(data):
 	global task_Sterr
+	if isinstance(data, bytes):
+		data = data.decode('utf-8', errors='replace')
 	for line in data.split('\n'):
 		if line:
 			task_Sterr.append(line)
@@ -435,6 +437,9 @@ class key_actions(stat_info):
 					cmdline = "%s/usr/bin/python %s '%s'" % (priority, self.commando, self.parameter)
 				else:
 					cmdline = "%s/usr/bin/python %s" % (priority, self.commando)
+			# change cwd for script before run
+			script_dir = os.path.dirname(self.commando)
+			cmdline = "cd '%s'; %s" % (script_dir, cmdline)
 		elif answer == "VIEW":
 			try:
 				yfile = os.stat(self.commando)
