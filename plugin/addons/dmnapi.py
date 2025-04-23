@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python3 -u
 # -*- coding: UTF-8 -*-
 # napiprojekt.pl API is used with napiproject administration consent
 
