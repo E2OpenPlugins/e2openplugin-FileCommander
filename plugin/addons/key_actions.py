@@ -434,9 +434,9 @@ class key_actions(stat_info):
 						cmdline = "%s/bin/sh %s" % (priority, self.commando)
 			else:
 				if 'PAR' in answer:
-					cmdline = "%s/usr/bin/python %s '%s'" % (priority, self.commando, self.parameter)
+					cmdline = "%s/usr/bin/python3 %s '%s'" % (priority, self.commando, self.parameter)
 				else:
-					cmdline = "%s/usr/bin/python %s" % (priority, self.commando)
+					cmdline = "%s/usr/bin/python3 %s" % (priority, self.commando)
 			# change cwd for script before run
 			script_dir = os.path.dirname(self.commando)
 			cmdline = "cd '%s'; %s" % (script_dir, cmdline)
