@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 #
 # ported from OpenATV to OpenPLi by mrvica April 2019
-# fixed, added features, rebuilded in May 2020 ims
+# fixed, added features, rebuilded in May 2020,2026 ims
 # based on Filebrowser plugin
 
 from . import _

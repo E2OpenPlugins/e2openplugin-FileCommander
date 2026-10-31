@@ -188,11 +188,11 @@ class FileList(FileListBase):
 
 		if directory is not None and self.showDirectories and not self.isTop:
 			if directory == self.current_mountpoint and self.showMountpoints:
-				self.list.append(FileEntryComponent(name="<%s>" % _("List of Storage Devices"), absolute=None, isDir=True, isLink=False))
+				self.list.append(FileEntryComponent(name="<" + (os.uname().nodename if config.plugins.filecommander.compact_labels.value else _("List of storage devices")) + ">", absolute=None, isDir=True, isLink=False))
 				self.parent_directory = None
 			elif (directory != "/") and not (self.inhibitMounts and self.getMountpoint(directory) in self.inhibitMounts):
 				self.parent_directory = '/'.join(directory.split('/')[:-2]) + '/'
-				self.list.append(FileEntryComponent(name="<%s>" % _("Parent Directory"), absolute=self.parent_directory, isDir=True, isLink=False))
+				self.list.append(FileEntryComponent(name=".." if config.plugins.filecommander.compact_labels.value else "<" + _("Parent directory") + ">", absolute=self.parent_directory, isDir=True, isLink=False))
 
 		if self.firstDirs:
 			if self.showDirectories:

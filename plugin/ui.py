@@ -64,7 +64,7 @@ from Plugins.Extensions.FileCommander.addons.type_utils import vEditor
 # for locale (gettext)
 from . import _, ngettext
 
-pvers = "%s%s" % (_("v"), "2.13")
+pvers = "%s%s" % (_("v"), "2.14")
 
 MOVIEEXTENSIONS = {"cuts": "movieparts", "meta": "movieparts", "ap": "movieparts", "sc": "movieparts", "eit": "movieparts"}
 
@@ -161,6 +161,7 @@ config.plugins.filecommander.cp = ConfigSelection(default="1250", choices=codepa
 config.plugins.filecommander.filename_header = ConfigYesNo(default=True)
 
 config.plugins.filecommander.veditor_case_sensitive = ConfigYesNo(default=False)
+config.plugins.filecommander.compact_labels = ConfigYesNo(default=False)
 cfg = config.plugins.filecommander
 
 # ####################
@@ -188,6 +189,7 @@ class Setup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Save cursor position"), cfg.cursorposition, _("Save cursor position in active panel.")))
 		self.list.append(getConfigListEntry(_("Show directories first"), cfg.firstDirs, _("Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted).")))
 		self.list.append(getConfigListEntry(_("Filenames in header"), cfg.filename_header, _("Display filenames in header. It is useful for filenames that are too long.")))
+		self.list.append(getConfigListEntry(_("Compact directory labels"), cfg.compact_labels, _("Show '..' and the receiver name instead of 'Parent directory' and 'List of storage devices'.")))
 		self.list.append(getConfigListEntry(_("Show Task's completed message"), cfg.showTaskCompleted_message, _("Show message if FileCommander is not running and all Task's are completed.")))
 		self.list.append(getConfigListEntry(_("Show Script completed message"), cfg.showScriptCompleted_message, _("Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info.")))
 		self.list.append(getConfigListEntry(_("Number of lines in script messages"), cfg.script_messagelen, _("Set for 'stout' and 'sterr' the number of lines in script info or script error messages.")))
@@ -654,7 +656,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 		menu.append((_("Go to default directory"), self.goDefaultfolder))			#yellow
 		menu.append((self.help_run_file(), self.run_file))					#
 		menu.append((self.help_run_ffprobe(), self.run_ffprobe))				#
-		menu.append((_("Settings..."), boundFunction(self.session.open, Setup)))		#menu
+		menu.append((_("Settings..."), boundFunction(self.session.openWithCallback, self.goRestart, Setup))) #menu
 		menu.append((_("Go to bookmarked folder"), self.goBookmarkedfolder))			#blue
 		keys += ["", "", "", "yellow", "", "", "menu", "blue"]
 
@@ -1267,7 +1269,7 @@ class FileCommanderScreen(Screen, HelpableScreen, key_actions):
 				self[side + "_head2"].updateList(self.statInfo(self[side]))
 				self[side + "_free"].text = "%s" % freeDiskSpace(dir) + self.walkdirflag
 			elif not dir and filename:
-				self[side + "_head1"].text = cutLargePath(_("<Receiver>"), self[side + "_head1"])
+				self[side + "_head1"].text = cutLargePath("<%s>" % os.uname().nodename if config.plugins.filecommander.compact_labels.value else _("<Receiver>"), self[side + "_head1"])
 			else:
 				self[side + "_head1"].text = ""
 				self[side + "_head2"].updateList(())
