@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 16:52+0200\n"
+"POT-Creation-Date: 2026-10-31 13:56+0100\n"
 "PO-Revision-Date: 2020-06-11 15:02+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: NL <translators@openpli.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../addons/key_actions.py:406
+#: ../addons/key_actions.py:408
 #, python-format
 msgid ""
 "\n"
@@ -44,36 +44,36 @@ msgstr " ('%s') voltooid maar met fouten."
 msgid " ('%s') finished with error number [%d]."
 msgstr " ('%s') voltooid maar met foutnummer [%d]."
 
-#: ../ui.py:1810 ../ui.py:1845
+#: ../ui.py:1812 ../ui.py:1847
 #, python-format
 msgid " - %d element exist! Overwrite"
 msgid_plural " - %d elements exist! Overwrite"
 msgstr[0] " - %d element bestaat! Overschrijven"
 msgstr[1] " - %d element bestaat! Overschrijven"
 
-#: ../ui.py:984 ../ui.py:1046
+#: ../ui.py:986 ../ui.py:1048
 msgid " - file exist! Overwrite"
 msgstr " - bestand bestaat! Overschrijven"
 
-#: ../ui.py:988 ../ui.py:1050
+#: ../ui.py:990 ../ui.py:1052
 msgid " - folder exist! Overwrite"
 msgstr " - directory bestaat! Overschrijven"
 
-#: ../addons/key_actions.py:740
+#: ../addons/key_actions.py:745
 msgid " or save the picture additionally to a file"
 msgstr " of sla de afbeelding op bij het bestand"
 
-#: ../ui.py:310
+#: ../ui.py:312
 #, python-format
 msgid "%d GB"
 msgstr "%d Gb"
 
-#: ../ui.py:308
+#: ../ui.py:310
 #, python-format
 msgid "%d MB"
 msgstr "%d Mb"
 
-#: ../ui.py:306
+#: ../ui.py:308
 #, python-format
 msgid "%d kB"
 msgstr "%d Kb"
@@ -82,18 +82,18 @@ msgstr "%d Kb"
 msgid "%d.%m.%Y, %H:%M:%S"
 msgstr "%d.%m.%Y, %H:%M:%S"
 
-#: ../addons/key_actions.py:349
+#: ../addons/key_actions.py:351
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: ../ui.py:2024
+#: ../ui.py:2026
 #, python-format
 msgid "%s (%04o)"
 msgstr "%s (%04o)"
 
-#: ../addons/key_actions.py:332 ../addons/key_actions.py:350
-#: ../addons/key_actions.py:351 ../addons/key_actions.py:352
+#: ../addons/key_actions.py:334 ../addons/key_actions.py:352
+#: ../addons/key_actions.py:353 ../addons/key_actions.py:354
 #, python-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
@@ -113,32 +113,32 @@ msgstr "%s is met een wachtwoord beveiligd."
 msgid "%s successfully extracted."
 msgstr "%s met succes uitgepakt."
 
-#: ../addons/key_actions.py:442 ../addons/key_actions.py:746
+#: ../addons/key_actions.py:447 ../addons/key_actions.py:751
 #, python-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: ../addons/key_actions.py:547
+#: ../addons/key_actions.py:552
 #, python-format
 msgid "'%s' not installed and no known package"
 msgstr "'%s' niet geïnstalleerd en ook geen bekend pakket"
 
-#: ../ui.py:198 ../ui.py:1406
+#: ../ui.py:200 ../ui.py:1408
 msgid "'Group selection' and 'Invert selection' in Multiselection mode can work with directories too."
 msgstr "Indien geactiveerd, dan werkt 'Groepsselectie' en 'Omgekeerde Selectie' in de Multi-select mode ook met directories."
 
-#: ../ui.py:553
+#: ../ui.py:555
 #, python-format
 msgid "(%d job)"
 msgid_plural "(%d jobs)"
 msgstr[0] "(%d opdracht)"
 msgstr[1] "(%d opdrachten)"
 
-#: ../ui.py:1542
+#: ../ui.py:1544
 msgid "(Selectmode)"
 msgstr "(Keuzemodus)"
 
-#: ../ui.py:1270 ../ui.py:1871
+#: ../ui.py:1272 ../ui.py:1873
 msgid "<Receiver>"
 msgstr "<Ontvanger>"
 
@@ -146,43 +146,43 @@ msgstr "<Ontvanger>"
 msgid "?"
 msgstr "?"
 
-#: ../ui.py:2028
+#: ../ui.py:2030
 msgid "Accessed:"
 msgstr "Toegankelijk:"
 
-#: ../ui.py:1511 ../ui.py:1513
+#: ../ui.py:1513 ../ui.py:1515
 msgid "Activate left-hand file list as multi-select source"
 msgstr "Activeer de linker lijst als een Multi geselecteerde bron"
 
-#: ../ui.py:501 ../ui.py:503
+#: ../ui.py:503 ../ui.py:505
 msgid "Activate left-hand file list as source"
 msgstr "Activeer de linker lijst als bron"
 
-#: ../ui.py:1510 ../ui.py:1512
+#: ../ui.py:1512 ../ui.py:1514
 msgid "Activate right-hand file list as multi-select source"
 msgstr "Activeer de rechter lijst als een Multi geselecteerde bron"
 
-#: ../ui.py:500 ../ui.py:502
+#: ../ui.py:502 ../ui.py:504
 msgid "Activate right-hand file list as source"
 msgstr "Activeer de rechter lijst als bron"
 
-#: ../ui.py:676
+#: ../ui.py:678
 msgid "Add current folder to bookmarks"
 msgstr "Voeg de huidige map aan de bladwijzers"
 
-#: ../ui.py:185
+#: ../ui.py:186
 msgid "Add plugin to Extensions menu"
 msgstr "Plug-in toevoegen aan het applicatiemenu"
 
-#: ../ui.py:184
+#: ../ui.py:185
 msgid "Add plugin to main menu"
 msgstr "Plug-in toevoegen aan het hoofdmenu"
 
-#: ../ui.py:672
+#: ../ui.py:674
 msgid "Add selected folder to bookmarks"
 msgstr "Voeg de gekozen map toe aan de bladwijzers"
 
-#: ../ui.py:1617
+#: ../ui.py:1619
 #, python-format
 msgid "Add to selection (%s)"
 msgstr "Voeg toe aan de selectie (%s)"
@@ -191,17 +191,17 @@ msgstr "Voeg toe aan de selectie (%s)"
 msgid "All"
 msgstr "Alles"
 
-#: ../ui.py:203 ../ui.py:1408
+#: ../ui.py:205 ../ui.py:1410
 msgid "All files in the directory with the same name as the selected movie will be copied or moved too."
 msgstr "Alle bestanden in de map met dezelfde naam als de geselecteerde film worden eveneens gekopieerd of verplaatst."
 
-#: ../ui.py:203 ../ui.py:1408
+#: ../ui.py:205 ../ui.py:1410
 msgid "All movie extensions"
 msgstr "Alle video extensies"
 
-#: ../addons/key_actions.py:275 ../addons/key_actions.py:296
-#: ../addons/key_actions.py:303 ../addons/key_actions.py:346
-#: ../addons/key_actions.py:351 ../addons/key_actions.py:352
+#: ../addons/key_actions.py:277 ../addons/key_actions.py:298
+#: ../addons/key_actions.py:305 ../addons/key_actions.py:348
+#: ../addons/key_actions.py:353 ../addons/key_actions.py:354
 msgid "B"
 msgstr "B"
 
@@ -209,24 +209,24 @@ msgstr "B"
 msgid "Block device"
 msgstr "Blokkeer het apparaat"
 
-#: ../ui.py:208
+#: ../ui.py:210
 msgid "CPU priority for script execution"
 msgstr "CPU prioriteit t.b.v. het uitvoeren van een script"
 
-#: ../ui.py:643
+#: ../ui.py:645
 msgid "Calculate file checksums"
 msgstr "Bereken de checksum van bestand(en)"
 
-#: ../ui.py:210
+#: ../ui.py:212
 msgid "Calculates file checksums."
 msgstr "Bereken de bestands checksums."
 
-#: ../ui.py:206
+#: ../ui.py:208
 #, fuzzy
 msgid "Calculates the size of directory contents for 'Info'."
 msgstr "Indien geactiveerd, dan wordt de de grootte van de inhoud van de map berekend t.b.v. 'Info'."
 
-#: ../addons/unrar.py:52 ../addons/unarchiver.py:143
+#: ../addons/unarchiver.py:143 ../addons/unrar.py:52
 #, python-format
 msgid ""
 "Can not run %s: %s.\n"
@@ -235,15 +235,15 @@ msgstr ""
 "Kan %s: %s. niet uitvoeren\n"
 "%s zit mogelijk in een niet geïnstalleerde plug-in."
 
-#: ../ui.py:2044
+#: ../ui.py:2046
 #, python-format
 msgid "Can't read link contents: %s"
 msgstr "Kan de inhoud van de koppeling niet lezen:% s"
 
-#: ../addons/unarchiver.py:74 ../addons/unarchiver.py:245
-#: ../addons/type_utils.py:369 ../addons/key_actions.py:250
-#: ../addons/key_actions.py:400 ../addons/key_actions.py:616 ../ui.py:216
-#: ../ui.py:1379 ../Console.py:28
+#: ../Console.py:28 ../addons/unarchiver.py:74 ../addons/unarchiver.py:245
+#: ../addons/key_actions.py:252 ../addons/key_actions.py:402
+#: ../addons/key_actions.py:621 ../addons/type_utils.py:369 ../ui.py:218
+#: ../ui.py:1381
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -256,11 +256,11 @@ msgstr "Annuleer de uitvoering?"
 msgid "Case sensitive search"
 msgstr "Vergelijk hoofd/kleine letters gevoeligheid"
 
-#: ../ui.py:196
+#: ../ui.py:198
 msgid "Change buttons for list navigation"
 msgstr "Wijzigen knop wissel L of R navigatiescherm"
 
-#: ../ui.py:646
+#: ../ui.py:648
 msgid "Change execute permissions (755/644)"
 msgstr "Wijzig de uitvoermachtigingen (755/644)"
 
@@ -272,71 +272,76 @@ msgstr "CH wisselt schermen"
 msgid "Character device"
 msgstr "Teken apparaat"
 
-#: ../TaskList.py:52 ../Console.py:83
+#: ../Console.py:83 ../TaskList.py:52
 msgid "Close"
 msgstr "Sluit"
 
-#: ../ui.py:1403
+#: ../ui.py:192
+#, fuzzy
+msgid "Compact directory labels"
+msgstr "Maak een directory aan"
+
+#: ../ui.py:1405
 msgid "Compare case sensitive"
 msgstr "Vergelijk hoofd/kleine letters gevoeligheid"
 
-#: ../ui.py:2034
+#: ../ui.py:2036
 msgid "Content size:"
 msgstr "Grootte van de inhoud:"
 
-#: ../ui.py:649
+#: ../ui.py:651
 #, python-format
 msgid "Convert subtitles from '%s' to UTF-8"
 msgstr ""
 
-#: ../ui.py:485 ../ui.py:1503
+#: ../ui.py:487 ../ui.py:1505
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: ../ui.py:1846
+#: ../ui.py:1848
 #, python-format
 msgid "Copy %d element"
 msgid_plural "Copy %d elements"
 msgstr[0] "Kopieer %d element"
 msgstr[1] "Kopiëer %d elementen"
 
-#: ../ui.py:985
+#: ../ui.py:987
 msgid "Copy file"
 msgstr "Kopieer bestand"
 
-#: ../ui.py:513 ../ui.py:633
+#: ../ui.py:515 ../ui.py:635
 msgid "Copy file/directory to target directory"
 msgstr "Kopieer een bestand / map naar de doelmap"
 
-#: ../ui.py:1520
+#: ../ui.py:1522
 msgid "Copy files/directories to target directory"
 msgstr "Kopieer bestanden / mappen naar de doelmap"
 
-#: ../ui.py:989
+#: ../ui.py:991
 msgid "Copy folder"
 msgstr "Kopieer de directory"
 
-#: ../ui.py:206
+#: ../ui.py:208
 msgid "Count directory content size"
 msgstr "Tel de grootte van de inhoud van de directory"
 
-#: ../ui.py:505 ../ui.py:1524
+#: ../ui.py:507 ../ui.py:1526
 msgid "Counting directory content size while walking (on/off)"
 msgstr "Tel de grootte van de inhoud van de directory tijdens andere werkzaamheden."
 
-#: ../ui.py:508 ../ui.py:635
+#: ../ui.py:510 ../ui.py:637
 msgid "Create directory"
 msgstr "Maak een directory aan"
 
-#: ../ui.py:1588
+#: ../ui.py:1590
 msgid "Create directory in 'Target' panel"
 msgstr "Maak een map aan in het 'Doel' paneel"
 
-#: ../ui.py:1178
+#: ../ui.py:1180
 msgid "Create symlink to file"
 msgstr "Maak een symlink naar een bestand aan"
 
-#: ../ui.py:652
+#: ../ui.py:654
 msgid "Create user-named symbolic link"
 msgstr "Maak een gebruikersnaam gerelateerde symlink aan"
 
@@ -348,59 +353,59 @@ msgstr "Datum"
 msgid "Date reverse"
 msgstr "Datum omgekeerd"
 
-#: ../ui.py:208
+#: ../ui.py:210
 msgid "Default CPU priority (nice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)"
 msgstr "Standaard CPU prioriteit t.b.v. uit te voeren scripts. Dit kan de systeembelasting verminderen zodat scripts de rest van het systeem niet hinderen. (hogere waarde = lagere prioriteit)"
 
-#: ../ui.py:239
+#: ../ui.py:241
 msgid "Default Folder"
 msgstr "Standaard map"
 
-#: ../ui.py:209
+#: ../ui.py:211
 msgid "Default I/O priority (ionice) for executed scripts. This can reduce the load so that scripts do not interfere with the rest of the system. (higher values = lower priority)"
 msgstr "Standaard I/O prioriteit t.b.v. uit te voeren scripts. Dit kan de systeembelasting verminderen zodat scripts de rest van het systeem niet hinderen. (hogere waarde = lagere prioriteit)"
 
-#: ../ui.py:201
+#: ../ui.py:203
 msgid "Default directory sorting"
 msgstr "Standaard sortering van directory’s"
 
-#: ../ui.py:199
+#: ../ui.py:201
 msgid "Default file sorting left"
 msgstr "Standaard bestandssortering links"
 
-#: ../ui.py:200
+#: ../ui.py:202
 msgid "Default file sorting right"
 msgstr "Standaard bestandssortering rechts"
 
-#: ../ui.py:202
+#: ../ui.py:204
 msgid "Default folder"
 msgstr "Standaard map"
 
-#: ../ui.py:201
+#: ../ui.py:203
 msgid "Default sorting method for directories in both panels (to apply the changes FileCommander must be restarted)."
 msgstr ""
 "Standaard sorteermethode voor mappen in beide panelen (om de wijzigingen toe te passen moet FileCommander opnieuw worden opgestart). \n"
 "U kunt kiezen uit: Naam, omgekeerde naam, datum en omgekeerde datum."
 
-#: ../ui.py:199
+#: ../ui.py:201
 msgid "Default sorting method for files in left panel."
 msgstr ""
 "Standaard sorteermethode in het linker paneel.\n"
 "\n"
 "U kunt kiezen uit: Datum, omgekeerde datum, naam, omgekeerde naam, grootte en omgekeerde grootte. "
 
-#: ../ui.py:200
+#: ../ui.py:202
 msgid "Default sorting method for files in right panel."
 msgstr ""
 "Standaard sorteermethode in het rechter paneel.\n"
 "\n"
 "U kunt kiezen uit: Datum, omgekeerde datum, naam, omgekeerde naam, grootte en omgekeerde grootte."
 
-#: ../addons/type_utils.py:128 ../ui.py:483 ../ui.py:1501
+#: ../addons/type_utils.py:128 ../ui.py:485 ../ui.py:1503
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../ui.py:1776
+#: ../ui.py:1778
 #, python-format
 msgid "Delete %d element"
 msgid_plural "Delete %d elements"
@@ -411,35 +416,35 @@ msgstr[1] "Verwijder %d elementen"
 msgid "Delete current line"
 msgstr "Verwijder de huidige regel"
 
-#: ../ui.py:1016
+#: ../ui.py:1018
 msgid "Delete file"
 msgstr "Verwijder bestand"
 
-#: ../ui.py:511 ../ui.py:636
+#: ../ui.py:513 ../ui.py:638
 msgid "Delete file or directory (and all its contents)"
 msgstr "Verwijder een bestand of map (en al zijn inhoud)"
 
-#: ../ui.py:1018
+#: ../ui.py:1020
 msgid "Delete folder"
 msgstr "Verwijder de map"
 
-#: ../ui.py:1518
+#: ../ui.py:1520
 msgid "Delete the selected files or directories"
 msgstr "Verwijder de geselecteerde bestanden of mappen"
 
-#: ../ui.py:1587
+#: ../ui.py:1589
 msgid "Deselect All"
 msgstr "Déselecteer alles"
 
-#: ../ui.py:1526
+#: ../ui.py:1528
 msgid "Deselect group"
 msgstr "Déselect de groep"
 
-#: ../ui.py:1585
+#: ../ui.py:1587
 msgid "Deselect group..."
 msgstr "Déselecteer de group..."
 
-#: ../ui.py:198 ../ui.py:1406
+#: ../ui.py:200 ../ui.py:1408
 msgid "Directories to group selections"
 msgstr "Directories naar groepselecties"
 
@@ -447,7 +452,7 @@ msgstr "Directories naar groepselecties"
 msgid "Directory"
 msgstr "Map"
 
-#: ../ui.py:1229 ../ui.py:1742
+#: ../ui.py:1231 ../ui.py:1744
 msgid ""
 "Directory cannot be created here on\n"
 "<List of Storage Devices> or <Receiver>.\n"
@@ -457,15 +462,15 @@ msgstr ""
 "<List of Storage Devices> or <Receiver>.\n"
 "Verplaats de selectie naar beneden of wijzig van directory."
 
-#: ../ui.py:190 ../ui.py:1405
+#: ../ui.py:191 ../ui.py:1407
 msgid "Display filenames in header. It is useful for filenames that are too long."
 msgstr ""
 
-#: ../addons/key_actions.py:251
+#: ../addons/key_actions.py:253
 msgid "Do you want change rights?\n"
 msgstr "Wilt u de rechten wijzigen?\n"
 
-#: ../addons/key_actions.py:407
+#: ../addons/key_actions.py:409
 msgid "Do you want to view or run the script?\n"
 msgstr "Wilt u het script zien of uitvoeren?\n"
 
@@ -481,24 +486,24 @@ msgstr "Bewerk de huidige regel"
 msgid "Edit line "
 msgstr "Bewerk de regel "
 
-#: ../ui.py:651
+#: ../ui.py:653
 #, fuzzy
 msgid "Edit new file"
 msgstr "Bewerk de regel "
 
-#: ../ui.py:195
+#: ../ui.py:197
 msgid "Edit position is the line end"
 msgstr "Beginpositie voor wijzigen aan het eind van een regel"
 
-#: ../ui.py:516 ../ui.py:517 ../ui.py:638
+#: ../ui.py:518 ../ui.py:519 ../ui.py:640
 msgid "Enter multi-file selection mode"
 msgstr "Activeer de meervoudige bestandsselectie"
 
-#: ../ui.py:850
+#: ../ui.py:852
 msgid "Error"
 msgstr "Fout"
 
-#: ../ui.py:1241 ../ui.py:1754
+#: ../ui.py:1243 ../ui.py:1756
 #, python-format
 msgid ""
 "Error creating directory %s:\n"
@@ -507,7 +512,7 @@ msgstr ""
 "Fout bij het aanmaken van de map %s:\n"
 "%s"
 
-#: ../ui.py:1219
+#: ../ui.py:1221
 #, fuzzy, python-format
 msgid ""
 "Error creating file %s:\n"
@@ -516,7 +521,7 @@ msgstr ""
 "Fout bij het aanmaken van de map %s:\n"
 "%s"
 
-#: ../ui.py:1159
+#: ../ui.py:1161
 #, python-format
 msgid ""
 "Error linking %s to %s:\n"
@@ -525,7 +530,7 @@ msgstr ""
 "Fout bij het linken van %s naar %s:\n"
 "%s"
 
-#: ../ui.py:1117
+#: ../ui.py:1119
 #, python-format
 msgid ""
 "Error renaming %s to %s:\n"
@@ -587,7 +592,7 @@ msgstr "File Commander - Addon Mediaspeler"
 msgid "File Commander - Addon Movieplayer"
 msgstr "File Commander - Addon Movieplayer"
 
-#: ../ui.py:878
+#: ../ui.py:880
 msgid "File Commander - all Task's completed!"
 msgstr "File Commander - alle taken uitgevoerd!"
 
@@ -615,7 +620,7 @@ msgstr "File Commander - unrar Addon"
 msgid "File Commander - unzip Addon"
 msgstr "File Commander - unzip Addon"
 
-#: ../ui.py:1204
+#: ../ui.py:1206
 #, fuzzy
 msgid ""
 "File cannot be created on\n"
@@ -626,11 +631,11 @@ msgstr ""
 "<List of Storage Devices> or <Receiver>.\n"
 "Verplaats de selectie naar beneden of wijzig van directory."
 
-#: ../ui.py:210
+#: ../ui.py:212
 msgid "File checksums/hashes"
 msgstr "Checksums/hashes van bestanden"
 
-#: ../addons/key_actions.py:692 ../addons/key_actions.py:793
+#: ../addons/key_actions.py:697 ../addons/key_actions.py:798
 #, python-format
 msgid "File not found: %s"
 msgstr "Bestand niet gevonden: %s"
@@ -644,35 +649,35 @@ msgstr "Bestandsoverdracht gestopt door de gebruiker"
 msgid "File write error: '%s'"
 msgstr "Fout bij schrijven van bestand: ‘%s’"
 
-#: ../ui.py:515 ../ui.py:637 ../ui.py:1522 ../ui.py:1975
+#: ../ui.py:517 ../ui.py:639 ../ui.py:1524 ../ui.py:1977
 msgid "File/Directory Status Information"
 msgstr "Status informatie van een bestand of directory"
 
-#: ../ui.py:190 ../ui.py:1405
+#: ../ui.py:191 ../ui.py:1407
 msgid "Filenames in header"
 msgstr ""
 
-#: ../ui.py:204
+#: ../ui.py:206
 msgid "Filter extension for 'My Extension' setting of 'Filter extension'. Use the extension name without a '.'."
 msgstr "In 'Mijn extensies' voert u een door u gewenst filter in om alles met dezelfde extensie te filteren. Gebruik in de extensienaam géén lees of koppeltekens. '.'."
 
-#: ../ui.py:205
+#: ../ui.py:207
 msgid "Filter extension, (*) appears in title"
 msgstr "Filter extensie, (*) wordt weergegeven in titel"
 
-#: ../ui.py:205
+#: ../ui.py:207
 msgid "Filter visible file classes by extension."
 msgstr "Filtering gebaseerd op de gewenste extensie. Dat kunnen muziekbestanden, films, afbeeldingen etc. zijn."
 
-#: ../addons/key_actions.py:275
+#: ../addons/key_actions.py:277
 msgid "GB"
 msgstr "GB"
 
-#: ../ui.py:658
+#: ../ui.py:660
 msgid "Go to bookmarked folder"
 msgstr "Ga naar de geselecteerde map"
 
-#: ../ui.py:654
+#: ../ui.py:656
 msgid "Go to default directory"
 msgstr "Ga naar de standaard directory"
 
@@ -680,7 +685,7 @@ msgstr "Ga naar de standaard directory"
 msgid "Go to end of file"
 msgstr "Ga naar het einde van het bestand"
 
-#: ../ui.py:653
+#: ../ui.py:655
 msgid "Go to parent directory"
 msgstr "Ga naar de bovenliggende map"
 
@@ -688,23 +693,23 @@ msgstr "Ga naar de bovenliggende map"
 msgid "Go to start of file"
 msgstr "Ga naar het begin van het bestand"
 
-#: ../ui.py:2023
+#: ../ui.py:2025
 msgid "Group:"
 msgstr "Groep:"
 
-#: ../ui.py:209
+#: ../ui.py:211
 msgid "I/O priority for script execution"
 msgstr "I/O prioriteit voor uitvoeren van scripts"
 
-#: ../ui.py:195
+#: ../ui.py:197
 msgid "If editing a file, you can set the cursor start position at end or begin of the line."
 msgstr "Indien geactiveerd, dan stelt u hiermee de beginpositie van de te bewerken regel in aan het eind van deze regel. Indien niet geactiveerd dan is de startpositie aan het begin van de betreffende regel."
 
-#: ../ui.py:197 ../ui.py:1407
+#: ../ui.py:199 ../ui.py:1409
 msgid "In multi-selection mode moves cursor to next item after marking."
 msgstr "Indien geactiveerd, dan wordt in de multi-selectiemodus de cursor verplaatst naar het volgende item na het markeren."
 
-#: ../ui.py:2031
+#: ../ui.py:2033
 msgid "Inode:"
 msgstr "Inode:"
 
@@ -720,7 +725,7 @@ msgstr "Voeg een regel in voor de huidige regel"
 msgid "Install"
 msgstr "Installeer"
 
-#: ../addons/key_actions.py:545
+#: ../addons/key_actions.py:550
 #, python-format
 msgid "Install '%s' and enable this operation"
 msgstr "Installeer '%s' en activeer deze actie"
@@ -729,72 +734,77 @@ msgstr "Installeer '%s' en activeer deze actie"
 msgid "Installing Plugin ..."
 msgstr "Plugin wordt geïnstalleerd …."
 
-#: ../ui.py:1589
+#: ../ui.py:1591
 msgid "Invert Selection"
 msgstr "Keer de Selectie om"
 
-#: ../ui.py:1504 ../ui.py:1521
+#: ../ui.py:1506 ../ui.py:1523
 msgid "Invert selection"
 msgstr "Keer de selectie om"
 
-#: ../addons/key_actions.py:601
+#: ../addons/key_actions.py:606
 msgid "It is not possible to calculate hashes on <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de hashes op <List of Storage Devices> te berekenen"
 
-#: ../addons/key_actions.py:245
+#: ../addons/key_actions.py:247
 msgid "It is not possible to change the file mode of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de bestandsmode van <List of Storage Devices> te wijzigen."
 
-#: ../ui.py:1993
+#: ../ui.py:1995
 msgid "It is not possible to get the file status of <List of Storage Devices>"
 msgstr "Het is niet mogelijk om de bestandsstatus van <List of Storage Devices> op te halen"
 
-#: ../addons/key_actions.py:496
+#: ../addons/key_actions.py:501
 #, python-format
 msgid "It is not possible to run '%s' on <List of Storage Devices>"
 msgstr "Het is niet mogelijk om ‘%s’ op <List of Storage Devices> uit te voeren"
 
-#: ../ui.py:1081
+#: ../ui.py:1083
 msgid "It's not possible to rename the filesystem root."
 msgstr "Het is niet mogelijk om 'root filesystem’ te hernoemen."
 
-#: ../addons/key_actions.py:275
+#: ../addons/key_actions.py:277
 msgid "KB"
 msgstr "KB"
 
-#: ../ui.py:498
+#: ../ui.py:500
 msgid "Leave File Commander"
 msgstr "Verlaat File Commander"
 
-#: ../ui.py:1509 ../ui.py:1529 ../ui.py:1530
+#: ../ui.py:1511 ../ui.py:1531 ../ui.py:1532
 msgid "Leave multi-select mode"
 msgstr "Multi-select mode verlaten"
 
-#: ../ui.py:2040
+#: ../ui.py:2042
 msgid "Link target:"
 msgstr "Link het doel:"
 
-#: ../ui.py:2030
+#: ../ui.py:2032
 msgid "Links:"
 msgstr "Links:"
 
-#: ../FileList.py:191 ../FileList.py:460 ../FileList.py:464
+#: ../FileList.py:460 ../FileList.py:464
 msgid "List of Storage Devices"
+msgstr "Lijst van opslag media"
+
+#: ../FileList.py:191
+#, fuzzy
+msgid "List of storage devices"
 msgstr "Lijst van opslag media"
 
 #: ../Console.py:178
 msgid "Load"
 msgstr "Laden"
 
-#: ../addons/key_actions.py:275
+#: ../addons/key_actions.py:277
 msgid "MB"
 msgstr "MB"
 
-#: ../ui.py:185
+#: ../ui.py:186
 msgid "Make FileCommander accessible from the Extensions menu."
 msgstr "Indien geactiveerd, dan kunt u FileCommander starten vanuit het applicatiemenu. (blauwe toets)"
 
-#: ../ui.py:184
+#: ../ui.py:185
 msgid "Make FileCommander accessible from the main menu."
 msgstr "Indien geactiveerd, dan kunt u FileCommander starten vanuit het hoofdmenu."
 
@@ -802,60 +812,60 @@ msgstr "Indien geactiveerd, dan kunt u FileCommander starten vanuit het hoofdmen
 msgid "Menu..."
 msgstr ""
 
-#: ../ui.py:2029
+#: ../ui.py:2031
 msgid "Metadata changed:"
 msgstr "Veranderde metadata:"
 
-#: ../addons/key_actions.py:298
+#: ../addons/key_actions.py:300
 #, python-format
 msgid "Mode %s (%04o)"
 msgstr "Modus %s (%04o)"
 
-#: ../ui.py:2027
+#: ../ui.py:2029
 msgid "Modified:"
 msgstr "Aangepast:"
 
-#: ../ui.py:484 ../ui.py:1502
+#: ../ui.py:486 ../ui.py:1504
 msgid "Move"
 msgstr "Verplaatsen"
 
-#: ../ui.py:1811
+#: ../ui.py:1813
 #, python-format
 msgid "Move %d element"
 msgid_plural "Move %d elements"
 msgstr[0] "Verplaats %d element"
 msgstr[1] "Verplaats %d elementen"
 
-#: ../ui.py:519 ../ui.py:1515
+#: ../ui.py:521 ../ui.py:1517
 msgid "Move down list"
 msgstr "Verplaast lijst naar beneden"
 
-#: ../ui.py:1047
+#: ../ui.py:1049
 msgid "Move file"
 msgstr "Verplaats een bestand"
 
-#: ../ui.py:512 ../ui.py:634
+#: ../ui.py:514 ../ui.py:636
 msgid "Move file/directory to target directory"
 msgstr "Verplaats een bestand / map naar de doelmap"
 
-#: ../ui.py:1519
+#: ../ui.py:1521
 msgid "Move files/directories to target directory"
 msgstr "Verplaats een bestanden / mappen naar de doelmap"
 
-#: ../ui.py:1051
+#: ../ui.py:1053
 msgid "Move folder"
 msgstr "Verplaats map"
 
-#: ../ui.py:197 ../ui.py:1407
+#: ../ui.py:199 ../ui.py:1409
 msgid "Move selector to next item"
 msgstr "Verplaats de cursor naar het volgende item"
 
-#: ../ui.py:1527
+#: ../ui.py:1529
 #, fuzzy
 msgid "Move selector to next item (on/off)"
 msgstr "Verplaats de cursor naar het volgende item"
 
-#: ../ui.py:518 ../ui.py:1514
+#: ../ui.py:520 ../ui.py:1516
 msgid "Move up list"
 msgstr "Verplaats lijst naar boven"
 
@@ -863,7 +873,7 @@ msgstr "Verplaats lijst naar boven"
 msgid "Movie"
 msgstr "Film"
 
-#: ../ui.py:1424
+#: ../ui.py:1426
 msgid "MultiSelection Settings"
 msgstr "Instellingen inz. multiselectie"
 
@@ -875,7 +885,7 @@ msgstr "Muziek"
 msgid "My Extension"
 msgstr "Mijn Extensie"
 
-#: ../ui.py:204
+#: ../ui.py:206
 msgid "My extension"
 msgstr "Mijn extensie"
 
@@ -887,11 +897,11 @@ msgstr "Naam"
 msgid "Name reverse"
 msgstr "Naam omgekeerd"
 
-#: ../ui.py:1231 ../ui.py:1744
+#: ../ui.py:1233 ../ui.py:1746
 msgid "New folder"
 msgstr "Nieuwe map"
 
-#: ../addons/key_actions.py:734 ../ui.py:103 ../ui.py:154 ../ui.py:155
+#: ../addons/key_actions.py:739 ../ui.py:103 ../ui.py:154 ../ui.py:155
 msgid "No"
 msgstr "Nee"
 
@@ -899,50 +909,50 @@ msgstr "Nee"
 msgid "No files found."
 msgstr "Geen bestanden gevonden."
 
-#: ../addons/key_actions.py:592
+#: ../addons/key_actions.py:597
 msgid "No hash calculations configured"
 msgstr "Geen hash berekeningen geconfigureerd"
 
-#: ../addons/key_actions.py:758
+#: ../addons/key_actions.py:763
 #, python-format
 msgid "No viewer installed for this file type: %s"
 msgstr "Geen viewer geïnstalleerd voor dit bestandstype: %s"
 
-#: ../addons/key_actions.py:596
+#: ../addons/key_actions.py:601
 #, python-format
 msgid "None of the hash programs for the hashes %s are available"
 msgstr "Geen van de hash programma's voor de hashes %s zijn beschikbaar"
 
-#: ../addons/key_actions.py:253
+#: ../addons/key_actions.py:255
 msgid "Not allowed with folders"
 msgstr "Niet toegestaan met mappen"
 
-#: ../ui.py:197 ../ui.py:1407
+#: ../ui.py:199 ../ui.py:1409
 msgid "Note - for switching this option in multi-selection mode you can use key '6' too."
 msgstr ""
 
-#: ../ui.py:206
+#: ../ui.py:208
 msgid "Note - independently of setting this item, there in list you can turn on/turn off counting and displaying directory content size with key '1'."
 msgstr ""
 
-#: ../ui.py:193
+#: ../ui.py:195
 msgid "Number of lines in script messages"
 msgstr "Aantal regels in script berichten"
 
 #: ../addons/unarchiver.py:75 ../addons/unarchiver.py:246
-#: ../addons/type_utils.py:370 ../ui.py:217 ../ui.py:1380
+#: ../addons/type_utils.py:370 ../ui.py:219 ../ui.py:1382
 msgid "OK"
 msgstr "OK"
 
-#: ../ui.py:2032
+#: ../ui.py:2034
 msgid "On device:"
 msgstr "Op apparaat:"
 
-#: ../ui.py:1507
+#: ../ui.py:1509
 msgid "Open actions menu"
 msgstr "Open het actie-menu"
 
-#: ../ui.py:499
+#: ../ui.py:501
 msgid "Open settings/actions menu"
 msgstr "Open instellingen/aktie menu"
 
@@ -950,11 +960,11 @@ msgstr "Open instellingen/aktie menu"
 msgid "Open with File Commander"
 msgstr "Open met FileCommander"
 
-#: ../ui.py:212
+#: ../ui.py:214
 msgid "Original subtitles codepage"
 msgstr ""
 
-#: ../ui.py:212
+#: ../ui.py:214
 msgid "Original subtitles codepage for conversion to UTF-8."
 msgstr ""
 
@@ -962,27 +972,32 @@ msgstr ""
 msgid "Original:"
 msgstr "Origineel:"
 
-#: ../ui.py:2022
+#: ../ui.py:2024
 msgid "Owner:"
 msgstr "Eigenaar:"
 
-#: ../ui.py:521 ../ui.py:1517
+#: ../ui.py:523 ../ui.py:1519
 msgid "Page down list"
 msgstr "Pagina naar beneden"
 
-#: ../ui.py:520 ../ui.py:1516
+#: ../ui.py:522 ../ui.py:1518
 msgid "Page up list"
 msgstr "Pagina naar boven"
 
-#: ../FileList.py:195 ../FileList.py:464
+#: ../FileList.py:464
 msgid "Parent Directory"
+msgstr "Bovenliggende map"
+
+#: ../FileList.py:195
+#, fuzzy
+msgid "Parent directory"
 msgstr "Bovenliggende map"
 
 #: ../Console.py:155
 msgid "Path to save not exist: '/tmp/'"
 msgstr "Het path om naar op te slaan bestaat niet: '/tmp'"
 
-#: ../ui.py:2024
+#: ../ui.py:2026
 msgid "Permissions:"
 msgstr "Machtigingen:"
 
@@ -990,23 +1005,23 @@ msgstr "Machtigingen:"
 msgid "Pictures"
 msgstr "Afbeeldingen"
 
-#: ../addons/key_actions.py:616
+#: ../addons/key_actions.py:621
 msgid "Play folder"
 msgstr "Speel de inhoud van de map af"
 
-#: ../addons/key_actions.py:616
+#: ../addons/key_actions.py:621
 msgid "Play title"
 msgstr "Speel deze titel af"
 
-#: ../ui.py:497
+#: ../ui.py:499
 msgid "Play/view/edit/install/extract/run file or enter directory"
 msgstr "Speel af/bekijk/wijzig/installeer/pak uit/voer een bestand uit of open de map"
 
-#: ../ui.py:1231 ../ui.py:1744
+#: ../ui.py:1233 ../ui.py:1746
 msgid "Please enter name of the new directory"
 msgstr "Voer de naam voor de nieuwe map in aub"
 
-#: ../ui.py:1140
+#: ../ui.py:1142
 msgid "Please enter name of the new symlink"
 msgstr "Geef de nieuwe naam voor de symlink op aub"
 
@@ -1014,11 +1029,11 @@ msgstr "Geef de nieuwe naam voor de symlink op aub"
 msgid "Please enter password"
 msgstr "Voer wachtwoord in aub"
 
-#: ../ui.py:1085
+#: ../ui.py:1087
 msgid "Please enter the new directory name"
 msgstr "Voer de nieuwe naam voor de map in aub"
 
-#: ../ui.py:1083
+#: ../ui.py:1085
 msgid "Please enter the new file name"
 msgstr "Voer de nieuwe bestandsnaam in aub"
 
@@ -1026,19 +1041,19 @@ msgstr "Voer de nieuwe bestandsnaam in aub"
 msgid "Please wait, Loading image."
 msgstr "Moment aub, de image wordt geladen."
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "Pre-fill first 'n' filename chars to virtual keyboard"
 msgstr "Vul de eerste 'n' karakters in op het virtuele toetsenbord"
 
-#: ../ui.py:1402
+#: ../ui.py:1404
 msgid "Pre-fill last 'n' filename chars to virtual keyboard"
 msgstr "Vul de laatste 'n' karakters van de bestandnaam in op het virtuele toetsenbord"
 
-#: ../ui.py:202
+#: ../ui.py:204
 msgid "Press 'OK' and select from list or bookmarks directory for 'Go to default directory'. Eventually you can manage plugin's bookmarks here too."
 msgstr "Druk op 'Ok' en kies 'Ga naar de standaardmap' uit de lijst of map met bladwijzers. Uiteindelijk kunt u ook de bladwijzers van plug-ins hier beheren."
 
-#: ../addons/key_actions.py:566
+#: ../addons/key_actions.py:571
 #, python-format
 msgid ""
 "Program '%s' is installed.\n"
@@ -1047,7 +1062,7 @@ msgstr ""
 "Het programma '%s' is geïnstalleerd.\n"
 "Het pakket met dit programma is niet bekend, dus het kan niet gedéinstalleerd worden."
 
-#: ../addons/key_actions.py:563
+#: ../addons/key_actions.py:568
 #, python-format
 msgid ""
 "Program '%s' needs to be installed to run the '%s' action.\n"
@@ -1056,7 +1071,7 @@ msgstr ""
 "Het programma '%s' moet worden geïnstalleerd om deze actie '%s' uit te voeren.\n"
 "Verwijder het pakket '%s' om het programma te verwijderen?"
 
-#: ../addons/key_actions.py:488
+#: ../addons/key_actions.py:493
 #, python-format
 msgid ""
 "Program '%s' needs to be installed to run this action.\n"
@@ -1065,7 +1080,7 @@ msgstr ""
 "Het programma '%s' moet worden geïnstalleerd om deze actie uit te voeren.\n"
 "Installeer pakket '%s' om het betreffende programma te installeren?"
 
-#: ../addons/key_actions.py:490
+#: ../addons/key_actions.py:495
 #, python-format
 msgid ""
 "Program '%s' not installed.\n"
@@ -1078,7 +1093,7 @@ msgstr ""
 msgid "Records"
 msgstr "Opnames"
 
-#: ../ui.py:504 ../ui.py:639 ../ui.py:1523
+#: ../ui.py:506 ../ui.py:641 ../ui.py:1525
 msgid "Refresh screen"
 msgstr "Ververs het scherm"
 
@@ -1086,55 +1101,55 @@ msgstr "Ververs het scherm"
 msgid "Regular file"
 msgstr "Normaal bestand"
 
-#: ../ui.py:676
+#: ../ui.py:678
 msgid "Remove current folder from bookmarks"
 msgstr "Verwijder de huidige map uit de bladwijzers"
 
-#: ../ui.py:1619
+#: ../ui.py:1621
 #, python-format
 msgid "Remove from selection (%s)"
 msgstr "Verwijder vanuit de selectie (%s)"
 
-#: ../ui.py:672
+#: ../ui.py:674
 msgid "Remove selected folder from bookmarks"
 msgstr "Verwijder de gekozen map uit de bladwijzers"
 
-#: ../ui.py:486
+#: ../ui.py:488
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: ../ui.py:506 ../ui.py:514 ../ui.py:628
+#: ../ui.py:508 ../ui.py:516 ../ui.py:630
 msgid "Rename file/directory"
 msgstr "Hernoem een bestand / map"
 
-#: ../ui.py:491 ../ui.py:493
+#: ../ui.py:493 ../ui.py:495
 msgid "Reverse left file sorting"
 msgstr "Omgekeerd sorteren linker zijde"
 
-#: ../ui.py:490 ../ui.py:494
+#: ../ui.py:492 ../ui.py:496
 msgid "Reverse right file sorting"
 msgstr "Omgekeerd sorteren rechter zijde"
 
-#: ../addons/key_actions.py:542
+#: ../addons/key_actions.py:547
 #, python-format
 msgid "Run '%s' command"
 msgstr "Run ‘%s’ commando"
 
 #: ../addons/key_actions.py:157 ../addons/key_actions.py:160
-#: ../addons/key_actions.py:174 ../addons/key_actions.py:400
-#: ../addons/key_actions.py:456 ../ui.py:561 ../ui.py:874 ../TaskList.py:76
+#: ../addons/key_actions.py:174 ../addons/key_actions.py:402
+#: ../addons/key_actions.py:461 ../TaskList.py:76 ../ui.py:563 ../ui.py:876
 msgid "Run script"
 msgstr "Run script"
 
-#: ../addons/key_actions.py:400
+#: ../addons/key_actions.py:402
 msgid "Run script in background"
 msgstr "Script in de achtergrond runnen"
 
-#: ../addons/key_actions.py:404
+#: ../addons/key_actions.py:406
 msgid "Run script with optional parameter"
 msgstr "Script met optionele parameter runnen"
 
-#: ../addons/key_actions.py:405
+#: ../addons/key_actions.py:407
 msgid "Run script with optional parameter in background"
 msgstr "Script in de achtergrond met de optionele parameters runnen"
 
@@ -1142,19 +1157,19 @@ msgstr "Script in de achtergrond met de optionele parameters runnen"
 msgid "Save"
 msgstr "Opslaan"
 
-#: ../ui.py:188
+#: ../ui.py:189
 msgid "Save cursor position"
 msgstr "Sla de cursor positie op"
 
-#: ../ui.py:188
+#: ../ui.py:189
 msgid "Save cursor position in active panel."
 msgstr "Indien geactiveerd, dan wordt de cursor positie opgeslagen. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
 
-#: ../ui.py:186
+#: ../ui.py:187
 msgid "Save left folder on exit"
 msgstr "Sla de linker map op bij het afsluiten"
 
-#: ../ui.py:187
+#: ../ui.py:188
 msgid "Save right folder on exit"
 msgstr "Sla de rechter map op bij het afsluiten"
 
@@ -1167,20 +1182,20 @@ msgstr ""
 "Wilt u de opdrachten en de uitvoer opslaan in een bestand?\n"
 "('%s')"
 
-#: ../ui.py:186
+#: ../ui.py:187
 msgid "Save the left directory list location on exit."
 msgstr "Indien geactiveerd, dan wordt het linker directory overzicht opgeslagen bij het afsluiten."
 
-#: ../ui.py:187
+#: ../ui.py:188
 msgid "Save the right folder list location on exit."
 msgstr "Indien geactiveerd, dan wordt het rechter directory overzicht opgeslagen bij het afsluiten."
 
-#: ../addons/key_actions.py:413
+#: ../addons/key_actions.py:415
 #, python-format
 msgid "Script '%s' must have read permission to be able to run it"
 msgstr "Om script '%s' uit te voeren zijn leesmachtigingen nodig"
 
-#: ../ui.py:1397
+#: ../ui.py:1399
 msgid "Search in group selection by"
 msgstr "Zoek in de groepsselectie op"
 
@@ -1198,15 +1213,15 @@ msgstr ""
 msgid "Search text in file (%s)."
 msgstr ""
 
-#: ../ui.py:1508
+#: ../ui.py:1510
 msgid "Select (source list) or enter directory (target list)"
 msgstr "Kies de (bronlijst) of voer de map in (doellijst)"
 
-#: ../ui.py:1586
+#: ../ui.py:1588
 msgid "Select All"
 msgstr "Kies alles"
 
-#: ../ui.py:731
+#: ../ui.py:733
 msgid "Select a path"
 msgstr "Kies een path"
 
@@ -1215,49 +1230,49 @@ msgstr "Kies een path"
 msgid "Select action:"
 msgstr "Kies de uit te voeren actie:"
 
-#: ../ui.py:1525
+#: ../ui.py:1527
 msgid "Select group"
 msgstr "Kies een groep"
 
-#: ../ui.py:1584
+#: ../ui.py:1586
 msgid "Select group..."
 msgstr "Kies een groep..."
 
-#: ../ui.py:679 ../ui.py:1592
+#: ../ui.py:681 ../ui.py:1594
 msgid "Select operation:"
 msgstr "Kies de uit te voeren actie:"
 
-#: ../ui.py:177
+#: ../ui.py:178
 msgid "Select your personal settings:"
 msgstr "Kies uw persoonlijke instellingen:"
 
-#: ../addons/key_actions.py:250
+#: ../addons/key_actions.py:252
 msgid "Set archive mode (644)"
 msgstr "Stel de rechten in (644)"
 
-#: ../addons/key_actions.py:250
+#: ../addons/key_actions.py:252
 msgid "Set executable mode (755)"
 msgstr "Stel de uitvoerbaarheid in (755)"
 
-#: ../ui.py:193
+#: ../ui.py:195
 msgid "Set for 'stout' and 'sterr' the number of lines in script info or script error messages."
 msgstr ""
 "Stel het aantal regels in scriptinfo of scriptfoutmeldingen in voor 'stout' en 'sterr'.\n"
 "U kunt kiezen van 1-10 regels. Standaard is 3 regels."
 
-#: ../ui.py:1403
+#: ../ui.py:1405
 msgid "Sets whether to distinguish between uper case and lower case for searching."
 msgstr "Met deze optie stelt in of er tijdens het zoeken onderscheid moet worden gemaakt tussen hoofd- en kleine letters."
 
-#: ../ui.py:229
+#: ../ui.py:231
 msgid "Settings"
 msgstr "Instellingen"
 
-#: ../addons/type_utils.py:156 ../ui.py:657 ../ui.py:1590
+#: ../addons/type_utils.py:156 ../ui.py:659 ../ui.py:1592
 msgid "Settings..."
 msgstr "Instellingen ..."
 
-#: ../addons/key_actions.py:741
+#: ../addons/key_actions.py:746
 #, python-format
 msgid ""
 "Show '%s' as picture%s?\n"
@@ -1267,18 +1282,22 @@ msgstr ""
 "Het huidige programma wordt gestopt!"
 
 #: ../ui.py:192
+msgid "Show '..' and the receiver name instead of 'Parent directory' and 'List of storage devices'."
+msgstr ""
+
+#: ../ui.py:194
 msgid "Show Script completed message"
 msgstr "Toon een bericht indien een script volledig uitgevoerd is"
 
-#: ../ui.py:191
+#: ../ui.py:193
 msgid "Show Task's completed message"
 msgstr "Toon een bericht inz. de afgeronde taken"
 
-#: ../addons/key_actions.py:735
+#: ../addons/key_actions.py:740
 msgid "Show as Picture (press any key to close)"
 msgstr "Als foto tonen (druk op een knop om te sluiten)"
 
-#: ../addons/key_actions.py:739
+#: ../addons/key_actions.py:744
 #, python-format
 msgid "Show as Picture and save as file ('%s')"
 msgstr "Als foto tonen en opslaan als bestand (‘%s’)"
@@ -1299,11 +1318,11 @@ msgstr "Toon de inhoud van tar of gecomprimeerd bestand"
 msgid "Show contents of zip file"
 msgstr "Toon de inhoud van zip bestand"
 
-#: ../ui.py:189
+#: ../ui.py:190
 msgid "Show directories first"
 msgstr "Toon de mappen eerst"
 
-#: ../ui.py:189
+#: ../ui.py:190
 msgid "Show directories on first or last positions in panel (to apply the changes FileCommander must be restarted)."
 msgstr "Indien geactiveerd, dan worden de mappen op de eerste of de laatste posities in het paneel weergegeven. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
 
@@ -1311,11 +1330,11 @@ msgstr "Indien geactiveerd, dan worden de mappen op de eerste of de laatste posi
 msgid "Show image information"
 msgstr "Toon image informatie"
 
-#: ../ui.py:191
+#: ../ui.py:193
 msgid "Show message if FileCommander is not running and all Task's are completed."
 msgstr "Indien geactiveerd, dan wordt er een bericht getoond als FileCommander niet actief is en alle taken voltooid zijn."
 
-#: ../ui.py:192
+#: ../ui.py:194
 msgid "Show message if a background script ends successfully. Has 'stout', then this is displayed as additional info."
 msgstr "Indien geactiveerd, dan wordt er een bericht getoond zodra een achtergrondscript met succes is geëindigd. Als het 'stout' heeft, dan wordt dit weergegeven als extra info."
 
@@ -1327,15 +1346,15 @@ msgstr "Toon het volgende plaatje"
 msgid "Show previous picture"
 msgstr "Toon het vorige plaatje"
 
-#: ../ui.py:509 ../ui.py:640 ../ui.py:1528
+#: ../ui.py:511 ../ui.py:642 ../ui.py:1530
 msgid "Show task list"
 msgstr "Toon een taakoverzicht"
 
-#: ../ui.py:194
+#: ../ui.py:196
 msgid "Show unknown extension as text"
 msgstr "Onbekende extensie als tekst tonen"
 
-#: ../ui.py:194
+#: ../ui.py:196
 msgid "Show unknown file extensions with 'Addon File-Viewer'."
 msgstr "Indien geactiveerd, dan worden onbekende bestandsextensies met de addon 'fileviewer' getoond."
 
@@ -1347,7 +1366,7 @@ msgstr "Grootte"
 msgid "Size reverse"
 msgstr "Grootte omgekeerd"
 
-#: ../ui.py:2026
+#: ../ui.py:2028
 msgid "Size:"
 msgstr "Grootte:"
 
@@ -1355,11 +1374,11 @@ msgstr "Grootte:"
 msgid "Socket"
 msgstr "Socket"
 
-#: ../ui.py:522
+#: ../ui.py:524
 msgid "Sorting left files by name, date or size"
 msgstr "Bestanden aan de linkerzijde worden gesorteerd op naam, datum of grootte"
 
-#: ../ui.py:525
+#: ../ui.py:527
 msgid "Sorting right files by name, date or size"
 msgstr "Bestanden aan de rechterzijde worden gesorteerd op naam, datum of grootte"
 
@@ -1367,15 +1386,15 @@ msgstr "Bestanden aan de rechterzijde worden gesorteerd op naam, datum of groott
 msgid "Start/stop slide show"
 msgstr "Start/stop de diavoorstelling"
 
-#: ../ui.py:728
+#: ../ui.py:730
 msgid "Storage devices"
 msgstr "Opslag media"
 
-#: ../ui.py:207
+#: ../ui.py:209
 msgid "Swap buttons for reverse file sorting"
 msgstr "Keer de functie van de toetsen om m.b.t. omgekeerd sorteren"
 
-#: ../ui.py:196
+#: ../ui.py:198
 msgid "Swap buttons right/left with channel +/- or the channel button changed always the side."
 msgstr "Indien geactiveerd, dan wisselt u met de pijltjestoetsen van het L naar het R navigatiescherm en tussen de bestanden. Indien gedeactiveerd, dan navigeert u met Ch +/- tussen het L en R scherm en met de pijltjestoetsen tussen de bestanden. Bij 'De CH knoppen wisselt ….', dan wisselt u met CH+ of CH- van scherm en met pijltjestoetsen Up/Down tussen de bestanden."
 
@@ -1383,11 +1402,11 @@ msgstr "Indien geactiveerd, dan wisselt u met de pijltjestoetsen van het L naar 
 msgid "Symbolic link"
 msgstr "Symbolic link"
 
-#: ../ui.py:1180
+#: ../ui.py:1182
 msgid "Symlink to "
 msgstr "Symlink naar "
 
-#: ../addons/key_actions.py:279
+#: ../addons/key_actions.py:281
 msgid "TB"
 msgstr "TB"
 
@@ -1412,7 +1431,7 @@ msgstr "Het component 'toon afbeelding'  van de FileCommander vereist de Picture
 msgid "The authors are NOT RESPONSIBLE"
 msgstr "De auteurs zijn NIET VERANTWOORDELIJK"
 
-#: ../addons/key_actions.py:799
+#: ../addons/key_actions.py:804
 msgid ""
 "The function has been interrupted.\n"
 "Don't press any key until the picture from mvi-file is displayed!"
@@ -1420,7 +1439,7 @@ msgstr ""
 "De functie is onderbroken.\n"
 "Druk geen enkele knop totdat het mvi plaatje wordt getoond!"
 
-#: ../addons/key_actions.py:605
+#: ../addons/key_actions.py:610
 msgid "The hash of a directory can't be calculated."
 msgstr "De hash van de map kan niet worden berekend."
 
@@ -1428,11 +1447,11 @@ msgstr "De hash van de map kan niet worden berekend."
 msgid "This line is not editable!"
 msgstr "Deze regel kan niet worden aangepast!"
 
-#: ../ui.py:211
+#: ../ui.py:213
 msgid "Time between slides in image viewer slideshow."
 msgstr "Met deze optie stelt u de pauzetijd in bij gebruik van de slideshow t.b.v. de weergave van afbeeldingen."
 
-#: ../ui.py:211
+#: ../ui.py:213
 msgid "Time for Slideshow"
 msgstr "Pauze bij diavoorstelling"
 
@@ -1445,16 +1464,16 @@ msgstr ""
 msgid "To previous found text"
 msgstr "Toon het vorige plaatje"
 
-#: ../ui.py:1206
+#: ../ui.py:1208
 #, fuzzy
 msgid "Type the name for the new file"
 msgstr "Voer de naam voor de nieuwe map in aub"
 
-#: ../ui.py:2021
+#: ../ui.py:2023
 msgid "Type:"
 msgstr "Type:"
 
-#: ../addons/key_actions.py:587
+#: ../addons/key_actions.py:592
 #, python-format
 msgid "Uninstall '%s' package and disable '%s'"
 msgstr "Deïnstalleer pakket ‘%s’ en deactiveer ‘%s’"
@@ -1474,26 +1493,26 @@ msgid "Unknown user: %d"
 msgstr "Onbekende gebruiker: %d"
 
 #: ../addons/unrar.py:32 ../addons/unrar.py:33 ../addons/unzip.py:28
-#: ../addons/unzip.py:29 ../addons/gz.py:27 ../addons/gz.py:28
-#: ../addons/tar.py:23 ../addons/tar.py:24
+#: ../addons/unzip.py:29 ../addons/tar.py:23 ../addons/tar.py:24
+#: ../addons/gz.py:27 ../addons/gz.py:28
 #, python-format
 msgid "Unpack to %s"
 msgstr "Uitpakken in %s"
 
-#: ../addons/unrar.py:31 ../addons/unzip.py:27 ../addons/gz.py:26
-#: ../addons/tar.py:22
+#: ../addons/unrar.py:31 ../addons/unzip.py:27 ../addons/tar.py:22
+#: ../addons/gz.py:26
 msgid "Unpack to current folder"
 msgstr "In huidige map uitpakken"
 
-#: ../ui.py:207
+#: ../ui.py:209
 msgid "Useful if remote controller having 'pause' button left to 'stop' (to apply the changes FileCommander must be restarted)."
 msgstr "Handig als de RC een 'pauzetoets' beschikbaar heeft om te stoppen. Om deze wijzigingen toe te passen moet FileCommander herstart worden."
 
-#: ../ui.py:507 ../ui.py:631
+#: ../ui.py:509 ../ui.py:633
 msgid "View or edit file (if size < 1MB)"
 msgstr "Bekijk of wijzig een bestand (indien < 1MB)"
 
-#: ../addons/key_actions.py:400 ../addons/key_actions.py:402
+#: ../addons/key_actions.py:402 ../addons/key_actions.py:404
 #, python-format
 msgid "View or edit this %s script"
 msgstr "Bekijk of pas script %s aan"
@@ -1502,7 +1521,7 @@ msgstr "Bekijk of pas script %s aan"
 msgid "WARNING!"
 msgstr "WAARSCHUWING!"
 
-#: ../addons/key_actions.py:617
+#: ../addons/key_actions.py:622
 msgid "What do you want to play?\n"
 msgstr "Wil je dit afspelen?\n"
 
@@ -1510,29 +1529,29 @@ msgstr "Wil je dit afspelen?\n"
 msgid "Yes"
 msgstr "Ja"
 
-#: ../ui.py:1400
+#: ../ui.py:1402
 msgid "You can set the number of letters from the beginning of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Hier kunt u het aantal karakters aangeven waarmee het virtuele toetsenbord wordt gevuld. Dat zijn de eerste 'n' karakters van het momenteel geselecteerde item."
 
-#: ../ui.py:1402
+#: ../ui.py:1404
 msgid "You can set the number of letters from the end of the current file name as the text pre-filled into virtual keyboard for easier input via group selection."
 msgstr "Hier kunt u het aantal karakters aangeven waarmee het virtuele toetsenbord wordt gevuld. Dat zijn de laatste 'n' karakters van het momenteel geselecteerde item."
 
-#: ../ui.py:1398
+#: ../ui.py:1400
 msgid "You can set what will group selection use - start of title, end of title or contains in title."
 msgstr "Hier stelt u in wat de groepsselectie gebruikt - begin van de titel, eind van de titel of titel."
 
-#: ../addons/key_actions.py:518
+#: ../addons/key_actions.py:523
 #, python-format
 msgid "You can't usefully run '%s' on '%s'."
 msgstr "Je kunt normaliter ‘%s’ niet uitvoeren op ‘%s’."
 
-#: ../addons/key_actions.py:501
+#: ../addons/key_actions.py:506
 #, python-format
 msgid "You can't usefully run '%s' on a directory."
 msgstr "Je kunt normaliter ‘%s’ niet uitvoeren in een map."
 
-#: ../ui.py:272
+#: ../ui.py:274
 #, python-format
 msgid "[D]%s%s[F]%s%s"
 msgstr "[D]%s%s[F]%s%s"
@@ -1551,23 +1570,23 @@ msgstr "Vergelijk hoofd/kleine letters gevoeligheid"
 msgid "contains in title"
 msgstr "Bevat in de titel"
 
-#: ../ui.py:1615
+#: ../ui.py:1617
 msgid "contains..."
 msgstr "bevat..."
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1002 ../ui.py:1844
+#: ../ui.py:563 ../ui.py:876 ../ui.py:1004 ../ui.py:1846
 msgid "copy file"
 msgstr "kopieer bestand"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1004 ../ui.py:1842
+#: ../ui.py:563 ../ui.py:876 ../ui.py:1006 ../ui.py:1844
 msgid "copy folder"
 msgstr "kopieer map"
 
-#: ../ui.py:1196
+#: ../ui.py:1198
 msgid "create symlink ..."
 msgstr "maak een symlink aan …"
 
-#: ../ui.py:268 ../ui.py:269
+#: ../ui.py:270 ../ui.py:271
 msgid "d"
 msgstr "d"
 
@@ -1575,7 +1594,7 @@ msgstr "d"
 msgid "end title"
 msgstr "Einde van de titel"
 
-#: ../ui.py:1613
+#: ../ui.py:1615
 msgid "ends with..."
 msgstr "eindigt met..."
 
@@ -1583,8 +1602,8 @@ msgstr "eindigt met..."
 msgid "for DATA LOSS OR DAMAGE !!!"
 msgstr "voor DATA VERLIES OF BESCHADIGING !!!"
 
-#: ../ui.py:990 ../ui.py:1019 ../ui.py:1052 ../ui.py:1777 ../ui.py:1812
-#: ../ui.py:1847
+#: ../ui.py:992 ../ui.py:1021 ../ui.py:1054 ../ui.py:1779 ../ui.py:1814
+#: ../ui.py:1849
 msgid "from dir"
 msgstr "uit de map"
 
@@ -1596,7 +1615,7 @@ msgstr "is VERANDERS! Wil je dit opslaan?"
 msgid "hide"
 msgstr "verbergen"
 
-#: ../addons/key_actions.py:305
+#: ../addons/key_actions.py:307
 #, python-format
 msgid "in %s selected file"
 msgid_plural "in %s selected files"
@@ -1611,19 +1630,19 @@ msgstr "installeer of pak ipk bestanden uit"
 msgid "manage local Files"
 msgstr "Beheer de locale bestanden"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1066 ../ui.py:1809
+#: ../ui.py:563 ../ui.py:876 ../ui.py:1068 ../ui.py:1811
 msgid "move file"
 msgstr "verplaats bestand"
 
-#: ../ui.py:561 ../ui.py:874 ../ui.py:1068
+#: ../ui.py:563 ../ui.py:876 ../ui.py:1070
 msgid "move folder"
 msgstr "verplaats directory"
 
-#: ../ui.py:268 ../ui.py:269
+#: ../ui.py:270 ../ui.py:271
 msgid "n"
 msgstr "n"
 
-#: ../ui.py:1206
+#: ../ui.py:1208
 msgid "new.txt"
 msgstr ""
 
@@ -1639,11 +1658,11 @@ msgstr "speel bestanden af"
 msgid "play/show Files"
 msgstr "speel af / toon bestanden"
 
-#: ../addons/key_actions.py:397
+#: ../addons/key_actions.py:399
 msgid "python"
 msgstr "python"
 
-#: ../ui.py:268 ../ui.py:269
+#: ../ui.py:270 ../ui.py:271
 msgid "s"
 msgstr "s"
 
@@ -1655,7 +1674,7 @@ msgstr "script 'sterr':"
 msgid "script 'stout':"
 msgstr "script 'stout':"
 
-#: ../addons/key_actions.py:399
+#: ../addons/key_actions.py:401
 msgid "shell"
 msgstr "shell"
 
@@ -1663,11 +1682,11 @@ msgstr "shell"
 msgid "start title"
 msgstr "Start deze titel"
 
-#: ../ui.py:1611
+#: ../ui.py:1613
 msgid "starts with..."
 msgstr "start met..."
 
-#: ../ui.py:990 ../ui.py:1052 ../ui.py:1812 ../ui.py:1847
+#: ../ui.py:992 ../ui.py:1054 ../ui.py:1814 ../ui.py:1849
 msgid "to dir"
 msgstr "naar directory"
 
